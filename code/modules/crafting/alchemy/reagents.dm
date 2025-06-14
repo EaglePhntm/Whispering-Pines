@@ -4,6 +4,58 @@
 	reagent_state = LIQUID
 
 //Potions
+
+/datum/reagent/medicine/minorhealthpot
+	name = "Lesser Health Potion"
+	description = "Somewhat regenerates all types of damage."
+	reagent_state = LIQUID
+	color = "#ff9494"
+	taste_description = "tangy sweetness"
+	overdose_threshold = 0
+	metabolization_rate = 1 * REAGENTS_METABOLISM
+	alpha = 173
+
+/datum/reagent/medicine/minorhealthpot/on_mob_life(mob/living/carbon/M) // Heals half as much as health potion, but not wounds.
+	var/list/wCount = M.get_wounds()
+	if(M.blood_volume < BLOOD_VOLUME_NORMAL) //can not overfill
+		M.blood_volume = min(M.blood_volume+20, BLOOD_VOLUME_MAXIMUM)
+	if(wCount.len > 0 && prob(50)) //half as effective as a normal health pot but still heals wounds.
+		M.heal_wounds(10)
+		M.update_damage_overlays()
+		if(prob(10))
+			to_chat(M, span_nicegreen("I feel my wounds mending."))
+	for(var/datum/reagent/toxin/R in M.reagents.reagent_list)
+		if(R != src)
+			M.reagents.remove_reagent(R.type,1)
+	M.adjustBruteLoss(-0.5, 0) // 20u = 25 points of healing
+	M.adjustFireLoss(-0.5, 0)
+	M.adjustToxLoss(-0.5, 0)
+	M.adjustOxyLoss(-1.5, 0)
+	M.adjustCloneLoss(-1, 0)
+	M.adjustOrganLoss(ORGAN_SLOT_LUNGS, -1)
+	M.adjustOrganLoss(ORGAN_SLOT_HEART, -1)
+	M.adjustOrganLoss(ORGAN_SLOT_TONGUE, -1)
+	M.adjustOrganLoss(ORGAN_SLOT_EARS, -1)
+	M.adjustOrganLoss(ORGAN_SLOT_EYES, -1)
+	M.adjustOrganLoss(ORGAN_SLOT_LIVER, -1)
+	M.adjustOrganLoss(ORGAN_SLOT_APPENDIX, -1)
+	M.adjustOrganLoss(ORGAN_SLOT_STOMACH, -1)
+	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -1)
+	..()
+	. = 1
+
+/datum/chemical_reaction/minorpot
+	name = "Lesser Health Potion"
+	id = /datum/reagent/medicine/minorhealthpot
+	results = list(/datum/reagent/medicine/minorhealthpot = 10)
+	required_reagents = list(/datum/reagent/medicine/healthpot = 5, /datum/reagent/water = 5)
+
+/datum/chemical_reaction/minorpot
+	name = "Health Potion"
+	id = /datum/reagent/medicine/healthpot
+	results = list(/datum/reagent/medicine/healthpot = 10)
+	required_reagents = list(/datum/reagent/medicine/stronghealth = 5, /datum/reagent/water = 5)
+
 /datum/reagent/medicine/healthpot
 	name = "Health Potion"
 	description = "Gradually regenerates all types of damage."
@@ -17,20 +69,37 @@
 	alpha = 173
 
 /datum/reagent/medicine/healthpot/on_mob_life(mob/living/carbon/M)
-	if(volume >= 60)
-		M.reagents.remove_reagent(/datum/reagent/medicine/healthpot, 2) //No overhealing.
-	if(M.blood_volume < BLOOD_VOLUME_NORMAL)
-		M.blood_volume = min(M.blood_volume+20, BLOOD_VOLUME_MAXIMUM)
 	var/list/wCount = M.get_wounds()
+	if(M.blood_volume < BLOOD_VOLUME_NORMAL)
+		M.blood_volume = min(M.blood_volume+50, BLOOD_VOLUME_MAXIMUM)
+	else
+		//can overfill you with blood, but at a slower rate
+		M.blood_volume = min(M.blood_volume+10, BLOOD_VOLUME_MAXIMUM)
 	if(wCount.len > 0)
-		M.heal_wounds(3) //at a motabalism of .5 U a tick this translates to 120WHP healing with 20 U Most wounds are unsewn 15-100. This is powerful on single wounds but rapidly weakens at multi wounds.
-	if(volume > 0.99)
-		M.adjustBruteLoss(-1.75*REM, 0)
-		M.adjustFireLoss(-1.75*REM, 0)
-		M.adjustOxyLoss(-1.25, 0)
-		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -5*REM)
-		M.adjustCloneLoss(-1.75*REM, 0)
+		//some peeps dislike the church, this allows an alternative thats not a doctor or sleep.
+		M.heal_wounds(20)
+		M.update_damage_overlays()
+		if(prob(10))
+			to_chat(M, span_nicegreen("I feel my wounds mending."))
+	for(var/datum/reagent/toxin/R in M.reagents.reagent_list)
+		if(R != src)
+			M.reagents.remove_reagent(R.type,2)
+	M.adjustBruteLoss(-1, 0) // 20u = 50 points of healing
+	M.adjustFireLoss(-1, 0)
+	M.adjustToxLoss(-1, 0)
+	M.adjustOxyLoss(-3, 0)
+	M.adjustCloneLoss(-2, 0)
+	M.adjustOrganLoss(ORGAN_SLOT_LUNGS, -2)
+	M.adjustOrganLoss(ORGAN_SLOT_HEART, -2)
+	M.adjustOrganLoss(ORGAN_SLOT_TONGUE, -2)
+	M.adjustOrganLoss(ORGAN_SLOT_EARS, -2)
+	M.adjustOrganLoss(ORGAN_SLOT_EYES, -2)
+	M.adjustOrganLoss(ORGAN_SLOT_LIVER, -2)
+	M.adjustOrganLoss(ORGAN_SLOT_APPENDIX, -2)
+	M.adjustOrganLoss(ORGAN_SLOT_STOMACH, -2)
+	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -2)
 	..()
+	. = 1
 
 /datum/reagent/medicine/stronghealth
 	name = "Strong Health Potion"
@@ -42,22 +111,33 @@
 	metabolization_rate = REAGENTS_METABOLISM * 3
 
 /datum/reagent/medicine/stronghealth/on_mob_life(mob/living/carbon/M)
-	if(volume >= 60)
-		M.reagents.remove_reagent(/datum/reagent/medicine/healthpot, 2) //No overhealing.
-	if(M.blood_volume < BLOOD_VOLUME_NORMAL)
-		M.blood_volume = min(M.blood_volume+80, BLOOD_VOLUME_MAXIMUM)
-	else
-		//can overfill you with blood, but at a slower rate
-		M.blood_volume = min(M.blood_volume+10, BLOOD_VOLUME_MAXIMUM)
 	var/list/wCount = M.get_wounds()
+	if(M.blood_volume < BLOOD_VOLUME_NORMAL)
+		M.blood_volume = min(M.blood_volume+100, BLOOD_VOLUME_MAXIMUM)
+	else
+		M.blood_volume = min(M.blood_volume+20, BLOOD_VOLUME_MAXIMUM)
 	if(wCount.len > 0)
-		M.heal_wounds(6) //at a motabalism of .5 U a tick this translates to 240WHP healing with 20 U Most wounds are unsewn 15-100.
-	if(volume > 0.99)
-		M.adjustBruteLoss(-7*REM, 0)
-		M.adjustFireLoss(-7*REM, 0)
-		M.adjustOxyLoss(-5, 0)
-		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -5*REM)
-		M.adjustCloneLoss(-7*REM, 0)
+		M.heal_wounds(30)
+		M.update_damage_overlays()
+		if(prob(10))
+			to_chat(M, span_nicegreen("I feel my wounds mending."))
+	for(var/datum/reagent/toxin/R in M.reagents.reagent_list)
+		if(R != src)
+			M.reagents.remove_reagent(R.type,3)
+	M.adjustBruteLoss(-1.5, 0) // 20u = 150 points of healing.
+	M.adjustFireLoss(-1.5, 0)
+	M.adjustToxLoss(-1.5, 0)
+	M.adjustOxyLoss(-5, 0)
+	M.adjustCloneLoss(-3, 0)
+	M.adjustOrganLoss(ORGAN_SLOT_LUNGS, -3)
+	M.adjustOrganLoss(ORGAN_SLOT_HEART, -3)
+	M.adjustOrganLoss(ORGAN_SLOT_TONGUE, -3)
+	M.adjustOrganLoss(ORGAN_SLOT_EARS, -3)
+	M.adjustOrganLoss(ORGAN_SLOT_EYES, -3)
+	M.adjustOrganLoss(ORGAN_SLOT_LIVER, -3)
+	M.adjustOrganLoss(ORGAN_SLOT_APPENDIX, -3)
+	M.adjustOrganLoss(ORGAN_SLOT_STOMACH, -3)
+	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -3)
 	..()
 	. = 1
 
@@ -502,7 +582,7 @@ If you want to expand on poisons theres tons of fun effects TG chemistry has tha
 	metabolization_rate = 0.5
 
 /datum/reagent/toxin/fyritiusnectar/on_mob_life(mob/living/carbon/M)
-	if(volume > 0.49 && prob(33))
+	if(volume > 0.49)
 		M.add_nausea(9)
 		M.adjustFireLoss(2, 0)
 		M.adjust_fire_stacks(1)

@@ -17,9 +17,13 @@
 
 /mob/living/carbon/human/Unconscious(amount, ignore_canstun = FALSE)
 	amount = dna?.species?.spec_stun(src, amount)
+	if(HAS_TRAIT(src, TRAIT_HEAVY_SLEEPER))
+		amount *= rand(1.25, 1.3)
 	return ..()
 
 /mob/living/carbon/human/Sleeping(amount)
+	if(HAS_TRAIT(src, TRAIT_HEAVY_SLEEPER))
+		amount *= rand(1.25, 1.3)
 	return ..()
 
 /mob/living/carbon/human/cure_husk(list/sources)

@@ -46,12 +46,19 @@
 		ORGAN_SLOT_LIVER = /obj/item/organ/liver,
 		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach,
 		ORGAN_SLOT_APPENDIX = /obj/item/organ/appendix,
-		ORGAN_SLOT_GUTS = /obj/item/organ/guts,
+		ORGAN_SLOT_GUTS = /obj/item/organ/filling_organ/guts,
 	)
 
 	changesource_flags = WABBAJACK
 	bleed_mod = 0.2
 	pain_mod = 0.2
+
+/datum/species/halforc/get_span_language(datum/language/message_language)
+	if(!message_language)
+		return
+	if(message_language.type == /datum/language/beast)
+		return list(SPAN_BEAST)
+	return message_language.spans
 
 /datum/species/werewolf/send_voice(mob/living/carbon/human/H)
 	playsound(get_turf(H), pick('sound/vo/mobs/wwolf/wolftalk1.ogg','sound/vo/mobs/wwolf/wolftalk2.ogg'), 100, TRUE, -1)

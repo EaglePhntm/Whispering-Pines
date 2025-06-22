@@ -910,7 +910,7 @@
 /obj/structure/rack/shelf/big{
 	pixel_y = 0
 	},
-/obj/item/organ/guts{
+/obj/item/organ/filling_organ/guts{
 	pixel_x = -1;
 	pixel_y = -1
 	},

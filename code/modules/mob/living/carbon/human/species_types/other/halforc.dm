@@ -98,7 +98,7 @@
 		ORGAN_SLOT_LIVER = /obj/item/organ/liver,
 		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach,
 		ORGAN_SLOT_APPENDIX = /obj/item/organ/appendix,
-		ORGAN_SLOT_GUTS = /obj/item/organ/guts,
+		ORGAN_SLOT_GUTS = /obj/item/organ/filling_organ/guts,
 	)
 
 	nutrition_mod = 2 // 200% higher hunger rate. Hungry, hungry horcs

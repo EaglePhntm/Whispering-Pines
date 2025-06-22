@@ -361,7 +361,7 @@
 /obj/structure/closet/crate/chest/neu,
 /obj/effect/spawner/map_spawner/loot/food,
 /obj/item/organ/eyes,
-/obj/item/organ/guts,
+/obj/item/organ/filling_organ/guts,
 /obj/item/organ/heart,
 /obj/item/organ/liver,
 /obj/item/reagent_containers/food/snacks/meat/human,

@@ -51,6 +51,8 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 //Mobs
 #define isliving(A) (istype(A, /mob/living))
 
+#define issimple(A) (istype(A, /mob/living/simple_animal))
+
 #define isbrain(A) (istype(A, /mob/living/brain))
 
 //Carbon mobs
@@ -73,6 +75,7 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 #define istiefling(A) (is_species(A, /datum/species/tieberian))
 #define ishalforc(A) (is_species(A, /datum/species/halforc))
 #define iskobold(A) (is_species(A, /datum/species/kobold))
+#define isgoblinp(A) (is_species(A, /datum/species/goblinp))
 #define israkshari(A) (is_species(A, /datum/species/rakshari))
 #define isaasimar(A) (is_species(A, /datum/species/aasimar))
 #define ishollowkin(A) (is_species(A, /datum/species/demihuman))

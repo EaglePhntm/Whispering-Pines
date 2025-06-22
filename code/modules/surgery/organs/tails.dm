@@ -8,6 +8,7 @@
 	slot = ORGAN_SLOT_TAIL
 	var/can_wag = TRUE
 	var/wagging = FALSE
+	var/can_penetrate = TRUE
 
 /obj/item/organ/tail/Remove(mob/living/carbon/human/H,  special = 0)
 	..()

@@ -872,6 +872,16 @@
 		set_stat(UNCONSCIOUS) //the mob starts unconscious,
 		updatehealth() //then we check if the mob should wake up.
 		update_sight()
+		if(has_quirk(/datum/quirk/greaternightvision))
+			var/obj/item/organ/eyes/eyes = getorganslot(ORGAN_SLOT_EYES)
+			if(eyes)
+				eyes.see_in_dark = 14 // Same as full darksight eyes
+				eyes.lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE
+		if(has_quirk(/datum/quirk/night_vision))
+			var/obj/item/organ/eyes/eyes = getorganslot(ORGAN_SLOT_EYES)
+			if(eyes)
+				eyes.see_in_dark = 7
+				eyes.lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE
 		clear_alert("not_enough_oxy")
 		reload_fullscreen()
 		remove_client_colour(/datum/client_colour/monochrome/death)

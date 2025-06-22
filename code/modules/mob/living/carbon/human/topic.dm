@@ -10,11 +10,20 @@ GLOBAL_VAR_INIT(year_integer, text2num(year)) // = 2013???
 		var/list/dat = list()
 		if(headshot_link)
 			dat += "<br>"
-			dat += ("<div align='center'><img src='[headshot_link]' width='325px' height='325px'></div>")
+			dat += ("<div align='center'><img src='[headshot_link]' width='350px' height='350px'></div>")
 		if(flavortext)
 			dat += "<br>"
 			dat += "<div align='center'>[flavortext]</div>"
-		var/datum/browser/popup = new(user, "[src]", "<center>[src]</center>", 480, 700)
+		if(ooc_notes)
+			dat += "<br>"
+			dat += "<div align='center'>[ooc_notes]</div>"
+		if(nsfw_headshot_link)
+			dat += "<div align='center'><b>NSFW</b></div>"
+			if(!wear_armor && !wear_shirt && (gender == FEMALE || !wear_pants))
+				dat += ("<br><div align='center'><img src='[nsfw_headshot_link]' width='600px' height='725px'></div>")
+			else
+				dat += "<br><center><i><font color = '#9d0080'; font size = 5>There is more to see, only if they were naked...</font></i></center>"
+		var/datum/browser/popup = new(user, "[src]", "<center>[src]</center>", 700, 800)
 
 		popup.set_content(dat.Join())
 		popup.open(FALSE)

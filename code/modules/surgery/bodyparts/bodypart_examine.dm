@@ -194,7 +194,6 @@
 
 	return status
 
-/*
 	for(var/body_zone in body_zones)
 		var/self_aware = FALSE
 		if(HAS_TRAIT(src, TRAIT_SELF_AWARE))
@@ -217,16 +216,16 @@
 		else
 			if(brutedamage > 0)
 				status = light_brute_msg
-			if(brutedamage > max_damage * 0.4))
+			if(brutedamage > max_damage * 0.4)
 				status = medium_brute_msg
-			if(brutedamage > max_damage * 0.8))
+			if(brutedamage > max_damage * 0.8)
 				status = heavy_brute_msg
 			if(brutedamage > 0 && burndamage > 0)
 				examination += " and "
 
-			if(burndamage > max_damage * 0.8))
+			if(burndamage > max_damage * 0.8)
 				examination += heavy_burn_msg
-			else if(burndamage > max_damage * 0.2))
+			else if(burndamage > max_damage * 0.2)
 				examination += medium_burn_msg
 			else if(burndamage > 0)
 				examination += light_burn_msg
@@ -348,9 +347,9 @@
 
 	if(brutedamage > 0)
 		status = FB.light_brute_msg
-	if(brutedamage > max_damage * 0.4))
+	if(brutedamage > max_damage * 0.4)
 		status = FB.medium_brute_msg
-	if(brutedamage > max_damage * 0.8))
+	if(brutedamage > max_damage * 0.8)
 		status = FB.heavy_brute_msg
 	if(brutedamage > 0)
 		if(burndamage > 0 && wounddamage > 0)
@@ -358,9 +357,9 @@
 		else if(burndamage > 0 || wounddamage > 0)
 			examination += " and "
 
-	if(burndamage > max_damage * 0.8))
+	if(burndamage > max_damage * 0.8)
 		examination += FB.heavy_burn_msg
-	else if(burndamage > max_damage * 0.2))
+	else if(burndamage > max_damage * 0.2)
 		examination += FB.medium_burn_msg
 	else if(burndamage > 0)
 		examination += FB.light_burn_msg
@@ -400,4 +399,3 @@
 
 	for(var/obj/item/I in FB.embedded_objects)
 		to_chat(src, "\t <a href='byond://?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(FB)]' class='warning'>There is \a [I] in my [FB.name]!</a>")
-*/

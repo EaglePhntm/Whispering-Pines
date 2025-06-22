@@ -64,5 +64,4 @@
 	new /obj/item/natural/elementalmote(deathspot)
 	new /obj/item/natural/elementalmote(deathspot)
 	update_icon()
-	sleep(1)
 	qdel(src)

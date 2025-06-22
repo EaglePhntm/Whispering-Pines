@@ -3642,7 +3642,7 @@
 /area/rogue/indoors)
 "ve" = (
 /obj/structure/table/wood/plain,
-/obj/item/organ/guts,
+/obj/item/organ/filling_organ/guts,
 /turf/open/floor/dirt,
 /area/rogue/outdoors/bog/inhumen_camp)
 "vf" = (

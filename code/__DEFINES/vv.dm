@@ -114,6 +114,8 @@
 // /mob/living/carbon/human
 #define VV_HK_COPY_OUTFIT "copy_outfit"
 #define VV_HK_SET_SPECIES "setspecies"
+#define VV_HK_REAPPLY_PREFS "reapply_prefs"
 
 // misc
 #define VV_HK_SPACEVINE_PURGE "spacevine_purge"
+#define VV_HK_MOD_QUIRKS "quirkmod"

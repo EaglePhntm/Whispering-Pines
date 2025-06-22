@@ -62,6 +62,7 @@
 		OFFSET_SHIRT = list(0,0),\
 		OFFSET_ARMOR = list(0,0),\
 		OFFSET_UNDIES = list(0,0),\
+		OFFSET_BUTT = list(0,-4),\
 	)
 
 	offset_features_f = list(

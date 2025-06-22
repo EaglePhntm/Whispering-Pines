@@ -108,7 +108,7 @@
 "iv" = (
 /obj/structure/closet/dirthole/grave,
 /obj/structure/closet/crate/coffin,
-/obj/item/organ/guts,
+/obj/item/organ/filling_organ/guts,
 /obj/item/organ/lungs,
 /obj/item/organ/heart,
 /obj/item/organ/tongue,

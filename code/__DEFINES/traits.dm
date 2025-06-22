@@ -103,10 +103,10 @@
 #define TRAIT_ZIZOID_HUNTED "zizoidhunted" // Used to signal character has been marked by death by the Zizoid cult
 #define TRAIT_LEPROSY "Leprosy"
 #define TRAIT_NUDE_SLEEPER "Nude Sleeper"
-#define TRAIT_CIVILIZEDBARBARIAN "Civilized Barbarian"
 #define TRAIT_BEAUTIFUL "Beautiful"
 #define TRAIT_UGLY "Ugly"
 #define TRAIT_SCHIZO_FLAW "Schizophrenic"
+#define TRAIT_CIVILIZEDBARBARIAN "Pugilist"
 
 // JOB RELATED TRAITS
 
@@ -131,6 +131,14 @@
 #define TRAIT_GRAGGAR_CURSE "Graggar's Curse"
 #define TRAIT_MATTHIOS_CURSE "Matthios' Curse"
 #define TRAIT_BAOTHA_CURSE "Baotha's Curse"
+
+//Whisperingpines
+#define TRAIT_GOODLOVER 	"Good Lover"
+#define TRAIT_LIMPDICK 	"Limp Dick"
+#define TRAIT_DEATHBYSNOOSNOO "Bed Breaker" // double sex damage (requires strong intent)
+#define TRAIT_SEXDEVO "Blessed Sex" //sex devotion gain and extra healing.
+#define TRAIT_SELF_AWARE "Self Aware"
+#define TRAIT_PERFECT_TRACKER "Perfect Tracker"
 
 GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_WEBWALK = "I can move freely between webs.",
@@ -203,6 +211,16 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_APRICITY = "The warmth of the sun rejuvenates me, allowing me to regain my stamina quicker.",
 	TRAIT_BLACKLEG = "I can cheat by rigging coin and dice, and peek at cards.",
 	TRAIT_MATTHIOS_EYES = span_notice("I have a sense for what the most valuable item someone has is."),
+	TRAIT_WOODWALKER = span_notice("I can climb trees quicker, and gain climbing experience twice as quickly. I can step on thorns and branches safely in the woods. I can get twice as many things from searching bushes, and I can stand on leaves in trees safely."),
+	TRAIT_ARCYNE_T1 = span_notice("I have received basic training in the Arcyne arts, allowing me access to a small variety of spells useful outside of combat."),
+	TRAIT_ARCYNE_T2 = span_notice("I have received advanced training in the Arcyne arts, allowing me to learn basic combat spells"),
+	TRAIT_ARCYNE_T3 = span_notice("I am a full-fledged mage, and have access to devastating spells that affects a wide area."),
+	TRAIT_ARCYNE_T4 = span_notice("I'm a master of the Arcyne arts, and has access to some of the most powerful spells ever devised."),
+	TRAIT_NOFATIGUE = span_notice ("I don't need rest; I won't ever feel fatigue."),
+	TRAIT_PERMAMUTE = span_notice("I am a mute. I cannot speak."),
+	TRAIT_TINY = span_info("I am tiny in size and quite fragile!"),
+	TRAIT_DEATHBYSNOOSNOO = ("With strong intent, I can shatter pelvises."),
+	TRAIT_SEXDEVO = span_info("I gain devotion and even more health through sex."),
 	TRAIT_CRATEMOVER = "I am able to drag heavy objects without any difficulty.",
 	TRAIT_SEE_LEYLINES = "I can see the lines that make up this world.",
 	TRAIT_MOONWATER_ELIXIR = span_info("My mind is open, I can understand magic runes."),
@@ -218,7 +236,11 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_RECRUITED = "I have been recruited!",
 	TRAIT_EARGRAB = span_info("I can keep a tight grip on the ear of unruly children."),
 	TRAIT_KITTEN_MOM = span_info("Kittens love you, they see you are a parent."),
-	TRAIT_FLOWERFIELD_IMMUNITY = span_info("I am immune to the effects of flower fields.")
+	TRAIT_GOODLOVER = span_love("It's a lucky thing to share my bed."),
+	TRAIT_LIMPDICK = span_crit("My soldier refuses to rise to attention! Curses!"),
+	TRAIT_TINY = span_info("I am tiny in size and quite fragile!"),
+	TRAIT_DEATHBYSNOOSNOO = ("With strong intent, I can shatter pelvises."),
+	TRAIT_SEXDEVO = span_info("I gain devotion and even more health through sex."),
 	))
 
 #define SIGNAL_ADDTRAIT(trait_ref) ("addtrait " + trait_ref)
@@ -444,6 +466,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define GLASSES_TRAIT "glasses"
 #define VEHICLE_TRAIT "vehicle" // inherited from riding vehicles
 #define INNATE_TRAIT "innate"
+#define QUIRK_TRAIT "quirk"
 #define CRIT_HEALTH_TRAIT "crit_health"
 #define OXYLOSS_TRAIT "oxyloss"
 #define BLOODLOSS_TRAIT "bloodloss"
@@ -522,3 +545,6 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 
 /// makes your footsteps completely silent
 #define TRAIT_SILENT_FOOTSTEPS "silent_footsteps"
+
+//quirk traits
+#define TRAIT_HEAVY_SLEEPER		"heavy_sleeper"

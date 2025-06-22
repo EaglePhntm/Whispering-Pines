@@ -640,7 +640,7 @@
 	for(var/i in 1 to amt)
 		if(!internal_organs.len)
 			break //Guess we're out of organs!
-		var/obj/item/organ/guts = pick(internal_organs)
+		var/obj/item/organ/filling_organ/guts = pick(internal_organs)
 		var/turf/T = get_turf(src)
 		guts.Remove(src)
 		guts.forceMove(T)

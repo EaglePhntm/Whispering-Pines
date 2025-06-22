@@ -24,6 +24,7 @@ GLOBAL_LIST_INIT(character_flaws, list(
 	"Chronic Back Pain" = /datum/charflaw/chronic_back_pain,
 	"Old War Wound" = /datum/charflaw/old_war_wound,
 	"Chronic Arthritis" = /datum/charflaw/chronic_arthritis,
+	"Sex Pest" = /datum/charflaw/addiction/lovefiend,
 	"Random Flaw or No Flaw"=/datum/charflaw/randflaw,
 	"Guaranteed No Flaw (3 TRI)"=/datum/charflaw/noflaw,))
 

@@ -39,6 +39,7 @@ GLOBAL_LIST_EMPTY(respawncounts)
 	var/commendedsomeone
 	var/atom/movable/movingmob
 	var/whitelisted = 2
+	authenticate = FALSE
 
 /client/Topic(href, href_list, hsrc)
 	if(!usr || usr != mob)	//stops us calling Topic for somebody else's client. Also helps prevent usr=null

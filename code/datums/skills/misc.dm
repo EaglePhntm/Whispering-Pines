@@ -75,3 +75,10 @@
 	dreams = list(
 		"...the needle goes through the cloth, in-and-out... then it's hide... then it's a man's flesh... you blink, the dress is done... the queen will love it..."
 	)
+
+/datum/skill/misc/tracking
+	name = "Tracking"
+	desc = "Tracking is a skill that represents your ability to determine properties of owners' of tracks left behind by some." //Placeholder description.
+	dreams = list(
+		"...The untiring hunter stays on it's prey's trail in a shaded forest..."
+	)

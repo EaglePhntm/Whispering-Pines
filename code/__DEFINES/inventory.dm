@@ -80,6 +80,9 @@
 #define HIDEBOOB (1<<11)
 #define HIDEBELT (1<<12)
 #define HIDETAIL (1<<13)
+#define HIDECROTCH (1<<14)
+#define HIDEBUTT (1<<15)
+#define HIDEBELLY (1<<16)
 // Some clothing have bras, etc of their own and look wrong overlayed over the default underwear
 // Such as the amazonian chainkini
 // Younglings will always override this don't worry

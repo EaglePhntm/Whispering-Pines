@@ -189,8 +189,10 @@ GLOBAL_LIST_EMPTY(patreon_races)
 		ORGAN_SLOT_LIVER = /obj/item/organ/liver,
 		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach,
 		ORGAN_SLOT_APPENDIX = /obj/item/organ/appendix,
-		ORGAN_SLOT_GUTS = /obj/item/organ/guts,
-	)
+		ORGAN_SLOT_GUTS = /obj/item/organ/filling_organ/guts,
+		)
+	/// List of bodypart features of this species
+	var/list/bodypart_features
 
 	/// List of descriptor choices this species gets in preferences customization
 	var/list/descriptor_choices = list(

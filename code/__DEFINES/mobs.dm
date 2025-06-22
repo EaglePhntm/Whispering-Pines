@@ -300,6 +300,7 @@
 #define OFFSET_CLOAK "cloak"
 #define OFFSET_MOUTH "mouth"
 #define OFFSET_PANTS "wear_pants"
+#define OFFSET_BUTT "butt"
 #define OFFSET_SHIRT "wear_shirt"
 #define OFFSET_ARMOR "wear_armor"
 #define OFFSET_UNDIES "underwear"
@@ -321,6 +322,10 @@
 
 #define PULL_PRONE_SLOWDOWN 2
 #define HUMAN_CARRY_SLOWDOWN 0
+
+// Roundstart trait system
+
+#define MAX_QUIRKS 4 //The maximum amount of quirks one character can have at roundstart
 
 //Flags that control what things can spawn species (whitelist)
 //Wabbacjack staff projectiles

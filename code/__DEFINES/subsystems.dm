@@ -116,6 +116,7 @@
 #define INIT_ORDER_JOBS				65
 #define INIT_ORDER_ROLE_CLASS_HANDLER 66
 #define INIT_ORDER_TRIUMPHS			67
+#define INIT_ORDER_QUIRKS			68
 #define INIT_ORDER_AI_MOVEMENT 		56 //We need the movement setup
 #define INIT_ORDER_AI_CONTROLLERS 	55 //So the controller can get the ref
 #define INIT_ORDER_TICKER			54

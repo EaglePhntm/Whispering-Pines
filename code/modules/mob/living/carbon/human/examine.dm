@@ -577,8 +577,16 @@
 		if(skipface && user.has_flaw(/datum/charflaw/hunted))
 			user.add_stress(/datum/stressevent/hunted)
 
-	if(!obscure_name && (flavortext || (headshot_link && src.client?.patreon?.has_access(ACCESS_ASSISTANT_RANK)))) // only show flavor text if there is a flavor text and we show headshot
-		. += "<a href='?src=[REF(src)];task=view_flavor_text;'>Examine Closer</a>"
+	if((!obscure_name) && (flavortext || headshot_link || ooc_notes))
+		. += "<a href='?src=[REF(src)];task=view_flavor_text;'>Examine closer</a>"
+		//tiny picture when you are not examining closer, shouldnt take too much space.
+		if(headshot_link && ((wear_shirt || wear_armor) || !nsfw_headshot_link))
+			msg += "<span class='info'><img src=[headshot_link] width=100 height=150/></span>"
+		if(nsfw_headshot_link && !wear_armor && !wear_shirt && (gender == FEMALE || !wear_pants)) //topless male barbarians shouldnt show nsfw pics
+			msg += "<span class='info'><img src=[nsfw_headshot_link] width=125 height=175/></span>"
+	var/list/lines = build_cool_description(get_mob_descriptors(obscure_name, user), src)
+	for(var/line in lines)
+		. += span_info(line)
 
 	var/trait_exam = common_trait_examine()
 	if(!isnull(trait_exam))

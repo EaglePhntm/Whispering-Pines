@@ -80,8 +80,10 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 	var/detail_color = "000"
 	/// link to a page containing your headshot image
 	var/headshot_link
+	var/nsfw_headshot_link
 	/// text of your flavor
 	var/flavortext
+	var/ooc_notes
 	var/datum/species/pref_species = new /datum/species/human/northern()	//Mutant race
 	var/datum/patron/selected_patron
 	var/static/datum/patron/default_patron = /datum/patron/divine/astrata
@@ -161,12 +163,16 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 	/// If our owner has patreon access
 	var/patreon = FALSE
 
+	//Quirk list
+	var/list/all_quirks = list()
+
 /datum/preferences/New(client/C)
 	parent = C
 
 	migrant  = new /datum/migrant_pref(src)
 
 	flavortext = null
+	ooc_notes = null
 	headshot_link = null
 
 	// C/parent can be a client_interface
@@ -284,6 +290,9 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 
 	dat += "</table>"
 
+	dat += "<center><h2>Quirk Setup</h2>"
+	dat += "<a href='?_src_=prefs;preference=trait;task=menu'>Configure Quirks</a><br></center>"
+	dat += "<center><b>Current Quirks:</b> [all_quirks.len ? all_quirks.Join(", ") : "None"]</center>"
 	// Encapsulating table
 	dat += "<table width = '100%'>"
 	// Only one Row
@@ -365,8 +374,12 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 
 	dat += "<br><b>Headshot:</b> <a href='?_src_=prefs;preference=headshot;task=input'>Change</a>"
 	if(headshot_link != null)
-		dat += "<br><img src='[headshot_link]' width='100px' height='100px'>"
+		dat += "<br><img src='[headshot_link]' width='150px' height='175px'>"
+	dat += "<br><b>NSFW Headshot:</b> <a href='?_src_=prefs;preference=nsfw_headshot;task=input'>Change</a>"
+	if(nsfw_headshot_link != null)
+		dat += "<br><img src='[nsfw_headshot_link]' width='125px' height='175px'>"
 	dat += "<br><b>Flavortext:</b> <a href='?_src_=prefs;preference=flavortext;task=input'>Change</a>"
+	dat += "<br><b>OOC Notes:</b> <a href='?_src_=prefs;preference=ooc_notes;task=input'>Change</a>"
 	dat += "<br></td>"
 
 	dat += "</tr></table>"
@@ -694,6 +707,80 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 			user.client.prefs.lastclass = null
 			user.client.prefs.save_preferences()
 
+/datum/preferences/proc/SetQuirks(mob/user)
+	if(!SSquirks)
+		to_chat(user, span_danger("The quirk subsystem is still initializing! Try again in a minute."))
+		return
+
+	var/list/dat = list()
+	if(!SSquirks.quirks.len)
+		dat += "The quirk subsystem hasn't finished initializing, please hold..."
+		dat += "<center><a href='?_src_=prefs;preference=trait;task=close'>Done</a></center><br>"
+	else
+		dat += "<center><b>Choose quirk setup</b></center><br>"
+		dat += "<div align='center'>Left-click to add or remove quirks. You need negative quirks to have positive ones.<br>\
+		Quirks are applied at roundstart and cannot normally be removed. Most things may not work or work right.</div>"
+		dat += "<center><a href='?_src_=prefs;preference=trait;task=close'>Done</a></center>"
+		dat += "<hr>"
+		dat += "<center><b>Current quirks:</b> [all_quirks.len ? all_quirks.Join(", ") : "None"]</center>"
+		dat += "<center>[GetPositiveQuirkCount()] / [MAX_QUIRKS + max(0, round(get_playerquality(parent.ckey)/10))] max positive quirks<br>\
+		<b>Quirk balance remaining:</b> [GetQuirkBalance()]</center><br>"
+		for(var/V in SSquirks.quirks)
+			var/datum/quirk/T = SSquirks.quirks[V]
+			var/quirk_name = initial(T.name)
+			var/has_quirk
+			var/quirk_cost = initial(T.value) * -1
+			var/lock_reason = "This trait is unavailable."
+			var/quirk_conflict = FALSE
+			for(var/_V in all_quirks)
+				if(_V == quirk_name)
+					has_quirk = TRUE
+			if(initial(T.mood_quirk) && CONFIG_GET(flag/disable_human_mood))
+				lock_reason = "Mood is disabled."
+				quirk_conflict = TRUE
+			if(has_quirk)
+				if(quirk_conflict)
+					all_quirks -= quirk_name
+					has_quirk = FALSE
+				else
+					quirk_cost *= -1 //invert it back, since we'd be regaining this amount
+			if(quirk_cost > 0)
+				quirk_cost = "+[quirk_cost]"
+			var/font_color = "#AAAAFF"
+			if(initial(T.value) != 0)
+				font_color = initial(T.value) > 0 ? "#AAFFAA" : "#FFAAAA"
+			if(quirk_conflict)
+				dat += "<font color='[font_color]'>[quirk_name]</font> - [initial(T.desc)] \
+				<font color='red'><b>LOCKED: [lock_reason]</b></font><br>"
+			else
+				if(has_quirk)
+					dat += "<a href='?_src_=prefs;preference=trait;task=update;trait=[quirk_name]'>[has_quirk ? "Remove" : "Take"] ([quirk_cost] pts.)</a> \
+					<b><font color='[font_color]'>[quirk_name]</font></b> - [initial(T.desc)]<br>"
+				else
+					dat += "<a href='?_src_=prefs;preference=trait;task=update;trait=[quirk_name]'>[has_quirk ? "Remove" : "Take"] ([quirk_cost] pts.)</a> \
+					<font color='[font_color]'>[quirk_name]</font> - [initial(T.desc)]<br>"
+		dat += "<br><center><a href='?_src_=prefs;preference=trait;task=reset'>Reset Quirks</a></center>"
+
+	var/datum/browser/noclose/popup = new(user, "mob_occupation", "<div align='center'>Quirk Preferences</div>", 900, 600) //no reason not to reuse the occupation window, as it's cleaner that way
+	popup.set_window_options("can_close=0")
+	popup.set_content(dat.Join())
+	popup.open(FALSE)
+
+/datum/preferences/proc/GetQuirkBalance()
+	var/bal = 0
+	bal += 2 //vice
+	bal += max(0, round(get_playerquality(parent.ckey)/10))
+	for(var/V in all_quirks)
+		var/datum/quirk/T = SSquirks.quirks[V]
+		bal -= initial(T.value)
+	return bal
+
+/datum/preferences/proc/GetPositiveQuirkCount()
+	. = 0
+	for(var/q in all_quirks)
+		if(SSquirks.quirk_points[q] > 0)
+			.++
+
 /datum/preferences/proc/SetKeybinds(mob/user)
 	var/list/dat = list()
 	// Create an inverted list of keybindings -> key
@@ -847,6 +934,44 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 				SetAntag(user)
 			else
 				SetAntag(user)
+
+	else if(href_list["preference"] == "trait")
+		switch(href_list["task"])
+			if("close")
+				user << browse(null, "window=mob_occupation")
+				ShowChoices(user)
+			if("update")
+				var/quirk = href_list["trait"]
+				if(!SSquirks.quirks[quirk])
+					return
+				for(var/V in SSquirks.quirk_blacklist) //V is a list
+					var/list/L = V
+					for(var/Q in all_quirks)
+						if((quirk in L) && (Q in L) && !(Q == quirk)) //two quirks have lined up in the list of the list of quirks that conflict with each other, so return (see quirks.dm for more details)
+							to_chat(user, span_danger("[quirk] is incompatible with [Q]."))
+							return
+				var/value = SSquirks.quirk_points[quirk]
+				var/balance = GetQuirkBalance()
+				if(quirk in all_quirks)
+					if(balance + value < 0)
+						to_chat(user, span_warning("Refunding this would cause you to go below your balance!"))
+						return
+					all_quirks -= quirk
+				else
+					if(GetPositiveQuirkCount() >= MAX_QUIRKS + max(0, round(get_playerquality(parent.ckey)/10)))
+						to_chat(user, span_warning("I can't have more than [MAX_QUIRKS + max(0, round(get_playerquality(parent.ckey)/10))] positive quirks!"))
+						return
+					if(balance - value < 0)
+						to_chat(user, span_warning("I don't have enough balance to gain this quirk!"))
+						return
+					all_quirks += quirk
+				SetQuirks(user)
+			if("reset")
+				all_quirks = list()
+				SetQuirks(user)
+			else
+				SetQuirks(user)
+		return TRUE
 
 	else if(href_list["preference"] == "triumphs")
 		user.show_triumphs_list()
@@ -1057,6 +1182,23 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 					to_chat(user, "<span class='notice'>Successfully updated headshot picture</span>")
 					log_game("[user] has set their Headshot image to '[headshot_link]'.")
 
+				if("nsfw_headshot")
+					to_chat(user, "<span class='notice'>Finally a place to show it all.</span>")
+					var/new_nsfw_headshot_link = input(user, "Input the nsfw headshot link (https, hosts: gyazo, discord, lensdump, imgbox, catbox):", "NSFW Headshot", nsfw_headshot_link) as text|null
+					if(new_nsfw_headshot_link == null)
+						return
+					if(new_nsfw_headshot_link == "")
+						nsfw_headshot_link = null
+						ShowChoices(user)
+						return
+					if(!valid_nsfw_headshot_link(user, new_nsfw_headshot_link))
+						nsfw_headshot_link = null
+						ShowChoices(user)
+						return
+					nsfw_headshot_link = new_nsfw_headshot_link
+					to_chat(user, "<span class='notice'>Successfully updated NSFW Headshot picture</span>")
+					log_game("[user] has set their NSFW Headshot image to '[nsfw_headshot_link]'.")
+
 				if("species")
 					var/list/selectable = get_selectable_species(patreon)
 
@@ -1091,7 +1233,7 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 							to_chat(user, "<span class='info'>[charflaw.desc]</span>")
 
 				if("flavortext")
-					to_chat(user, "<span class='notice'>["<span class='bold'>Flavortext should not include nonphysical nonsensory attributes such as backstory or the character's internal thoughts. NSFW descriptions are prohibited.</span>"]</span>")
+					to_chat(user, "<span class='notice'>["<span class='bold'>Flavortext should not include nonphysical nonsense and should be kept used for short, first-glance notable things.</span>"]</span>")
 					var/new_flavortext = input(user, "Input your character description:", "Flavortext", flavortext) as message|null
 					if(new_flavortext == null)
 						return
@@ -1102,6 +1244,19 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 					flavortext = new_flavortext
 					to_chat(user, "<span class='notice'>Successfully updated flavortext</span>")
 					log_game("[user] has set their flavortext'.")
+
+				if("ooc_notes")
+					to_chat(user, "<span class='notice'>["<span class='bold'>OOC Notes are generally used for NSFW prefs etc, although nobody has to follow them generally.</span>"]</span>")
+					var/new_ooc_notes = input(user, "Input your OOC Notes.:", "OOC Notes", ooc_notes) as message|null
+					if(new_ooc_notes == null)
+						return
+					if(new_ooc_notes == "")
+						ooc_notes = null
+						ShowChoices(user)
+						return
+					ooc_notes = new_ooc_notes
+					to_chat(user, "<span class='notice'>Successfully updated ooc notes</span>")
+					log_game("[user] has set their ooc notes'.")
 
 				if("s_tone")
 					var/listy = pref_species.get_skin_list()
@@ -1389,6 +1544,7 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 					reset_all_customizer_accessory_colors()
 					randomize_all_customizer_accessories()
 					ResetJobs(user)
+					nsfw_headshot_link = null
 
 				if("tab")
 					if (href_list["tab"])
@@ -1428,10 +1584,13 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 	character.age = age
 	character.gender = gender
 	character.set_species(pref_species.type, icon_update = FALSE, pref_load = src)
+/*
 	if(real_name in GLOB.chosen_names)
 		character.real_name = pref_species.random_name(gender)
 	else
 		character.real_name = real_name
+	character.name = character.real_name*/
+	character.real_name = real_name
 	character.name = character.real_name
 
 	character.dna.features = features.Copy()
@@ -1451,7 +1610,9 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 	/* V: */
 
 	character.headshot_link = headshot_link
+	character.nsfw_headshot_link = nsfw_headshot_link
 	character.flavortext = flavortext
+	character.ooc_notes = ooc_notes
 
 	character.domhand = domhand
 	character.voice_color = voice_color
@@ -1632,3 +1793,35 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 
 	return TRUE
 
+/proc/valid_nsfw_headshot_link(mob/user, value, silent = FALSE)
+	var/static/link_regex = regex("i.gyazo.com|a.l3n.co|b.l3n.co|c.l3n.co|images2.imgbox.com|thumbs2.imgbox.com|files.catbox.moe") //gyazo, discord, lensdump, imgbox, catbox
+	var/static/list/valid_extensions = list("jpg", "png", "jpeg") // Regex works fine, if you know how it works
+
+	if(!length(value))
+		return FALSE
+
+	var/find_index = findtext(value, "https://")
+	if(find_index != 1)
+		if(!silent)
+			to_chat(user, "<span class='warning'>Your link must be https!</span>")
+		return FALSE
+
+	if(!findtext(value, "."))
+		if(!silent)
+			to_chat(user, "<span class='warning'>Invalid link!</span>")
+		return FALSE
+	var/list/value_split = splittext(value, ".")
+
+	// extension will always be the last entry
+	var/extension = value_split[length(value_split)]
+	if(!(extension in valid_extensions))
+		if(!silent)
+			to_chat(usr, "<span class='warning'>The image must be one of the following extensions: '[english_list(valid_extensions)]'</span>")
+		return FALSE
+
+	find_index = findtext(value, link_regex)
+	if(find_index != 9)
+		if(!silent)
+			to_chat(usr, "<span class='warning'>The image must be hosted on one of the following sites: 'Gyazo, Lensdump, Imgbox, Catbox'</span>")
+		return FALSE
+	return TRUE

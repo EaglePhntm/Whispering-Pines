@@ -64,6 +64,8 @@
 		/datum/customizer/organ/vagina/human_anthro,
 		/datum/customizer/organ/ears/goblin,
 		/datum/customizer/organ/horns/tusks,
+		/datum/customizer/organ/belly/human,
+		/datum/customizer/organ/butt/human,
 		)
 
 	descriptor_choices = list(

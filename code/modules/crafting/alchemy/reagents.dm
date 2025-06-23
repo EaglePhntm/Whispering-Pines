@@ -245,7 +245,7 @@
 /datum/reagent/medicine/antidote/on_mob_life(mob/living/carbon/M)
 	if(volume > 0.99)
 		M.adjustToxLoss(-4, 0)
-	for(var/datum/reagent/toxin/toxinsies in M.reagents)
+	for(var/datum/reagent/toxin/toxinsies in M.reagents.reagent_list)
 		M.reagents.remove_reagent(toxinsies, -2)
 	..()
 	. = 1
@@ -262,7 +262,7 @@
 /datum/reagent/medicine/diseasecure/on_mob_life(mob/living/carbon/M)
 	if(volume > 0.99)
 		M.adjustToxLoss(-16, 0)
-	for(var/datum/reagent/toxin/toxinsies in M.reagents)
+	for(var/datum/reagent/toxin/toxinsies in M.reagents.reagent_list)
 		M.reagents.remove_reagent(toxinsies, -6)
 	..()
 	. = 1
@@ -571,11 +571,6 @@ If you want to expand on poisons theres tons of fun effects TG chemistry has tha
 
 /datum/reagent/toxin/infection/on_mob_life(mob/living/carbon/M)
 	var/heat = (BODYTEMP_AUTORECOVERY_MINIMUM + clamp(volume, 3, 15)) * fever_multiplier
-	if(HAS_TRAIT(M, TRAIT_SNEK))
-		M.apply_status_effect(/datum/status_effect/buff/healing)
-		if(holder.has_reagent(/datum/reagent/toxin/infection))
-			holder.remove_reagent(/datum/reagent/toxin/infection, 9999)
-			return
 	M.adjustToxLoss(damage_tick, 0)
 	if (lethal_fever)
 		M.adjust_bodytemperature(heat, 0)
@@ -595,11 +590,6 @@ If you want to expand on poisons theres tons of fun effects TG chemistry has tha
 
 /datum/reagent/toxin/infection/minor/on_mob_life(mob/living/carbon/M)
 	var/heat = (BODYTEMP_AUTORECOVERY_MINIMUM + clamp(volume, 3, 15)) * fever_multiplier
-	if(HAS_TRAIT(M, TRAIT_SNEK))
-		M.apply_status_effect(/datum/status_effect/buff/healing)
-		if(holder.has_reagent(/datum/reagent/toxin/infection/minor))
-			holder.remove_reagent(/datum/reagent/toxin/infection/minor, 9999)
-			return
 	M.adjustToxLoss(damage_tick, 0)
 	if (lethal_fever)
 		M.adjust_bodytemperature(heat, 0)
@@ -619,11 +609,6 @@ If you want to expand on poisons theres tons of fun effects TG chemistry has tha
 	fever_multiplier = 3
 
 /datum/reagent/toxin/infection/major/on_mob_life(mob/living/carbon/M)
-	if(HAS_TRAIT(M, TRAIT_SNEK))
-		M.apply_status_effect(/datum/status_effect/buff/healing)
-		if(holder.has_reagent(/datum/reagent/toxin/infection/major))
-			holder.remove_reagent(/datum/reagent/toxin/infection/major, 9999)
-			return
 	if (M.badluck(1))
 		M.reagents.add_reagent(src, rand(1,3))
 		to_chat(M, span_small("I feel even worse..."))

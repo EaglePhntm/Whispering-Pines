@@ -100,7 +100,7 @@
 		/datum/sprite_accessory/horns/rbroken,
 		/datum/sprite_accessory/horns/lbroken,
 		/datum/sprite_accessory/horns/drake,
-		/datum/sprite_accessory/horns/knight
+		/datum/sprite_accessory/horns/knight,
 		/datum/sprite_accessory/horns/antlers,
 		/datum/sprite_accessory/horns/ramalt,
 		/datum/sprite_accessory/horns/smallantlers,
@@ -124,7 +124,7 @@
 		/datum/sprite_accessory/horns/faceguard,
 //		/datum/sprite_accessory/horns/sheephorns,			Ears in horns. Doesn't fit.
 		/datum/sprite_accessory/horns/doublehorns,
-		/datum/sprite_accessory/horns/tiefling
+		/datum/sprite_accessory/horns/tiefling,
 		)
 
 /datum/customizer/organ/horns/anthro

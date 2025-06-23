@@ -121,6 +121,12 @@
 		/datum/customizer/bodypart_feature/hair/head/humanoid/triton,
 		/datum/customizer/bodypart_feature/accessory,
 		/datum/customizer/bodypart_feature/face_detail,
+		/datum/customizer/organ/testicles/anthro,
+		/datum/customizer/organ/penis/anthro,
+		/datum/customizer/organ/breasts/anthro,
+		/datum/customizer/organ/vagina/anthro,
+		/datum/customizer/organ/belly/anthro,
+		/datum/customizer/organ/butt/anthro,
 	)
 
 	body_markings = list(

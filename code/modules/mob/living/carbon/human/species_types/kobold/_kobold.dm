@@ -95,6 +95,12 @@
 		/datum/customizer/organ/eyes/humanoid,
 		/datum/customizer/bodypart_feature/accessory,
 		/datum/customizer/bodypart_feature/face_detail,
+		/datum/customizer/organ/testicles/anthro,
+		/datum/customizer/organ/penis/anthro,
+		/datum/customizer/organ/breasts/anthro,
+		/datum/customizer/organ/vagina/anthro,
+		/datum/customizer/organ/belly/anthro,
+		/datum/customizer/organ/butt/anthro,
 	)
 
 /datum/species/kobold/on_species_gain(mob/living/carbon/C, datum/species/old_species, datum/preferences/pref_load)

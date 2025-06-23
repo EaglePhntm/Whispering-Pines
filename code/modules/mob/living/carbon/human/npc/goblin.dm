@@ -17,6 +17,8 @@
 	flee_in_pain = TRUE
 	stand_attempts = 6
 	vitae_pool = 250 // Small, frail creechers with not so much vitality to gain from.
+	erpable = TRUE
+	seeksfuck = 33
 
 /mob/living/carbon/human/species/goblin/npc
 	ai_controller = /datum/ai_controller/human_npc

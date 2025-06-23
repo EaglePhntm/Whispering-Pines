@@ -2797,11 +2797,6 @@
 #include "modular_hearthstone\code\game\objects\items\clothes\strapless_dress.dm"
 #include "modular_hearthstone\code\game\objects\structures\canopy.dm"
 #include "modular_hearthstone\code\game\objects\structures\hangingbanners.dm"
-#include "modular_hearthstone\code\interface\LOOC.dm"
-#include "modular_hearthstone\code\modules\mob\living\simple_animal\rogue\orc.dm"
-#include "modular_hearthstone\code\modules\mob\living\simple_animal\rogue\rogue_corpse.dm"
-#include "modular_hearthstone\code\modules\reagents\reagent_containers\lux.dm"
-#include "modular_hearthstone\code\modules\spells\roguetown\flagellant.dm"
 #include "modular_stonehedge\code\datums\traits\_quirk.dm"
 #include "modular_stonehedge\code\datums\traits\good.dm"
 #include "modular_stonehedge\code\datums\traits\negative.dm"
@@ -2814,4 +2809,5 @@
 #include "modular_stonehedge\unlicensed-eaglephntm\code\modules\clothing\rogueclothes\stockings.dm"
 #include "modular_stonehedge\unlicensed-eaglephntm\code\modules\surgery\organs\filling_organ.dm"
 #include "modular_stonehedge\unlicensed-eaglephntm\code\modules\surgery\organs\lewdai.dm"
+#include "code\modules\client\customizer\customizers\organ\genitals.dm"
 // END_INCLUDE

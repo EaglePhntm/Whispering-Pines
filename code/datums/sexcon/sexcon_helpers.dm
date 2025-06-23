@@ -34,11 +34,6 @@
 	volume = 20
 	extra_range = -4
 
-/mob/living
-	var/can_do_sex = TRUE
-	var/mouth_blocked = FALSE
-	var/datum/sex_controller/sexcon = null
-
 /mob/living/MiddleMouseDrop_T(mob/living/target, mob/living/user)
 	if(user.mmb_intent)
 		return ..()

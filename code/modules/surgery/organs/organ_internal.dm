@@ -273,7 +273,7 @@
 /// Whether the organ is visible and should appear on a bodypart.
 /obj/item/organ/proc/is_visible()
 	/// It's an internal organ, always hidden.
-	if(!organ.visible_organ)
+	if(!visible_organ)
 		return FALSE
 	/// Doesn't have an owner so it couldn't be covered by anything.
 	if(!owner)

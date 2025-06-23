@@ -35,8 +35,9 @@
 		return 0
 	return !density
 
-/obj/structure/fluff/canopy/booth/CheckExit(atom/movable/O, turf/target)
-	if(get_dir(O.loc, target) == dir)
+/obj/structure/fluff/canopy/booth/Exit(atom/movable/AM, atom/newLoc)
+	. = ..()
+	if(get_dir(AM.loc, newLoc) == dir)
 		return 0
 	return !density
 

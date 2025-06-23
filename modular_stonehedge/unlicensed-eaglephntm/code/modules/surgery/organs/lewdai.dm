@@ -2,15 +2,15 @@
 //probably janky as fuck but it is what it is, all mobs having this stuff enabled will stunlock poor warriors with defiant off and monster hunter quirk, likely.
 
 
-//The funny itself... Works with retaliate/rogue simple mobs and non simple human mobs.
+//The funny itself... Works with retaliate simple mobs and non simple human mobs.
 //To set up proper you need to change seeksfuck var to TRUE
 /mob/living
 
 	//You can use this with any living.
 	///Will this mob be given genitals and sexcontroller, therefore enabling erp panel, and basically enables everything else, key variable. Does not make em aggressively seek it.
-	var/erpable = FALSE
+	var/erpable = TRUE
 
-	//You can not use the vars below with anything less than retaliate/rogue simple mobs, anything less dont have retaliate ai and required vars.
+	//You can not use the vars below with anything less than retaliate simple mobs, anything less dont have retaliate ai and required vars.
 	///Is this a horny goober that periodically tries to get in people.
 	var/seeksfuck = FALSE
 	///percent chance at initialize to enable seeksfuck, if normally not enabled in type.
@@ -26,16 +26,12 @@
 	var/fuckcd = 0
 	var/chasesfuck = FALSE
 	var/seekboredom = 0
-	var/show_genitals = FALSE
-	var/mouth_blocked = FALSE
-	// Boolean. Usually set only to TRUE for non-Eoran church roles.
-	var/virginity = FALS
 
 //--------------simple mobs ----------------
 //sex stuff brainrot for things like werevolves --vide noir
 //talking is not optional here for show of sentience.
 
-/mob/living/simple_animal/hostile/retaliate/rogue/proc/Lewd_Tick()
+/mob/living/simple_animal/hostile/retaliate/proc/Lewd_Tick()
 	if(client)
 		return
 	if(!erpable)
@@ -54,7 +50,7 @@
 		for(var/mob/living/carbon/human/fucktarg in oview(aggro_vision_range, src))
 			if(fucktarg == src)
 				continue
-			if(!aggressive && fucktarg.cmode) //skip if the target has cmode on and the mob is not aggressive.
+			if(!target && fucktarg.cmode) //skip if the target has cmode on and the mob is not targeting anyone so probably not aggressive...
 				continue
 			if(fucktarg.alpha <= 100)
 				continue
@@ -74,8 +70,6 @@
 		seekboredom += 1
 		enemies = list()
 		target = null
-		approaching_target = FALSE
-		in_melee = FALSE
 		if(prob(10))
 			if(gender == MALE)
 				visible_message(span_warning("[src] seeks his mate, cock throbbing!"))
@@ -89,7 +83,7 @@
 	if(retreating && chasesfuck) //we are outta here
 		stoppedfucking(timedout = TRUE)
 
-/mob/living/simple_animal/hostile/retaliate/rogue/proc/seeklewd()
+/mob/living/simple_animal/hostile/retaliate/proc/seeklewd()
 	if(!erpable)
 		return
 	if(retreating)
@@ -112,7 +106,7 @@
 					chasesfuck = FALSE
 					if(attack_sound)
 						playsound(src, pick(attack_sound), 100, TRUE, -1)
-					stop_automated_movement = TRUE
+					ai_controller.PauseAi(8 MINUTES)
 					if(L.cmode)
 						L.SetImmobilized(40)
 						L.SetKnockdown(40)
@@ -132,10 +126,7 @@
 								visible_message(span_danger("[src] manages to tug [L]'s [L.wear_pants.name] out of the way!"))
 					enemies = list()
 					target = null
-					approaching_target = FALSE
-					in_melee = FALSE
-					toggle_ai(AI_OFF)
-					if(aggressive)
+					if(health < maxHealth)
 						sexcon.force = SEX_FORCE_MAX
 					else
 						sexcon.force = SEX_FORCE_MID
@@ -182,39 +173,41 @@
 					sexcon.try_start_action(current_action)
 			else
 				var/turf/T = get_turf(L)
-				Goto(T,move_to_delay,0)
+				walk_to(src, T, move_to_delay)
 
-/mob/living/simple_animal/hostile/retaliate/rogue/proc/stoppedfucking(mob/living/carbon/target, timedout = FALSE)
+/mob/living/simple_animal/hostile/retaliate/proc/stoppedfucking(mob/living/carbon/target, timedout = FALSE)
 	walk_away(src, get_turf(loc), 1, move_to_delay)
 	sexcon.current_action = null
 	chasesfuck = FALSE
 	seekboredom = 0
-	toggle_ai(AI_ON)
+	ai_controller.PauseAi(8 SECONDS) //You get some time to get up.
 	if(sexcon.just_ejaculated() || timedout) //is it satisfied or given up
 		fuckcd = rand(50,350)
 	else
 		fuckcd = rand(20,40)
-		if(aggressive)
+		if(health < maxHealth)
 			//if its in combat and unsatisfied by prey slipping off, it will wanna try again. But with some delay so the person can actually get up
 			// and if they are taking turns with multiple seeksfuck mobs around this may help a bit.
 			fuckcd = rand(10,20)
-	stop_automated_movement = 0
 
-/mob/living/simple_animal/hostile/retaliate/rogue/Life()
+/mob/living/simple_animal/hostile/retaliate/Life()
 	if(seeksfuck)
 		Lewd_Tick()
 	. = ..()
 
-/mob/living/simple_animal/hostile/retaliate/rogue/Retaliate()
+/mob/living/simple_animal/hostile/retaliate/apply_damage(damage, damagetype, def_zone, blocked, forced, spread_damage)
 	. = ..()
 	if(sexcon)
 		if(sexcon.current_action)
 			stoppedfucking()
+			if(!ai_controller.able_to_run())
+				ai_controller.PauseAi(1) //override pauses.
 
 /mob/living/simple_animal/Initialize()
 	. = ..()
 	if(erpable)
-		give_genitals()
+		gender = pick(MALE, FEMALE)
+		addtimer(CALLBACK(src, PROC_REF(give_genitals)), 1) //stupid should_not_sleep on init and organ removal death sleep issues.
 	if(prob(hornychance))
 		seeksfuck = TRUE
 		fuckcd = rand(0,20)
@@ -240,7 +233,7 @@
 		for(var/mob/living/carbon/human/fucktarg in around)
 			if(fucktarg == src)
 				continue
-			if(!aggressive && fucktarg.cmode) //skip if the target has cmode on and the mob is not aggressive.
+			if(!(health < maxHealth) && fucktarg.cmode) //skip if the target has cmode on and the mob is not aggressive.
 				continue
 			if(fucktarg.alpha <= 100)
 				continue
@@ -269,8 +262,6 @@
 		seeklewd()
 	if(seekboredom > 25) //give up after a while and go dormant again, this should also help them get unstuck.
 		stoppedfucking(timedout = TRUE)
-	if(mode == AI_FLEE && chasesfuck) //we are outta here.
-		stoppedfucking(timedout = TRUE)
 
 /mob/living/carbon/human/proc/seeklewd()
 	if(sexcon.current_action)
@@ -286,8 +277,7 @@
 			foundfuckmeat += fucktarg
 		if(foundfuckmeat.len)
 			L = pick(foundfuckmeat)
-			STOP_PROCESSING(SShumannpc,src)
-			mode = AI_OFF
+			ai_controller.PauseAi(8 MINUTES)
 			if(Adjacent(L) || loc == L.loc)
 				if(iscarbon(L))
 					chasesfuck = FALSE
@@ -308,12 +298,12 @@
 								thepants.throw_at(orange(2, get_turf(L)), 2, 1, src, TRUE)
 							else if(L.cmode)
 								visible_message(span_danger("[src] manages to tug [L]'s [L.wear_pants.name] out of the way!"))
-					if(aggressive)
+					if(health < maxHealth)
 						sexcon.force = SEX_FORCE_MAX
 					else
 						sexcon.force = SEX_FORCE_MID
 					if(!Adjacent(L) || loc != L.loc) //are we at the same tile?
-						walk2derpless(L.loc) //get to them since it looks like shit tweaks out.
+						walk_towards(src, L.loc, 1)
 					if(!pulling)
 						start_pulling(L)
 					visible_message(span_danger("[src] starts to breed [L]!"))
@@ -357,39 +347,38 @@
 					sexcon.try_start_action(current_action)
 			else
 				var/turf/T = get_turf(L)
-				walk2derpless(T)
+				walk_towards(src, T, 1)
 
 /mob/living/carbon/human/proc/stoppedfucking(mob/living/carbon/target, timedout = FALSE)
 	//try to bind after sex.
 	if(target && Adjacent(target))
-		if(aggressive && !target.handcuffed && target.lying) //aggro mob, not handcuffed, lying.
+		if(health < maxHealth && !target.handcuffed && !(target.mobility_flags & MOBILITY_STAND)) //aggro mob, not handcuffed, lying.
 			for(var/obj/item/rope/ropey in held_items)
 				if(target.cmode)
 					visible_message(span_info("[src] struggles with [target]!"))
-					adjustStaminaLoss(50, TRUE)
-					target.adjustStaminaLoss(50, TRUE)
+					adjust_energy(-50, TRUE)
+					target.adjust_energy(-50, TRUE)
 				else
 					ropey.apply_cuffs(target, src)
 					visible_message(span_info("[src] ties up [target] with a rope!"))
 					start_pulling(target)
 				emote("laugh")
 				break
-		else if(aggressive && target.handcuffed) //already cuffed.
+		else if(health < maxHealth && target.handcuffed) //already cuffed.
 			emote("laugh")
-			target.adjustStaminaLoss(25, TRUE)
-			adjustStaminaLoss(25, TRUE)
+			target.adjust_energy(-25, TRUE)
+			adjust_energy(-25, TRUE)
 	else if(target)
 		walk_away(src, get_turf(loc), 1, 1)
 	sexcon.current_action = null
 	chasesfuck = FALSE
 	seekboredom = 0
-	START_PROCESSING(SShumannpc,src)
-	mode = AI_IDLE
+	ai_controller.PauseAi(1)
 	if(sexcon.just_ejaculated() || timedout) //is it satisfied or given up
 		fuckcd = rand(50,350)
 	else
 		fuckcd = rand(20,40)
-		if(aggressive)
+		if(health < maxHealth)
 			//if its in combat and unsatisfied by prey slipping off, it will wanna try again. But with some delay so the person can actually get up
 			// and if they are taking turns with multiple seeksfuck mobs around this may help a bit.
 			fuckcd = rand(10,20)
@@ -402,7 +391,8 @@
 /mob/living/carbon/human/Initialize()
 	. = ..()
 	if(erpable)
-		give_genitals()
+		gender = pick(MALE, FEMALE)
+		addtimer(CALLBACK(src, PROC_REF(give_genitals)), 1) //stupid should_not_sleep on init and organ removal death sleep issues.
 	if(prob(hornychance))
 		seeksfuck = TRUE
 		fuckcd = rand(0,20)
@@ -417,7 +407,6 @@
 		sexcon = new /datum/sex_controller(src)
 	if(!issimple(src))
 		var/mob/living/carbon/human/species/user = src
-
 		if(gender == MALE)
 			var/obj/item/organ/filling_organ/testicles/testicles = user.getorganslot(ORGAN_SLOT_TESTICLES)
 			if(!show_genitals)

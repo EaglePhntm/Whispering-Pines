@@ -650,7 +650,7 @@
 	var/datum/sex_action/action = SEX_ACTION(current_action)
 	action.on_start(user, target)
 	while(TRUE)
-		if(!user.adjust_energy(action.stamina_cost * get_stamina_cost_multiplier()))
+		if(!user.adjust_energy(-(action.stamina_cost * get_stamina_cost_multiplier())))
 			break
 		if(user.mind)
 			user.mind.adjust_experience(/datum/skill/misc/athletics, (user.STAINT*0.04)*get_stamina_cost_multiplier()) //endurance training boiii
@@ -825,6 +825,15 @@
 				var/obj/item/bodypart/groin = target.get_bodypart(check_zone(BODY_ZONE_PRECISE_GROIN))
 				groin.add_wound(/datum/wound/fracture)
 			}
+
+/mob/living
+	var/show_genitals = FALSE
+	var/mouth_blocked = FALSE
+	// Boolean. Usually set only to TRUE for non-Eoran church roles.
+	var/virginity = FALSE
+
+	var/can_do_sex = TRUE
+	var/datum/sex_controller/sexcon = null
 
 //other things necessary packed here
 /datum/stressevent/loinache

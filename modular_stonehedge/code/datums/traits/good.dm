@@ -213,7 +213,6 @@
 	)
 	H.equip_in_one_of_slots(camera, camera_slots , qdel_on_fail = TRUE)
 	H.regenerate_icons()
-*/
 
 /datum/quirk/selfaware
 	name = "Self-Aware"
@@ -222,7 +221,6 @@
 	mob_trait = TRAIT_SELF_AWARE
 	medical_record_text = "Patient demonstrates an uncanny knack for self-diagnosis."
 
-/*
 /datum/quirk/skittish
 	name = "Skittish"
 	desc = "I can leap into things to hide."
@@ -243,8 +241,6 @@
 	var/mob/living/carbon/human/H = quirk_holder
 	H.equip_to_slot_or_del(new /obj/item/storage/fancy/candle_box(H), SLOT_IN_BACKPACK)
 
-
-/*
 /datum/quirk/tagger
 	name = "Tagger"
 	desc = ""

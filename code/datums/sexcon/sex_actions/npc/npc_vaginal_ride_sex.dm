@@ -44,7 +44,7 @@
 /datum/sex_action/npc_vaginal_ride_sex/on_finish(mob/living/user, mob/living/target)
 	user.visible_message(span_warning("[user] gets off [target]."))
 	if(issimple(user))
-		var/mob/living/simple_animal/hostile/retaliate/rogue/simpleuser = user
+		var/mob/living/simple_animal/hostile/retaliate/simpleuser = user
 		simpleuser.stoppedfucking(target)
 	else
 		var/mob/living/carbon/human/humanuser = user
@@ -54,7 +54,7 @@
 /datum/sex_action/npc_vaginal_ride_sex/is_finished(mob/living/user, mob/living/target)
 	if(user.sexcon.finished_check())
 		if(issimple(user))
-			var/mob/living/simple_animal/hostile/retaliate/rogue/simpleuser = user
+			var/mob/living/simple_animal/hostile/retaliate/simpleuser = user
 			simpleuser.stoppedfucking(target)
 		else
 			var/mob/living/carbon/human/humanuser = user

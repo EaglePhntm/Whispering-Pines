@@ -39,6 +39,8 @@ GLOBAL_LIST_EMPTY(rousman_ambush_objects)
 	canparry = TRUE
 	flee_in_pain = TRUE
 	wander = FALSE
+	erpable = TRUE
+	seeksfuck = 33
 
 /mob/living/carbon/human/species/rousman/npc/Initialize()
 	. = ..()

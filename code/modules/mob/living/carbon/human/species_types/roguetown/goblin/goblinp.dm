@@ -18,8 +18,8 @@
 	limbs_icon_f = 'icons/roguetown/mob/bodies/f/fd.dmi'
 	dam_icon_m = 'icons/roguetown/mob/bodies/dam/dam_male.dmi'
 	dam_icon_f = 'icons/roguetown/mob/bodies/dam/dam_female.dmi'
-	soundpack_m = /datum/voicepack/male/goblin
-	soundpack_f = /datum/voicepack/female/goblin
+	soundpack_m = /datum/voicepack/male/elf
+	soundpack_f = /datum/voicepack/female/elf
 	custom_clothes = TRUE
 	swap_male_clothes = TRUE
 	changesource_flags = WABBAJACK
@@ -111,7 +111,7 @@
 
 /datum/species/goblinp/on_species_gain(mob/living/carbon/C, datum/species/old_species)
 	..()
-	C.cmode_music = 'sound/music/combat_gronn.ogg'
+	C.cmode_music = 'sound/music/cmode/antag/combat_bandit2.ogg'
 	RegisterSignal(C, COMSIG_MOB_SAY, PROC_REF(handle_speech))
 
 /datum/species/goblinp/on_species_loss(mob/living/carbon/C)

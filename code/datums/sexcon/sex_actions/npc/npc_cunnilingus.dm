@@ -29,7 +29,7 @@
 /datum/sex_action/npc_cunnilingus/on_finish(mob/living/user, mob/living/target)
 	user.visible_message(span_warning("[user] stops licking [target]'s cunt ..."))
 	if(issimple(user))
-		var/mob/living/simple_animal/hostile/retaliate/rogue/simpleuser = user
+		var/mob/living/simple_animal/hostile/retaliate/simpleuser = user
 		simpleuser.stoppedfucking(target)
 	else
 		var/mob/living/carbon/human/humanuser = user
@@ -39,7 +39,7 @@
 /datum/sex_action/npc_cunnilingus/is_finished(mob/living/user, mob/living/target)
 	if(target.sexcon.finished_check())
 		if(issimple(user))
-			var/mob/living/simple_animal/hostile/retaliate/rogue/simpleuser = user
+			var/mob/living/simple_animal/hostile/retaliate/simpleuser = user
 			simpleuser.stoppedfucking(target)
 		else
 			var/mob/living/carbon/human/humanuser = user

@@ -106,7 +106,6 @@
 #define TRAIT_BEAUTIFUL "Beautiful"
 #define TRAIT_UGLY "Ugly"
 #define TRAIT_SCHIZO_FLAW "Schizophrenic"
-#define TRAIT_CIVILIZEDBARBARIAN "Pugilist"
 
 // JOB RELATED TRAITS
 
@@ -137,7 +136,6 @@
 #define TRAIT_LIMPDICK 	"Limp Dick"
 #define TRAIT_DEATHBYSNOOSNOO "Bed Breaker" // double sex damage (requires strong intent)
 #define TRAIT_SEXDEVO "Blessed Sex" //sex devotion gain and extra healing.
-#define TRAIT_SELF_AWARE "Self Aware"
 #define TRAIT_PERFECT_TRACKER "Perfect Tracker"
 
 GLOBAL_LIST_INIT(roguetraits, list(
@@ -174,7 +172,6 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_ROT_EATER = span_necrosis("I can eat rotten food."),
 	TRAIT_ORGAN_EATER = span_bloody("I can eat organs and raw flesh."),
 	TRAIT_CRACKHEAD = span_love("I can use drugs as much as I want!"),
-	TRAIT_CIVILIZEDBARBARIAN = span_info("My rigorous training in the martial arts has turned me into a living weapon. No limb is out of reach for my fists and feet, and my unarmed strikes now have a higher chance to inflict critical damage."),
 	TRAIT_NUDE_SLEEPER = span_warning("I can't fall asleep unless I'm nude and in bed."),
 	TRAIT_SOUL_EXAMINE = span_deadsay("I know when someone's soul has departed after checking their heartbeat."),
 	TRAIT_CYCLOPS_LEFT = span_warning("My left eye has been poked out..."),

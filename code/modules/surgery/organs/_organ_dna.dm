@@ -39,3 +39,55 @@
 	eyes_organ.eye_color = eye_color
 	eyes_organ.heterochromia  = heterochromia
 	eyes_organ.second_color = second_color
+
+/datum/organ_dna/penis
+	var/organ_size = DEFAULT_PENIS_SIZE
+
+/datum/organ_dna/penis/imprint_organ(obj/item/organ/organ, datum/species/species)
+	..()
+	var/obj/item/organ/penis/penis_organ = organ
+	penis_organ.organ_size = organ_size
+
+/datum/organ_dna/testicles
+	var/organ_size = DEFAULT_TESTICLES_SIZE
+	var/virility = TRUE
+
+/datum/organ_dna/testicles/imprint_organ(obj/item/organ/organ, datum/species/species)
+	..()
+	var/obj/item/organ/filling_organ/testicles/testicles_organ = organ
+	testicles_organ.organ_size = organ_size
+	testicles_organ.virility = virility
+
+/datum/organ_dna/breasts
+	var/organ_size = DEFAULT_BREASTS_SIZE
+	var/refilling = FALSE
+
+/datum/organ_dna/breasts/imprint_organ(obj/item/organ/organ, datum/species/species)
+	..()
+	var/obj/item/organ/filling_organ/breasts/breasts_organ = organ
+	breasts_organ.organ_size = organ_size
+	breasts_organ.refilling = refilling
+
+/datum/organ_dna/belly
+	var/organ_size = DEFAULT_BELLY_SIZE
+
+/datum/organ_dna/belly/imprint_organ(obj/item/organ/organ, datum/species/species)
+	..()
+	var/obj/item/organ/belly/belly_organ = organ
+	belly_organ.organ_size = organ_size
+
+/datum/organ_dna/vagina
+	var/fertility = TRUE
+
+/datum/organ_dna/vagina/imprint_organ(obj/item/organ/organ, datum/species/species)
+	..()
+	var/obj/item/organ/filling_organ/vagina/vagina_organ = organ
+	vagina_organ.fertility = fertility
+
+/datum/organ_dna/butt
+	var/organ_size = DEFAULT_BUTT_SIZE
+
+/datum/organ_dna/butt/imprint_organ(obj/item/organ/organ, datum/species/species)
+	..()
+	var/obj/item/organ/butt/butt_organ = organ
+	butt_organ.organ_size = organ_size

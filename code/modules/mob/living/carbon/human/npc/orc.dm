@@ -19,7 +19,8 @@
 	dodgetime = 15 //they can dodge easily, but have a cooldown on it
 	canparry = TRUE
 	flee_in_pain = FALSE
-
+	erpable = TRUE
+	seeksfuck = 33
 	wander = FALSE
 
 /mob/living/carbon/human/species/orc/npc/Initialize()

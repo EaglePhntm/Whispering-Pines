@@ -52,8 +52,7 @@
 	name = "fair banners red-white"
 	result = list(/obj/structure/fluff/littlebanners)
 	reqs = list(/obj/item/natural/cloth = 4, /obj/item/natural/fibers)
-	verbage_simple = "construct"
-	verbage = "constructs"
+	verbage = "construct"
 	craftdiff = 0
 
 /datum/crafting_recipe/roguetown/structure/littlebanners/greenblue

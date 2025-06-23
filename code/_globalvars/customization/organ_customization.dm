@@ -134,5 +134,4 @@ GLOBAL_LIST_INIT(customizers, build_customizers())
 	if(!color)
 		return
 	color = sanitize_hexcolor(color)
-	var/list/hsl = rgb2hsl(hex2num(copytext(color,1,3)),hex2num(copytext(color,3,5)),hex2num(copytext(color,5,7)))
 	return color

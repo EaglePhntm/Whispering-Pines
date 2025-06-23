@@ -10,6 +10,8 @@ GLOBAL_LIST_INIT(bum_aggro, world.file2list('strings/rt/bumaggrolines.txt'))
 	possible_rmb_intents = list()
 
 	wander = FALSE
+	erpable = TRUE
+	seeksfuck = 33
 
 /mob/living/carbon/human/species/human/northern/bum/Initialize()
 	. = ..()

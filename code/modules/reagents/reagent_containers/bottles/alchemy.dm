@@ -30,7 +30,7 @@
 	list_reagents = list(/datum/reagent/toxin/berrypoison = 15)
 
 /obj/item/reagent_containers/glass/bottle/strongpoison
-	list_reagents = list(/datum/reagent/strongpoison = 15)
+	list_reagents = list(/datum/reagent/toxin/strongpoison = 15)
 
 /obj/item/reagent_containers/glass/bottle/stampoison
 	list_reagents = list(/datum/reagent/toxin/stampoison = 15)
@@ -78,7 +78,7 @@
 	list_reagents = list(/datum/reagent/medicine/gender_potion = 5)
 
 /obj/item/reagent_containers/glass/bottle/vial/strongpoison
-	list_reagents = list(/datum/reagent/strongpoison = 30)
+	list_reagents = list(/datum/reagent/toxin/strongpoison = 30)
 
 /obj/item/reagent_containers/glass/bottle/vial/antidote
 	list_reagents = list(/datum/reagent/medicine/antidote = 30)

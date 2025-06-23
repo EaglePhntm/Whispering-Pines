@@ -228,7 +228,6 @@
 /obj/effect/track/proc/add_knower(mob/living/tracker, competence = 1)
 	known_by[tracker] = competence
 	if(ishuman(tracker))
-		var/mob/living/carbon/human/H = tracker
 		if(tracker.client)
 			tracker.client.images += real_image
 	RegisterSignal(tracker, COMSIG_PARENT_QDELETING, PROC_REF(remove_knower), override = TRUE)
@@ -316,7 +315,7 @@
 		var/weapon
 		if(holding)
 			if(istype(holding,/obj/item/weapon))
-				var/static/list/weapon_types = list(/obj/item/weapon/sword, /obj/item/weapon/mace, /obj/item/weapon/spear, /obj/item/weapon/greatsword, /obj/item/weapon/pick, /obj/item/weapon/knife/dagger, /obj/item/weapon/whip, /obj/item/lockpick)
+				var/static/list/weapon_types = list(/obj/item/weapon/sword, /obj/item/weapon/mace, /obj/item/weapon/polearm/spear, /obj/item/weapon/sword/long/greatsword, /obj/item/weapon/pick, /obj/item/weapon/knife/dagger, /obj/item/weapon/whip, /obj/item/lockpick)
 				for(var/type in weapon_types)
 					if(istype(holding, type))
 						var/obj/item/weapon/found = type
@@ -453,7 +452,7 @@
 		. += "These tracks are about [timetext] old. <i>([realtime] minute[realtime == 1 ? "" : "s"] real-time)</i><br>"
 	if(knowledge >= ANALYSIS_GOOD)
 		if(skill_level)
-			. += "The person was at <font color = '#ebebeb'>[SSskills.level_names_plain[skill_level]]</font> skill level with this item.<br>"
+			. += "The person was at <font color = '#ebebeb'>[SSskills.level_names[skill_level]]</font> skill level with this item.<br>"
 	if(knowledge >= ANALYSIS_PERFECT)
 		. += "It looks to be the distinct markings of \the <font color = '#5ca2d1'>[tool_used].</font><br>"
 	return .

@@ -3,7 +3,6 @@
 	icon = 'icons/roguetown/mob/monster/skeletons.dmi'
 	icon_state = MAP_SWITCH("", "skeleton")
 	race = /datum/species/human/northern
-	gender = MALE
 	bodyparts = list(/obj/item/bodypart/chest, /obj/item/bodypart/head, /obj/item/bodypart/l_arm,
 					/obj/item/bodypart/r_arm, /obj/item/bodypart/r_leg, /obj/item/bodypart/l_leg)
 	faction = list(FACTION_UNDEAD)
@@ -30,6 +29,8 @@
 	simpmob_defend = 0
 	wander = TRUE
 	attack_speed = -10
+	erpable = TRUE
+	seeksfuck = 33
 
 /mob/living/carbon/human/species/skeleton/Initialize()
 	. = ..()

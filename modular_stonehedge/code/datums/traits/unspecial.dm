@@ -27,18 +27,6 @@
 	ADD_TRAIT(H, TRAIT_BREADY, QUIRK_TRAIT)
 	H.change_stat("constitution", 2)
 
-/*
-/datum/quirk/charger
-	name = "Charger"
-	desc = "I am like a raging bull, whoever gets in my way will fall."
-	value = 3
-
-/datum/quirk/charger/on_spawn()
-	var/mob/living/carbon/human/H = quirk_holder
-	ADD_TRAIT(H, TRAIT_CHARGER, QUIRK_TRAIT)
-	H.change_stat("constitution", 1)
-*/
-
 /datum/quirk/curseofcain
 	name = "Flawed Immortality"
 	desc = "Some fell magick has rendered me inwardly unliving - I do not hunger, and I do not breathe."
@@ -114,7 +102,7 @@
 
 /datum/quirk/training2/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	H.clamped_adjust_skillrank(/datum/skill/combat/maces, 3, 3, TRUE)
+	H.clamped_adjust_skillrank(/datum/skill/combat/axesmaces, 3, 3, TRUE)
 	H.mind.special_items["Mace"] = /obj/item/weapon/mace/spiked
 
 /datum/quirk/training4
@@ -144,11 +132,10 @@
 
 /datum/quirk/training6/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	H.clamped_adjust_skillrank(/datum/skill/combat/axes, 3, 3, TRUE)
+	H.clamped_adjust_skillrank(/datum/skill/combat/axesmaces, 3, 3, TRUE)
 	H.clamped_adjust_skillrank(/datum/skill/labor/lumberjacking, 3, 3, TRUE)
-	H.mind.special_items["Axe"] = /obj/item/weapon/knife/stoneaxe/woodcut
+	H.mind.special_items["Axe"] = /obj/item/weapon/polearm/halberd/bardiche/woodcutter
 
-/* reenable when firearms are back
 /datum/quirk/training7
 	name = "Firearms Training"
 	desc = "I have journeyman firearms skills."
@@ -157,7 +144,6 @@
 /datum/quirk/training7/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	H.clamped_adjust_skillrank(/datum/skill/combat/firearms, 3, 3, TRUE)
-*/
 
 /datum/quirk/training9
 	name = "Unarmed Training"
@@ -180,8 +166,8 @@
 	H.clamped_adjust_skillrank(/datum/skill/craft/alchemy, 2, 2, TRUE)
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/diagnose/secular)
 	H.mind.special_items["Needle"] = /obj/item/needle
-	H.mind.special_items["Bedroll"] = /obj/item/bedroll //for field surgery
-	H.mind.special_items["Surgery Bag"] = /obj/item/storage/belt/rogue/surgery_bag
+	H.mind.special_items["Bedroll"] = /obj/structure/bed/sleepingbag //for field surgery
+	H.mind.special_items["Surgery Bag"] = /obj/item/storage/backpack/satchel/surgbag/shit
 
 /datum/quirk/greenthumb
 	name = "Green Thumb"
@@ -191,9 +177,9 @@
 /datum/quirk/greenthumb/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	H.clamped_adjust_skillrank(/datum/skill/labor/farming, 4, 4, TRUE)
-	H.mind.special_items["Fertilizer 1"] = /obj/item/fertilizer
-	H.mind.special_items["Fertilizer 2"] = /obj/item/fertilizer
-	H.mind.special_items["Fertilizer 3"] = /obj/item/fertilizer
+	H.mind.special_items["Fertilizer 1"] = /obj/item/compost
+	H.mind.special_items["Fertilizer 2"] = /obj/item/compost
+	H.mind.special_items["Fertilizer 3"] = /obj/item/compost
 	H.mind.special_items["Whore"] = /obj/item/weapon/hoe // I too respect a humble farmer.
 
 /datum/quirk/eagle_eyed
@@ -213,8 +199,8 @@
 /datum/quirk/training10/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	H.clamped_adjust_skillrank(/datum/skill/combat/bows, 3, 3, TRUE)
-	H.mind.special_items["Bow"] = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/longbow
-	H.mind.special_items["Quiver"] = /obj/item/quiver/arrows
+	H.mind.special_items["Bow"] = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/long
+	H.mind.special_items["Quiver"] = /obj/item/ammo_holder/quiver
 
 /datum/quirk/mule
 	name = "Mule"
@@ -223,9 +209,9 @@
 
 /datum/quirk/mule/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	H.mind.special_items["Stash One"] = /obj/item/storage/backpack/rogue/satchel/mule
-	H.mind.special_items["Stash Two"] = /obj/item/storage/backpack/rogue/satchel/mule
-	H.mind.special_items["Dagger"] = /obj/item/weapon/knife/huntingknife/idagger
+	H.mind.special_items["Stash One"] = /obj/item/storage/backpack/satchel/mule
+	H.mind.special_items["Stash Two"] = /obj/item/storage/backpack/satchel/mule
+	H.mind.special_items["Dagger"] = /obj/item/weapon/knife/hunting
 	H.clamped_adjust_skillrank(/datum/skill/combat/knives, 2, 2, TRUE)
 
 /datum/quirk/bookworm
@@ -273,19 +259,6 @@
 	H.grant_language(/datum/language/celestial)
 	H.grant_language(/datum/language/orcish)
 	H.grant_language(/datum/language/beast)
-	H.grant_language(/datum/language/draconic)
-	H.grant_language(/datum/language/grenzelhoftian)
-
-/* this does not work that way in this code and may be op so disabled
-/datum/quirk/civilizedbarbarian
-	name = "Tavern Brawler"
-	desc = "I am a barstool warrior. Improvised weapons are more effective in my hands."
-	value = 2
-
-/datum/quirk/civilizedbarbarian/on_spawn()
-	var/mob/living/carbon/human/H = quirk_holder
-	ADD_TRAIT(H, TRAIT_CIVILIZEDBARBARIAN, TRAIT_GENERIC) //Need to make trait improve hitting people with chairs, mugs, goblets.
-*/
 
 /datum/quirk/mastercraftsmen // Named this way to absorb the old quirk. Keeps old saves cleaner without them needing to reset quirks.
 	name = "Jack of All Trades"

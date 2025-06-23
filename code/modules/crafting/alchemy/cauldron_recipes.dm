@@ -163,7 +163,7 @@
 /datum/alch_cauldron_recipe/doompoison
 	recipe_name = "Doom Poison"
 	smells_like = "doom"
-	output_reagents = list(/datum/reagent/strongpoison = 6, /datum/reagent/additive = 6)
+	output_reagents = list(/datum/reagent/toxin/strongpoison = 6, /datum/reagent/additive = 6)
 	required_essences = list(
 		/datum/thaumaturgical_essence/poison = 6,
 		/datum/thaumaturgical_essence/void = 3,

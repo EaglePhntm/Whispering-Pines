@@ -55,19 +55,19 @@
 			return
 		var/list/wash = list('sound/foley/waterwash (1).ogg','sound/foley/waterwash (2).ogg')
 		playsound(user, pick_n_take(wash), 100, FALSE)
-		var/item2wash = user.get_active_held_item()
+		var/obj/item/item2wash = user.get_active_held_item()
 		if(!item2wash)
 			user.visible_message(span_info("[user] starts to wash in [src]."))
 			to_chat(user, span_info("The slimy liquid doesn't stain but it is hard to work with..."))
 			if(do_after(L, 30, target = src))
-				user.wash(CLEAN_MEDIUM)
+				user.wash(CLEAN_WASH)
 				playsound(user, pick(wash), 100, FALSE)
 		else
 			user.visible_message(span_info("[user] starts to wash [item2wash] in [src]."))
 			to_chat(user, span_info("The slimy liquid doesn't stain but it is hard to work with..."))
 
 			if(do_after(L, 30, target = src))
-				item2wash.wash(CLEAN_MEDIUM)
+				item2wash.wash(CLEAN_WASH)
 				playsound(user, pick(wash), 100, FALSE)
 		return
 	..()

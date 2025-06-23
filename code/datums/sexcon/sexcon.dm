@@ -203,9 +203,6 @@
 	if(!oral)
 		after_intimate_climax()
 
-	// Cuckold check only for penetrative sex (cum_into)
-	cuckold_check()
-
 /datum/sex_controller/proc/ejaculate()
 	if(!issimple(user))
 		log_combat(user, user, "Ejaculated")

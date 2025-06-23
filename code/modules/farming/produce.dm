@@ -258,8 +258,8 @@
 	seed = /obj/item/neuFarm/seed/poison_berries
 	icon_state = "berries"
 	tastes = list("berry" = 1)
-	list_reagents = list(/datum/reagent/berrypoison = 5)
-	grind_results = list(/datum/reagent/berrypoison = 5)
+	list_reagents = list(/datum/reagent/toxin/berrypoison = 5)
+	grind_results = list(/datum/reagent/toxin/berrypoison = 5)
 	color_index = "bad"
 	poisonous = TRUE
 
@@ -288,7 +288,7 @@
 	filling_color = "#008000"
 	bitesize_mod = 1
 	foodtype = VEGETABLES
-	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/berrypoison = 1)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/toxin/berrypoison = 1)
 	tastes = list("sweet" = 1,"bitterness" = 1)
 	eat_effect = /datum/status_effect/debuff/badmeal
 	rotprocess = SHELFLIFE_LONG
@@ -318,7 +318,7 @@
 	bitesize_mod = 1
 	foodtype = VEGETABLES
 	tastes = list("sweet" = 1,"bitterness" = 1)
-	list_reagents = list(/datum/reagent/drug/nicotine = 2, /datum/reagent/consumable/nutriment = 1, /datum/reagent/berrypoison = 2)
+	list_reagents = list(/datum/reagent/drug/nicotine = 2, /datum/reagent/consumable/nutriment = 1, /datum/reagent/toxin/berrypoison = 2)
 	grind_results = list(/datum/reagent/drug/nicotine = 5)
 	eat_effect = /datum/status_effect/debuff/badmeal
 	rotprocess = SHELFLIFE_LONG

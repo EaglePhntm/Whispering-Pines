@@ -298,7 +298,7 @@
 /obj/item/reagent_containers/food/snacks/stale_bread/raisin
 	icon_state = "raisinbread6"
 /obj/item/reagent_containers/food/snacks/stale_bread/raisin/poison
-	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/berrypoison = 12)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/toxin/berrypoison = 12)
 
 /*	.................   Raisin bread   ................... */
 /obj/item/reagent_containers/food/snacks/raisindough
@@ -324,12 +324,12 @@
 	name = "loaf of raisins"
 	icon_state = "raisinbreaduncooked"
 	slices_num = 0
-	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/berrypoison = 12)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/toxin/berrypoison = 12)
 	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/reagent_containers/food/snacks/bread/raisin/poison
 	slice_path = /obj/item/reagent_containers/food/snacks/breadslice/raisin_poison
-	list_reagents = list(/datum/reagent/consumable/nutriment = MEAL_AVERAGE, /datum/reagent/berrypoison = 6)
+	list_reagents = list(/datum/reagent/consumable/nutriment = MEAL_AVERAGE, /datum/reagent/toxin/berrypoison = 6)
 	tastes = list("bread" = 1,"bitter fruit" = 1)
 	become_rot_type = /obj/item/reagent_containers/food/snacks/stale_bread/raisin/poison
 
@@ -344,7 +344,7 @@
 /obj/item/reagent_containers/food/snacks/breadslice/raisin_poison
 	name = "raisin loaf slice"
 	icon_state = "raisinbread_slice"
-	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_POOR, /datum/reagent/berrypoison = 4)
+	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_POOR, /datum/reagent/toxin/berrypoison = 4)
 	tastes = list("bread" = 1,"dried fruit" = 1)
 	rotprocess = SHELFLIFE_LONG
 
@@ -466,7 +466,7 @@
 	icon_state = "biscuit"
 	base_icon_state = "biscuit"
 	biting = TRUE
-	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_DECENT+SNACK_POOR, /datum/reagent/berrypoison = 4)
+	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_DECENT+SNACK_POOR, /datum/reagent/toxin/berrypoison = 4)
 	tastes = list("crispy butterdough" = 1, "bitter raisins" = 1)
 
 
@@ -666,7 +666,7 @@
 	dropshrink = 0.8
 	slices_num = 6
 	slice_path = /obj/item/reagent_containers/food/snacks/cheesecake_poison_slice
-	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_DECENT*6, /datum/reagent/berrypoison = 24)
+	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_DECENT*6, /datum/reagent/toxin/berrypoison = 24)
 	w_class = WEIGHT_CLASS_NORMAL
 	tastes = list("cake"=1, "sour berry" = 1, "creamy cheese"=1)
 	foodtype = GRAIN | DAIRY | SUGAR
@@ -685,7 +685,7 @@
 	slices_num = 0
 	bitesize = 2
 	biting = TRUE
-	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_DECENT, /datum/reagent/berrypoison = 6)
+	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_DECENT, /datum/reagent/toxin/berrypoison = 6)
 	tastes = list("cake"=1, "sour berry" = 1, "creamy cheese"=1)
 	w_class = WEIGHT_CLASS_NORMAL
 	foodtype = GRAIN | DAIRY | SUGAR
@@ -982,7 +982,7 @@
 	desc = "Enjoyed by mercenaries throughout Psydonia, though despite its prevelance no one quite knows its origin."
 	bitesize = 6
 	icon_state = "griddlecakeberry"
-	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_DECENT+SNACK_POOR, /datum/reagent/berrypoison = 12)
+	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_DECENT+SNACK_POOR, /datum/reagent/toxin/berrypoison = 12)
 	tastes = list("fluffy butterdough" = 1, "sweet" = 1, "bitter berry" = 1)
 	rotprocess = SHELFLIFE_LONG
 	faretype = FARE_NEUTRAL

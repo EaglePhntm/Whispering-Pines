@@ -30,10 +30,10 @@
 	else
 		return "penis_[icon_state]_[pp.organ_size]_0"
 
-/datum/sprite_accessory/penis/is_visible(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
+/datum/sprite_accessory/penis/is_visible(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/human/owner)
 	if(owner.underwear)
 		return FALSE
-	if(!visible_organ)
+	if(!organ.visible_organ)
 		return FALSE
 	return is_human_part_visible(owner, HIDEJUMPSUIT|HIDECROTCH)
 
@@ -99,13 +99,12 @@
 	generic_gender_feature_adjust(appearance_list, organ, bodypart, owner, OFFSET_SHIRT)
 
 /datum/sprite_accessory/testicles/get_icon_state(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
-	var/obj/item/organ/filling_organ/testicles/testes = organ
-	return "[icon_state]_[testes.organ_size]"
+	return "[icon_state]_[organ.organ_size]"
 
-/datum/sprite_accessory/testicles/is_visible(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
+/datum/sprite_accessory/testicles/is_visible(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/human/owner)
 	if(owner.underwear)
 		return FALSE
-	if(!testes.visible_organ)
+	if(!organ.visible_organ)
 		return FALSE
 	return is_human_part_visible(owner, HIDEJUMPSUIT|HIDECROTCH)
 
@@ -126,10 +125,10 @@
 /datum/sprite_accessory/breasts/adjust_appearance_list(list/appearance_list, obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
 	generic_gender_feature_adjust(appearance_list, organ, bodypart, owner, OFFSET_RING)
 
-/datum/sprite_accessory/breasts/is_visible(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
+/datum/sprite_accessory/breasts/is_visible(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/human/owner)
 	if(owner.underwear)
 		return FALSE
-	if(!visible_organ)
+	if(!organ.visible_organ)
 		return FALSE
 	return is_human_part_visible(owner, HIDEBOOB|HIDEBELLY|HIDEJUMPSUIT)
 
@@ -156,10 +155,10 @@
 /datum/sprite_accessory/vagina/adjust_appearance_list(list/appearance_list, obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
 	generic_gender_feature_adjust(appearance_list, organ, bodypart, owner, OFFSET_BELT)
 
-/datum/sprite_accessory/vagina/is_visible(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
+/datum/sprite_accessory/vagina/is_visible(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/human/owner)
 	if(owner.underwear)
 		return FALSE
-	if(!visible_organ)
+	if(!organ.visible_organ)
 		return FALSE
 	return is_human_part_visible(owner, HIDECROTCH|HIDEBUTT|HIDEJUMPSUIT)
 
@@ -221,7 +220,7 @@
 	generic_gender_feature_adjust(appearance_list, organ, bodypart, owner, OFFSET_BELT)
 
 /datum/sprite_accessory/belly/is_visible(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
-	if(!visible_organ)
+	if(!organ.visible_organ)
 		return FALSE
 	return is_human_part_visible(owner, HIDEBELLY|HIDEJUMPSUIT)
 
@@ -247,7 +246,7 @@
 /datum/sprite_accessory/butt/is_visible(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/human/owner)
 	if(owner.underwear)
 		return FALSE
-	if(!visible_organ)
+	if(!organ.visible_organ)
 		return FALSE
 	return is_human_part_visible(owner, HIDEJUMPSUIT|HIDEBUTT)
 

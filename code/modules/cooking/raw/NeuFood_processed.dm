@@ -226,7 +226,7 @@
 		qdel(M)
 
 /obj/item/reagent_containers/food/snacks/raisins/poison
-	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_POOR, /datum/reagent/berrypoison = 4)
+	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_POOR, /datum/reagent/toxin/berrypoison = 4)
 	tastes = list("bitter dried fruit" = 1)
 
 // -------------- STRAWBERRY -----------------

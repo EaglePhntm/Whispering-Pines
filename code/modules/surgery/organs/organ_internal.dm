@@ -144,8 +144,8 @@
 	name = "appendix"
 	icon_state = "appendix"
 	icon = 'icons/obj/surgery.dmi'
-	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_POOR, /datum/reagent/organpoison = 1)
-	grind_results = list(/datum/reagent/organpoison = 3)
+	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_POOR, /datum/reagent/toxin/organpoison = 1)
+	grind_results = list(/datum/reagent/toxin/organpoison = 3)
 	foodtype = RAW | MEAT | GROSS
 	eat_effect = /datum/status_effect/debuff/uncookedfood
 	rotprocess = 5 MINUTES
@@ -153,7 +153,7 @@
 
 /obj/item/reagent_containers/food/snacks/organ/on_consume(mob/living/eater)
 	if(HAS_TRAIT(eater, TRAIT_ORGAN_EATER) && eat_effect != /datum/status_effect/debuff/rotfood)
-		eat_effect = null // food buff handled in /datum/reagent/organpoison
+		eat_effect = null // food buff handled in /datum/reagent/toxin/organpoison
 	if(bitecount >= bitesize)
 		record_featured_stat(FEATURED_STATS_CRIMINALS, eater)
 		GLOB.vanderlin_round_stats[STATS_ORGANS_EATEN]++
@@ -170,8 +170,8 @@
 	return
 
 /obj/item/reagent_containers/food/snacks/organ/heart
-	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_DECENT, /datum/reagent/organpoison = 2)
-	grind_results = list(/datum/reagent/organpoison = 6)
+	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_DECENT, /datum/reagent/toxin/organpoison = 2)
+	grind_results = list(/datum/reagent/toxin/organpoison = 6)
 
 /obj/item/reagent_containers/food/snacks/organ/heart/check_culling(mob/living/eater)
 	. = ..()
@@ -192,8 +192,8 @@
 			return TRUE
 
 /obj/item/reagent_containers/food/snacks/organ/lungs
-	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_DECENT, /datum/reagent/organpoison = 2)
-	grind_results = list(/datum/reagent/organpoison = 6)
+	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_DECENT, /datum/reagent/toxin/organpoison = 2)
+	grind_results = list(/datum/reagent/toxin/organpoison = 6)
 
 /obj/item/organ/Initialize()
 	. = ..()
@@ -273,7 +273,7 @@
 /// Whether the organ is visible and should appear on a bodypart.
 /obj/item/organ/proc/is_visible()
 	/// It's an internal organ, always hidden.
-	if(!visible_organ)
+	if(!organ.visible_organ)
 		return FALSE
 	/// Doesn't have an owner so it couldn't be covered by anything.
 	if(!owner)

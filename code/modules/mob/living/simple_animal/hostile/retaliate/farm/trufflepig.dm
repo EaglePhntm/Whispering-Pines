@@ -69,7 +69,7 @@
 	icon = 'icons/roguetown/items/produce.dmi'
 	icon_state = "mushroom1_full"
 	base_icon_state = "mushroom1_full"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/berrypoison = 5)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/toxin/berrypoison = 5)
 	color = "#ab7d6f"
 	tastes = list("mushroom" = 1)
 	biting = TRUE
@@ -79,7 +79,7 @@
 	icon = 'icons/roguetown/items/produce.dmi'
 	icon_state = "mushroom1_full"
 	base_icon_state = "mushroom1_full"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/berrypoison = 6)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/toxin/berrypoison = 6)
 	color = "#835b4f"
 	tastes = list("off-putting" = 2)
 	biting = TRUE

@@ -114,8 +114,8 @@
 				gr.add_wound(/datum/wound/slash/large, TRUE, FALSE)
 				pain_amt *= 6
 
-	if(istype(user.get_active_held_item(), /obj/item/ammo_casing/caseless/rogue))
-		var/obj/item/ammo_casing/caseless/rogue/adildo = dildo
+	if(istype(user.get_active_held_item(), /obj/item/ammo_casing/caseless))
+		var/obj/item/ammo_casing/caseless/adildo = dildo
 		var/cutchance = 15*sc.speed //multiplies with speed
 		if(!(user.mobility_flags & MOBILITY_STAND)) //less odds if laying
 			cutchance *= 0.5

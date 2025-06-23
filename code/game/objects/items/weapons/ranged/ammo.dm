@@ -84,7 +84,7 @@
 
 /obj/item/ammo_casing/caseless/bolt/poison/Initialize()
 	. = ..()
-	reagents.add_reagent(/datum/reagent/berrypoison, 2)
+	reagents.add_reagent(/datum/reagent/toxin/berrypoison, 2)
 
 //................ Poison Bolt (potent) ............... //
 /obj/item/ammo_casing/caseless/bolt/poison/potent
@@ -92,7 +92,7 @@
 
 /obj/item/ammo_casing/caseless/bolt/poison/potent/Initialize()
 	. = ..()
-	reagents.add_reagent(/datum/reagent/strongpoison, 2)
+	reagents.add_reagent(/datum/reagent/toxin/strongpoison, 2)
 
 //................ Pyro Bolt ............... //
 /obj/item/ammo_casing/caseless/bolt/pyro
@@ -223,7 +223,7 @@
 
 /obj/projectile/bullet/reusable/arrow/poison/Initialize()
 	. = ..()
-	reagents.add_reagent(/datum/reagent/berrypoison, 2)
+	reagents.add_reagent(/datum/reagent/toxin/berrypoison, 2)
 
 //................ Poison Arrow (potent) ............... //
 /obj/item/ammo_casing/caseless/arrow/poison/potent
@@ -231,7 +231,7 @@
 
 /obj/item/ammo_casing/caseless/arrow/poison/potent/Initialize()
 	. = ..()
-	reagents.add_reagent(/datum/reagent/strongpoison, 2)
+	reagents.add_reagent(/datum/reagent/toxin/strongpoison, 2)
 
 //................ Pyro Arrow ............... //
 /obj/item/ammo_casing/caseless/arrow/pyro
@@ -455,7 +455,7 @@
 
 /obj/item/ammo_casing/caseless/dart/poison/Initialize()
 	. = ..()
-	reagents.add_reagent(/datum/reagent/berrypoison, 3)
+	reagents.add_reagent(/datum/reagent/toxin/berrypoison, 3)
 
 #undef BLOWDART_DAMAGE
 #undef ARROW_DAMAGE

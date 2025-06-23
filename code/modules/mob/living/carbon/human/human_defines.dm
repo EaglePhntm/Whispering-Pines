@@ -115,7 +115,7 @@
 	var/tokenclaimed = FALSE // Check for one-time tri reward.
 
 	var/nsfw_headshot_link = null
-	var/ooc_notes = nullE
+	var/ooc_notes = null
 
 	possible_rmb_intents = list(/datum/rmb_intent/feint,\
 	/datum/rmb_intent/aimed,\

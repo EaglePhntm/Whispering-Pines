@@ -8,12 +8,28 @@
 	taste_description = "bitterness"
 	taste_mult = 1.2
 	harmful = TRUE
+	metabolization_rate = REAGENTS_SLOW_METABOLISM
 	var/toxpwr = 1.5
+	var/nausea = 1
 	var/silent_toxin = FALSE //won't produce a pain message when processed by liver/life() if there isn't another non-silent toxin present.
+	var/dwarf_toxpwr = 0.3
+	var/dwarf_nausea = 1
+	var/nasty_eater_immune = FALSE
+	var/organ_eater_immune = FALSE
 
 /datum/reagent/toxin/on_mob_life(mob/living/carbon/M)
+	if(HAS_TRAIT(M, TRAIT_NASTY_EATER) && nasty_eater_immune)
+		return
+	if(HAS_TRAIT(M, TRAIT_ORGAN_EATER) && organ_eater_immune)
+		return
 	if(toxpwr)
-		M.adjustToxLoss(toxpwr*REM, 0)
+		if(volume > 0.09)
+			if(isdwarf(M))
+				M.add_nausea(dwarf_nausea)
+				M.adjustToxLoss(dwarf_toxpwr)
+			else
+				M.add_nausea(nausea)
+				M.adjustToxLoss(toxpwr)
 	return ..()
 
 /datum/reagent/toxin/amatoxin

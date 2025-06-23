@@ -177,7 +177,7 @@
 	bitesize = 5
 
 /obj/item/reagent_containers/food/snacks/cooked/royal_truffle/toxin
-	list_reagents = list(/datum/reagent/consumable/nutriment = COOKED_MEAT_NUTRITION, /datum/reagent/berrypoison = 10)
+	list_reagents = list(/datum/reagent/consumable/nutriment = COOKED_MEAT_NUTRITION, /datum/reagent/toxin/berrypoison = 10)
 
 
 

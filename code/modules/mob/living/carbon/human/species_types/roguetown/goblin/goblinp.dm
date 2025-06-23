@@ -21,7 +21,7 @@
 	soundpack_m = /datum/voicepack/male/goblin
 	soundpack_f = /datum/voicepack/female/goblin
 	custom_clothes = TRUE
-	use_female_sprites = TRUE
+	swap_male_clothes = TRUE
 	changesource_flags = WABBAJACK
 	organs = list(
 		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,

@@ -154,7 +154,7 @@
 /datum/alch_cauldron_recipe/berrypoison
 	recipe_name = "Poison"
 	smells_like = "death"
-	output_reagents = list(/datum/reagent/berrypoison = 18)
+	output_reagents = list(/datum/reagent/toxin/berrypoison = 18)
 	required_essences = list(
 		/datum/thaumaturgical_essence/poison = 4,
 		/datum/thaumaturgical_essence/chaos = 1
@@ -173,7 +173,7 @@
 /datum/alch_cauldron_recipe/stam_poison
 	recipe_name = "Stamina Poison"
 	smells_like = "a slow breeze"
-	output_reagents = list(/datum/reagent/stampoison = 18)
+	output_reagents = list(/datum/reagent/toxin/stampoison = 18)
 	required_essences = list(
 		/datum/thaumaturgical_essence/poison = 3,
 		/datum/thaumaturgical_essence/void = 2
@@ -182,7 +182,7 @@
 /datum/alch_cauldron_recipe/big_stam_poison
 	recipe_name = "Strong Stamina Poison"
 	smells_like = "stagnant air"
-	output_reagents = list(/datum/reagent/stampoison = 18, /datum/reagent/additive = 18)
+	output_reagents = list(/datum/reagent/toxin/stampoison = 18, /datum/reagent/additive = 18)
 	required_essences = list(
 		/datum/thaumaturgical_essence/poison = 5,
 		/datum/thaumaturgical_essence/void = 4,

@@ -27,19 +27,19 @@
 	list_reagents = list(/datum/reagent/medicine/strongstam = 45)
 
 /obj/item/reagent_containers/glass/bottle/poison
-	list_reagents = list(/datum/reagent/berrypoison = 15)
+	list_reagents = list(/datum/reagent/toxin/berrypoison = 15)
 
 /obj/item/reagent_containers/glass/bottle/strongpoison
 	list_reagents = list(/datum/reagent/strongpoison = 15)
 
 /obj/item/reagent_containers/glass/bottle/stampoison
-	list_reagents = list(/datum/reagent/stampoison = 15)
+	list_reagents = list(/datum/reagent/toxin/stampoison = 15)
 
 /obj/item/reagent_containers/glass/bottle/strongstampoison
-	list_reagents = list(/datum/reagent/strongstampoison = 15)
+	list_reagents = list(/datum/reagent/toxin/strongstampoison = 15)
 
 /obj/item/reagent_containers/glass/bottle/killersice
-	list_reagents = list(/datum/reagent/killersice = 15)
+	list_reagents = list(/datum/reagent/toxin/killersice = 15)
 
 /obj/item/reagent_containers/glass/bottle/wine
 	list_reagents = list(/datum/reagent/consumable/ethanol/wine = 45)

@@ -28,10 +28,6 @@
 		H.change_stat(STATKEY_STR, 1) // Same stat spread as lancer/swordmaster, but gets a small bonus to speed instead of a malus, at the cost of getting no constitution bonus
 		H.change_stat(STATKEY_END, 1)
 		H.change_stat(STATKEY_SPD, 1)
-	if(H.gender == FEMALE)
-		H.underwear = "Femleotard"
-		H.underwear_color = CLOTHING_SOOT_BLACK
-		H.update_body()
 	pants = /obj/item/clothing/pants/tights/black
 	backr = /obj/item/weapon/sword/long/greatsword/elfgsword
 	beltl = /obj/item/storage/belt/pouch/coins/mid

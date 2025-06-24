@@ -183,7 +183,7 @@
 		H.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 
 	if(H.gender == FEMALE)
-		H.underwear = "Femleotard"
+		H.underwear = null
 		H.underwear_color = CLOTHING_SOOT_BLACK
 		H.update_body()
 

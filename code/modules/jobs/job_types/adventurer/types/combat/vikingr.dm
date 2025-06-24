@@ -25,10 +25,6 @@
 	H.adjust_skillrank(/datum/skill/misc/reading, pick(0,1,1), TRUE)
 	H.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 
-	if(H.gender == FEMALE)
-		H.underwear = "Femleotard"
-		H.underwear_color = CLOTHING_SOOT_BLACK
-		H.update_body()
 	shoes = /obj/item/clothing/shoes/boots
 	gloves = /obj/item/clothing/gloves/leather
 	wrists = /obj/item/clothing/wrists/bracers/leather

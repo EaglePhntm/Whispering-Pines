@@ -43,7 +43,7 @@
 	..()
 	name = "skeleton"
 	real_name = "skeleton"
-	underwear = "Nude"
+	underwear = null
 	mob_biotypes = MOB_UNDEAD
 	faction = list(FACTION_UNDEAD)
 	if(charflaw)

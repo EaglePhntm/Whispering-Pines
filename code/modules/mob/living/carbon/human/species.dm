@@ -427,12 +427,6 @@ GLOBAL_LIST_EMPTY(patreon_races)
 							spec_undies += X
 	return spec_undies
 
-/datum/species/proc/random_underwear(gender)
-	var/list/spec_undies = get_spec_undies_list(gender)
-	if(LAZYLEN(spec_undies))
-		var/datum/sprite_accessory/underwear = pick(spec_undies)
-		return underwear.name
-
 /datum/species/proc/regenerate_icons(mob/living/carbon/human/H)
 	return FALSE
 
@@ -553,7 +547,6 @@ GLOBAL_LIST_EMPTY(patreon_races)
 /datum/species/proc/random_character(mob/living/carbon/human/H)
 	H.real_name = random_name(H.gender,1)
 //	H.age = pick(possible_ages)
-	H.underwear = random_underwear(H.gender)
 	var/list/skins = get_skin_list()
 	H.skin_tone = skins[pick(skins)]
 	H.accessory = "Nothing"

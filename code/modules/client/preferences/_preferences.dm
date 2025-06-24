@@ -68,7 +68,7 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 	var/gender = MALE					//gender of character (well duh)
 	var/age = AGE_ADULT						//age of character
 	var/origin = "Default"
-	var/underwear = "Nude"				//underwear type
+	var/underwear = null				//underwear type
 	var/underwear_color = null			//underwear color
 	var/undershirt = "Nude"				//undershirt type
 	var/accessory = "Nothing"
@@ -91,9 +91,6 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 	var/list/randomise = list(
 		(RANDOM_BODY) = FALSE,
 		(RANDOM_BODY_ANTAG) = FALSE,
-		(RANDOM_UNDERWEAR) = FALSE,
-		(RANDOM_UNDERWEAR_COLOR) = FALSE,
-		(RANDOM_UNDERSHIRT) = FALSE,
 		(RANDOM_SKIN_TONE) = FALSE,
 		(RANDOM_EYE_COLOR) = FALSE
 	)

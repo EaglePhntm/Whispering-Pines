@@ -42,7 +42,7 @@
 				if(!underwear)
 					return
 				src.visible_message(span_notice("[src] begins to take off [underwear]..."))
-				if(do_after(user, 30, needhand = 1, target = src))
+				if(do_after(user, 30, target = src))
 					var/obj/item/bodypart/chest = get_bodypart(BODY_ZONE_CHEST)
 					chest.remove_bodypart_feature(underwear.undies_feature)
 					underwear.forceMove(get_turf(src))
@@ -713,7 +713,7 @@
 /mob/living/carbon/human/proc/skele_look()
 	dna.species.go_bald()
 	update_body_parts(redraw = TRUE)
-	underwear = "Nude"
+	underwear = null
 
 /mob/living/carbon/human/adjust_nutrition(change) //Honestly FUCK the oldcoders for putting nutrition on /mob someone else can move it up because holy hell I'd have to fix SO many typechecks
 	if(HAS_TRAIT(src, TRAIT_NOHUNGER))

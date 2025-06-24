@@ -35,7 +35,7 @@
 	var/underwear_color
 	var/undershirt = "Nude" //Which undershirt the player wants
 
-	var/cached_underwear = "Nude"
+	var/cached_underwear = null
 
 	var/accessory = "None"
 	var/detail = "None"

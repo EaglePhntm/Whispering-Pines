@@ -83,9 +83,6 @@
 #define RANDOM_GENDER_ANTAG "random_gender_antag"
 #define RANDOM_AGE "random_age"
 #define RANDOM_AGE_ANTAG "random_age_antag"
-#define RANDOM_UNDERWEAR "random_underwear"
-#define RANDOM_UNDERWEAR_COLOR "random_underwear_color"
-#define RANDOM_UNDERSHIRT "random_undershirt"
 #define RANDOM_SKIN_TONE "random_skin_tone"
 #define RANDOM_EYE_COLOR "random_eye_color"
 

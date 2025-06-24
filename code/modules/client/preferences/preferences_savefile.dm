@@ -57,11 +57,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 			var/new_value
 			if(new_value)
 				job_preferences[initial(J.title)] = new_value
-	if(current_version < 24)
-		if (!(underwear in GLOB.underwear_list))
-			underwear = "Nude"
 	if(current_version < 25)
-		randomise = list(RANDOM_UNDERWEAR = TRUE, RANDOM_UNDERWEAR_COLOR = TRUE, RANDOM_UNDERSHIRT = TRUE, RANDOM_SKIN_TONE = TRUE, RANDOM_EYE_COLOR = TRUE)
+		randomise = list(RANDOM_SKIN_TONE = TRUE, RANDOM_EYE_COLOR = TRUE)
 		if(S["name_is_always_random"] == 1)
 			randomise[RANDOM_NAME] = TRUE
 		if(S["body_is_always_random"] == 1)
@@ -276,7 +273,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	// We load our list, but override everything to FALSE to stop a "tainted" save from making it random again.
 	randomise[RANDOM_BODY] = FALSE
 	randomise[RANDOM_BODY_ANTAG] = FALSE
-	randomise[RANDOM_UNDERWEAR] = FALSE
 	randomise[RANDOM_SKIN_TONE] = FALSE
 	randomise[RANDOM_EYE_COLOR] = FALSE
 

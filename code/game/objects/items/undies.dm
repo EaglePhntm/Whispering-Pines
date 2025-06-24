@@ -46,9 +46,3 @@
 	icon_state = "leotard"
 	covers_breasts = TRUE
 	flags_inv = HIDEBOOB|HIDEBUTT|HIDECROTCH|HIDEBELLY
-
-/obj/item/undies/athletic_leotard
-	name = "athletic leotard"
-	icon_state = "athletic_leotard"
-	covers_breasts = TRUE
-	flags_inv = HIDEBOOB|HIDEBUTT|HIDECROTCH|HIDEBELLY

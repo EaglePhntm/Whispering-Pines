@@ -172,9 +172,6 @@
 	if(randomise_flags & RANDOMIZE_NAME)
 		real_name = species.random_name(gender, TRUE)
 
-	if(randomise_flags & RANDOMIZE_UNDERWEAR)
-		underwear = species.random_underwear(gender)
-
 	if(randomise_flags & RANDOMIZE_SKIN_TONE)
 		var/list/skin_list = species.get_skin_list()
 		skin_tone = pick_assoc(skin_list)

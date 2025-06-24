@@ -142,3 +142,18 @@
 		if(robotic)
 			L.change_bodypart_status(BODYPART_ROBOTIC)
 	. = L
+
+//Limb numbers
+/mob/proc/get_num_arms(check_disabled = TRUE)
+	return 2
+
+/mob/living/carbon/get_num_arms(check_disabled = TRUE)
+	. = 0
+	for(var/X in bodyparts)
+		var/obj/item/bodypart/affecting = X
+		if(affecting.body_part == ARM_RIGHT)
+			if(!check_disabled || !affecting.bodypart_disabled)
+				.++
+		if(affecting.body_part == ARM_LEFT)
+			if(!check_disabled || !affecting.bodypart_disabled)
+				.++

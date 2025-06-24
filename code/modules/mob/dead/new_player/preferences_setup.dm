@@ -17,9 +17,6 @@
 	if(randomise_flags & RANDOMIZE_NAME)
 		real_name = pref_species.random_name(gender, TRUE)
 
-	if(randomise_flags & RANDOMIZE_UNDERWEAR)
-		underwear = pref_species.random_underwear(gender)
-
 	if(randomise_flags & (RANDOMIZE_HAIRSTYLE | RANDOMIZE_HAIR_COLOR))
 		var/datum/customizer_entry/hair/entry = get_customizer_entry_of_type(/datum/customizer_entry/hair/head)
 		if(entry)
@@ -58,13 +55,6 @@
 		age = pick(pref_species.possible_ages)
 	if(randomise[RANDOM_NAME] || antag_override && randomise[RANDOM_NAME_ANTAG])
 		real_name = pref_species.random_name(gender, TRUE)
-
-	if(randomise[RANDOM_UNDERWEAR_COLOR])
-		underwear_color = random_short_color()
-	if(randomise[RANDOM_UNDERSHIRT])
-		undershirt = random_undershirt(gender)
-	if(randomise[RANDOM_UNDERWEAR])
-		underwear = pref_species.random_underwear(gender)
 	if(randomise[RANDOM_SKIN_TONE])
 		var/list/skins = pref_species.get_skin_list()
 		skin_tone = pick_assoc(skins)

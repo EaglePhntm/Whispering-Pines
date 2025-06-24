@@ -46,20 +46,31 @@
 /datum/sprite_accessory/proc/is_visible(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
 	return TRUE
 
-/datum/sprite_accessory/proc/generic_gender_feature_adjust(list/appearance_list, obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner, feature_male_key, feature_female_key)
-	if(!ishuman(owner))
+/datum/sprite_accessory/proc/generic_gender_feature_adjust(list/appearance_list, obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner, feature_key)
+	if(QDELETED(owner) || !ishuman(owner))
 		return
-	var/mob/living/carbon/human/humie = owner
-	var/datum/species/species = owner.dna.species
-	for(var/mutable_appearance/appearance as anything in appearance_list)
-		var/list/offset_list
-		if(humie.gender == FEMALE)
-			offset_list = species.offset_features_f[feature_female_key]
-		else
-			offset_list = species.offset_features_m[feature_male_key]
-		if(offset_list)
-			appearance.pixel_x += offset_list[1]
-			appearance.pixel_y += offset_list[2]
+
+	var/mob/living/carbon/human/H = owner
+	var/datum/species/species = H.dna?.species
+
+	if(!species)
+		return
+
+	var/use_female_sprites = FALSE
+	if(species?.sexes)
+		if(H.gender == FEMALE && !species.swap_female_clothes || H.gender == MALE && species.swap_male_clothes)
+			use_female_sprites = FEMALE_SPRITES
+
+	var/list/offsets
+	if(use_female_sprites)
+		offsets = (H.age == AGE_CHILD) ? species.offset_features_child : species.offset_features_f
+	else
+		offsets = (H.age == AGE_CHILD) ? species.offset_features_child : species.offset_features_m
+
+	if(LAZYACCESS(offsets, feature_key))
+		for(var/mutable_appearance/appearance as anything in appearance_list)
+			appearance.pixel_x += offsets[feature_key][1]
+			appearance.pixel_y += offsets[feature_key][2]
 
 /datum/sprite_accessory/proc/validate_color_keys_for_owner(mob/living/carbon/owner, colors)
 	if(!color_keys)
@@ -83,6 +94,8 @@
 		owner = organ.owner
 	else if (bodypart)
 		owner = bodypart.owner
+		if(!owner)
+			owner = bodypart.original_owner
 	else
 		return
 	if(!is_visible(organ, bodypart, owner))
@@ -197,7 +210,7 @@
 /datum/sprite_accessory/proc/get_icon_state(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
 	return icon_state
 
-/datum/sprite_accessory/proc/get_default_colors(var/key_source_list)
+/datum/sprite_accessory/proc/get_default_colors(key_source_list)
 	var/list/color_list = list()
 	for(var/i in 1 to color_keys)
 		var/color

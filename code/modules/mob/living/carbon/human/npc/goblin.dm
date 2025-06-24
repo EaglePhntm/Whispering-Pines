@@ -232,7 +232,7 @@
 	for(var/slot in internal_organs_slot)
 		var/obj/item/organ/organ = internal_organs_slot[slot]
 		organ.sellprice = 5
-	src.underwear = "Nude"
+	src.underwear = null
 	if(src.charflaw)
 		QDEL_NULL(src.charflaw)
 	update_body()

@@ -94,18 +94,6 @@
 	if(ears)
 		ears.minimumDeafTicks(value)
 
-
-/obj/item/organ/ears/cat
-	name = "cat ears"
-	icon = 'icons/obj/clothing/hats.dmi'
-	icon_state = "kitty"
-	damage_multiplier = 2
-
-/obj/item/organ/ears/penguin
-	name = "penguin ears"
-	desc = ""
-	var/datum/component/waddle
-
 /obj/item/organ/ears/penguin/Insert(mob/living/carbon/human/H, special = 0, drop_if_replaced = TRUE)
 	. = ..()
 	if(istype(H))

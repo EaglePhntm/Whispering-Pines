@@ -82,25 +82,33 @@
 		ORGAN_SLOT_LUNGS = /obj/item/organ/lungs,
 		ORGAN_SLOT_EYES = /obj/item/organ/eyes/kobold,
 		ORGAN_SLOT_EARS = /obj/item/organ/ears,
-		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue,
+		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue/lizard,
 		ORGAN_SLOT_LIVER = /obj/item/organ/liver,
 		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach,
 		ORGAN_SLOT_APPENDIX = /obj/item/organ/appendix,
 		ORGAN_SLOT_GUTS = /obj/item/organ/filling_organ/guts,
-		ORGAN_SLOT_TAIL = /obj/item/organ/tail/kobold
+		ORGAN_SLOT_TAIL = /obj/item/organ/tail/kobold,
+		ORGAN_SLOT_SNOUT = /obj/item/organ/snout/lizard,
+		ORGAN_SLOT_FRILLS = /obj/item/organ/frills/lizard,
+		ORGAN_SLOT_HORNS = /obj/item/organ/horns,
 	)
 
 	customizers = list(
-		/datum/customizer/organ/tail/kobold,
 		/datum/customizer/organ/eyes/humanoid,
+		/datum/customizer/bodypart_feature/hair/head/humanoid/bald_default,
+		/datum/customizer/bodypart_feature/hair/facial/humanoid/shaved_default,
 		/datum/customizer/bodypart_feature/accessory,
 		/datum/customizer/bodypart_feature/face_detail,
+		/datum/customizer/bodypart_feature/underwear,
+		/datum/customizer/organ/snout/lizard,
+		/datum/customizer/organ/frills/lizard,
+		/datum/customizer/organ/horns/humanoid,
 		/datum/customizer/organ/testicles/anthro,
 		/datum/customizer/organ/penis/anthro,
-		/datum/customizer/organ/breasts/anthro,
-		/datum/customizer/organ/vagina/anthro,
-		/datum/customizer/organ/belly/anthro,
-		/datum/customizer/organ/butt/anthro,
+		/datum/customizer/organ/breasts/animal,
+		/datum/customizer/organ/vagina/animal,
+		/datum/customizer/organ/belly/animal,
+		/datum/customizer/organ/butt/animal,
 	)
 
 /datum/species/kobold/on_species_gain(mob/living/carbon/C, datum/species/old_species, datum/preferences/pref_load)

@@ -224,3 +224,48 @@
 		/datum/sprite_accessory/tail/rattlesnake,
 		/datum/sprite_accessory/tail/lynx,
 		)
+
+
+/datum/customizer/organ/tail/harpy
+	customizer_choices = list(/datum/customizer_choice/organ/tail/harpy)
+	allows_disabling = TRUE
+
+/datum/customizer_choice/organ/tail/harpy
+	name = "Harpy Plumage"
+	organ_type = /obj/item/organ/tail
+	generic_random_pick = TRUE
+	allows_accessory_color_customization = FALSE
+	sprite_accessories = list(
+		/datum/sprite_accessory/tail/hawk,
+		)
+
+/obj/item/organ/tail/triton
+	accessory_type = /datum/sprite_accessory/tail/triton
+
+/datum/customizer/organ/tail/triton
+	customizer_choices = list(/datum/customizer_choice/organ/tail/triton)
+	allows_disabling = FALSE
+
+/datum/customizer_choice/organ/tail/triton
+	name = "Triton Bell"
+	organ_type = /obj/item/organ/tail/triton
+	allows_accessory_color_customization = FALSE
+	sprite_accessories = list(
+		/datum/sprite_accessory/tail/triton,
+		)
+
+/obj/item/organ/tail/kobold
+	accessory_type = /datum/sprite_accessory/tail/kobold
+
+/datum/customizer/organ/tail/kobold
+	customizer_choices = list(/datum/customizer_choice/organ/tail/kobold)
+	allows_disabling = FALSE
+
+/datum/customizer_choice/organ/tail/kobold
+	name = "Kobold Tail"
+	organ_type = /obj/item/organ/tail/kobold
+	allows_accessory_color_customization = FALSE
+	sprite_accessories = list(
+		/datum/sprite_accessory/tail/kobold,
+		/datum/sprite_accessory/tail/kobold/alt,
+		)

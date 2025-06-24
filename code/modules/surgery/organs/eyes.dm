@@ -88,10 +88,7 @@
 	if(ishuman(owner))
 		var/mob/living/carbon/human/HMN = owner
 		if(eye_color)
-			HMN.eye_color = eye_color
 			HMN.regenerate_icons()
-		else
-			eye_color = HMN.eye_color
 		if(M.has_quirk(/datum/quirk/night_vision) && !lighting_alpha)
 			lighting_alpha = LIGHTING_PLANE_ALPHA_NV_TRAIT
 		if(M.has_quirk(/datum/quirk/greaternightvision) && !lighting_alpha)

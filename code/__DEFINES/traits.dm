@@ -114,6 +114,7 @@
 #define TRAIT_BURDEN "Burdened" //Gaffer stuff
 #define TRAIT_OLDPARTY "Old Party"
 #define TRAIT_EARGRAB "Ear Grab"
+#define TRAIT_FACELESS "Faceless One"
 
 // PATRON CURSE TRAITS
 #define TRAIT_CURSE "Curse" //source
@@ -238,6 +239,8 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_TINY = span_info("I am tiny in size and quite fragile!"),
 	TRAIT_DEATHBYSNOOSNOO = ("With strong intent, I can shatter pelvises."),
 	TRAIT_SEXDEVO = span_info("I gain devotion and even more health through sex."),
+	TRAIT_FACELESS = span_danger("I am faceless. I am shunned. The others will recognise me for what I am. If I give them the chance."),
+	TRAIT_FLOWERFIELD_IMMUNITY = span_info("I am immune to the effects of flower fields."),
 	))
 
 #define SIGNAL_ADDTRAIT(trait_ref) ("addtrait " + trait_ref)

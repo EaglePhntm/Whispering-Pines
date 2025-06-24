@@ -123,10 +123,10 @@
 		/datum/customizer/bodypart_feature/face_detail,
 		/datum/customizer/organ/testicles/anthro,
 		/datum/customizer/organ/penis/anthro,
-		/datum/customizer/organ/breasts/anthro,
+		/datum/customizer/organ/breasts/animal,
 		/datum/customizer/organ/vagina/anthro,
-		/datum/customizer/organ/belly/anthro,
-		/datum/customizer/organ/butt/anthro,
+		/datum/customizer/organ/belly/animal,
+		/datum/customizer/organ/butt/animal,
 	)
 
 	body_markings = list(

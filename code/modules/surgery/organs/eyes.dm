@@ -61,20 +61,11 @@
 
 /obj/item/organ/eyes/update_overlays()
 	. = ..()
-	if(eye_color)
-		var/mutable_appearance/iris_overlay = mutable_appearance(icon, "[icon_state]-iris")
-
-		var/used_color = "#[eye_color]"
-		if(heterochromia && prob(50))
-			used_color = "#[second_color]"
-
-		iris_overlay.color = base_override ? base_override : used_color
+	if(eye_color && (icon_state == "eyeball"))
+		var/mutable_appearance/iris_overlay = mutable_appearance(src.icon, "eyeball-iris")
+		iris_overlay.color = "#" + eye_color
 		. += iris_overlay
-		// if(glows)
-		// 	iris_overlay = mutable_appearance(icon, "[icon_state]-iris")
-		// 	iris_overlay.color = emissive_override ? emissive_override : used_color
-		// 	iris_overlay.plane = EMISSIVE_PLANE
-		// 	. += iris_overlay
+
 
 /obj/item/organ/eyes/update_accessory_colors()
 	var/list/colors_list = list()
@@ -97,7 +88,14 @@
 	if(ishuman(owner))
 		var/mob/living/carbon/human/HMN = owner
 		if(eye_color)
+			HMN.eye_color = eye_color
 			HMN.regenerate_icons()
+		else
+			eye_color = HMN.eye_color
+		if(M.has_quirk(/datum/quirk/night_vision) && !lighting_alpha)
+			lighting_alpha = LIGHTING_PLANE_ALPHA_NV_TRAIT
+		if(M.has_quirk(/datum/quirk/greaternightvision) && !lighting_alpha)
+			lighting_alpha = LIGHTING_PLANE_ALPHA_DARKVISION
 	for(var/datum/wound/facial/eyes/eye_wound as anything in M.get_wounds())
 		qdel(eye_wound)
 	M.update_tint()
@@ -105,7 +103,17 @@
 	if(M.has_dna() && ishuman(M))
 		M.dna.species.handle_body(M) //updates eye icon
 
-
+/proc/set_eye_color(mob/living/carbon/mob, color_one, color_two)
+	var/obj/item/organ/eyes/eyes = mob.getorganslot(ORGAN_SLOT_EYES)
+	if(!eyes)
+		return
+	if(color_one)
+		eyes.eye_color = color_one
+	if(color_two)
+		eyes.second_color = color_two
+	eyes.update_accessory_colors()
+	if(eyes.owner)
+		eyes.owner.update_body_parts(TRUE)
 
 /obj/item/organ/eyes/Remove(mob/living/carbon/M, special = 0)
 	. = ..()
@@ -163,6 +171,11 @@
 			sight_flags &= ~SEE_BLACKNESS
 	owner.update_sight()
 
+
+/obj/item/organ/eyes/night_vision/argonian
+	name = "sissean eyes"
+	desc = ""
+
 /obj/item/organ/eyes/night_vision/alien
 	name = "alien eyes"
 	desc = ""
@@ -171,7 +184,17 @@
 /obj/item/organ/eyes/night_vision/zombie
 	name = "undead eyes"
 	desc = ""
-	eye_color = "FFFFFF"
+
+/obj/item/organ/eyes/construct
+	name = "construct eyes"
+	desc = "Some beast's eyes, preserved through artifice and with magical rock embedded in their back. Seems to fit a construct's head."
+	icon_state = "eyeball-con"
+
+/obj/item/organ/eyes/night_vision/zombie/on_life()
+	. = ..()
+	if (!(owner.mob_biotypes & MOB_UNDEAD))
+		if (prob(10))
+			owner.adjustToxLoss(0.2)
 
 /obj/item/organ/eyes/night_vision/werewolf
 	name = "moonlight eyes"
@@ -181,6 +204,17 @@
 	name = "burning red eyes"
 	desc = ""
 	eye_color = BLOODCULT_EYE
+
+/obj/item/organ/eyes/night_vision/wild_goblin
+	name = "wild goblin eyes"
+	desc = "What manner of madness have these reddened orbs espied in the darker places of the realm?"
+	icon_state = "burning_eyes"
+
+/obj/item/organ/eyes/night_vision/wild_goblin/on_life()
+	. = ..()
+	if (!istype(owner, /mob/living/carbon/human/species/goblin))
+		if (prob(10))
+			owner.adjustToxLoss(0.2)
 
 /obj/item/organ/eyes/night_vision/mushroom
 	name = "fung-eye"
@@ -193,6 +227,8 @@
 	lighting_alpha = LIGHTING_PLANE_ALPHA_NV_TRAIT
 
 /obj/item/organ/eyes/elf/less
+	name = "half-elf eyes"
+	desc = ""
 	see_in_dark = 3
 	lighting_alpha = LIGHTING_PLANE_ALPHA_LESSER_NV_TRAIT
 
@@ -200,24 +236,264 @@
 	name = "slitted eyes" // SPRITE PLS
 	accessory_type = /datum/sprite_accessory/eyes/humanoid/kobold
 
+/obj/item/organ/eyes/goblin
+	name = "goblin eyes"
+	desc = ""
+	see_in_dark = 15
+	lighting_alpha = 200
+
+///Robotic
+
+/obj/item/organ/eyes/robotic
+	name = "robotic eyes"
+	icon_state = "cybernetic_eyeballs"
+	desc = ""
+	status = ORGAN_ROBOTIC
+	organ_flags = ORGAN_SYNTHETIC
+
+/obj/item/organ/eyes/robotic/emp_act(severity)
+	. = ..()
+	if(!owner || . & EMP_PROTECT_SELF)
+		return
+	if(prob(10 * severity))
+		return
+	to_chat(owner, span_warning("Static obfuscates my vision!"))
+	owner.flash_act(visual = 1)
+
+/obj/item/organ/eyes/robotic/xray
+	name = "\improper X-ray eyes"
+	desc = ""
+	eye_color = "000"
+	see_in_dark = 8
+	sight_flags = SEE_MOBS | SEE_OBJS | SEE_TURFS
+
 /obj/item/organ/eyes/triton
 	name = "dead fish eyes"
 	accessory_type = /datum/sprite_accessory/eyes/humanoid/triton
 	base_override = "#000"
 	glows = TRUE
+
+/obj/item/organ/eyes/robotic/thermals
+	name = "thermal eyes"
+	desc = ""
+	eye_color = "FC0"
+	sight_flags = SEE_MOBS
+	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE
 	flash_protect = FLASH_PROTECTION_SENSITIVE
+	see_in_dark = 8
+
+/obj/item/organ/eyes/robotic/flashlight
+	name = "flashlight eyes"
+	desc = ""
+	eye_color ="fee5a3"
+	icon = 'icons/obj/lighting.dmi'
+	icon_state = "flashlight_eyes"
+	flash_protect = FLASH_PROTECTION_WELDER
+	tint = INFINITY
+	var/obj/item/flashlight/eyelight/eye
+
+// Welding shield implant
+/obj/item/organ/eyes/robotic/shield
+	name = "shielded robotic eyes"
+	desc = ""
+	flash_protect = FLASH_PROTECTION_WELDER
+
+/obj/item/organ/eyes/robotic/shield/emp_act(severity)
+	return
+
+#define RGB2EYECOLORSTRING(definitionvar) ("[copytext(definitionvar,2,3)][copytext(definitionvar,4,5)][copytext(definitionvar,6,7)]")
+
+/obj/item/organ/eyes/robotic/glow
+	name = "High Luminosity Eyes"
+	desc = ""
+	eye_color = "000"
+	actions_types = list(/datum/action/item_action/organ_action/use, /datum/action/item_action/organ_action/toggle)
+	var/current_color_string = "#ffffff"
+	var/active = FALSE
+	var/max_light_beam_distance = 5
+	var/light_beam_distance = 5
+	var/light_object_range = 1
+	var/light_object_power = 2
+	var/list/obj/effect/abstract/eye_lighting/eye_lighting
+	var/obj/effect/abstract/eye_lighting/on_mob
+	var/image/mob_overlay
+	var/datum/component/mobhook
+
+/obj/item/organ/eyes/robotic/glow/Initialize()
+	. = ..()
+	mob_overlay = image('icons/mob/human_face.dmi', "eyes_glow_gs")
+
+/obj/item/organ/eyes/robotic/glow/Destroy()
+	terminate_effects()
+	. = ..()
+
+/obj/item/organ/eyes/robotic/glow/Remove(mob/living/carbon/M, special = FALSE)
+	terminate_effects()
+	. = ..()
 
 /obj/item/organ/eyes/no_render
 	accessory_type = null
+/obj/item/organ/eyes/robotic/glow/proc/terminate_effects()
+	if(owner && active)
+		deactivate()
+	active = FALSE
+	clear_visuals(TRUE)
+	STOP_PROCESSING(SSfastprocess, src)
 
-/proc/set_eye_color(mob/living/carbon/mob, color_one, color_two)
-	var/obj/item/organ/eyes/eyes = mob.getorganslot(ORGAN_SLOT_EYES)
-	if(!eyes)
+/obj/item/organ/eyes/robotic/glow/ui_action_click(owner, action)
+	if(istype(action, /datum/action/item_action/organ_action/toggle))
+		toggle_active()
+	else if(istype(action, /datum/action/item_action/organ_action/use))
+		prompt_for_controls(owner)
+
+/obj/item/organ/eyes/robotic/glow/proc/toggle_active()
+	if(active)
+		deactivate()
+	else
+		activate()
+
+/obj/item/organ/eyes/robotic/glow/proc/prompt_for_controls(mob/user)
+	var/C = input(owner, "Select Color", "Select color", "#ffffff") as color|null
+	if(!C || QDELETED(src) || QDELETED(user) || QDELETED(owner) || owner != user)
 		return
-	if(color_one)
-		eyes.eye_color = color_one
-	if(color_two)
-		eyes.second_color = color_two
-	eyes.update_accessory_colors()
-	if(eyes.owner)
-		eyes.owner.update_body_parts(TRUE)
+	var/range = input(user, "Enter range (0 - [max_light_beam_distance])", "Range Select", 0) as null|num
+
+	set_distance(CLAMP(range, 0, max_light_beam_distance))
+	assume_rgb(C)
+
+/obj/item/organ/eyes/robotic/glow/proc/assume_rgb(newcolor)
+	current_color_string = newcolor
+	eye_color = RGB2EYECOLORSTRING(current_color_string)
+	sync_light_effects()
+	cycle_mob_overlay()
+	if(!QDELETED(owner) && ishuman(owner))		//Other carbon mobs don't have eye color.
+		owner.dna.species.handle_body(owner)
+
+/obj/item/organ/eyes/robotic/glow/proc/cycle_mob_overlay()
+	remove_mob_overlay()
+	mob_overlay.color = current_color_string
+	add_mob_overlay()
+
+/obj/item/organ/eyes/robotic/glow/proc/add_mob_overlay()
+	if(!QDELETED(owner))
+		owner.add_overlay(mob_overlay)
+
+/obj/item/organ/eyes/robotic/glow/proc/remove_mob_overlay()
+	if(!QDELETED(owner))
+		owner.cut_overlay(mob_overlay)
+
+/obj/item/organ/eyes/robotic/glow/emp_act()
+	. = ..()
+	if(!active || . & EMP_PROTECT_SELF)
+		return
+	deactivate(silent = TRUE)
+
+/obj/item/organ/eyes/robotic/glow/Insert(mob/living/carbon/M, special = FALSE, drop_if_replaced = FALSE)
+	. = ..()
+	RegisterSignal(M, COMSIG_ATOM_DIR_CHANGE, PROC_REF(update_visuals))
+
+/obj/item/organ/eyes/robotic/glow/Remove(mob/living/carbon/M, special = FALSE)
+	. = ..()
+	UnregisterSignal(M, COMSIG_ATOM_DIR_CHANGE)
+
+/obj/item/organ/eyes/robotic/glow/Destroy()
+	QDEL_NULL(mobhook) // mobhook is not our component
+	return ..()
+
+/obj/item/organ/eyes/robotic/glow/proc/activate(silent = FALSE)
+	start_visuals()
+	if(!silent)
+		to_chat(owner, span_warning("My [src] clicks and makes a whining noise, before shooting out a beam of light!"))
+	active = TRUE
+	cycle_mob_overlay()
+
+/obj/item/organ/eyes/robotic/glow/proc/deactivate(silent = FALSE)
+	clear_visuals()
+	if(!silent)
+		to_chat(owner, span_warning("My [src] shuts off!"))
+	active = FALSE
+	remove_mob_overlay()
+
+/obj/item/organ/eyes/robotic/glow/proc/update_visuals(datum/source, olddir, newdir)
+	if((LAZYLEN(eye_lighting) < light_beam_distance) || !on_mob)
+		regenerate_light_effects()
+	var/turf/scanfrom = get_turf(owner)
+	var/scandir = owner.dir
+	if (newdir && scandir != newdir) // COMSIG_ATOM_DIR_CHANGE happens before the dir change, but with a reference to the new direction.
+		scandir = newdir
+	if(!istype(scanfrom))
+		clear_visuals()
+	var/turf/scanning = scanfrom
+	var/stop = FALSE
+	on_mob.forceMove(scanning)
+	for(var/i in 1 to light_beam_distance)
+		scanning = get_step(scanning, scandir)
+		if(scanning.opacity || scanning.has_opaque_atom)
+			stop = TRUE
+		var/obj/effect/abstract/eye_lighting/L = LAZYACCESS(eye_lighting, i)
+		if(stop)
+			L.forceMove(src)
+		else
+			L.forceMove(scanning)
+
+/obj/item/organ/eyes/robotic/glow/proc/clear_visuals(delete_everything = FALSE)
+	if(delete_everything)
+		QDEL_LIST(eye_lighting)
+		QDEL_NULL(on_mob)
+	else
+		for(var/i in eye_lighting)
+			var/obj/effect/abstract/eye_lighting/L = i
+			L.forceMove(src)
+		if(!QDELETED(on_mob))
+			on_mob.forceMove(src)
+
+/obj/item/organ/eyes/robotic/glow/proc/start_visuals()
+	if(!islist(eye_lighting))
+		regenerate_light_effects()
+	if((eye_lighting.len < light_beam_distance) || !on_mob)
+		regenerate_light_effects()
+	sync_light_effects()
+	update_visuals()
+
+/obj/item/organ/eyes/robotic/glow/proc/set_distance(dist)
+	light_beam_distance = dist
+	regenerate_light_effects()
+
+/obj/item/organ/eyes/robotic/glow/proc/regenerate_light_effects()
+	clear_visuals(TRUE)
+	on_mob = new (src, light_object_range, light_object_power, current_color_string, LIGHT_ATTACHED)
+	for(var/i in 1 to light_beam_distance)
+		LAZYADD(eye_lighting, new /obj/effect/abstract/eye_lighting(src, light_object_range, light_object_power, current_color_string))
+	sync_light_effects()
+
+
+/obj/item/organ/eyes/robotic/glow/proc/sync_light_effects()
+	for(var/I in eye_lighting)
+		var/obj/effect/abstract/eye_lighting/L = I
+		L.set_light(light_object_range, light_inner_range, light_object_power, l_color =  current_color_string)
+	if(on_mob)
+		on_mob.set_light(1, 1, 1, l_color = current_color_string)
+
+/obj/effect/abstract/eye_lighting
+	var/obj/item/organ/eyes/robotic/glow/parent
+
+/obj/effect/abstract/eye_lighting/Initialize()
+	. = ..()
+	parent = loc
+	if(!istype(parent))
+		return INITIALIZE_HINT_QDEL
+
+/obj/item/organ/eyes/moth
+	name = "fluvian eyes"
+	desc = ""
+	flash_protect = FLASH_PROTECTION_SENSITIVE
+	accessory_type = /datum/sprite_accessory/eyes/moth
+	eye_color = "000000"
+	second_color = "000000"
+
+/obj/item/organ/eyes/snail
+	name = "snail eyes"
+	desc = ""
+	eye_icon_state = "snail_eyes"
+	icon_state = "snail_eyeballs"
+

@@ -74,3 +74,10 @@
 	default_choice = /datum/customizer_choice/organ/eyes/humanoid
 
 /datum/customizer_choice/organ/eyes/humanoid
+
+/datum/customizer/organ/eyes/moth
+	customizer_choices = list(/datum/customizer_choice/organ/eyes/moth)
+	default_choice = /datum/customizer_choice/organ/eyes/moth
+
+/datum/customizer_choice/organ/eyes/moth
+	organ_type = /obj/item/organ/eyes/moth

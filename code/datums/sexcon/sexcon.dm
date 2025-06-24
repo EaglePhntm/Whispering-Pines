@@ -653,7 +653,7 @@
 		if(!user.adjust_energy(-(action.stamina_cost * get_stamina_cost_multiplier())))
 			break
 		if(user.mind)
-			user.mind.adjust_experience(/datum/skill/misc/athletics, (user.STAINT*0.04)*get_stamina_cost_multiplier()) //endurance training boiii
+			user.mind.add_sleep_experience(/datum/skill/misc/athletics, (user.STAINT*0.04)*get_stamina_cost_multiplier()) //endurance training boiii
 		if(!do_after(user, (action.do_time / get_speed_multiplier()), target = target))
 			break
 		if(current_action == null || performed_action_type != current_action)
@@ -911,7 +911,7 @@
 	. = 1
 	..()
 
-/mob/living/carbon/human/has_breasts()
+/mob/living/carbon/human/proc/has_breasts()
 	RETURN_TYPE(/obj/item/organ/filling_organ/breasts)
 	return getorganslot(ORGAN_SLOT_BREASTS)
 

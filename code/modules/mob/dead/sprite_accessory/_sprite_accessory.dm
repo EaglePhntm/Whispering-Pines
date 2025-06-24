@@ -46,31 +46,20 @@
 /datum/sprite_accessory/proc/is_visible(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
 	return TRUE
 
-/datum/sprite_accessory/proc/generic_gender_feature_adjust(list/appearance_list, obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner, feature_key)
-	if(QDELETED(owner) || !ishuman(owner))
+/datum/sprite_accessory/proc/generic_gender_feature_adjust(list/appearance_list, obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner, feature_male_key, feature_female_key)
+	if(!ishuman(owner))
 		return
-
-	var/mob/living/carbon/human/H = owner
-	var/datum/species/species = H.dna?.species
-
-	if(!species)
-		return
-
-	var/use_female_sprites = FALSE
-	if(species?.sexes)
-		if(H.gender == FEMALE && !species.swap_female_clothes || H.gender == MALE && species.swap_male_clothes)
-			use_female_sprites = FEMALE_SPRITES
-
-	var/list/offsets
-	if(use_female_sprites)
-		offsets = (H.age == AGE_CHILD) ? species.offset_features_child : species.offset_features_f
-	else
-		offsets = (H.age == AGE_CHILD) ? species.offset_features_child : species.offset_features_m
-
-	if(LAZYACCESS(offsets, feature_key))
-		for(var/mutable_appearance/appearance as anything in appearance_list)
-			appearance.pixel_x += offsets[feature_key][1]
-			appearance.pixel_y += offsets[feature_key][2]
+	var/mob/living/carbon/human/humie = owner
+	var/datum/species/species = owner.dna.species
+	for(var/mutable_appearance/appearance as anything in appearance_list)
+		var/list/offset_list
+		if(humie.gender == FEMALE)
+			offset_list = species.offset_features_f[feature_female_key]
+		else
+			offset_list = species.offset_features_m[feature_male_key]
+		if(offset_list)
+			appearance.pixel_x += offset_list[1]
+			appearance.pixel_y += offset_list[2]
 
 /datum/sprite_accessory/proc/validate_color_keys_for_owner(mob/living/carbon/owner, colors)
 	if(!color_keys)
@@ -94,8 +83,6 @@
 		owner = organ.owner
 	else if (bodypart)
 		owner = bodypart.owner
-		if(!owner)
-			owner = bodypart.original_owner
 	else
 		return
 	if(!is_visible(organ, bodypart, owner))
@@ -188,12 +175,14 @@
 
 /datum/sprite_accessory/proc/get_layer_suffix(passed_layer)
 	switch(passed_layer)
-		if(BODY_FRONT_LAYER)
-			return "FRONT"
-		if(BODY_ADJ_LAYER)
-			return "ADJ"
 		if(BODY_BEHIND_LAYER)
 			return "BEHIND"
+		if(BODY_ADJ_LAYER)
+			return "ADJ"
+		if(BODY_FRONT_LAYER)
+			return "FRONT"
+		if(BODY_FRONT_FRONT_LAYER)
+			return "FFRONT"
 		if(BODY_UNDER_LAYER)
 			return "UNDER"
 		else
@@ -202,7 +191,7 @@
 /datum/sprite_accessory/proc/get_icon_state(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
 	return icon_state
 
-/datum/sprite_accessory/proc/get_default_colors(key_source_list)
+/datum/sprite_accessory/proc/get_default_colors(var/key_source_list)
 	var/list/color_list = list()
 	for(var/i in 1 to color_keys)
 		var/color
@@ -231,27 +220,40 @@
 			return KEY_MUT_COLOR_THREE
 
 /proc/color_key_source_list_from_prefs(datum/preferences/prefs)
-	if(istype(prefs))
-		var/list/sources = list()
-		sources[KEY_SKIN_COLOR] = prefs.skin_tone
-		sources[KEY_EYE_COLOR] = prefs.get_eye_color()
-		sources[KEY_HAIR_COLOR] = prefs.get_hair_color()
-		sources[KEY_FACE_HAIR_COLOR] = prefs.get_facial_hair_color()
-		sources[KEY_CHEST_COLOR] = sources[KEY_SKIN_COLOR]
-		var/chest_color = prefs.get_chest_color()
-		if(chest_color)
-			sources[KEY_CHEST_COLOR] = chest_color
-		return sources
+	var/list/features = prefs.features
+	var/list/sources = list()
+	sources[KEY_MUT_COLOR_ONE] = features["mcolor"]
+	sources[KEY_MUT_COLOR_TWO] = features["mcolor2"]
+	sources[KEY_MUT_COLOR_THREE] = features["mcolor3"]
+	/// Read specific organ entries to deduce eye, hair and facial hair color
+	if(MUTCOLORS in prefs.pref_species.species_traits)
+		sources[KEY_SKIN_COLOR] = sources[KEY_MUT_COLOR_ONE]
 	else
-		return color_key_source_list_from_carbon(prefs)
-
+		sources[KEY_SKIN_COLOR] = prefs.skin_tone
+	sources[KEY_EYE_COLOR] = prefs.get_eye_color()
+	sources[KEY_HAIR_COLOR] = prefs.get_hair_color()
+	sources[KEY_FACE_HAIR_COLOR] = prefs.get_facial_hair_color()
+	sources[KEY_CHEST_COLOR] = sources[KEY_SKIN_COLOR]
+	var/chest_color = prefs.get_chest_color()
+	if(chest_color)
+		sources[KEY_CHEST_COLOR] = chest_color
+	return sources
 
 /proc/color_key_source_list_from_carbon(mob/living/carbon/carbon)
+	var/datum/dna/dna = carbon.dna
+	var/datum/species/species = dna.species
+	var/list/features = dna.features
 	var/list/sources = list()
+	sources[KEY_MUT_COLOR_ONE] = features["mcolor"]
+	sources[KEY_MUT_COLOR_TWO] = features["mcolor2"]
+	sources[KEY_MUT_COLOR_THREE] = features["mcolor3"]
 	/// Read specific organ DNA entries to deduce eye, hair and facial hair color
 	if(ishuman(carbon))
 		var/mob/living/carbon/human/human = carbon
-		sources[KEY_SKIN_COLOR] = human.skin_tone
+		if(MUTCOLORS in species.species_traits)
+			sources[KEY_SKIN_COLOR] = sources[KEY_MUT_COLOR_ONE]
+		else
+			sources[KEY_SKIN_COLOR] = human.skin_tone
 		sources[KEY_EYE_COLOR] = human.get_eye_color()
 		sources[KEY_HAIR_COLOR] = human.get_hair_color()
 		sources[KEY_FACE_HAIR_COLOR] = human.get_facial_hair_color()

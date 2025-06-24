@@ -191,8 +191,6 @@ GLOBAL_LIST_EMPTY(patreon_races)
 		ORGAN_SLOT_APPENDIX = /obj/item/organ/appendix,
 		ORGAN_SLOT_GUTS = /obj/item/organ/filling_organ/guts,
 		)
-	/// List of bodypart features of this species
-	var/list/bodypart_features
 
 	/// List of descriptor choices this species gets in preferences customization
 	var/list/descriptor_choices = list(
@@ -2194,3 +2192,18 @@ GLOBAL_LIST_EMPTY(patreon_races)
 	var/modifier = -distance
 	if(!prob(STAEND+skill_modifier+modifier))
 		Knockdown(8)
+
+//This exists so sprite accessories can still be per-layer without having to include that layer's
+//number in their sprite name, which causes issues when those numbers change.
+/datum/species/proc/mutant_bodyparts_layertext(layer)
+	switch(layer)
+		if(BODY_BEHIND_LAYER)
+			return "BEHIND"
+		if(BODY_ADJ_LAYER)
+			return "ADJ"
+		if(BODY_FRONT_LAYER)
+			return "FRONT"
+		if(BODY_FRONT_FRONT_LAYER)
+			return "FFRONT"
+		if(BODY_UNDER_LAYER)
+			return "UNDER"

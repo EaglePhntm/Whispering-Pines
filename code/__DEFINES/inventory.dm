@@ -76,13 +76,14 @@
 #define HIDEFACE (1<<7)	// Whether we appear as unknown.
 #define HIDEHAIR (1<<8)
 #define HIDEFACIALHAIR (1<<9)
-#define HIDENECK (1<<10)
-#define HIDEBOOB (1<<11)
-#define HIDEBELT (1<<12)
-#define HIDETAIL (1<<13)
-#define HIDECROTCH (1<<14)
-#define HIDEBUTT (1<<15)
-#define HIDEBELLY (1<<16)
+#define HIDENECK		(1<<10)
+#define HIDEBOOB		(1<<11)
+#define HIDEBELT		(1<<12)
+#define HIDECROTCH		(1<<13)
+#define HIDETAIL		(1<<14)
+#define HIDESNOUT		(1<<15)
+#define HIDEBUTT		(1<<16)
+#define HIDEBELLY		(1<<17)
 // Some clothing have bras, etc of their own and look wrong overlayed over the default underwear
 // Such as the amazonian chainkini
 // Younglings will always override this don't worry

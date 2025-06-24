@@ -3,7 +3,6 @@
 	icon = 'icons/mob/sprite_accessory/tails/tails.dmi'
 	color_key_name = "Tail"
 	relevant_layers = list(BODY_FRONT_LAYER, BODY_BEHIND_LAYER)
-	color_key_defaults = list(KEY_HAIR_COLOR)
 	var/can_wag = FALSE
 
 /datum/sprite_accessory/tail/is_visible(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
@@ -81,6 +80,13 @@
 	name = "Cow"
 	icon_state = "cow"
 
+/datum/sprite_accessory/tail/data_shark
+	name = "Data Shark"
+	icon_state = "datashark"
+	color_keys = 2
+	color_key_names = list("Tail", "Neons")
+	can_wag = TRUE
+
 /datum/sprite_accessory/tail/eevee
 	name = "Eevee"
 	icon_state = "eevee"
@@ -114,7 +120,6 @@
 /datum/sprite_accessory/tail/hawk
 	name = "Hawk"
 	icon_state = "hawk"
-	color_key_defaults = list(KEY_HAIR_COLOR)
 
 /datum/sprite_accessory/tail/horse
 	name = "Horse"
@@ -202,6 +207,12 @@
 	color_key_names = list("Tail", "Inner")
 	can_wag = TRUE
 
+/datum/sprite_accessory/tail/jackal
+	name = "Jackal"
+	icon_state = "jackal"
+	color_keys = 3
+	color_key_names = list("Tail", "Inside", "Stripes")
+
 /datum/sprite_accessory/tail/skunk
 	name = "Skunk"
 	icon_state = "skunk"
@@ -229,6 +240,11 @@
 	icon_state = "9sune"
 	color_keys = 2
 	color_key_names = list("Tails", "Tips")
+
+/datum/sprite_accessory/tail/tentacle
+	name = "Tentacle"
+	icon_state = "tentacle"
+	can_wag = TRUE
 
 /datum/sprite_accessory/tail/tiger
 	name = "Tiger"
@@ -338,6 +354,12 @@
 	color_keys = 2
 	color_key_names = list("Tail", "Tip")
 	can_wag = TRUE
+
+/datum/sprite_accessory/tail/lynx
+	name = "Lynx"
+	icon_state = "lynx"
+	color_keys = 2
+	color_key_names = list("Tail", "Tip")
 
 /datum/sprite_accessory/tail/tiefling
 	icon = 'icons/roguetown/mob/bodies/attachments.dmi'

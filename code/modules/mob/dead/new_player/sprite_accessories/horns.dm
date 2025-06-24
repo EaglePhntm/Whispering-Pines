@@ -175,34 +175,13 @@
 	icon_state = "big_antlers"
 	relevant_layers = list(BODY_ADJ_LAYER, BODY_BEHIND_LAYER, BODY_FRONT_LAYER)
 
-/datum/sprite_accessory/horns/halforc
-	name = "Half Orc"
-	icon = 'icons/mob/sprite_accessory/halforc.dmi'
-	icon_state = "orctusk"
-	default_colors = list("#F4F4BE")
-
 /datum/sprite_accessory/horns/tiefling
-	icon = 'icons/roguetown/mob/bodies/attachments.dmi'
-	name = "TiebHorns"
+	name = "Tiefling"
 	icon_state = "tiebhorns"
-	specuse = list("tiefling")
-	color_key_defaults = list(KEY_SKIN_COLOR)
 
 /datum/sprite_accessory/horns/tiefling/alt
-	icon = 'icons/roguetown/mob/bodies/attachments.dmi'
-	name = "TiebHornies"
+	name = "Tiefling Alt"
 	icon_state = "tiebhornsalt"
-	specuse = list("tiefling")
-	color_key_defaults = list(KEY_SKIN_COLOR)
-
-/datum/sprite_accessory/horns/triton
-	name = "Triton Tusks"
-	icon = 'icons/mob/sprite_accessory/horns/triton.dmi'
-	icon_state = "tusks"
-	use_static = TRUE
-
-/datum/sprite_accessory/horns/triton/is_visible(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
-	return is_human_part_visible(owner, HIDEMASK)
 
 /datum/sprite_accessory/horns/halforc
 	name = "Orc"
@@ -215,3 +194,18 @@
 	icon = 'icons/mob/sprite_accessory/halforc.dmi'
 	icon_state = "longtusk"
 	default_colors = list("#F4F4BE")
+
+/datum/sprite_accessory/horns/halforc
+	name = "Half Orc"
+	icon = 'icons/mob/sprite_accessory/halforc.dmi'
+	icon_state = "orctusk"
+	default_colors = list("#F4F4BE")
+
+/datum/sprite_accessory/horns/triton
+	name = "Triton Tusks"
+	icon = 'icons/mob/sprite_accessory/horns/triton.dmi'
+	icon_state = "tusks"
+	use_static = TRUE
+
+/datum/sprite_accessory/horns/triton/is_visible(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
+	return is_human_part_visible(owner, HIDEMASK)

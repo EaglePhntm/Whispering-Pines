@@ -123,3 +123,91 @@
 	desc = ""
 	damage_multiplier = 0.1 //STRONK
 	bang_protect = 1 //Fear me weaklings.
+
+
+
+/obj/item/organ/ears/cat
+	name = "cat ears"
+	icon = 'icons/obj/clothing/hats.dmi'
+	icon_state = "kitty"
+	damage_multiplier = 2
+	accessory_type = /datum/sprite_accessory/ears/cat_big
+
+/obj/item/organ/ears/penguin
+	name = "penguin ears"
+	desc = ""
+	var/datum/component/waddle
+
+/obj/item/organ/ears/penguin/Insert(mob/living/carbon/human/H, special = 0, drop_if_replaced = TRUE)
+	. = ..()
+	if(istype(H))
+		to_chat(H, span_notice("I suddenly feel like you've lost my balance."))
+		waddle = H.AddComponent(/datum/component/waddling)
+
+/obj/item/organ/ears/penguin/Remove(mob/living/carbon/human/H,  special = 0)
+	. = ..()
+	if(istype(H))
+		to_chat(H, span_notice("My sense of balance comes back to you."))
+		QDEL_NULL(waddle)
+
+/obj/item/organ/ears/bronze
+	name = "tin ears"
+	desc = ""
+	damage_multiplier = 0.1 //STRONK
+	bang_protect = 1 //Fear me weaklings.
+
+/obj/item/organ/ears/cybernetic
+	name = "cybernetic ears"
+	icon_state = "ears-c"
+	desc = ""
+	damage_multiplier = 0.9
+	organ_flags = ORGAN_SYNTHETIC
+
+/obj/item/organ/ears/cybernetic/upgraded
+	name = "upgraded cybernetic ears"
+	icon_state = "ears-c-u"
+	desc = ""
+	damage_multiplier = 0.5
+
+/obj/item/organ/ears/cybernetic/emp_act(severity)
+	. = ..()
+	if(. & EMP_PROTECT_SELF)
+		return
+	damage += 40/severity
+
+/obj/item/organ/ears/anthro
+	name = "wild-kin ears"
+
+/obj/item/organ/ears/lupian
+	name = "lupian ears"
+
+/obj/item/organ/ears/vulpkanin
+	name = "vulpkian ears"
+	accessory_type = /datum/sprite_accessory/ears/fox
+
+/obj/item/organ/ears/tajaran
+	name = "tajaran ears"
+
+/obj/item/organ/ears/elf
+	name = "elf ears"
+	accessory_type = /datum/sprite_accessory/ears/elf
+
+/obj/item/organ/ears/elfw
+	name = "wood elf ears"
+	accessory_type = /datum/sprite_accessory/ears/elfw
+
+/obj/item/organ/ears/tiefling
+	name = "tiefling ears"
+	accessory_type = /datum/sprite_accessory/ears
+
+/obj/item/organ/ears/akula
+	name = "axian ears"
+	accessory_type = /datum/sprite_accessory/ears/shark
+
+/obj/item/organ/ears/halforc
+	name = "halforc ears"
+	accessory_type = /datum/sprite_accessory/ears/halforc
+
+/obj/item/organ/ears/goblin
+	name = "goblin ears"
+	accessory_type = /datum/sprite_accessory/ears/goblin

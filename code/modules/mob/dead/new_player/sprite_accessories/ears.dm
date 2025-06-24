@@ -3,7 +3,6 @@
 	icon = 'icons/mob/sprite_accessory/ears/ears.dmi'
 	color_key_name = "Ears"
 	relevant_layers = list(BODY_ADJ_LAYER, BODY_FRONT_LAYER)
-	color_key_defaults = list(KEY_HAIR_COLOR)
 
 /datum/sprite_accessory/ears/is_visible(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
 	return is_human_part_visible(owner, HIDEEARS)
@@ -286,6 +285,18 @@
 	color_keys = 2
 	color_key_names = list("Ears", "Inner")
 
+/datum/sprite_accessory/ears/elf
+	name = "Elf"
+	icon = 'icons/mob/sprite_accessory/elf.dmi'
+	icon_state = "elf"
+	color_key_defaults = list(KEY_SKIN_COLOR)
+
+/datum/sprite_accessory/ears/elfw
+	name = "Elf (Wood)"
+	icon = 'icons/mob/sprite_accessory/elf.dmi'
+	icon_state = "elfw"
+	color_key_defaults = list(KEY_SKIN_COLOR)
+
 /datum/sprite_accessory/ears/halforc
 	name = "Half Orc"
 	icon = 'icons/mob/sprite_accessory/halforc.dmi'
@@ -296,6 +307,18 @@
 	name = "Goblin"
 	icon = 'icons/mob/sprite_accessory/halforc.dmi'
 	icon_state = "goblin"
+	color_key_defaults = list(KEY_SKIN_COLOR)
+
+/datum/sprite_accessory/ears/goblin_alt
+	name = "Goblin Alt"
+	icon = 'icons/mob/sprite_accessory/halforc.dmi'
+	icon_state = "goblinalt"
+	color_key_defaults = list(KEY_SKIN_COLOR)
+
+/datum/sprite_accessory/ears/goblin_small
+	name = "Goblin Small"
+	icon = 'icons/mob/sprite_accessory/halforc.dmi'
+	icon_state = "goblinsmall"
 	color_key_defaults = list(KEY_SKIN_COLOR)
 
 /datum/sprite_accessory/ears/big
@@ -321,6 +344,20 @@
 	color_keys = 2
 	color_key_names = list("Ears", "Inner")
 	relevant_layers = list(BODY_ADJ_LAYER)
+
+/datum/sprite_accessory/ears/big/sandfox_large
+	icon_state = "sandfox"
+	name = "Sandfox"
+	color_keys = 2
+	color_key_names = list("Ears", "Inner")
+	relevant_layers = list(BODY_ADJ_LAYER)
+
+/datum/sprite_accessory/ears/lynx
+	name = "Lynx"
+	icon_state = "lynx"
+	color_keys = 3
+	color_key_names = list("Ears", "Inner", "Tips")
+	relevant_layers = list(BODY_BEHIND_LAYER, BODY_FRONT_LAYER, BODY_ADJ_LAYER)
 
 /datum/sprite_accessory/ears/none
 	name = "None"

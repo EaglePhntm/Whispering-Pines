@@ -2,11 +2,10 @@
 	abstract_type = /datum/sprite_accessory/snout
 	icon = 'icons/mob/sprite_accessory/snouts/snouts.dmi'
 	color_key_name = "Snout"
-	color_key_defaults = list(KEY_SKIN_COLOR)
 	relevant_layers = list(BODY_ADJ_LAYER)
 
 /datum/sprite_accessory/snout/is_visible(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
-	return is_human_part_visible(owner, HIDEFACE)
+	return is_human_part_visible(owner, HIDESNOUT)
 
 /datum/sprite_accessory/snout/adjust_appearance_list(list/appearance_list, obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
 	generic_gender_feature_adjust(appearance_list, organ, bodypart, owner, OFFSET_FACE)
@@ -445,6 +444,10 @@
 	extra_state = TRUE
 	color_keys = 2
 	color_key_names = list("Snout", "Inner")
+
+/*
+---- azure snouts below this ----
+*/
 
 /datum/sprite_accessory/snout/shortnosed
 	name = "Short Nosed"

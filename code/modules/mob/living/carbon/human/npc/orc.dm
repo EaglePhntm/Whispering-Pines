@@ -13,6 +13,7 @@
 	base_intents = list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB, /datum/intent/unarmed/claw, /datum/intent/simple/bite, /datum/intent/kick)
 	possible_rmb_intents = list()
 	vitae_pool = 1000 // Not as much vitae from them as humans to avoid vampires cheesing mobs
+	erpable = TRUE
 
 /mob/living/carbon/human/species/orc/npc
 	ai_controller = /datum/ai_controller/human_npc

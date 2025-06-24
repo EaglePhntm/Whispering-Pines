@@ -99,7 +99,7 @@ GLOBAL_LIST_INIT_TYPED(blood_types, /datum/blood_type, init_subtypes_w_path_keys
 	contains_lux = FALSE
 
 /datum/blood_type/human/demihuman
-	name = "Hollow-Kin"
+	name = "Demihuman"
 	compatible_types = list(
 		/datum/blood_type/human/o_minus,
 	)

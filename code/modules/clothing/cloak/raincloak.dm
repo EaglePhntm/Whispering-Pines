@@ -16,6 +16,7 @@
 	hoodtype = /obj/item/clothing/head/hooded/rainhood
 	toggle_icon_state = FALSE
 	salvage_result = /obj/item/natural/hide/cured
+	flags_inv = HIDETAIL
 
 /obj/item/clothing/cloak/raincloak/ComponentInitialize()
 	. = ..()
@@ -64,7 +65,7 @@
 	dynamic_hair_suffix = ""
 	edelay_type = 1 // Leaving as 1 so you get that small do_after for dramatic purposes
 	body_parts_covered = HEAD
-	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDETAIL
 	block2add = FOV_BEHIND
 
 /obj/item/clothing/head/hooded/equipped(mob/user, slot)

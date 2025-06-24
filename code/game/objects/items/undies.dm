@@ -15,6 +15,7 @@
 	var/datum/bodypart_feature/underwear/undies_feature
 	var/covers_breasts = FALSE
 	sewrepair = TRUE
+	flags_inv = HIDEBOOB|HIDEBUTT|HIDECROTCH
 
 /obj/item/undies/attack(mob/M, mob/user, def_zone)
 	if(ishuman(M))
@@ -38,13 +39,16 @@
 /obj/item/undies/panties
 	name = "panties"
 	icon_state = "panties"
+	flags_inv = HIDEBUTT|HIDECROTCH
 
 /obj/item/undies/leotard
 	name = "leotard"
 	icon_state = "leotard"
 	covers_breasts = TRUE
+	flags_inv = HIDEBOOB|HIDEBUTT|HIDECROTCH|HIDEBELLY
 
 /obj/item/undies/athletic_leotard
 	name = "athletic leotard"
 	icon_state = "athletic_leotard"
 	covers_breasts = TRUE
+	flags_inv = HIDEBOOB|HIDEBUTT|HIDECROTCH|HIDEBELLY

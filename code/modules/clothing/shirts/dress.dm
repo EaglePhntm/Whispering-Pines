@@ -7,6 +7,7 @@
 	item_state = "dress"
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_NORMAL
+	genital_access = TRUE
 
 /obj/item/clothing/shirt/dress/gen
 	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT

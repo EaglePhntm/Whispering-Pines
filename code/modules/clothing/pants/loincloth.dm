@@ -8,6 +8,7 @@
 	l_sleeve_status = SLEEVE_NOMOD
 	fiber_salvage = FALSE
 	salvage_amount = 1
+	genital_access = TRUE
 
 /obj/item/clothing/pants/loincloth/brown
 	color = CLOTHING_BARK_BROWN

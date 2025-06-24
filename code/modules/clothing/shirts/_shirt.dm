@@ -32,6 +32,7 @@
 	var/fire_resist = T0C+100
 	var/blood_overlay_type = "suit"
 	var/togglename = null
+	flags_inv = HIDEUNDIESTOP|HIDEBELLY|HIDEBOOB
 
 /obj/item/clothing/shirt/worn_overlays(isinhands = FALSE)
 	. = list()

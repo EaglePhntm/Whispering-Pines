@@ -92,7 +92,7 @@
 /// Don't show default underwear bottoms when wearing this
 #define HIDEUNDIESBOT (1<<15)
 /// Don't show either
-#define HIDEUNDIES (HIDEUNDIESTOP | HIDEUNDIESBOT)
+#define HIDEUNDIES (HIDEUNDIESTOP | HIDEUNDIESBOT | HIDEBUTT | HIDECROTCH | HIDEBOOB)
 
 //blocking_behavior var on clothing items
 #define BLOCKBOOTS		(1<<0)

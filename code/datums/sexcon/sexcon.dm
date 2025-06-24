@@ -324,29 +324,29 @@
 	//go go gadget sex healing.. magic?
 	if(user.buckled?.sleepy) //gooder healing in bed
 		sexhealrand *= 4
-	if(!issimple(user)||!issimple(target))
-		if(user.health < user.maxHealth) //so its not spammy
-			if(HAS_TRAIT(user, TRAIT_SEXDEVO))
-				var/sexhealmult = user.get_skill_level(/datum/skill/magic/holy)
-				if(sexhealmult < 2) //so its never below 2 for ones with trait.
-					sexhealmult = 2
-				sexhealrand *= sexhealmult
-				//heals target unless user zaping.
-				if(!user.cmode)
-					if(!issimple(target))
-						target.adjustBruteLoss(-sexhealrand)
-						target.adjustFireLoss(-sexhealrand/2)
-				if(prob(4))
-					to_chat(user, span_green("I feel Eora's miracle upon me."))
-					sexhealrand *= 2
-	if(!user.cmode && prob(1)) //surprise heal burst at 1% chance
-		to_chat(user, span_greentextbig("I suddenly feel much better thanks to this act..."))
-		sexhealrand *= 5
+	if(user.bruteloss||user.fireloss||user.has_wound()) //so its not spammy
+		if(HAS_TRAIT(user, TRAIT_SEXDEVO))
+			var/sexhealmult = user.get_skill_level(/datum/skill/magic/holy)
+			if(sexhealmult < 2) //so its never below 2 for ones with trait.
+				sexhealmult = 2
+			sexhealrand *= sexhealmult
+			if(prob(4))
+				to_chat(user, span_green("I feel Eora's miracle upon me."))
+				sexhealrand *= 2
+		if(!prob(1)) //surprise heal burst at 1% chance
+			to_chat(user, span_greentextbig("I suddenly feel much better..."))
+			sexhealrand *= 5
 	user.heal_wounds(sexhealrand)
 	user.heal_overall_damage(sexhealrand, sexhealrand/2, updating_health = TRUE)
+	//heals target unless user zaping.
+	if(!user.cmode)
+		if(!issimple(target) && (target.bruteloss||target.fireloss||target.has_wound()))
+			target.heal_wounds(sexhealrand)
+			target.heal_overall_damage(sexhealrand, sexhealrand/2, updating_health = TRUE)
+		else if(target.health < target.maxHealth)
+			target.health = min((target.health+sexhealrand), target.maxHealth)
 
 	//grant devotion through sex because who needs praying.
-	//not sure if it works right but i dont need to test cuz its asked to be commented out anyway, ffs.
 	if(!issimple(user))
 		var/mob/living/carbon/human/devouser = user
 		var/datum/devotion/cleric_holder/C = devouser.cleric

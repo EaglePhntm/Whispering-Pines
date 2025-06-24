@@ -8,7 +8,7 @@
 
 	//You can use this with any living.
 	///Will this mob be given genitals and sexcontroller, therefore enabling erp panel, and basically enables everything else, key variable. Does not make em aggressively seek it.
-	var/erpable = TRUE
+	var/erpable = FALSE
 
 	//You can not use the vars below with anything less than retaliate simple mobs, anything less dont have retaliate ai and required vars.
 	///Is this a horny goober that periodically tries to get in people.

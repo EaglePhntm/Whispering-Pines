@@ -16,6 +16,7 @@
 	stand_attempts = 4
 	cmode_music = 'sound/music/cmode/antag/combatskeleton.ogg'
 	var/should_have_aggro = TRUE
+	erpable = TRUE
 
 /mob/living/carbon/human/species/skeleton/npc/no_equipment
 	skel_outfit = null

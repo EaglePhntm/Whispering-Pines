@@ -34,6 +34,7 @@
 
 	sewrepair = TRUE
 	anvilrepair = null
+	flags_inv = HIDEUNDIESBOT|HIDECROTCH|HIDEBUTT
 
 	var/fitted = NO_FEMALE_UNIFORM // For use in alternate clothing styles for women
 	var/random_sensor = TRUE

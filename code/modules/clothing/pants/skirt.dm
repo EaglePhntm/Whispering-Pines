@@ -4,6 +4,7 @@
 	icon_state = "skirt"
 	item_state = "skirt"
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/pants.dmi'
+	genital_access = TRUE
 
 /obj/item/clothing/pants/skirt/random
 	name = "skirt"

@@ -741,6 +741,10 @@ GLOBAL_LIST_EMPTY(patreon_races)
 
 	C.remove_movespeed_modifier(MOVESPEED_ID_SPECIES)
 
+	if(C.underwear)
+		qdel(C.underwear)
+		C.underwear = null
+
 	SEND_SIGNAL(C, COMSIG_SPECIES_LOSS, src)
 
 /datum/species/proc/handle_body(mob/living/carbon/human/H)
@@ -783,68 +787,6 @@ GLOBAL_LIST_EMPTY(patreon_races)
 			var/mutable_appearance/bodyhair_overlay = mutable_appearance(limb_icon, "[species?.hairyness]", -BODY_LAYER)
 			bodyhair_overlay.color = H.get_hair_color()
 			standing += bodyhair_overlay
-
-	//Underwear
-	if(!(NO_UNDERWEAR in species_traits))
-		var/hide_top = FALSE
-		var/hide_bottom = FALSE
-		var/obj/item/clothing/w_armor = H.wear_armor
-		if(w_armor)
-			hide_top = w_armor.flags_inv & (HIDEBOOB | HIDEUNDIESTOP)
-			hide_bottom = w_armor.flags_inv & (HIDEUNDIESBOT)
-
-		var/obj/item/clothing/w_shirt = H.wear_shirt
-		if(w_shirt)
-			hide_top = w_shirt.flags_inv & (HIDEBOOB |HIDEUNDIESTOP)
-			hide_bottom = w_shirt.flags_inv & ( HIDEUNDIESBOT)
-
-		var/obj/item/clothing/w_cloak = H.wear_shirt
-		if(w_cloak)
-			hide_top = w_cloak.flags_inv & (HIDEBOOB | HIDEUNDIESTOP)
-			hide_bottom = w_cloak.flags_inv & (HIDEUNDIESBOT)
-
-		if(H.wear_pants)
-			hide_bottom = H.wear_pants.flags_inv & HIDEUNDIESBOT
-
-		if(H.underwear)
-			if(H.age == AGE_CHILD)
-				hide_top = FALSE
-				hide_bottom = FALSE
-
-				if(H.gender == FEMALE)
-					H.underwear = "FemYoungling"
-				else
-					H.underwear = "Youngling"
-
-			var/datum/sprite_accessory/underwear/underwear = GLOB.underwear_list[H.underwear]
-
-			if(underwear)
-				var/mutable_appearance/underwear_overlay
-				if(!hide_bottom)
-					underwear_overlay = mutable_appearance(underwear.icon, underwear.icon_state, -BODY_LAYER)
-					if(LAZYACCESS(offsets, OFFSET_UNDIES))
-						underwear_overlay.pixel_x += offsets[OFFSET_UNDIES][1]
-						underwear_overlay.pixel_y += offsets[OFFSET_UNDIES][2]
-					if(!underwear.use_static)
-						if(H.underwear_color)
-							underwear_overlay.color = H.underwear_color
-						else //default undies are brown
-							H.underwear_color = "#755f46"
-							underwear_overlay.color = "#755f46"
-					standing += underwear_overlay
-
-				if(!hide_top && H.gender == FEMALE)
-					underwear_overlay = mutable_appearance(underwear.icon, "[underwear.icon_state]_boob", -BODY_LAYER)
-					if(LAZYACCESS(offsets, OFFSET_UNDIES))
-						underwear_overlay.pixel_x += offsets[OFFSET_UNDIES][1]
-						underwear_overlay.pixel_y += offsets[OFFSET_UNDIES][2]
-					if(!underwear.use_static)
-						if(H.underwear_color)
-							underwear_overlay.color = H.underwear_color
-						else
-							H.underwear_color = "#755f46"
-							underwear_overlay.color = "#755f46"
-					standing += underwear_overlay
 
 	if(length(standing))
 		H.overlays_standing[BODY_LAYER] = standing

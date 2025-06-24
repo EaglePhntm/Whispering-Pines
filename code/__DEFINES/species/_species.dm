@@ -9,7 +9,7 @@
 #define RACE_HALF_ORC "Half-Orc"
 #define RACE_RAKSHARI "Rakshari"
 #define RACE_KOBOLD "Kobold"
-#define RACE_HOLLOWKIN "Hollow-Kin"
+#define RACE_HOLLOWKIN "Demihuman"
 #define RACE_HARPY "Harpy"
 #define RACE_TRITON "Triton"
 

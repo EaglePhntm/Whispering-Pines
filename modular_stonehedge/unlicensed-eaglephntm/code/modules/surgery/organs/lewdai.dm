@@ -403,7 +403,7 @@
 //hidden organs are on by default due to coloring issues.
 /mob/living/proc/give_genitals()
 	erpable = TRUE
-	if(sexcon == null)
+	if(!sexcon)
 		sexcon = new /datum/sex_controller(src)
 	if(!issimple(src))
 		var/mob/living/carbon/human/species/user = src

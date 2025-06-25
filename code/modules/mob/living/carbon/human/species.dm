@@ -1502,12 +1502,14 @@ GLOBAL_LIST_EMPTY(patreon_races)
 						target.Immobilize(5)
 						balance += 15
 						target.visible_message("<span class='danger'>[user] puts their foot on [target]'s neck!</span>", \
-										"<span class='danger'>I'm get my throat stepped on by [user]! I can't breathe!</span>", "<span class='hear'>I hear a sickening sound of pugilism!</span>", COMBAT_MESSAGE_RANGE, user)
+										"<span class='danger'>I get my throat stepped on by [user]! I can't breathe!</span>", "<span class='hear'>I hear a sickening sound of pugilism!</span>", COMBAT_MESSAGE_RANGE, user)
 					else
 						affecting.bodypart_attacked_by(BCLASS_BLUNT, damage, user, user.zone_selected, crit_message = TRUE)
 						target.visible_message("<span class='danger'>[user] stomps [target]![target.next_attack_msg.Join()]</span>", \
 										"<span class='danger'>I'm stomped by [user]![target.next_attack_msg.Join()]</span>", "<span class='hear'>I hear a sickening kick!</span>", COMBAT_MESSAGE_RANGE, user)
 						to_chat(user, "<span class='danger'>I stomp on [target]![target.next_attack_msg.Join()]</span>")
+					if(selzone == BODY_ZONE_PRECISE_STOMACH)
+						target.check_funny_knockdown()
 			target.next_attack_msg.Cut()
 			log_combat(user, target, "kicked")
 			user.OffBalance(balance)

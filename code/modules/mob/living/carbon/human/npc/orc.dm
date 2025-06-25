@@ -21,7 +21,7 @@
 	canparry = TRUE
 	flee_in_pain = FALSE
 	erpable = TRUE
-	seeksfuck = 33
+	hornychance = 50
 	wander = FALSE
 
 /mob/living/carbon/human/species/orc/npc/Initialize()

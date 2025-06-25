@@ -7,9 +7,7 @@
 	return FALSE
 
 /datum/sex_action/npc_vaginal_ride_sex/can_perform(mob/living/user, mob/living/target)
-	if(user.seeksfuck) //should filter down to only npcs with seeksfuck behavior.
-		return TRUE
-	return FALSE
+	return TRUE
 
 /datum/sex_action/npc_vaginal_ride_sex/on_start(mob/living/user, mob/living/target)
 	user.visible_message(span_warning("[user] gets on top of [target] and begins riding them with their cunt!"))

@@ -77,6 +77,7 @@ GLOBAL_LIST_INIT(wolf_suffixes, list("Fang", "Claw", "Stalker", "Prowler", "Roar
 #define FAMILY_INLAW "In Law"
 
 GLOBAL_LIST_EMPTY(job_respawn_delays)
+GLOBAL_LIST_EMPTY(head_bounties)
 
 //stress levels
 #define STRESS_MAX 30

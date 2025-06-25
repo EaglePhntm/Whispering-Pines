@@ -7,9 +7,7 @@
 	return FALSE
 
 /datum/sex_action/npc_facesitting/can_perform(mob/living/user, mob/living/target)
-	if(user.seeksfuck) //should filter down to only npcs with seeksfuck behavior.
-		return TRUE
-	return FALSE
+	return TRUE
 
 
 /datum/sex_action/npc_facesitting/on_start(mob/living/user, mob/living/target)

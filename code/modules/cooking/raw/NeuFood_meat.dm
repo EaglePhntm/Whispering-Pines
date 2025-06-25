@@ -32,10 +32,6 @@
 	slice_path = /obj/item/reagent_containers/food/snacks/meat/mince/beef
 	slice_bclass = BCLASS_CHOP
 
-/obj/item/reagent_containers/food/snacks/meat/human
-	name = "manflesh"
-	foodtype = RAW | MEAT | GROSS
-
 /*	.............   Pigflesh, strange meat, birdmeat   ................ */
 /obj/item/reagent_containers/food/snacks/meat/fatty
 	name = "raw pigflesh"

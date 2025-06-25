@@ -415,13 +415,13 @@
 //hidden organs are on by default due to coloring issues.
 /mob/living/proc/give_genitals()
 	erpable = TRUE
-	if(sexcon == null)
+	if(!sexcon)
 		sexcon = new /datum/sex_controller(src)
 	if(!issimple(src))
 		var/mob/living/carbon/human/species/user = src
-		if(!user.getorganslot(ORGAN_SLOT_ANUS))
-			var/obj/item/organ/filling_organ/anus/ass = user.getorganslot(ORGAN_SLOT_ANUS)
-			ass = new /obj/item/organ/filling_organ/anus
+		if(!user.getorganslot(ORGAN_SLOT_GUTS))
+			var/obj/item/organ/filling_organ/guts/ass = user.getorganslot(ORGAN_SLOT_GUTS)
+			ass = new /obj/item/organ/filling_organ/guts
 			ass.Insert(user, TRUE)
 		if(gender == MALE)
 			var/obj/item/organ/filling_organ/testicles/testicles = user.getorganslot(ORGAN_SLOT_TESTICLES)

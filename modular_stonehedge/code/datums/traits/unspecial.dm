@@ -1,4 +1,4 @@
-//BE SPECIAL converted most to regular quirk traits for consistency in characters -- vide noir.
+//BE SPECIAL converted most to regular quirk traits for consistency in Hs -- vide noir.
 //Will need rebalancing costs and stuff.
 
 //includes non special related, original traits aswell cuz we dumb.
@@ -50,7 +50,7 @@
 /datum/quirk/value
 	name = "Skilled Appraiser"
 	desc = "I know how to estimate an item's value, more or less."
-	value = 2
+	value = 1
 
 /datum/quirk/value/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -258,23 +258,26 @@
 	H.grant_language(/datum/language/hellspeak)
 	H.grant_language(/datum/language/celestial)
 	H.grant_language(/datum/language/orcish)
-	H.grant_language(/datum/language/beast)
+	H.grant_language(/datum/language/oldpsydonic)
+	H.grant_language(/datum/language/zybantine)
 
 /datum/quirk/mastercraftsmen // Named this way to absorb the old quirk. Keeps old saves cleaner without them needing to reset quirks.
 	name = "Jack of All Trades"
 	desc = "I've always had steady hands. I'm experienced enough in most fine craftsmanship to make a career out of it, if I can procure my own tools."
-	value = 3 // you get no tools but you get 3 to everything.
+	value = 3 // you get no tools but you get 2 to everything.
 
 /datum/quirk/mastercraftsmen/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	H.clamped_adjust_skillrank(/datum/skill/craft/crafting, 3, 3, TRUE)
-	H.clamped_adjust_skillrank(/datum/skill/craft/blacksmithing, 3, 3, TRUE)
-	H.clamped_adjust_skillrank(/datum/skill/craft/carpentry, 3, 3, TRUE)
-	H.clamped_adjust_skillrank(/datum/skill/craft/masonry, 3, 3, TRUE)
-	H.clamped_adjust_skillrank(/datum/skill/craft/cooking, 3, 3, TRUE)
-	H.clamped_adjust_skillrank(/datum/skill/craft/engineering, 3, 3, TRUE)
-	H.clamped_adjust_skillrank(/datum/skill/misc/sewing, 3, 3, TRUE)
-	H.clamped_adjust_skillrank(/datum/skill/craft/smelting, 3, 3, TRUE)
+	H.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
+	H.adjust_skillrank(/datum/skill/craft/weaponsmithing, 2, TRUE)
+	H.adjust_skillrank(/datum/skill/craft/armorsmithing, 2, TRUE)
+	H.adjust_skillrank(/datum/skill/craft/blacksmithing, 2, TRUE)
+	H.adjust_skillrank(/datum/skill/craft/carpentry, 2, TRUE)
+	H.adjust_skillrank(/datum/skill/craft/masonry, 2, TRUE)
+	H.adjust_skillrank(/datum/skill/craft/traps, 2, TRUE)
+	H.adjust_skillrank(/datum/skill/craft/cooking, 2, TRUE)
+	H.adjust_skillrank(/datum/skill/craft/engineering, 2, TRUE)
+	H.adjust_skillrank(/datum/skill/craft/tanning, 2, TRUE)
 
 /datum/quirk/masterbuilder
 	name = "Practiced Builder"
@@ -507,3 +510,122 @@
 	ADD_TRAIT(H, TRAIT_COMICSANS, QUIRK_TRAIT)
 
 */
+
+//vanderlin spesiale
+/datum/quirk/latentmagic
+	name = "Latent Magic"
+	desc = "I have innate magical potential."
+	value = 1
+
+/datum/quirk/latentmagic/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.adjust_skillrank(/datum/skill/magic/arcane, 1, TRUE)
+
+/datum/quirk/arsonist
+	name = "Arsonist"
+	desc = "I like seeing things combust and burn. I have hidden around two firebombs."
+	value = 2
+
+/datum/quirk/arsonist/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.mind.special_items["Firebomb One"] = /obj/item/bomb
+	H.mind.special_items["Firebomb Two"] = /obj/item/bomb
+	H.adjust_skillrank(/datum/skill/craft/alchemy, 1, TRUE)
+
+/datum/quirk/rider
+	name = "Rider"
+	desc = "I have a horse and bottle in hand, drunk driving is the best."
+	value = 2
+
+/datum/quirk/rider/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.drunkenness = 50
+	for(var/i in 1 to 2)
+		var/obj/item/bottle = new /obj/item/reagent_containers/glass/bottle/wine(get_turf(H))
+		H.put_in_hands(bottle, forced = TRUE)
+
+	H.adjust_skillrank(/datum/skill/misc/riding, 4, TRUE)
+	new /mob/living/simple_animal/hostile/retaliate/saiga/tame/saddled(get_turf(H))
+
+/datum/quirk/hussite
+	name = "Known Heretic"
+	desc = "I've been denounced by the church for either reasons legitimate or not!"
+	value = -2
+
+/datum/quirk/hussite/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	GLOB.excommunicated_players += H.real_name
+
+/datum/quirk/bounty
+	name = "Hunted Man"
+	desc = "Someone put a bounty on my head!"
+	value = -2
+
+/datum/quirk/bounty/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/reason = ""
+	var/employer = "unknown employer"
+	var/employer_gender
+	if(prob(65))
+		employer_gender = MALE
+	else
+		employer_gender = FEMALE
+	if(employer_gender == MALE)
+		employer = pick(list("Baron", "Lord", "Nobleman", "Prince"))
+	else
+		employer = pick(list("Duchess", "Lady", "Noblelady", "Princess"))
+	employer = "A [employer]"
+	var/amount = rand(40,100)
+	switch(rand(1,7))
+		if(1)
+			reason = "murder"
+		if(2)
+			reason = "kinslaying"
+		if(3)
+			reason = "besmirching a noble's name"
+		if(4)
+			reason = "treason"
+		if(5)
+			reason = "arson"
+		if(6)
+			reason = "heresy"
+		if(7)
+			reason = "robbing a noble"
+	add_bounty(H.real_name, amount, FALSE, reason, employer)
+	to_chat(H, span_notice("Whether I done it or not, I have been accused of [reason], and the [employer] put a bounty on my head!"))
+
+/datum/quirk/outlaw
+	name = "Known Outlaw"
+	desc = "Whether for crimes I did or was accused of, I have been declared an outlaw!"
+	value = -1
+
+/datum/quirk/outlaw/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	GLOB.outlawed_players += H.real_name
+
+/datum/quirk/illicit_merchant
+	name = "Wandering Merchant"
+	desc = "I'm sick of working as an underling, I will start my own trade emporium. I've got my hands on a curious magical device..."
+	value = 3
+
+/datum/quirk/illicit_merchant/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.mind.special_items["GOLDFACE Gem"] = /obj/item/gem_device/goldface
+
+/datum/quirk/skeleton
+	name = "Skeleton"
+	desc = "I was- am afflicted with a curse by a lich that left me without my flesh but i still retained controls..(This is not a antagonist role.)"
+	value = -1
+
+/datum/quirk/skeleton/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.skeletonize(FALSE)
+	H.skele_look()
+	ADD_TRAIT(H, TRAIT_NOLIMBDISABLE, "[type]")
+	ADD_TRAIT(H, TRAIT_EASYDISMEMBER, "[type]")
+	ADD_TRAIT(H, TRAIT_LIMBATTACHMENT, "[type]")
+	ADD_TRAIT(H, TRAIT_NOHUNGER, "[type]")
+	ADD_TRAIT(H, TRAIT_NOBREATH, "[type]")
+	ADD_TRAIT(H, TRAIT_NOPAIN, "[type]")
+	ADD_TRAIT(H, TRAIT_TOXIMMUNE, "[type]")
+	H.update_body()

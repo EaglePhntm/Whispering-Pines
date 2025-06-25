@@ -17,6 +17,11 @@
 	cmode_music = 'sound/music/cmode/antag/combatskeleton.ogg'
 	var/should_have_aggro = TRUE
 	erpable = TRUE
+	hornychance = 50
+	var/ball_organ = /obj/item/organ/filling_organ/testicles/skeleton
+	var/breast_organ = /obj/item/organ/filling_organ/breasts/skeleton
+	var/ass_organ = /obj/item/organ/butt/skeleton
+	var/penis_organ = /obj/item/organ/penis/skeleton
 
 /mob/living/carbon/human/species/skeleton/npc/no_equipment
 	skel_outfit = null
@@ -31,7 +36,7 @@
 	wander = TRUE
 	attack_speed = -10
 	erpable = TRUE
-	seeksfuck = 33
+	hornychance = 50
 
 /mob/living/carbon/human/species/skeleton/Initialize()
 	. = ..()
@@ -340,3 +345,87 @@
 
 /mob/living/carbon/human/species/skeleton/death_arena/roll_mob_stats()
 	return
+
+//skeleton bits, sans blue dick meme go.
+
+/mob/living/carbon/human/species/skeleton/give_genitals()
+	erpable = TRUE
+	if(!sexcon)
+		sexcon = new /datum/sex_controller(src)
+	if(!issimple(src))
+		var/mob/living/carbon/human/species/user = src
+		if(!user.getorganslot(ORGAN_SLOT_GUTS))
+			var/obj/item/organ/filling_organ/guts/ass = user.getorganslot(ORGAN_SLOT_GUTS)
+			ass = new /obj/item/organ/filling_organ/guts
+			ass.Insert(user, TRUE)
+		if(gender == MALE)
+			var/obj/item/organ/filling_organ/testicles/testicles = user.getorganslot(ORGAN_SLOT_TESTICLES)
+			testicles = new  ball_organ
+			testicles.Insert(user, TRUE)
+			var/obj/item/organ/penis/penis = user.getorganslot(ORGAN_SLOT_PENIS)
+			penis = new penis_organ
+			penis.Insert(user, TRUE)
+		if(gender == FEMALE)
+			if(!user.getorganslot(ORGAN_SLOT_GUTS))
+				var/obj/item/organ/butt/buttie = user.getorganslot(ORGAN_SLOT_BUTT)
+				buttie = new ass_organ
+				buttie.organ_size = 0
+				buttie.Insert(user, TRUE)
+			var/obj/item/organ/filling_organ/breasts/breasts = user.getorganslot(ORGAN_SLOT_BREASTS)
+			breasts = new breast_organ
+			breasts.organ_size = rand(3,4)
+			breasts.Insert(user, TRUE)
+			var/obj/item/organ/filling_organ/vagina/vagina = user.getorganslot(ORGAN_SLOT_VAGINA)
+			vagina = new /obj/item/organ/filling_organ/vagina
+			vagina.Insert(user, TRUE)
+			if(prob(3)) //3 chance to be dickgirl.
+				var/obj/item/organ/filling_organ/testicles/testicles = user.getorganslot(ORGAN_SLOT_TESTICLES)
+				testicles = new ball_organ
+				testicles.Insert(user, TRUE)
+				var/obj/item/organ/penis/penis = user.getorganslot(ORGAN_SLOT_PENIS)
+				penis = new penis_organ
+				penis.Insert(user, TRUE)
+
+/obj/item/organ/butt/skeleton
+	name = "skeleton butt"
+	accessory_type = /datum/sprite_accessory/butt/skeleton
+	item_flags = DROPDEL //Magical bits cant exist like that.
+
+/datum/sprite_accessory/butt/skeleton
+	name = "skeleton butt"
+	icon = 'modular_stonehedge/icons/roguetown/mob/monster/skeletonbits.dmi'
+	icon_state = "skeleton"
+
+/obj/item/organ/penis/skeleton
+	name = "skeleton penis"
+	accessory_type = /datum/sprite_accessory/penis/skeleton
+	item_flags = DROPDEL
+
+/datum/sprite_accessory/penis/skeleton
+	name = "skeleton penis"
+	icon = 'modular_stonehedge/icons/roguetown/mob/monster/skeletonbits.dmi'
+	icon_state = "skeleton"
+
+/obj/item/organ/filling_organ/testicles/skeleton
+	name = "skeleton testicles"
+	accessory_type = /datum/sprite_accessory/testicles/skeleton
+	item_flags = DROPDEL
+	reagent_to_make = /datum/reagent/consumable/cum/sterile/old
+
+/datum/sprite_accessory/testicles/skeleton
+	name = "skeleton testicles"
+	icon = 'modular_stonehedge/icons/roguetown/mob/monster/skeletonbits.dmi'
+	icon_state = "skeletonballs"
+
+/obj/item/organ/filling_organ/breasts/skeleton
+	name = "skeleton breasts"
+	accessory_type = /datum/sprite_accessory/breasts/skeleton
+	refilling = FALSE
+	hungerhelp = FALSE
+	startsfilled = FALSE
+	item_flags = DROPDEL
+
+/datum/sprite_accessory/breasts/skeleton
+	name = "skeleton"
+	icon = 'modular_stonehedge/icons/roguetown/mob/monster/skeletonbits.dmi'
+	icon_state = "skeletonbreasts"

@@ -4,7 +4,7 @@
 /obj/structure/flora/tree
 	name = "old tree"
 	desc = "An old, wicked tree that not even elves could love."
-	icon = 'icons/roguetown/misc/foliagetall.dmi'
+	icon = 'modular_whisper/icons/misc/foliagetall.dmi'
 	icon_state = "t1"
 	opacity = 1
 	density = 1

@@ -8,6 +8,9 @@
 /obj/item/reagent_containers/glass/bottle/additive
 	list_reagents = list(/datum/reagent/additive = 10)
 
+/obj/item/reagent_containers/glass/bottle/minorhealthpot
+	list_reagents = list(/datum/reagent/medicine/minorhealthpot = 45)
+
 /obj/item/reagent_containers/glass/bottle/healthpot
 	list_reagents = list(/datum/reagent/medicine/healthpot = 45)
 

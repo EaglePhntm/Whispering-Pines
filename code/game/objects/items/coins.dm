@@ -90,7 +90,7 @@
 	. = ..()
 	var/denomination = quantity == 1 ? name : plural_name
 	if(isobserver(user))
-		. += span_info("[quantity_to_words(quantity)] [denomination] ([get_real_price()] mammon)")
+		. += span_info("[quantity_to_words(quantity)] [denomination] ([get_real_price()] casings)")
 		return
 	var/intelligence = user.mind?.current.STAINT
 
@@ -117,16 +117,16 @@
 		var/description = "[quantity_to_words(fuzzy_quantity)] [denomination]"
 		var/value_text
 		if(intelligence >= 10)
-			value_text = "[estimated_value] mammon"
+			value_text = "[estimated_value] casings"
 		else
-			value_text = "~[estimated_value] mammon"
+			value_text = "~[estimated_value] casings"
 			if(intelligence <= 7)
 				value_text = "[pick(uncertainty_phrases)] [value_text]"
 				if(prob(30))
 					value_text += "?"
 		. += span_info("[description] ([value_text])")
 	else
-		. += span_info("One [name] ([sellprice] mammon)")
+		. += span_info("One [name] ([sellprice] casings)")
 
 
 /obj/item/coin/attack_hand(mob/user)
@@ -330,31 +330,34 @@
 
 //GOLD
 /obj/item/coin/gold
-	name = "zenar"
-	desc = "A gold coin bearing the symbol of the Taurus and the pre-kingdom psycross. These were in the best condition of the provincial gold mints, the rest were melted down. It's valued at 10 mammon per coin."
+	name = "high caliber casing"
+	desc = "A high-caliber casing, weapon lifeblood that are scattered everywhere, made into currency. It's valued at 10 small casings each."
+	icon = 'modular_whisper/icons/items/valuable.dmi'
 	icon_state = "g1"
 	sellprice = 10
 	base_type = CTYPE_GOLD
-	plural_name = "zenarii"
+	plural_name = "hi-cals"
 
 
 // SILVER
 /obj/item/coin/silver
-	name = "ziliqua"
-	desc = "An ancient silver coin still in use due to their remarkable ability to last the ages. It's valued at 5 mammon per coin."
+	name = "medium caliber casing"
+	desc = "A medium-caliber casing, weapon lifeblood that are scattered everywhere, made into currency. It's valued at 5 small casings each."
+	icon = 'modular_whisper/icons/items/valuable.dmi'
 	icon_state = "s1"
 	sellprice = 5
 	base_type = CTYPE_SILV
-	plural_name = "ziliquae"
+	plural_name = "mi-cals"
 
 // COPPER
 /obj/item/coin/copper
-	name = "zenny"
-	desc = "A brand-new bronze coin minted by the capital in an effort to be rid of the financial use of silver. It's valued at 1 mammon per coin."
+	name = "small caliber casing"
+	desc = "A small-caliber casing, weapon lifeblood that are scattered everywhere, made into currency. It's valued at 1 casing each."
+	icon = 'modular_whisper/icons/items/valuable.dmi'
 	icon_state = "c1"
 	sellprice = 1
 	base_type = CTYPE_COPP
-	plural_name = "zennies"
+	plural_name = "cassies"
 
 /obj/item/coin/copper/pile/Initialize(mapload, coin_amount)
 	. = ..()

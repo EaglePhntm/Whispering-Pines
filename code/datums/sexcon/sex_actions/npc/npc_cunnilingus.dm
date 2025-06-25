@@ -8,9 +8,7 @@
 	return FALSE
 
 /datum/sex_action/npc_cunnilingus/can_perform(mob/living/user, mob/living/target)
-	if(user.seeksfuck) //should filter down to only npcs with seeksfuck behavior.
-		return TRUE
-	return FALSE
+	return TRUE
 
 /datum/sex_action/npc_cunnilingus/on_start(mob/living/user, mob/living/target)
 	user.visible_message(span_warning("[user] starts licking [target]'s cunt..."))

@@ -11,7 +11,7 @@ GLOBAL_LIST_INIT(bum_aggro, world.file2list('strings/rt/bumaggrolines.txt'))
 
 	wander = FALSE
 	erpable = TRUE
-	seeksfuck = 33
+	hornychance = 50
 
 /mob/living/carbon/human/species/human/northern/bum/Initialize()
 	. = ..()

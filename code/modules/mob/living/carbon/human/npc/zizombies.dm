@@ -20,7 +20,7 @@
 	flee_in_pain = FALSE
 	wander = FALSE
 	erpable = TRUE
-	seeksfuck = 33
+	hornychance = 50
 
 /mob/living/carbon/human/species/zizombie/npc/Initialize()
 	. = ..()

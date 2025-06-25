@@ -770,9 +770,9 @@
 		if(SEX_SPEED_MID)
 			return 1.0
 		if(SEX_SPEED_HIGH)
-			return 1.2
+			return 1.3
 		if(SEX_SPEED_EXTREME)
-			return 1.4
+			return 1.7
 
 /datum/sex_controller/proc/get_force_string()
 	switch(force)
@@ -850,7 +850,6 @@
 	name = "pussy juice"
 	description = "A strange slightly gooey substance."
 
-
 /datum/reagent/consumable/cum
 	name = "Semen"
 	description = "A strange white liquid produced by testicles..."
@@ -872,7 +871,7 @@
 
 /datum/reagent/consumable/cum/on_mob_life(mob/living/carbon/M)
 	if(M.getBruteLoss() && prob(20))
-		M.heal_bodypart_damage(1,0, 0)
+		M.heal_bodypart_damage(2,0, 0)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		if(!HAS_TRAIT(H, TRAIT_NOHUNGER))
@@ -882,6 +881,15 @@
 			H.blood_volume = min(H.blood_volume+10, BLOOD_VOLUME_NORMAL)
 	. = 1
 	..()
+
+/obj/item/reagent_containers/glass/bottle/milk
+	list_reagents = list(/datum/reagent/consumable/milk = 45)
+
+/obj/item/reagent_containers/glass/bottle/cum
+	list_reagents = list(/datum/reagent/consumable/cum = 45)
+
+/obj/item/reagent_containers/glass/bottle/pussyjuice
+	list_reagents = list(/datum/reagent/water/pussjuice = 45)
 
 /datum/reagent/consumable/cum/sterile
 	virile = FALSE
@@ -903,8 +911,8 @@
 			H.adjust_hydration(5)
 			H.adjust_nutrition(5)
 		if(!HAS_TRAIT(H, TRAIT_ROT_EATER))
-			H.adjustToxLoss(3, TRUE) //this shit is toxic.
-			H.add_nausea(10)
+			H.adjustToxLoss(2, TRUE) //this shit is toxic.
+			H.add_nausea(3)
 			if(prob(5))
 				to_chat(M, span_notice("[pick("God, I am going to puke...","My stomach is crying for help...","I feel sick...","That was disgusting... I feel sick...")]"))
 
@@ -952,3 +960,41 @@
 	timer = 5 MINUTES
 	stressadd = -5
 	desc = "<span class='green'>Pain makes it better.</span>"
+
+/mob/living/simple_animal/fuck_npc
+	name = "fucknpc"
+	desc = "used to hide in objects to fuck the user."
+	icon = null //invis
+	gender = MALE
+	erpable = TRUE
+	wander = FALSE
+	density = FALSE
+	var/cleanup_timer
+
+/mob/living/simple_animal/fuck_npc/fem
+	gender = FEMALE
+
+/obj/proc/start_obj_sex(gendero = MALE, mob/living/victim, datum/sex_action/sexaction, speed, force)
+	var/mob/living/simple_animal/fuck_npc/fuckero
+	if(gendero == MALE)
+		fuckero = new /mob/living/simple_animal/fuck_npc(contents)
+	else
+		fuckero = new /mob/living/simple_animal/fuck_npc/fem(contents)
+	fuckero.name = name //disguise
+	fuckero.sexcon.force = force
+	fuckero.sexcon.speed = speed
+	fuckero.sexcon.current_action = sexaction
+	fuckero.sexcon.do_until_finished = TRUE
+	fuckero.sexcon.target = victim
+	fuckero.sexcon.try_start_action(sexaction)
+	sleep(0.5 SECONDS)
+	if(!fuckero.sexcon.current_action)
+		log_runtime("[src] failed to start object sex.")
+	fuckero.cleanup_timer = addtimer(CALLBACK(src, PROC_REF(stop_obj_sex), fuckero, victim), 8 MINUTES, TIMER_STOPPABLE) //clean it up no matter after 5 mins incase.
+
+/obj/proc/stop_obj_sex()
+	for(var/mob/living/simple_animal/fuck_npc/fuckero in contents)
+		if(fuckero.sexcon.current_action)
+			fuckero.sexcon.try_stop_current_action()
+			sleep(2)
+			qdel(fuckero)

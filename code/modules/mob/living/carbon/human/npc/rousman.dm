@@ -41,7 +41,7 @@ GLOBAL_LIST_EMPTY(rousman_ambush_objects)
 	flee_in_pain = TRUE
 	wander = FALSE
 	erpable = TRUE
-	seeksfuck = 33
+	hornychance = 50
 
 /mob/living/carbon/human/species/rousman/npc/Initialize()
 	. = ..()

@@ -45,11 +45,6 @@
 	/// Glows with emissive in the dark
 	var/glows = FALSE
 
-	/// Override color for item overlay
-	var/base_override // = "#000000"
-	/// Override emissive color for item overlay
-	var/emissive_override // = "#000000"
-
 /obj/item/organ/eyes/Initialize()
 	. = ..()
 	if(!owner && !eye_color)
@@ -61,11 +56,19 @@
 
 /obj/item/organ/eyes/update_overlays()
 	. = ..()
-	if(eye_color && (icon_state == "eyeball"))
-		var/mutable_appearance/iris_overlay = mutable_appearance(src.icon, "eyeball-iris")
-		iris_overlay.color = "#" + eye_color
-		. += iris_overlay
+	if(eye_color)
+		var/mutable_appearance/iris_overlay = mutable_appearance(icon, "[icon_state]-iris")
 
+		var/used_color = "#[eye_color]"
+		if(heterochromia && prob(50))
+			used_color = "#[second_color]"
+
+		iris_overlay.color = used_color
+		. += iris_overlay
+		if(glows)
+			iris_overlay = mutable_appearance(icon, "[icon_state]-iris", plane = EMISSIVE_PLANE)
+			iris_overlay.color = used_color
+			. += iris_overlay
 
 /obj/item/organ/eyes/update_accessory_colors()
 	var/list/colors_list = list()
@@ -267,7 +270,6 @@
 /obj/item/organ/eyes/triton
 	name = "dead fish eyes"
 	accessory_type = /datum/sprite_accessory/eyes/humanoid/triton
-	base_override = "#000"
 	glows = TRUE
 
 /obj/item/organ/eyes/robotic/thermals

@@ -62,7 +62,8 @@
 	new /obj/item/natural/fairydust(deathspot)
 	new /obj/item/natural/fairydust(deathspot)
 	new /obj/item/natural/fairydust(deathspot)
-	update_icon()
+	update_appearance()
+	sleep(1)
 	qdel(src)
 
 /mob/living/simple_animal/hostile/retaliate/fae/sprite/taunted(mob/user)

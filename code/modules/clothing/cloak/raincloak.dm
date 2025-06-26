@@ -18,7 +18,7 @@
 	salvage_result = /obj/item/natural/hide/cured
 	flags_inv = HIDETAIL
 
-/obj/item/clothing/cloak/raincloak/ComponentInitialize()
+/obj/item/clothing/cloak/raincloak/Initialize(mapload, ...)
 	. = ..()
 	AddComponent(/datum/component/storage/concrete/grid/cloak)
 

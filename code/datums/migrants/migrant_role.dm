@@ -25,7 +25,6 @@
 	var/banned_lunatic = TRUE
 
 /datum/migrant_role/proc/after_spawn(mob/living/carbon/human/character)
-	SSquirks.AssignQuirks(character, character.client, TRUE)
 	if(is_foreigner)
 		ADD_TRAIT(character, TRAIT_FOREIGNER, TRAIT_GENERIC)
 	return

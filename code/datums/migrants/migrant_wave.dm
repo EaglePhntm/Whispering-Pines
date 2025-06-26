@@ -36,7 +36,7 @@
 	return amount
 
 /datum/migrant_wave/pilgrim
-	name = "Pilgrimage"
+	name = "Wanderers"
 	downgrade_wave = /datum/migrant_wave/pilgrim_down_one
 	roles = list(
 		/datum/migrant_role/pilgrim = 4,
@@ -44,7 +44,7 @@
 	greet_text = "Fleeing from misfortune and hardship, you and a handful of survivors get closer to Vanderlin, looking for refuge and work, finally almost being there, almost..."
 
 /datum/migrant_wave/pilgrim_down_one
-	name = "Pilgrimage"
+	name = "Wanderers"
 	downgrade_wave = /datum/migrant_wave/pilgrim_down_two
 	can_roll = FALSE
 	roles = list(
@@ -53,7 +53,7 @@
 	greet_text = "Fleeing from misfortune and hardship, you and a handful of survivors get closer to Vanderlin, looking for refuge and work, finally almost being there, almost..."
 
 /datum/migrant_wave/pilgrim_down_two
-	name = "Pilgrimage"
+	name = "Wanderers"
 	downgrade_wave = /datum/migrant_wave/pilgrim_down_three
 	can_roll = FALSE
 	roles = list(
@@ -62,7 +62,7 @@
 	greet_text = "Fleeing from misfortune and hardship, you and a handful of survivors get closer to Vanderlin, looking for refuge and work, finally almost being there, almost..."
 
 /datum/migrant_wave/pilgrim_down_three
-	name = "Pilgrimage"
+	name = "Wanderers"
 	can_roll = FALSE
 	roles = list(
 		/datum/migrant_role/pilgrim = 1,

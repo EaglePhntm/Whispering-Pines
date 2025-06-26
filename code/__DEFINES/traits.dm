@@ -133,11 +133,13 @@
 #define TRAIT_BAOTHA_CURSE "Baotha's Curse"
 
 //Whisperingpines
-#define TRAIT_GOODLOVER 	"Good Lover"
+#define TRAIT_GOODLOVER "Good Lover"
 #define TRAIT_LIMPDICK 	"Limp Dick"
 #define TRAIT_DEATHBYSNOOSNOO "Bed Breaker" // double sex damage (requires strong intent)
 #define TRAIT_SEXDEVO "Blessed Sex" //sex devotion gain and extra healing.
 #define TRAIT_PERFECT_TRACKER "Perfect Tracker"
+#define TRAIT_USEMAGIC "Use Magic"
+#define TRAIT_LEARNMAGIC "Learn Magic" //You dont need usemagic if you have learnmagic.
 
 GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_WEBWALK = "I can move freely between webs.",
@@ -241,6 +243,8 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_SEXDEVO = span_info("I gain devotion and even more health through sex."),
 	TRAIT_FACELESS = span_danger("I am faceless. I am shunned. The others will recognise me for what I am. If I give them the chance."),
 	TRAIT_FLOWERFIELD_IMMUNITY = span_info("I am immune to the effects of flower fields."),
+	TRAIT_USEMAGIC = span_info("I know my way around magic items by legit means or trickery."),
+	TRAIT_LEARNMAGIC = span_info("I can memorize spells long as my intellect allow me."),
 	))
 
 #define SIGNAL_ADDTRAIT(trait_ref) ("addtrait " + trait_ref)

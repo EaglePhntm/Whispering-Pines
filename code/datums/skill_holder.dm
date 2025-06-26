@@ -323,6 +323,7 @@
 	// Give spellpoints if the skill is arcane
 	if(skill == /datum/skill/magic/arcane)
 		current.mind?.adjust_spellpoints(amt)
+		current.calculate_spell_slots()
 	if(amt > 0)
 		for(var/i in 1 to amt)
 			switch(skill_experience[skill_ref])
@@ -408,6 +409,8 @@
  ** max - maximum amount up to which the skill will be changed
 */
 /datum/skill_holder/proc/clamped_adjust_skillrank(skill, amt, max, silent)
+	if(!max) //basically up_to
+		max = amt
 	adjust_skillrank(skill, clamp(abs(amt - get_skill_level(skill)), 0, max), silent)
 
 /**

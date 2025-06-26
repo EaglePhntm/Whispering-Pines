@@ -1,15 +1,16 @@
 /datum/job/guardsman
-	title = "City Watchmen"
-	tutorial = "You are a member of the City Watch. \
-	You've proven yourself worthy to the Captain and now you've got yourself a salary... \
-	as long as you keep the peace that is."
+	title = "Knight (Town Guard)"
+	tutorial = "You are a member of the Knight. \
+	It is not nobility, or anything extraordinary. It's just a name,\
+	likely to make it sound more appealing than a town guard... Though you are the law, \
+	Your primary job is to protect the King, who pays your wages."
 	flag = GUARDSMAN
 	department_flag = GARRISON
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 	display_order = JDO_CITYWATCHMEN
 	faction = FACTION_TOWN
-	total_positions = 8
-	spawn_positions = 8
+	total_positions = 4
+	spawn_positions = 4
 	min_pq = 4
 	bypass_lastclass = TRUE
 
@@ -22,7 +23,7 @@
 	give_bank_account = 30
 	cmode_music = 'sound/music/cmode/garrison/CombatGarrison.ogg'
 
-//................. City Watchmen Base .............. //
+//................. Knightmen Base .............. //
 /datum/outfit/job/guardsman/pre_equip(mob/living/carbon/human/H)
 	. = ..()
 	cloak = pick(/obj/item/clothing/cloak/half/guard, /obj/item/clothing/cloak/half/guardsecond)
@@ -42,8 +43,8 @@
 
 //................. Axes, Maces, Swords, Shields .............. //
 /datum/advclass/garrison/footman
-	name = "City Watch Footman"
-	tutorial = "You are a member of the City Watch. \
+	name = "Knight Footman"
+	tutorial = "You are a member of the Knight. \
 	You are well versed in holding the line with a shield while wielding a trusty sword, axe, or mace in the other hand."
 	outfit = /datum/outfit/job/guardsman/footman
 	category_tags = list(CTAG_GARRISON)
@@ -52,8 +53,8 @@
 	..()
 	head = /obj/item/clothing/head/helmet/townwatch
 	neck = /obj/item/clothing/neck/gorget
-	armor = /obj/item/clothing/armor/chainmail
-	shirt = /obj/item/clothing/armor/gambeson
+	armor = /obj/item/clothing/armor/cuirass
+	shirt = /obj/item/clothing/armor/chainmail
 	backr = /obj/item/weapon/shield/heater
 	backl = /obj/item/storage/backpack/satchel
 	beltr = /obj/item/weapon/sword/short
@@ -61,29 +62,29 @@
 	backpack_contents = list(/obj/item/storage/keyring/guard, /obj/item/weapon/knife/dagger/steel/special)
 
 
-	H.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE) // Main weapon
+	H.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
 	H.adjust_skillrank(/datum/skill/combat/shields, 3, TRUE) // Main off-hand weapon
-	H.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE) // Backup
+	H.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE) // Backup
 	H.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 	H.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
-	H.adjust_skillrank(/datum/skill/combat/unarmed, 4, TRUE) // Guards should be going for less than lethal in reality. Unarmed would be a primary thing.
+	H.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE) // Guards should be going for less than lethal in reality. Unarmed would be a primary thing.
 	H.change_stat(STATKEY_STR, 1)
 	H.change_stat(STATKEY_END, 2)
 	H.change_stat(STATKEY_CON, 1)
-	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	H.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
 	H.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
 	H.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE) // Wrestling is cardio intensive, and guards wrestle with the populace a lot.
 	H.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
 	H.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
 	H.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
+	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC)
 	H.verbs |= /mob/proc/haltyell
 
 //................. Archer .............. //
 /datum/advclass/garrison/archer
-	name = "City Watch Archer"
-	tutorial = "You are a member of the City Watch. Your training with bows makes you a formidable threat when perched atop the walls or rooftops, raining arrows down upon foes with impunity."
+	name = "Knight Archer"
+	tutorial = "You are a member of the Knight. Your training with bows makes you a formidable threat when perched atop the walls or rooftops, raining arrows down upon foes with impunity."
 	outfit = /datum/outfit/job/guardsman/archer
 	category_tags = list(CTAG_GARRISON)
 
@@ -120,8 +121,8 @@
 		H.verbs |= /mob/proc/haltyell
 
 /datum/advclass/garrison/pikeman
-	name = "City Watch Pikeman"
-	tutorial = "You are a pikeman in the City Watch. You are less fleet of foot compared to the rest, but you are burly and well practiced with spears, pikes, billhooks - all the various polearms for striking enemies from a distance."
+	name = "Knight Pikeman"
+	tutorial = "You are a pikeman in the Knight. You are less fleet of foot compared to the rest, but you are burly and well practiced with spears, pikes, billhooks - all the various polearms for striking enemies from a distance."
 	outfit = /datum/outfit/job/guardsman/pikeman
 
 	category_tags = list(CTAG_GARRISON)

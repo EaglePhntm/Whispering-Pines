@@ -111,9 +111,41 @@
 /obj/item/book/granter/spell
 	grid_width = 64
 	grid_height = 32
-
+	var/spell_slot_cost = 1
+	//Can this be one-casted by non learnables?
+	var/castable = TRUE
+	var/usable_times = 10
+	var/required_trait = TRAIT_USEMAGIC
+	var/required_learn_trait = TRAIT_LEARNMAGIC
+	//should help us not remove spells from people that have em memorized.
+	var/user_has_spell_already = FALSE
 	var/spell
 	var/spellname = "conjure bugs"
+
+/obj/item/book/granter/spell/Initialize()
+	. = ..()
+	desc = "The arcyne ink on it is at pristine condition and may be cast off of [usable_times] times."
+
+/obj/item/book/granter/spell/equipped(mob/user, slot, initial)
+	. = ..()
+	if(spell && castable && HAS_TRAIT(user, required_trait) && !HAS_TRAIT(user, required_learn_trait))
+		if(ishuman(user))
+			var/mob/living/carbon/human/H = user
+			for(var/obj/effect/proc_holder/spell/knownspell in user.mind.spell_list)
+				if(knownspell == spell)
+					user_has_spell_already = TRUE
+					return
+			if(H.mind)
+				H.mind.AddSpell(new spell)
+
+/obj/item/book/granter/spell/dropped(mob/user, silent)
+	. = ..()
+	if(spell && castable && HAS_TRAIT(user, required_trait) && !user_has_spell_already && !HAS_TRAIT(user, required_learn_trait))
+		if(ishuman(user))
+			var/mob/living/carbon/human/H = user
+			if(H.mind)
+				H.mind.RemoveSpell(spell)
+	user_has_spell_already = FALSE //reset
 
 /obj/item/book/granter/spell/already_known(mob/user)
 	if(!spell)
@@ -121,19 +153,26 @@
 	for(var/obj/effect/proc_holder/spell/knownspell in user.mind.spell_list)
 		if(knownspell.type == spell)
 			if(user.mind)
-				to_chat(user,"<span class='warning'>You've already read this one!</span>")
+				to_chat(user,span_warning("You've already read this one!"))
 			return TRUE
 	return FALSE
 
 /obj/item/book/granter/spell/on_reading_start(mob/user)
-	to_chat(user, "<span class='notice'>I start reading about casting [spellname]...</span>")
+	to_chat(user, span_notice("I start reading about casting [spellname]..."))
 
-/obj/item/book/granter/spell/on_reading_finished(mob/user)
-	to_chat(user, "<span class='notice'>I feel like you've experienced enough to cast [spellname]!</span>")
-	var/obj/effect/proc_holder/spell/S = new spell
-	user.mind.AddSpell(S)
-	user.log_message("learned the spell [spellname] ([S])", LOG_ATTACK, color="orange")
-	onlearned(user)
+/obj/item/book/granter/spell/on_reading_finished(mob/living/user)
+	user.calculate_spell_slots()
+	if(user.spell_slots - spell_slot_cost >= 0)
+		to_chat(user, span_notice("I feel like you've experienced enough to cast [spellname]!"))
+		var/obj/effect/proc_holder/spell/S = new spell
+		user.spell_slots_used += 1
+		user.calculate_spell_slots(TRUE)
+		user.mind.AddSpell(S)
+		user.log_message("learned the spell [spellname] ([S])", LOG_ATTACK, color="orange")
+		onlearned(user)
+	else
+		to_chat(user, span_notice("I can't memorize any more spells looks like..."))
+		return
 
 /obj/item/book/granter/spell/recoil(mob/user)
 	user.visible_message("<span class='warning'>[src] glows in a black light!</span>")
@@ -153,10 +192,7 @@
 /obj/item/book/granter/spell/magick/onlearned(mob/living/carbon/user)
 	..()
 	if(oneuse == TRUE)
-		name = "siphoned scroll"
-		desc = "A scroll once inscribed with magical scripture. The surface is now barren of knowledge, siphoned by someone else. It's utterly useless."
-		icon_state = "scroll"
-		user.visible_message(span_warning("[src] has had its magic ink ripped from the scroll!"))
+		Destroy()
 
 /obj/item/book/granter/spell/magick/fireball
 	name = "Scroll of Fireball"

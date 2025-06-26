@@ -16,7 +16,7 @@
 	grid_height = 64
 
 /obj/item/bomb/homemade
-	prob2fail = 20
+	prob2fail = 0 //every bomb is homemade here bro
 
 /obj/item/bomb/homemade/Initialize()
 	. = ..()
@@ -120,3 +120,15 @@
 	if(prob(25))
 		new /obj/item/ash(T)
 	qdel(src)
+
+//modular edit -wp
+/obj/item/bomb
+	var/impact_explode = TRUE
+
+/obj/item/bomb/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
+	. = ..()
+	if(impact_explode)
+		//its a molotov it has to explode when it lands.
+		if(!QDELETED(src))
+			lit = TRUE
+			explode(TRUE)

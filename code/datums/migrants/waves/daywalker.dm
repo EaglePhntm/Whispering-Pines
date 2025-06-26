@@ -27,7 +27,7 @@
 			H.set_patron(/datum/patron/divine/astrata)
 
 		H.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
-		H.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
+		H.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 		H.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 		H.adjust_skillrank(/datum/skill/combat/unarmed, 4, TRUE)
 		H.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)

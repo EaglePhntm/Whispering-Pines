@@ -33,8 +33,6 @@ GLOBAL_VAR_INIT(adventurer_hugbox_duration_still, 3 MINUTES)
 
 /datum/job/adventurer/after_spawn(mob/living/spawned, client/player_client)
 	..()
-	if(advclass_cat_rolls)
-		hugboxify_for_class_selection(spawned)
 
 /datum/outfit/job/adventurer // Reminder message
 	var/merc_ad = "<br><font color='#855b14'><span class='bold'>If I wanted to make mammons by selling my services, or completing quests, the Mercenary guild would be a good place to start.</span></font><br>"

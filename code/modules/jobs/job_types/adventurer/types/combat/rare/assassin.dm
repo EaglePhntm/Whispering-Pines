@@ -4,7 +4,7 @@
 	allowed_sexes = list(MALE, FEMALE)
 
 	outfit = /datum/outfit/job/adventurer/assassin
-	category_tags = list(CTAG_PILGRIM)
+	category_tags = list(CTAG_DISABLED)
 	maximum_possible_slots = 2
 	min_pq = 0
 	pickprob = 100

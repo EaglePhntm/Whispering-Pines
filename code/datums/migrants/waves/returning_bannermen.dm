@@ -30,7 +30,7 @@
 		H.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
 		H.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
 		H.adjust_skillrank(/datum/skill/combat/whipsflails, 3, TRUE)
-		H.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
+		H.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 		H.adjust_skillrank(/datum/skill/combat/shields, 4, TRUE)
 		H.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
 		H.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
@@ -79,7 +79,7 @@
 		head = pick(/obj/item/clothing/head/roguehood/guard, /obj/item/clothing/head/roguehood/guardsecond)
 
 	if(H.mind)
-		H.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
+		H.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 		H.adjust_skillrank(/datum/skill/combat/bows, 4, TRUE)
 		H.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)
 		H.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
@@ -128,7 +128,7 @@
 		head = pick(/obj/item/clothing/head/roguehood/guard, /obj/item/clothing/head/roguehood/guardsecond)
 
 	if(H.mind)
-		H.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
+		H.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 		H.adjust_skillrank(/datum/skill/combat/bows, 3, TRUE)
 		H.adjust_skillrank(/datum/skill/combat/crossbows, 4, TRUE)
 		H.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)

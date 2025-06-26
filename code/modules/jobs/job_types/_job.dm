@@ -254,6 +254,7 @@
 		humanguy.advsetup = TRUE
 		humanguy.invisibility = INVISIBILITY_MAXIMUM
 		humanguy.become_blind("advsetup")
+		hugboxify_for_class_selection(spawned)
 
 //Used for a special check of whether to allow a client to latejoin as this job.
 /datum/job/proc/special_check_latejoin(client/C)

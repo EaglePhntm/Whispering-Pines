@@ -128,9 +128,11 @@
 	. = ..()
 	if(!.)
 		return
+	owner.visible_message(span_alert("[owner] falls limp and unconscious.", "I lose consciousness..."))
 	ADD_TRAIT(owner, TRAIT_KNOCKEDOUT, TRAIT_STATUS_EFFECT(id))
 
 /datum/status_effect/incapacitating/unconscious/on_remove()
+	owner.visible_message(span_alert("[owner] wakes up.", "I regain consciousness..."))
 	REMOVE_TRAIT(owner, TRAIT_KNOCKEDOUT, TRAIT_STATUS_EFFECT(id))
 	return ..()
 

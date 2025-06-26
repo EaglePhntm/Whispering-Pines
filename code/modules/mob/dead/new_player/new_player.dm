@@ -377,7 +377,6 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/Lore_Primer.json")
 		var/fakekey = get_display_ckey(character.ckey)
 		GLOB.character_list[character.mobid] = "[fakekey] was [character.real_name] ([job.title])<BR>"
 		GLOB.character_ckey_list[character.real_name] = character.ckey
-		SSquirks.AssignQuirks(humanc, humanc.client, TRUE)
 		log_character("[character.ckey] ([fakekey]) - [character.real_name] - [job.title]")
 
 	GLOB.joined_player_list += character.ckey

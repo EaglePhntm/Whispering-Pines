@@ -22,7 +22,7 @@
 	neck = /obj/item/clothing/neck/chaincoif
 	backpack_contents = list(/obj/item/storage/belt/pouch/coins/poor)
 	if(H.mind)
-		H.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
+		H.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 		H.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
 		H.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
 		H.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)

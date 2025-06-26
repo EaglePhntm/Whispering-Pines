@@ -1,8 +1,8 @@
 /obj/effect/proc_holder/spell/invoked/strengthen_undead
-	name = "Strengthen Undead"
+	name = "Infuse Unlife"
 	overlay_state = "raiseskele"
 	releasedrain = 30
-	chargetime = 5
+	chargetime = 2
 	range = 7
 	warnie = "sydwarning"
 	movement_interrupt = FALSE
@@ -10,39 +10,48 @@
 	sound = 'sound/magic/whiteflame.ogg'
 	associated_skill = /datum/skill/magic/arcane
 	antimagic_allowed = TRUE
-	recharge_time = 15 SECONDS
+	charge_max = 5 SECONDS //you are likely to have many undeads and no other way to heal them so it should be fast.
 	miracle = FALSE
 	attunements = list(
 		/datum/attunement/dark = 0.4,
 		/datum/attunement/death = 0.5,
 	)
+	invocation = "Infuse unlife!"
+	invocation_type = "shout"
+	xp_gain = TRUE
 
 /obj/effect/proc_holder/spell/invoked/strengthen_undead/cast(list/targets, mob/living/user)
 	. = ..()
+	if(!ismob(targets[1])) //no miscasting this shit on empty turfs.
+		return FALSE
 	if(isliving(targets[1]))
 		var/mob/living/target = targets[1]
-		if(target.mob_biotypes & MOB_UNDEAD) //negative energy helps the undead
+		if(target.mob_biotypes & MOB_UNDEAD) //negative energy heals the undead
 			var/obj/item/bodypart/affecting = target.get_bodypart(check_zone(user.zone_selected))
 			if(affecting)
-				if(affecting.heal_damage(50, 50))
+				if(affecting.heal_damage(150, 150))
 					target.update_damage_overlays()
-				if(affecting.heal_wounds(50))
+				if(affecting.heal_wounds(50)) //this shit is per limb and slow so damn.
 					target.update_damage_overlays()
+			target.heal_overall_damage(150, 150, updating_health = TRUE)
 			target.visible_message(span_danger("[target] reforms under the vile energy!"), span_notice("I'm remade by dark magic!"))
 			return TRUE
+
 		target.visible_message(span_info("Necrotic energy floods over [target]!"), span_userdanger("I feel colder as the dark energy floods into me!"))
 		if(iscarbon(target))
-			target.Paralyze(50)
+			target.emote("scream")
+			target.Stun(10)
 		else
 			target.adjustBruteLoss(20)
 		return TRUE
+
 	return FALSE
 
 /obj/effect/proc_holder/spell/invoked/eyebite
 	name = "Eyebite"
 	overlay_state = "raiseskele"
 	releasedrain = 30
-	chargetime = 15
+	chargetime = 7
 	range = 7
 	warnie = "sydwarning"
 	movement_interrupt = FALSE
@@ -50,11 +59,14 @@
 	sound = 'sound/items/beartrap.ogg'
 	associated_skill = /datum/skill/magic/arcane
 	antimagic_allowed = TRUE
-	recharge_time = 15 SECONDS
+	charge_max = 15 SECONDS
 	miracle = FALSE
 	attunements = list(
 		/datum/attunement/dark = 0.4,
 	)
+	invocation = "Eyebite!"
+	invocation_type = "shout"
+	xp_gain = TRUE
 
 /obj/effect/proc_holder/spell/invoked/eyebite/cast(list/targets, mob/living/user)
 	. = ..()
@@ -70,6 +82,7 @@
 /obj/effect/proc_holder/spell/invoked/raise_undead
 	name = "Raise Undead"
 	desc = ""
+	clothes_req = FALSE
 	range = 7
 	overlay_state = "raiseskele"
 	sound = list('sound/magic/magnet.ogg')
@@ -85,6 +98,8 @@
 		/datum/attunement/dark = 0.4,
 		/datum/attunement/death = 1,
 	)
+	charge_max = 30 SECONDS
+	xp_gain = TRUE
 
 
 /**
@@ -105,11 +120,6 @@
 		to_chat(user, span_warning("I need to cast this spell on a corpse."))
 		return FALSE
 
-	// bandaid until goblin skeleton immortality is fixed
-	if(istype(obj, /mob/living/carbon/human/species/goblin))
-		to_chat(user, span_warning("I cannot raise goblins."))
-		return FALSE
-
 	var/mob/living/carbon/human/target = obj
 
 	if(target.stat != DEAD)
@@ -127,7 +137,7 @@
 
 	if(target.ckey) //player still inside body
 
-		var/offer = alert(target, "Do you wish to be reanimated as a minion?", "RAISED BY NECROMANCER", "Yes", "No")
+		var/offer = alert(target, "Do you wish to be reanimated as a minion? If you refuse another soul will take over.", "RAISED BY NECROMANCER", "Yes", "No")
 		var/offer_time = world.time
 
 		if(offer == "No" || world.time > offer_time + 5 SECONDS)
@@ -159,6 +169,19 @@
 
 	return FALSE
 
+/mob/living/carbon/human
+
+	///npc's master that it should follow around.
+	var/mob/living/carbon/human/mastermob = null
+	var/following_master = FALSE
+
+/mob/living/carbon/human/Life()
+	. = ..()
+	//i dont know how to do ai shit in vanderlin -vide
+	if(mastermob && following_master)
+		if(mode == AI_IDLE || mode == AI_HUNT) //if not in combat, follow master.
+			walk_to(src,mastermob,0.5)
+
 /**
  * Turns a mob into a skeletonized minion. Used for raising undead minions.
  * If a ckey is provided, the minion will be controlled by the player, NPC otherwise.
@@ -177,44 +200,46 @@
 	if(ckey) //player
 		src.ckey = ckey
 	else //npc
-		ai_controller = new /datum/ai_controller/human_npc(src)
-		AddComponent(/datum/component/ai_aggro_system)
+		mastermob = master
+		aggressive = 1
+		mode = AI_HUNT
 		wander = TRUE
+		following_master = TRUE
 
 	if(!mind)
 		mind_initialize()
 
-	clamped_adjust_skillrank(/datum/skill/combat/axesmaces, 2, 3, TRUE)
-	clamped_adjust_skillrank(/datum/skill/combat/crossbows, 2, 3, TRUE)
-	clamped_adjust_skillrank(/datum/skill/combat/wrestling, 2, 3, TRUE)
-	clamped_adjust_skillrank(/datum/skill/combat/unarmed, 1, 3, TRUE)
-	clamped_adjust_skillrank(/datum/skill/combat/swords, 2, 3, TRUE)
+	mind.clamped_adjust_skillrank(/datum/skill/combat/maces, 3, TRUE)
+	mind.clamped_adjust_skillrank(/datum/skill/combat/axes, 3, TRUE)
+	mind.clamped_adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)
+	mind.clamped_adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
+	mind.clamped_adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
+	mind.clamped_adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
 	mind.current.job = null
 
 	dna.species.species_traits |= NOBLOOD
 	dna.species.soundpack_m = new /datum/voicepack/skeleton()
 	dna.species.soundpack_f = new /datum/voicepack/skeleton()
 
-	src.base_strength = 6
-	src.base_perception = 8
-	src.base_endurance = 8
-	src.base_constitution = 8
-	src.base_intelligence = 4
-	src.base_speed = 9
-	src.base_fortune = 6
 
+	cmode_music = 'sound/music/combat_cult.ogg'
 
-	cmode_music = 'sound/music/cmode/antag/combat_cult.ogg'
-
-	set_patron(master.patron)
-	copy_known_languages_from(master,FALSE)
+	patron = master.patron
 	mob_biotypes = MOB_UNDEAD
-	faction = list(FACTION_UNDEAD)
+	faction = list("undead")
 	ambushable = FALSE
+	underwear = "Nude"
 
-	skeletonize(FALSE)
-	skele_look()
-	grant_undead_eyes()
+	for(var/obj/item/bodypart/BP in bodyparts)
+		BP.skeletonize()
+
+	var/obj/item/organ/eyes/eyes = getorganslot(ORGAN_SLOT_EYES)
+	if(eyes)
+		eyes.Remove(src,1)
+		QDEL_NULL(eyes)
+
+	eyes = new /obj/item/organ/eyes/night_vision/zombie
+	eyes.Insert(src)
 
 	if(charflaw)
 		QDEL_NULL(charflaw)
@@ -224,17 +249,15 @@
 	ADD_TRAIT(src, TRAIT_EASYDISMEMBER, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_LIMBATTACHMENT, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_NOSTAMINA, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOBREATH, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOPAIN, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_TOXIMMUNE, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOSLEEP, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_SHOCKIMMUNE, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_CRITICAL_WEAKNESS, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_KNEESTINGER_IMMUNITY, TRAIT_GENERIC)
 
 	update_body()
 
-	to_chat(src, span_userdanger("My master is [master.real_name]."))
+	to_chat(src, span_userdanger("My master is [master.real_name]. I must follow their orders and protect them, no matter what."))
 
 	master.minions += src
 
@@ -243,23 +266,23 @@
 /obj/effect/proc_holder/spell/invoked/projectile/sickness
 	name = "Ray of Sickness"
 	desc = ""
+	clothes_req = FALSE
 	range = 15
 	projectile_type = /obj/projectile/magic/sickness
 	overlay_state = "raiseskele"
 	sound = list('sound/misc/portal_enter.ogg')
 	active = FALSE
 	releasedrain = 30
-	chargetime = 10
+	chargetime = 5
 	warnie = "spellwarning"
 	no_early_release = TRUE
 	charging_slowdown = 1
 	chargedloop = /datum/looping_sound/invokegen
 	associated_skill = /datum/skill/magic/arcane
-	recharge_time = 15 SECONDS
-	attunements = list(
-		/datum/attunement/dark = 0.4,
-		/datum/attunement/blood = 0.5,
-	)
+	charge_max = 15 SECONDS
+	invocation = "Ray of Sickness!"
+	invocation_type = "shout"
+	xp_gain = TRUE
 
 /obj/effect/proc_holder/spell/self/command_undead
 	name = "Command Undead"
@@ -269,12 +292,12 @@
 	invocation = "Zuth'gorash vel'thar dral'oth!"
 	invocation_type = "shout"
 	antimagic_allowed = TRUE
-	recharge_time = 15 SECONDS
+	charge_max = 15 SECONDS
 
 /obj/effect/proc_holder/spell/self/command_undead/cast(mob/user = usr)
-	. = ..()
+	..()
 
-	var/message = input(user, "Speak to your minions!", "LICH") as text|null
+	var/message = input("Speak to your minions!", "LICH") as text|null
 
 	if(!message)
 		return
@@ -282,23 +305,145 @@
 	var/mob/living/carbon/human/lich_player = user
 
 	to_chat(lich_player, span_boldannounce("Lich [lich_player.real_name] commands: [message]"))
-	message_admins("[lich_player.real_name], the Lich, commands his minions: [message]")
-	lich_player.log_message("[lich_player.real_name], the Lich, commands his minions: [message]", LOG_GAME)
 
 	for(var/mob/player in lich_player.minions)
 		if(player.mind)
 			to_chat(player, span_boldannounce("Lich [lich_player.real_name] commands: [message]"))
 
 
-/obj/projectile/magic/sickness
-	name = "Bolt of Sickness"
-	icon_state = "xray"
-	damage = 10
-	damage_type = BURN
-	flag = "magic"
+/obj/effect/proc_holder/spell/invoked/projectile/lifesteal
+	name = "Life Steal"
+	desc = ""
+	clothes_req = FALSE
+	overlay_state = "bloodsteal"
+	sound = 'sound/magic/vlightning.ogg'
+	range = 8
+	projectile_type = /obj/projectile/magic/lifesteal
+	releasedrain = 30
+	chargedrain = 1
+	chargetime = 25
+	charge_max = 20 SECONDS
+	warnie = "spellwarning"
+	no_early_release = TRUE
+	movement_interrupt = FALSE
+	charging_slowdown = 3
+	chargedloop = /datum/looping_sound/invokegen
+	associated_skill = /datum/skill/magic/arcane
+	invocation = "Life Steal!"
+	invocation_type = "shout"
+	xp_gain = TRUE
 
-/obj/projectile/magic/sickness/on_hit(atom/target, blocked = FALSE)
+/obj/projectile/magic/lifesteal
+	name = "life steal"
+	tracer_type = /obj/effect/projectile/tracer/lifesteal
+	muzzle_type = null
+	impact_type = null
+	hitscan = TRUE
+	movement_type = UNSTOPPABLE
+	damage = 25
+	damage_type = BRUTE
+	nodamage = FALSE
+	speed = 0.3
+	flag = "magic"
+	light_color = "#00d5ff"
+	light_range = 7
+
+/obj/effect/projectile/tracer/lifesteal
+	name = "life steal"
+	icon_state = "tracer_beam"
+
+/obj/projectile/magic/lifesteal/on_hit(target)
 	. = ..()
-	if(iscarbon(target))
-		var/mob/living/carbon/M = target
-		M.reagents.add_reagent(/datum/reagent/toxin, 3)
+	if(ismob(target))
+		var/mob/M = target
+		if(M.anti_magic_check())
+			visible_message(span_warning("[src] fizzles on contact with [target]!"))
+			playsound(get_turf(target), 'sound/magic/magic_nulled.ogg', 100)
+			qdel(src)
+			return BULLET_ACT_BLOCK
+		var/mob/living/living = target
+		living.visible_message(span_danger("[target] has their life force ripped from their body!!"), \
+				span_userdanger("I feel like i lost a part of me within!"), \
+				span_hear("..."), COMBAT_MESSAGE_RANGE, target)
+		sender.heal_overall_damage(100, 100, updating_health = TRUE)
+		if(sender.blood_volume < BLOOD_VOLUME_NORMAL) //can not overfill
+			sender.blood_volume = min(sender.blood_volume+150, BLOOD_VOLUME_MAXIMUM)
+		var/list/wCount = sender.get_wounds()
+		if(wCount.len > 0)
+			sender.heal_wounds(150) //the fucking wound hps are crazy.
+			sender.update_damage_overlays()
+			to_chat(sender, span_blue("I feel some of my wounds mend."))
+		sender.update_damage_overlays()
+	qdel(src)
+
+/obj/effect/proc_holder/spell/invoked/control_undead
+	name = "Control Undead"
+	desc = "Use on a undead to toggle it's aggressiveness, use on yourself to get your minions to follow you and stop being aggressive, use on a turf to send your minions to attack, use on a mob to send your minions to attack that mob. "
+	overlay_state = "raiseskele"
+	range = 7
+	warnie = "sydwarning"
+	movement_interrupt = FALSE
+	chargedloop = null
+	sound = 'sound/magic/whiteflame.ogg'
+	associated_skill = /datum/skill/magic/arcane
+	antimagic_allowed = TRUE
+	charge_max = 2 SECONDS
+	miracle = FALSE
+	invocation = ""
+	invocation_type = "none"
+	xp_gain = FALSE
+
+/obj/effect/proc_holder/spell/invoked/control_undead/cast(list/targets, mob/user)
+	. = ..()
+	var/commanded = 0
+	for(var/mob/living/carbon/human/minion in orange(7, user)) //a necromancer can control their own risen undead.
+		if(minion.mob_biotypes & ~MOB_UNDEAD)
+			continue
+		if(minion.stat == DEAD) //cant command the dead-dead
+			continue
+		if(minion.client) //we dont touch mobs that are connected players.
+			continue
+		if(user.mind.has_antag_datum(/datum/antagonist/lich)) //lich control ALL undead, that is not owned and their own.
+			if(minion.mastermob && minion.mastermob != user) //skip if this mob has a master AND it's not you, if it's masterless or your own, it should command.
+				continue
+		else
+			if(minion.mastermob != user) //if you are not lich and you are not master of this mob, skip.
+				continue
+			commanded ++
+			if(commanded > max(1,user.mind.get_skill_level(/datum/skill/magic/arcane))) // Makes your army size dependant on your blood magic skill, with a minimum of one.
+				to_chat(user, span_necrosis("I can't easily control more than [user.mind.get_skill_level(/datum/skill/magic/arcane)] undead at once."))
+				return
+		if(minion == targets[1] && minion.mastermob == user)
+			minion.aggressive = !minion.aggressive
+			if(!minion.aggressive)
+				minion.back_to_idle()
+			minion.balloon_alert(user, "Now [minion.aggressive ? "" : "not"] aggressive.")
+			return
+		if(user == targets[1])
+			minion.back_to_idle()
+			minion.emote("idle")
+			minion.walk_to(src,user,0.5)
+			user.visible_message("[user] beckons while incanting.")
+			minion.balloon_alert(user, "Returning to master.")
+			minion.aggressive = FALSE
+			minion.following_master = TRUE
+		if(isturf(targets[1]))
+			minion.back_to_idle()
+			minion.emote("idle")
+			var/turf/turftarget = targets[1]
+			user.visible_message("[user] points at \the [turftarget] while incanting.")
+			minion.balloon_alert(user, "Marching to [turftarget].")
+			minion.mode = AI_HUNT
+			minion.aggressive = TRUE
+			minion.following_master = FALSE
+			minion.walk_to(src,turftarget)
+		if(ismob(targets[1]) && user != targets[1])
+			var/mob/living/mobtarget = targets[1]
+			if(mobtarget.mob_biotypes & MOB_UNDEAD)
+				return
+			minion.back_to_idle() //so he stops attacking something if it is right now.
+			minion.mode = AI_COMBAT
+			minion.aggressive = TRUE
+			minion.retaliate(mobtarget)
+			user.visible_message("[user] points menacingly at [mobtarget.name] while incanting.")
+			minion.balloon_alert(user, "Marked [mobtarget.name] as target.")

@@ -60,7 +60,7 @@
 	H.change_stat("strength", 1)
 
 	H.adjust_skillrank(/datum/skill/combat/swords, pick(1,2), TRUE) //they are practicing with their fake ass shit sword but its clearly not paying off yet
-	H.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
+	H.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 	H.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 	H.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 	H.adjust_skillrank(/datum/skill/combat/crossbows, 4, TRUE)

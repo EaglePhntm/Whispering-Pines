@@ -3,16 +3,6 @@
 	tutorial = "Humen and elf rangers often live among each other, as these bow-wielding \
 	adventurers are often scouting the lands for the same purpose."
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = list(
-		"Humen",
-		"Elf",
-		"Half-Elf",
-		"Tiefling",
-		"Dark Elf",
-		"Aasimar",
-		"Half-Orc",
-		"Rakshari"
-	)
 	outfit = /datum/outfit/job/adventurer/ranger
 	min_pq = 0
 	category_tags = list(CTAG_ADVENTURER)
@@ -20,7 +10,6 @@
 
 /datum/outfit/job/adventurer/ranger/pre_equip(mob/living/carbon/human/H)
 	..()
-	shoes = /obj/item/clothing/shoes/boots/leather
 	H.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
 	H.adjust_skillrank(/datum/skill/combat/bows, 3, TRUE)
 	H.adjust_skillrank(/datum/skill/craft/tanning, 2, TRUE)

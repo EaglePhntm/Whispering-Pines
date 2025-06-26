@@ -38,6 +38,7 @@
 		list(
 			/obj/item/coin/gold/pile = 15,
 			/obj/item/weapon/knife/dagger/silver = 5,
+			/obj/item/weapon/knife/dagger/steel/parrying = 5,
 			/obj/item/weapon/sword/long/greatsword = 3,
 			/obj/item/weapon/axe/iron = 10,
 			/obj/item/ingot/gold = 5,

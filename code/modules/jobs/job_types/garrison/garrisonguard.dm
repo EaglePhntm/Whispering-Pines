@@ -103,7 +103,7 @@
 		H.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE) // You don't even have access to crossbows
 		H.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE) // Backup
 		H.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
-		H.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
+		H.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
 		H.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
 		H.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 		H.change_stat(STATKEY_PER, 2)

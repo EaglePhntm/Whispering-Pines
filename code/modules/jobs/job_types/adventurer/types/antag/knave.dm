@@ -62,5 +62,5 @@
 			backr = /obj/item/storage/backpack/satchel
 			backpack_contents = list(/obj/item/needle/thorn = 1, /obj/item/natural/cloth = 1, /obj/item/restraints/legcuffs/beartrap = 2) //poacher gets mantraps
 			H.adjust_skillrank(/datum/skill/combat/bows, 1, TRUE)
-			H.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
+			H.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
 			ADD_TRAIT(H, TRAIT_FORAGER, TRAIT_GENERIC)

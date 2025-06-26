@@ -32,7 +32,7 @@
 
 	if(H.mind)
 		H.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
-		H.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
+		H.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
 		H.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
 		H.adjust_skillrank(/datum/skill/misc/swimming, pick(0,1,1), TRUE)
 		H.adjust_skillrank(/datum/skill/misc/climbing, pick(1,1,2), TRUE)

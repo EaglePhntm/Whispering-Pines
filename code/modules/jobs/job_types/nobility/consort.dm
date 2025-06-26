@@ -85,7 +85,7 @@
 	H.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
 	H.adjust_skillrank(/datum/skill/labor/mathematics, 3, TRUE)
 	if(H.age == AGE_OLD)
-		H.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
+		H.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
 	H.change_stat(STATKEY_INT, 3)
 	H.change_stat(STATKEY_END, 1)
 	H.change_stat(STATKEY_PER, 3)

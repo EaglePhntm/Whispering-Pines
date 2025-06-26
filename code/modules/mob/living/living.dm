@@ -2311,6 +2311,7 @@
 				found_ping(get_turf(M), client, "hidden")
 				if(M.m_intent == MOVE_INTENT_SNEAK)
 					emote("huh")
+					playsound(M.loc, 'modular_stonehedge/sound/mgsalert.ogg', 100, FALSE)
 					to_chat(M, "<span class='danger'>[src] sees me! I'm found!</span>")
 					MOBTIMER_SET(M, MT_FOUNDSNEAK)
 			else

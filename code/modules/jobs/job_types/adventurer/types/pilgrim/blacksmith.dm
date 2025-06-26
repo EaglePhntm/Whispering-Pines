@@ -25,7 +25,7 @@
 	backpack_contents = list(/obj/item/flint = 1, /obj/item/ore/coal=1, /obj/item/ore/iron=1, /obj/item/mould/ingot = 1, /obj/item/storage/crucible/random = 1)
 
 	if(H.mind)
-		H.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
+		H.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
 		H.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 		H.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
 		H.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)

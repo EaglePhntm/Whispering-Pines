@@ -60,6 +60,6 @@
 	else if(prob(33))
 		H.adjust_skillrank(/datum/skill/combat/bows, 1, TRUE)
 	else //the legendary shopARM
-		H.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
+		H.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
 		H.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
 		H.change_stat(STATKEY_STR, 1)

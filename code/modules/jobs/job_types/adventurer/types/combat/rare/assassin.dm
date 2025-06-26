@@ -148,7 +148,7 @@
 			belt = /obj/item/storage/belt/leather/assassin
 			ring = /obj/item/clothing/ring/silver
 			if(H.gender == MALE)
-				H.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE) //The male noble's sword is less useful than the female noble's bow, so no downside.
+				H.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE) //The male noble's sword is less useful than the female noble's bow, so no downside.
 				pants = /obj/item/clothing/pants/tights/black
 				shirt = /obj/item/clothing/shirt/tunic/random
 				cloak = /obj/item/clothing/cloak/raincloak/furcloak

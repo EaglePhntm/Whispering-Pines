@@ -25,7 +25,7 @@
 	H.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
 	H.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
 	H.adjust_skillrank(/datum/skill/misc/riding, pick(1,1,2), TRUE)
-	H.adjust_skillrank(/datum/skill/misc/reading, pick(0,1,1), TRUE)
+	H.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 
 	shoes = /obj/item/clothing/shoes/boots
 	gloves = /obj/item/clothing/gloves/leather
@@ -56,10 +56,10 @@
 			H.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
 		if("Messer")
 			beltl = /obj/item/weapon/sword/scimitar/messer
-			H.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
+			H.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
 		if("Sword")
 			beltl = /obj/item/weapon/sword/iron
-			H.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
+			H.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
 		if("Flail") // Big roller gets one of the best weapons to pair with a shield, even if it is only iron tier. Lucky bastard
 			beltl = /obj/item/weapon/flail
 			H.adjust_skillrank(/datum/skill/combat/whipsflails, 1, TRUE)

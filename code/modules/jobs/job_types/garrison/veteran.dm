@@ -85,7 +85,7 @@
 	H.change_stat(STATKEY_SPD, 1)
 	H.change_stat(STATKEY_STR, 1)
 	if(H.age == AGE_OLD)
-		H.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
+		H.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
 		H.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
 		H.adjust_skillrank(/datum/skill/combat/wrestling, 1, TRUE)
 		H.change_stat(STATKEY_END, 1)
@@ -145,7 +145,7 @@
 	H.change_stat(STATKEY_STR, 1)
 	if(H.age == AGE_OLD)
 		H.adjust_skillrank(/datum/skill/combat/shields, 2, TRUE)
-		H.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
+		H.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
 		H.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
 		H.adjust_skillrank(/datum/skill/combat/wrestling, 1, TRUE)
 		H.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
@@ -202,7 +202,7 @@
 	H.change_stat(STATKEY_STR, 1)
 	if(H.age == AGE_OLD)
 		H.adjust_skillrank(/datum/skill/combat/bows, 1, TRUE)
-		H.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
+		H.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
 		H.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE) // You get a lot of weapon skills, but none are legendary. Jack of all trades, master of none. This is probably worse than just having legendary in one, as people rarely swap weapons mid-combat.
 		H.adjust_skillrank(/datum/skill/combat/crossbows, 1, TRUE)
 		H.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
@@ -278,7 +278,7 @@
 	H.change_stat(STATKEY_SPD, -1)
 	H.change_stat(STATKEY_STR, 2)
 	if(H.age == AGE_OLD)
-		H.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
+		H.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
 		H.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
 		H.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
 		H.adjust_skillrank(/datum/skill/misc/athletics, 1, TRUE) // two handed weapons require a LOT of stamina.
@@ -294,7 +294,7 @@
 	switch(weapon_choice)
 		if("Zweihander")
 			r_hand = /obj/item/weapon/sword/long/greatsword/zwei
-			H.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
+			H.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
 			H.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
 			H.change_stat(STATKEY_STR, 1) // needs minimum strength to actually use the fucking sword
 		if("Halberd")

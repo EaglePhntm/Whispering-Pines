@@ -112,11 +112,11 @@
 			grant_shield = FALSE
 		if("Longsword")
 			if(!reduced_skill)
-				H.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
+				H.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
 			grant_shield = FALSE
 		if("Sabre")
 			if(!reduced_skill)
-				H.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
+				H.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
 		if("Unarmed")
 			if(!reduced_skill)
 				H.adjust_skillrank(/datum/skill/combat/wrestling, 1, TRUE)

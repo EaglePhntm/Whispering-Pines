@@ -33,7 +33,7 @@
 		H.adjust_skillrank(/datum/skill/combat/whipsflails, 3, TRUE)
 		H.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
 		H.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
-		H.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
+		H.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
 		H.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
 		H.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 		H.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)

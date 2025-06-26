@@ -88,18 +88,38 @@
 	icon_state = "peculate"
 
 /*------------\
-| Pick intent |	great AP. Not actually used anywhere.
+| Pick intent |	great AP. Slow as hell.
 \------------*/
-/*
+
 /datum/intent/dagger/thrust/pick
-	name = "thrust"
+	name = "icepick stab"
+	icon_state = "inpick"
 	attack_verb = list("stabs", "impales")
 	hitsound = list('sound/combat/hits/bladed/genstab (1).ogg', 'sound/combat/hits/bladed/genstab (2).ogg', 'sound/combat/hits/bladed/genstab (3).ogg')
-	penfactor = 50
+	penfactor = 80
 	clickcd = CLICK_CD_MELEE
-	swingdelay = 1
+	swingdelay = 12
+	damfactor = 1.1
 	blade_class = BCLASS_PICK
-*/
+
+/*------------\
+| Punch intent| Unavoidable blunt strike.
+\------------*/
+
+/datum/intent/dagger/sucker_punch
+	name = "sucker punch"
+	icon_state = "inpunch"
+	attack_verb = list("punches", "jabs",)
+	animname = "strike"
+	blade_class = BCLASS_BLUNT
+	hitsound = list('sound/combat/hits/blunt/bluntsmall (1).ogg', 'sound/combat/hits/blunt/bluntsmall (2).ogg', 'sound/combat/hits/kick/kick.ogg')
+	damfactor = 1
+	penfactor = -100
+	clickcd = 14
+	recovery = 10
+	item_damage_type = "blunt"
+	canparry = FALSE
+	candodge = FALSE
 
 /*------------\
 | Chop intent |	small AP, bonus damage
@@ -250,9 +270,10 @@
 
 //................ Iron Dagger ............... //
 /obj/item/weapon/knife/dagger
-	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust)
+	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	name = "iron dagger"
 	desc = "Thin, sharp, pointed death."
+	icon = 'modular_whisper/icons/weapons/weapons.dmi'
 	icon_state = "idagger"
 	melting_material = null
 	sellprice = 12
@@ -261,24 +282,29 @@
 /obj/item/weapon/knife/dagger/steel
 	name = "steel dagger"
 	desc = "A dagger made of refined steel."
+	icon = 'modular_whisper/icons/weapons/weapons.dmi'
 	icon_state = "sdagger"
 	melting_material = null
 	wdefense = AVERAGE_PARRY
 	wbalance = VERY_HARD_TO_DODGE
 
 /obj/item/weapon/knife/dagger/steel/special
+	icon = 'modular_whisper/icons/weapons/weapons.dmi'
 	icon_state = "sdaggeralt"
 	desc = "A dagger of refined steel, and even more refined appearance."
 
 /obj/item/weapon/knife/dagger/steel/pestrasickle
 	name ="plaguebringer sickle"
 	desc = "A wicked edge brings feculent delights."
+	icon = 'icons/roguetown/weapons/32.dmi'
 	icon_state = "pestrasickle"
 	max_integrity = 200
 	wdefense = GOOD_PARRY //They use a dagger, but it should be fine for them to also parry with it.
+
 //................ Fanged dagger ............... //
 /obj/item/weapon/knife/dagger/steel/dirk
 	name = "fanged dagger"
+	icon = 'icons/roguetown/weapons/32.dmi'
 	desc = "A dagger modeled after the fang of an anthrax spider."
 	icon_state = "spiderdagger"
 	melting_material = null
@@ -287,6 +313,7 @@
 /obj/item/weapon/knife/dagger/silver
 	name = "silver dagger"
 	desc = "A dagger made of fine silver, the bane of the undead."
+	icon = 'modular_whisper/icons/weapons/weapons.dmi'
 	icon_state = "sildagger"
 	melting_material = null
 	max_blade_int = 112 // .8 of steel
@@ -298,6 +325,7 @@
 //................ Psydonian Dagger ............... //
 /obj/item/weapon/knife/dagger/psydon
 	name = "psydonian dagger"
+	icon = 'modular_whisper/icons/weapons/weapons.dmi'
 	desc = "A silver dagger favored by close range fighters of the inquisition."
 	icon_state = "psydagger"
 	melting_material = null
@@ -310,6 +338,7 @@
 	// desc = "A profane dagger made of cursed black steel. Whispers emanate from the gem on its hilt."
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust, /datum/intent/peculate)
 	sellprice = 250
+	icon = 'icons/roguetown/weapons/32.dmi'
 	icon_state = "pdagger"
 	melting_material = null
 	embedding = list("embed_chance" = 0) // Embedding the cursed dagger has the potential to cause duping issues. Keep it like this unless you want to do a lot of bug hunting.

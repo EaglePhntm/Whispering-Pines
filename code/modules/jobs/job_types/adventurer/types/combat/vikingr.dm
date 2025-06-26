@@ -22,7 +22,7 @@
 	H.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 	H.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 	H.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
-	H.adjust_skillrank(/datum/skill/misc/reading, pick(0,1,1), TRUE)
+	H.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 	H.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 
 	shoes = /obj/item/clothing/shoes/boots
@@ -52,7 +52,7 @@
 			beltl = /obj/item/weapon/axe/iron
 			beltr = /obj/item/storage/belt/pouch/coins/poor
 			head = /obj/item/clothing/head/helmet/nasal
-			H.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
+			H.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
 
 
 	H.change_stat(STATKEY_STR, 3) // Vikingr are Strong

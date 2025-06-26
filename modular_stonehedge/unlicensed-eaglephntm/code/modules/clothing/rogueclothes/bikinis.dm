@@ -1,7 +1,7 @@
 //By Vide Noir https://github.com/EaglePhntm. All sprites except chain bikini.
 //bikini
 /obj/item/clothing/armor/leather/bikini
-	name = "leather corslet"
+	name = "leather bikini"
 	desc = "Flexible cowhide armor. Lightweight, better than nothing. Now in tasteful bikini shape."
 	icon = 'modular_stonehedge/icons/clothing/armor/armor.dmi'
 	mob_overlay_icon = 'modular_stonehedge/icons/clothing/armor/onmob/armor.dmi'
@@ -20,7 +20,7 @@
 	is_bra = TRUE
 
 /obj/item/clothing/armor/leather/studded/bikini
-	name = "studded leather corslet"
+	name = "studded leather bikini"
 	desc = "Studded leather is the most durable of all hides and leathers and about as light. This one is in bikini form."
 	icon = 'modular_stonehedge/icons/clothing/armor/armor.dmi'
 	mob_overlay_icon = 'modular_stonehedge/icons/clothing/armor/onmob/armor.dmi'
@@ -39,7 +39,7 @@
 	is_bra = TRUE
 
 /obj/item/clothing/armor/leather/hide/bikini
-	name = "hide corslet"
+	name = "hide bikini"
 	desc = "A light armor of wildbeast hide. Far more durable than leather. This will not keep a person warm though..."
 	icon = 'modular_stonehedge/icons/clothing/armor/armor.dmi'
 	mob_overlay_icon = 'modular_stonehedge/icons/clothing/armor/onmob/armor.dmi'
@@ -58,7 +58,7 @@
 	is_bra = TRUE
 
 /obj/item/clothing/armor/leather/advanced/bikini
-	name = "hardened leather corslet"
+	name = "hardened leather bikini"
 	desc = "Sturdy, durable, flexible. Will keep you alive in style, and now even less than before!"
 	icon = 'modular_stonehedge/icons/clothing/armor/armor.dmi'
 	mob_overlay_icon = 'modular_stonehedge/icons/clothing/armor/onmob/armor.dmi'
@@ -77,7 +77,7 @@
 	is_bra = TRUE
 
 /obj/item/clothing/armor/plate/bikini
-	name = "half-plate corslet"
+	name = "half-plate bikini"
 	desc = "Half plate in bikini form, still just as protective somehow."
 	icon = 'modular_stonehedge/icons/clothing/armor/armor.dmi'
 	mob_overlay_icon = 'modular_stonehedge/icons/clothing/armor/onmob/armor.dmi'
@@ -96,7 +96,7 @@
 	is_bra = TRUE
 
 /obj/item/clothing/armor/plate/full/bikini
-	name = "fullplate corslet"
+	name = "fullplate bikini"
 	desc = "Full plate in bikini form, full package and full exposure."
 	icon = 'modular_stonehedge/icons/clothing/armor/armor.dmi'
 	mob_overlay_icon = 'modular_stonehedge/icons/clothing/armor/onmob/armor.dmi'
@@ -114,7 +114,7 @@
 	is_bra = TRUE
 
 /obj/item/clothing/armor/chainmail/bikini
-	name = "chainmail corslet"
+	name = "chainmail bikini"
 	desc = "Try not to get your nipples caught between the chains, and other bits."
 	icon = 'modular_stonehedge/icons/clothing/armor/armor.dmi'
 	mob_overlay_icon = 'modular_stonehedge/icons/clothing/armor/onmob/armor.dmi'
@@ -133,7 +133,7 @@
 	is_bra = TRUE
 
 /obj/item/clothing/armor/chainmail/iron/bikini
-	name = "iron chainmail corslet"
+	name = "iron chainmail bikini"
 	desc = "Try not to get your nipples caught between the chains, and other bits."
 	icon = 'modular_stonehedge/icons/clothing/armor/armor.dmi'
 	mob_overlay_icon = 'modular_stonehedge/icons/clothing/armor/onmob/armor.dmi'
@@ -157,7 +157,7 @@
 //recipes
 
 /datum/anvil_recipe/armor/studdedbikini
-	name = "Studded Leather Corslet (+ Leather Corslet)"
+	name = "Studded Leather bikini (+ Leather bikini)"
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/clothing/armor/leather)
 	created_item = /obj/item/clothing/armor/leather/studded/bikini
@@ -170,19 +170,19 @@
 	i_type = "Armor"
 
 /datum/anvil_recipe/armor/steel/chainkini
-	name = "Chainmail Corslet (+1 Cloth)"
+	name = "Chainmail bikini (+1 Cloth)"
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/natural/cloth)
 	created_item = /obj/item/clothing/armor/chainmail/bikini
 
 /datum/anvil_recipe/armor/ironchainbra
-	name = "Iron Chainmail Corslet"
+	name = "Iron Chainmail bikini"
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/clothing/armor/chainmail/iron/bikini/bra
 	i_type = "Armor"
 
 /datum/anvil_recipe/armor/steel/platebikini
-	name = "Half-Plate Corslet (+1 Steel, +1 Cured Leather)"
+	name = "Half-Plate bikini (+1 Steel, +1 Cured Leather)"
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel, /obj/item/natural/hide/cured)
 	created_item = /obj/item/clothing/armor/plate/bikini
@@ -197,7 +197,7 @@
 	i_type = "Armor"
 
 /datum/anvil_recipe/armor/steel/fullplatebikini
-	name = "Full-Plate Corslet (+2 Steel, +1 Cured Leather)"
+	name = "Full-Plate bikini (+2 Steel, +1 Cured Leather)"
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel, /obj/item/ingot/steel, /obj/item/natural/hide/cured)
 	created_item = /obj/item/clothing/armor/plate/full/bikini
@@ -211,7 +211,7 @@
 	craftdiff = 4
 
 /datum/crafting_recipe/sewing/leather/hardenedbikini
-	name = "hardened leather corslet"
+	name = "hardened leather bikini"
 	result = /obj/item/clothing/armor/leather/advanced/bikini
 	reqs = list(/obj/item/natural/hide/cured = 2,
 				/obj/item/natural/fibers = 1)
@@ -226,13 +226,13 @@
 
 
 /datum/crafting_recipe/leather/bikini
-	name = "leather corslet (2 leather)"
+	name = "leather bikini (2 leather)"
 	result = /obj/item/clothing/armor/leather/bikini
 	reqs = list(/obj/item/natural/hide/cured = 2)
 	sellprice = 26
 
 /datum/crafting_recipe/leather/hidebikini
-	name = "hide corslet (2 leather, 1 fur)"
+	name = "hide bikini (2 leather, 1 fur)"
 	result = /obj/item/clothing/armor/leather/hide/bikini
 	reqs = list(/obj/item/natural/hide/cured = 2,
 				/obj/item/natural/fur = 1)
@@ -255,7 +255,7 @@
 ///CONVERSIONS
 
 /datum/crafting_recipe/larmorconvone
-	name = "leather armor to corslet"
+	name = "leather armor to bikini"
 	result = /obj/item/clothing/armor/leather/bikini
 	reqs = list(/obj/item/clothing/armor/leather = 1)
 
@@ -265,7 +265,7 @@
 	reqs = list(/obj/item/clothing/armor/leather/bikini = 1)
 
 /datum/crafting_recipe/hidearmorconvone
-	name = "hide armor to corslet"
+	name = "hide armor to bikini"
 	result = /obj/item/clothing/armor/leather/hide/bikini
 	reqs = list(/obj/item/clothing/armor/leather/hide = 1)
 
@@ -281,7 +281,7 @@
 	craftdiff = 1
 
 /datum/crafting_recipe/studdedconvone
-	name = "studded armor to corslet"
+	name = "studded armor to bikini"
 	result = list(/obj/item/clothing/armor/leather/studded/bikini)
 	reqs = list(/obj/item/clothing/armor/leather/studded = 1)
 
@@ -291,7 +291,7 @@
 	reqs = list(/obj/item/clothing/armor/leather/studded/bikini = 1)
 
 /datum/crafting_recipe/lharmorconvone
-	name = "hardened leather armor to corslet"
+	name = "hardened leather armor to bikini"
 	result = /obj/item/clothing/armor/leather/advanced/bikini
 	reqs = list(/obj/item/clothing/armor/leather/advanced = 1)
 
@@ -311,7 +311,7 @@
 	reqs = list(/obj/item/clothing/armor/chainmail/bikini = 1)
 
 /datum/crafting_recipe/halfplateconvone
-	name = "halfplate armor to corslet"
+	name = "halfplate armor to bikini"
 	result = list(/obj/item/clothing/armor/plate/bikini)
 	reqs = list(/obj/item/clothing/armor/plate = 1)
 
@@ -321,7 +321,7 @@
 	reqs = list(/obj/item/clothing/armor/plate/bikini = 1)
 
 /datum/crafting_recipe/halfplateconvone
-	name = "fullplate armor to corslet"
+	name = "fullplate armor to bikini"
 	result = list(/obj/item/clothing/armor/plate/full/bikini)
 	reqs = list(/obj/item/clothing/armor/plate/full = 1)
 

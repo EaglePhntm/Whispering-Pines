@@ -2,15 +2,9 @@
 	name = "Barbarian"
 	tutorial = "Wildmen and warriors all, Barbarians forego the intricacies of modern warfare in favour of raw strength and brutal cunning. Few of them can truly adjust to the civilized, docile lands of lords and ladies."
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = list(
-		"Humen",
-		"Half-Elf",
-		"Dwarf",
-		"Half-Orc"
-	)
 	outfit = /datum/outfit/job/adventurer/barbarian
 	min_pq = 0
-	category_tags = list(CTAG_ADVENTURER)
+	category_tags = list(CTAG_DISABLED)
 	cmode_music = 'sound/music/cmode/adventurer/CombatOutlander2.ogg'
 
 /datum/outfit/job/adventurer/barbarian

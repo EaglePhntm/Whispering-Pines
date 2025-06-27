@@ -10,7 +10,7 @@
 	outfit = /datum/outfit/job/adventurer/longbeard
 	maximum_possible_slots = 1
 	pickprob = 15
-	category_tags = list(CTAG_ADVENTURER)
+	category_tags = list(CTAG_DISABLED)
 	min_pq = 2
 	cmode_music = 'sound/music/cmode/adventurer/CombatOutlander2.ogg'
 

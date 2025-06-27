@@ -5,7 +5,7 @@
 	shiteheap. All you have are your possessions from your former life. Make some coin for yourself, lest you end up dead and gone."
 	allowed_sexes = list(MALE, FEMALE)
 	outfit = /datum/outfit/job/adventurer/dredge
-	category_tags = list(CTAG_ADVENTURER)
+	category_tags = list(CTAG_DISABLED)
 	maximum_possible_slots = 7
 	min_pq = 0
 

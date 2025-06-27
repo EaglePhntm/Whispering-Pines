@@ -8,7 +8,7 @@
 	maximum_possible_slots = 1
 	pickprob = 15
 	outfit = /datum/outfit/job/adventurer/bladesinger
-	category_tags = list(CTAG_ADVENTURER)
+	category_tags = list(CTAG_DISABLED)
 	min_pq = 2
 	cmode_music = 'sound/music/cmode/adventurer/CombatWarrior.ogg'
 

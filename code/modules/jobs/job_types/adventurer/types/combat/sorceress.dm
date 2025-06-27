@@ -4,9 +4,9 @@
 	allowed_sexes = list(FEMALE)
 
 	outfit = /datum/outfit/job/adventurer/sorceress
-	maximum_possible_slots = 2
+	maximum_possible_slots =0
 	min_pq = 0
-	category_tags = list(CTAG_ADVENTURER)
+	category_tags = list(CTAG_DISABLED)
 	cmode_music = 'sound/music/cmode/adventurer/CombatSorcerer.ogg'
 
 /datum/outfit/job/adventurer/sorceress

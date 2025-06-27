@@ -116,7 +116,7 @@
 			continue
 		H.mind.AddSpell(new spell_type)
 	level = CLERIC_T3
-	passive_devotion_gain = 1 //1 devotion per second
+	passive_devotion_gain = 5 //5 devotion per second
 	update_devotion(300, 900)
 	START_PROCESSING(SSprocessing, src)
 
@@ -134,6 +134,7 @@
 			continue
 		H.mind.AddSpell(new spell_type)
 	level = CLERIC_T1
+	passive_devotion_gain = 1
 
 //Cleric Spell Spawner
 /datum/devotion/cleric_holder/proc/grant_spells_cleric(mob/living/carbon/human/H)
@@ -149,6 +150,7 @@
 			continue
 		H.mind.AddSpell(new spell_type)
 	level = CLERIC_T1
+	passive_devotion_gain = 4
 	max_devotion = 180
 	max_progression = 180
 	update_devotion(50, 50)
@@ -177,6 +179,7 @@
 			H.mind.AddSpell(new spell_type)
 
 	level = CLERIC_T0
+	passive_devotion_gain = 2
 	max_devotion = 230
 	max_progression = 230
 	update_devotion(50, 50)

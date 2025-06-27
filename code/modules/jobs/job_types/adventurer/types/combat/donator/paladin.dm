@@ -7,7 +7,7 @@
 	maximum_possible_slots = 1
 	min_pq = 2
 	pickprob = 15
-	category_tags = list(CTAG_ADVENTURER)
+	category_tags = list(CTAG_DISABLED)
 
 /datum/outfit/job/adventurer/paladin/pre_equip(mob/living/carbon/human/H)
 	..()

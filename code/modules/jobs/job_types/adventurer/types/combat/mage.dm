@@ -1,16 +1,12 @@
 /datum/advclass/combat/mage
 	name = "Mage"
-	tutorial = "Either a apprentice studing under a wizard or an ambitious autodidact, you have finally set out to Vanderlin to gain more knowledge. You seek adventure, using your arcyne knowledge to aid others in need."
-	allowed_sexes = list(MALE)
+	tutorial = "You are a wandering mage, ones who aren't gifted in magic but are intelligent enough to study to harness it through hard work."
+	allowed_sexes = list(MALE, FEMALE)
 
 	outfit = /datum/outfit/job/adventurer/mage
 	category_tags = list(CTAG_ADVENTURER)
 	min_pq = 0
-	maximum_possible_slots = 2
 	cmode_music = 'sound/music/cmode/adventurer/CombatSorcerer.ogg'
-
-/datum/outfit/job/adventurer/mage
-	allowed_patrons = list(/datum/patron/divine/noc, /datum/patron/inhumen/zizo)
 
 /datum/outfit/job/adventurer/mage/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -37,9 +33,9 @@
 			H.adjust_skillrank(/datum/skill/magic/arcane, 1, TRUE)
 			H.change_stat(STATKEY_INT, 1)
 		H.change_stat(STATKEY_STR, -2)
-		H.change_stat(STATKEY_INT, 3)
+		H.change_stat(STATKEY_INT, 5)
+		H.change_stat(STATKEY_PER, 3)
 		H.change_stat(STATKEY_CON, -2)
 		H.change_stat(STATKEY_END, -1)
-		H.change_stat(STATKEY_SPD, -2)
 		H.mind.adjust_spellpoints(5)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/touch/prestidigitation)

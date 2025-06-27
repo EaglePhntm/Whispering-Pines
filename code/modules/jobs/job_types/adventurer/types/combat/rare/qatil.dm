@@ -14,7 +14,7 @@
 	maximum_possible_slots = 1
 	min_pq = 0
 	pickprob = 25
-	category_tags = list(CTAG_ADVENTURER)
+	category_tags = list(CTAG_DISABLED)
 
 	cmode_music = 'sound/music/cmode/adventurer/CombatOutlander3.ogg'
 

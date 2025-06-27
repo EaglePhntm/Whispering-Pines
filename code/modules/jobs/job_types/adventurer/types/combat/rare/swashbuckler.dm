@@ -17,7 +17,7 @@
 	maximum_possible_slots = 1
 	min_pq = 0
 	pickprob = 30
-	category_tags = list(CTAG_ADVENTURER)
+	category_tags = list(CTAG_DISABLED)
 
 /datum/outfit/job/adventurer/swashbuckler
 	head = /obj/item/clothing/head/helmet/leather/headscarf

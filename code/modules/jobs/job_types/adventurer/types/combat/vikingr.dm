@@ -7,7 +7,7 @@
 		"Half-Elf",
 	)
 	outfit = /datum/outfit/job/adventurer/vikingr
-	category_tags = list(CTAG_ADVENTURER)
+	category_tags = list(CTAG_DISABLED)
 	min_pq = 0
 	cmode_music = 'sound/music/cmode/adventurer/CombatWarrior.ogg'
 

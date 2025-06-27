@@ -2809,6 +2809,7 @@
 #include "modular\Mapping\hammer\hammer_mapping_helpers.dm"
 #include "modular\modular_azure\code\necra.dm"
 #include "modular\modular_hearthstone\code\interface\LOOC.dm"
+#include "modular_azure\code\azure_bleak_items.dm"
 #include "modular_hearthstone\code\game\objects\effects\track.dm"
 #include "modular_hearthstone\code\game\objects\items\clothes\neck.dm"
 #include "modular_hearthstone\code\game\objects\items\clothes\stockings.dm"
@@ -2835,5 +2836,4 @@
 #include "modular_whisper\code\modules\reagents\blood_pack.dm"
 #include "modular_whisper\code\modules\reagents\dropper.dm"
 #include "modular_whisper\code\modules\reagents\syringes.dm"
-#include "modular_azure\code\azure_bleak_items.dm"
 // END_INCLUDE

@@ -9,7 +9,7 @@
 	maximum_possible_slots = 1
 	pickprob = 15
 	min_pq = 2
-	category_tags = list(CTAG_ADVENTURER)
+	category_tags = list(CTAG_DISABLED)
 	cmode_music = 'sound/music/cmode/adventurer/CombatOutlander3.ogg'
 
 /datum/outfit/job/adventurer/lancer/pre_equip(mob/living/carbon/human/H)

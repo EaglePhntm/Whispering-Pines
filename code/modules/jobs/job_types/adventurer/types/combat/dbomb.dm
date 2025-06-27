@@ -5,7 +5,7 @@
 	allowed_races = list("Dwarf")
 	outfit = /datum/outfit/job/adventurer/dbomb
 	min_pq = 0
-	category_tags = list(CTAG_ADVENTURER)
+	category_tags = list(CTAG_DISABLED)
 
 /datum/outfit/job/adventurer/dbomb/pre_equip(mob/living/carbon/human/H)
 	..()

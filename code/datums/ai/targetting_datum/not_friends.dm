@@ -17,6 +17,8 @@
 		if (mob_target.stat > attack_until_past_stat)
 			return FALSE
 
+	if(living_mob.mobility_flags & MOBILITY_STAND && !length(living_mob.get_empty_held_indexes()))
+		return FALSE
 	if (living_mob.see_invisible < target.invisibility)
 		return FALSE
 	if (!isturf(target.loc)) // z check will always fail if target is in a mech

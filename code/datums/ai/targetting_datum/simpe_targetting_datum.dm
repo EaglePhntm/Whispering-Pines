@@ -22,6 +22,10 @@
 		if(attacker.binded == TRUE)
 			return FALSE
 
+	//Dont need to attack unarmed laying people, may swap to sexcon check for lewdai if cheesed too much.
+	if(living_mob.mobility_flags & MOBILITY_STAND && !length(living_mob.get_empty_held_indexes()))
+		return FALSE
+
 	if(ismob(the_target)) //Target is in godmode, ignore it.
 		var/mob/M = the_target
 		if(M.status_flags & GODMODE)

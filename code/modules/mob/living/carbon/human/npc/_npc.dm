@@ -130,7 +130,7 @@
 /mob/living/proc/npc_detect_sneak(mob/living/target, extra_prob = 0)
 	if (target.alpha > 0 || !target.rogue_sneaking)
 		return TRUE
-	var/probby = 4 * STAPER //this is 10 by default - npcs get an easier time to detect to slightly thwart cheese
+	var/probby = 2 * STAPER //this is 10 by default - npcs get an easier time to detect to slightly thwart cheese
 	probby += extra_prob
 	var/sneak_bonus = 0
 	if(target.mind)

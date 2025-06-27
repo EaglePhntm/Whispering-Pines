@@ -153,6 +153,7 @@
 
 
 /obj/item/reagent_containers/syringe/update_icon()
+	. = ..()
 	cut_overlays()
 	var/rounded_vol
 	if(reagents && reagents.total_volume)

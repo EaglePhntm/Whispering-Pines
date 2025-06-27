@@ -131,15 +131,14 @@
 	..()
 	head = /obj/item/clothing/head/armingcap
 	shoes = /obj/item/clothing/shoes/sandals
-	neck = /obj/item/clothing/neck/leathercollar
 	belt =	/obj/item/storage/belt/leather/cloth/lady
-	beltl = /obj/item/roguekey/nightmaiden
+	beltl = /obj/item/key/bathhouse
 	beltr = /obj/item/storage/belt/pouch/coins/poor
 	backl = /obj/item/storage/backpack/satchel
 	if(H.gender == FEMALE)
 		shirt = /obj/item/clothing/shirt/undershirt
-		armor = /obj/item/clothing/shirt/dress/gen/sexy/random
-		pants = /obj/item/clothing/pants/skirt/brown
+		armor = /obj/item/clothing/shirt/dress/gen/sexy
+		pants = /obj/item/clothing/pants/skirt/red
 	else
 		shirt = /obj/item/clothing/shirt/tunic/random
 	backpack_contents = list(
@@ -177,10 +176,9 @@
 
 /datum/outfit/job/nightmaiden/concubine/pre_equip(mob/living/carbon/human/H)
 	..()
-	mask = /obj/item/clothing/mask/exoticsilkmask
-	neck = /obj/item/clothing/neck/leathercollar
+	mask = /obj/item/clothing/face/exoticsilkmask
 	belt = /obj/item/storage/belt/leather/exoticsilkbelt
-	beltl = /obj/item/roguekey/nightmaiden
+	beltl = /obj/item/key/bathhouse
 	shoes = /obj/item/clothing/shoes/anklets
 	backl = /obj/item/storage/backpack/satchel
 	shirt = /obj/item/clothing/shirt/exoticsilkbra
@@ -188,8 +186,8 @@
 	backpack_contents = list(
 		/obj/item/rope = 1,
 		/obj/item/candle/eora = 1,
-		/obj/item/rogueweapon/whip = 1,
-		/obj/item/clothing/mask/blindfold = 1,
+		/obj/item/weapon/whip = 1,
+		/obj/item/clothing/face/blindfold = 1,
 	)
 
 	if(H.mind)
@@ -243,20 +241,20 @@
 /datum/outfit/job/nightmaiden/courtesan/pre_equip(mob/living/carbon/human/H)
 	..()
 	head = /obj/item/lockpick/goldpin
-	armor = /obj/item/clothing/shirt/dress/silkydress/random
-	shirt = /obj/item/clothing/suit/armor/corset
+	armor = /obj/item/clothing/shirt/dress/silkydress
+	shirt = /obj/item/clothing/armor/corset
 	belt = /obj/item/storage/belt/leather/cloth/lady
-	beltl = /obj/item/roguekey/nightmaiden
+	beltl = /obj/item/key/bathhouse
 	beltr = /obj/item/storage/belt/pouch/coins/poor
-	id = /obj/item/clothing/ring/gold
+	ring = /obj/item/clothing/ring/gold
 	if(prob(50))
-		id = /obj/item/clothing/ring/gold/emerald
+		ring = /obj/item/clothing/ring/gold/emerald
 	if(prob(30))
-		id = /obj/item/clothing/ring/gold/topaz
+		ring = /obj/item/clothing/ring/gold/topaz
 	if(prob(15))
-		id = /obj/item/clothing/ring/silver
+		ring = /obj/item/clothing/ring/silver
 	if(prob(5))
-		id = /obj/item/clothing/ring/gold/diamond
+		ring = /obj/item/clothing/ring/gold/diamond
 	shoes = /obj/item/clothing/shoes/anklets
 	backl = /obj/item/storage/backpack/satchel
 	backpack_contents = list(
@@ -306,6 +304,7 @@
 		if("Flute")
 			backr = /obj/item/instrument/flute
 
+//to do
 /datum/advclass/nightmaiden/slave
 	name = "Slave"
 	tutorial = "You were either a criminal or indebted and are here to pay your debt, you lost all your rights and your dignity, as you are forced to perform heavy labor and let people use you in the whorehouse..."
@@ -316,15 +315,14 @@
 	..()
 	head = /obj/item/clothing/head/armingcap
 	shoes = /obj/item/clothing/shoes/sandals
-	neck = /obj/item/clothing/neck/leathercollar
 	belt =	/obj/item/storage/belt/leather/cloth/lady
-	beltl = /obj/item/roguekey/nightmaiden
+	beltl = /obj/item/key/bathhouse
 	beltr = /obj/item/storage/belt/pouch/coins/poor
 	backl = /obj/item/storage/backpack/satchel
 	if(H.gender == FEMALE)
 		shirt = /obj/item/clothing/shirt/undershirt
-		armor = /obj/item/clothing/shirt/dress/gen/sexy/random
-		pants = /obj/item/clothing/pants/skirt/brown
+		armor = /obj/item/clothing/shirt/dress/gen/sexy
+		pants = /obj/item/clothing/pants/skirt/red
 	else
 		shirt = /obj/item/clothing/shirt/tunic/random
 	backpack_contents = list(

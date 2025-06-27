@@ -2216,6 +2216,7 @@
 #include "code\modules\jobs\job_types\serfs\matron.dm"
 #include "code\modules\jobs\job_types\serfs\scribe.dm"
 #include "code\modules\jobs\job_types\serfs\tailor.dm"
+#include "code\modules\jobs\job_types\youngfolk\apothecary.dm"
 #include "code\modules\jobs\job_types\youngfolk\churchling.dm"
 #include "code\modules\jobs\job_types\youngfolk\innkeepchild.dm"
 #include "code\modules\jobs\job_types\youngfolk\orphan.dm"
@@ -2834,5 +2835,5 @@
 #include "modular_whisper\code\modules\reagents\blood_pack.dm"
 #include "modular_whisper\code\modules\reagents\dropper.dm"
 #include "modular_whisper\code\modules\reagents\syringes.dm"
-#include "code\modules\jobs\job_types\youngfolk\apothecary.dm"
+#include "modular_azure\code\azure_bleak_items.dm"
 // END_INCLUDE

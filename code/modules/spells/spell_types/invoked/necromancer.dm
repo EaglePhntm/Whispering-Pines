@@ -306,7 +306,6 @@
 /obj/effect/proc_holder/spell/invoked/projectile/lifesteal
 	name = "Life Steal"
 	desc = ""
-	clothes_req = FALSE
 	overlay_state = "bloodsteal"
 	sound = 'sound/magic/vlightning.ogg'
 	range = 8

@@ -22,14 +22,14 @@
 	if(ishuman(user))
 		var/mob/living/carbon/human/userhuman = user
 		if(userhuman.wear_pants)
-			var/obj/item/clothing/under/roguetown/pantsies = userhuman.wear_pants
+			var/obj/item/clothing/pants/pantsies = userhuman.wear_pants
 			if(pantsies.flags_inv & HIDECROTCH)
 				if(!pantsies.genital_access)
 					return FALSE
 	if(ishuman(target))
 		var/mob/living/carbon/human/targethuman = target
 		if(targethuman.wear_shirt)
-			var/obj/item/clothing/suit/roguetown/shirtsies = targethuman.wear_shirt
+			var/obj/item/clothing/shirt/shirtsies = targethuman.wear_shirt
 			if(shirtsies.flags_inv & HIDEBOOB)
 				if(shirtsies.genital_access == FALSE)
 					return FALSE

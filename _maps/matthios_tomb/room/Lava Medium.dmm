@@ -44,7 +44,7 @@
 /turf/open/floor/naturalstone,
 /area/rogue/under/tomb/cave/lava)
 "S" = (
-/obj/item/natural/rock/gemerald,
+/obj/item/natural/rock/emerald,
 /turf/open/floor/volcanic,
 /area/rogue/under/tomb/cave/lava)
 "U" = (

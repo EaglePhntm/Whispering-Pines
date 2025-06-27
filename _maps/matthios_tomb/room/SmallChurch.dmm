@@ -84,7 +84,7 @@
 /area/rogue/under/tomb/indoors/church)
 "cP" = (
 /obj/structure/closet/crate/coffin,
-/obj/item/clothing/ring/gold/rontz,
+/obj/item/clothing/ring/gold/ruby,
 /turf/open/floor/tile/masonic/spiral,
 /area/rogue/under/tomb/indoors/church)
 "cR" = (

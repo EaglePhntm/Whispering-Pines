@@ -125,7 +125,7 @@
 /turf/open/water/swamp,
 /area/rogue/indoors/shelter/bog)
 "bN" = (
-/turf/closed/mineral/gemeralds,
+/turf/closed/mineral/emeralds,
 /area/rogue/indoors/cave)
 "bP" = (
 /obj/structure/rack,
@@ -1483,7 +1483,7 @@
 /turf/open/water/swamp,
 /area/rogue/outdoors/bog)
 "tG" = (
-/turf/closed/mineral/gemeralds,
+/turf/closed/mineral/emeralds,
 /area/rogue/outdoors/mountains)
 "tH" = (
 /obj/machinery/light/fueled/firebowl,
@@ -2851,7 +2851,7 @@
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/indoors/shelter/bog)
 "Nk" = (
-/obj/item/natural/rock/gemerald,
+/obj/item/natural/rock/emerald,
 /turf/open/floor/naturalstone,
 /area/rogue/indoors/cave)
 "Ns" = (

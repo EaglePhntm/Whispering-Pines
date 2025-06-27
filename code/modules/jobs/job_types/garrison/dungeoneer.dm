@@ -5,7 +5,8 @@
 	Perhaps you were promoted from the garrison down to these cells \
 	to get your brutality off the town streets where cracked skulls caused outcries, \
 	or maybe your soft-hearted lord wanted to be sure his justice was done without malice. \
-	In either case, your little world is the lowest office in the Realm; from it your guests see only hell."
+	In either case, your little world is the lowest office in the Realm; from it your guests see only hell.\
+	You can not decide the fate of your prisoners however, that is up to the lord and their law."
 	flag = DUNGEONEER
 	department_flag = GARRISON
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)

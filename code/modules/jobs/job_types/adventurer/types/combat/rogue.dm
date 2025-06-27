@@ -85,11 +85,11 @@
 		H.set_blindness(0)
 		switch(weapon_choice)
 			if("Sabre")
-				H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
-				beltr = /obj/item/rogueweapon/sword/sabre
+				H.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
+				beltr = /obj/item/weapon/sword/sabre
 			if("Whip")
-				H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 1, TRUE)
-				beltr = /obj/item/rogueweapon/whip
+				H.adjust_skillrank(/datum/skill/combat/whipsflails, 1, TRUE)
+				beltr = /obj/item/weapon/whip
 		to_chat(H, span_warning("I am a scavenger, gentle name for a tomb raider, or grave digger..."))
 
 /datum/outfit/job/adventurer/rogue/proc/roguearch(mob/living/carbon/human/H)
@@ -111,12 +111,12 @@
 		H.adjust_skillrank(/datum/skill/misc/lockpicking, 4, TRUE)
 		H.adjust_skillrank(/datum/skill/craft/traps, 3, TRUE)
 		H.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
-		H.adjust_skillrank(/datum/skill/craft/sewing, 1, TRUE)
+		H.adjust_skillrank(/datum/skill/craft/tanning, 1, TRUE)
 	shirt = /obj/item/clothing/armor/gambeson
 	if(H.gender == FEMALE) //funny
-		shirt = /obj/item/clothing/suit/armor/chainmail/bikini
+		shirt = /obj/item/clothing/armor/chainmail/bikini
 	else
-		shirt = /obj/item/clothing/suit/armor/chainmail
+		shirt = /obj/item/clothing/armor/chainmail
 	gloves = /obj/item/clothing/gloves/fingerless
 	pants = /obj/item/clothing/pants/trou/leather
 	shoes = /obj/item/clothing/shoes/boots
@@ -166,13 +166,13 @@
 	shoes = /obj/item/clothing/shoes/nobleboot
 	belt = /obj/item/storage/belt/leather
 	if(H.gender == FEMALE) //funny
-		shirt = /obj/item/clothing/suit/armor/chainmail/bikini
+		shirt = /obj/item/clothing/armor/chainmail/bikini
 	else
-		shirt = /obj/item/clothing/suit/armor/chainmail
+		shirt = /obj/item/clothing/armor/chainmail
 	backl = /obj/item/storage/backpack/rogue/satchel
-	beltl = /obj/item/rogueweapon/sword/rapier
-	beltr = /obj/item/rogueweapon/shield/buckler
-	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/parrying = 1, /obj/item/bomb = 1,  /obj/item/bomb/smoke = 1, /obj/item/recipe_book/survival = 1)
+	beltl = /obj/item/weapon/sword/rapier
+	beltr = /obj/item/weapon/shield/buckler
+	backpack_contents = list(/obj/item/weapon/knife/dagger/steel/parrying = 1, /obj/item/bomb = 1,  /obj/item/smokebomb = 1, /obj/item/recipe_book/survival = 1)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_DECEIVING_MEEKNESS, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC) //if they got all the shield and parry stuff, might aswell.
@@ -193,30 +193,30 @@
 	H.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
 	H.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
 	H.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
-	H.adjust_skillrank(/datum/skill/misc/alchemy, 2, TRUE)
+	H.adjust_skillrank(/datum/skill/craft/alchemy, 2, TRUE)
 	H.adjust_skillrank(/datum/skill/magic/arcane, 2, TRUE)
 	H.adjust_skillrank(/datum/skill/craft/crafting, 3, TRUE)
 	H.adjust_skillrank(/datum/skill/misc/sneaking, 3, TRUE)
 	H.adjust_skillrank(/datum/skill/misc/stealing, 3, TRUE)
 	H.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
-	H.adjust_skillrank(/datum/skill/craft/sewing, 1, TRUE)
-	pants = /obj/item/clothing/under/trou/leather
+	H.adjust_skillrank(/datum/skill/craft/tanning, 1, TRUE)
+	pants = /obj/item/clothing/pants/trou/leather
 	shirt = /obj/item/clothing/armor/gambeson
 	gloves = /obj/item/clothing/gloves/fingerless
-	belt = /obj/item/storage/belt/rogue/leather
-	armor = /obj/item/clothing/suit/armor/leather
+	belt = /obj/item/storage/belt/leather
+	armor = /obj/item/clothing/armor/leather
 	cloak = /obj/item/clothing/cloak/raincloak/rogue
-	backl = /obj/item/storage/backpack/rogue/satchel
-	beltr = /obj/item/rogueweapon/huntingknife/idagger/steel
-	beltl = /obj/item/rogueweapon/huntingknife/idagger/steel
+	backl = /obj/item/storage/backpack/satchel
+	beltr = /obj/item/weapon/knife/dagger/steel
+	beltl = /obj/item/weapon/knife/dagger/steel
 	backpack_contents = list(/obj/item/lockpick, /obj/item/book/granter/spellbook/mid = 1, /obj/item/recipe_book/survival = 1)
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_LEARNMAGIC, TRAIT_GENERIC)
 	//Far less sum of stats due having crazy magic.
 	H.change_stat(STATKEY_STR, -1)
 	H.change_stat(STATKEY_PER, 2)
-	H.change_stat(STAKEY_SPD, 2)
-	H.change_stat(STAKEY_INT, 3)
+	H.change_stat(STATKEY_SPD, 2)
+	H.change_stat(STATKEY_INT, 3)
 	H.visible_message(span_info("I was always intrigued by magic, more than others. I took my time learning to use magic and stole a spellbook along the way."))
 	if(H.mind)
 		H.mind.adjust_spellpoints(1)

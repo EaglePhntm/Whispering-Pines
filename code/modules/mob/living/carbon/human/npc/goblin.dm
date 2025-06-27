@@ -445,7 +445,7 @@
 		if(6) //tribal club with rope for lewd
 			r_hand = /obj/item/weapon/mace/woodclub
 			l_hand = /obj/item/rope
-			//pants = /obj/item/clothing/under/roguetown/loincloth/goblinloin //lewd goblins don't need lioncloths i guess
+			//pants = /obj/item/clothing/pants/loincloth/goblinloin //lewd goblins don't need lioncloths i guess
 			H.seeksfuck = TRUE
 
 ////

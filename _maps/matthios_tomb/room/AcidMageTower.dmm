@@ -212,7 +212,7 @@
 /turf/open/floor/carpet/green,
 /area/rogue/under/tomb/indoors/magic)
 "jJ" = (
-/obj/item/natural/rock/gemerald,
+/obj/item/natural/rock/emerald,
 /turf/open/floor/naturalstone,
 /area/rogue/under/tomb/cave/wet)
 "jO" = (
@@ -325,7 +325,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/blood,
-/obj/item/clothing/ring/gold/rontz,
+/obj/item/clothing/ring/gold/ruby,
 /mob/living/carbon/human/species/zizombie/npc/ambush,
 /turf/open/floor/carpet/green,
 /area/rogue/under/tomb/indoors/magic)
@@ -1381,7 +1381,7 @@
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/under/tomb/indoors/magic)
 "YL" = (
-/obj/item/natural/rock/gemerald,
+/obj/item/natural/rock/emerald,
 /obj/item/natural/rock/random_ore,
 /turf/open/floor/naturalstone,
 /area/rogue/under/tomb/cave/wet)

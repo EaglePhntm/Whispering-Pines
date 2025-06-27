@@ -106,7 +106,7 @@
 
 /datum/outfit/job/vet/footman/pre_equip(mob/living/carbon/human/H)
 	neck = /obj/item/clothing/neck/gorget
-	armor = /obj/item/clothing/armor/plate // Meant to be better than man-at-arms, but worse than knight. No heavy armor!! This is a cuirass, not half-plate.
+	armor = /obj/item/clothing/armor/plate // Meant to be better than Manor Guard, but worse than knight. No heavy armor!! This is a cuirass, not half-plate.
 	shirt = /obj/item/clothing/armor/gambeson/heavy
 	head = /obj/item/clothing/head/helmet/sallet
 	pants = /obj/item/clothing/pants/chainlegs

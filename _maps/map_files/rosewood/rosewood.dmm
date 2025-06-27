@@ -7110,7 +7110,7 @@
 /area/rogue/outdoors/rtfield/safe)
 "dNd" = (
 /obj/structure/closet/crate/coffin,
-/obj/item/clothing/ring/silver/blortz,
+/obj/item/clothing/ring/silver/quartz,
 /turf/open/floor/cobble,
 /area/rogue/under/town/sewer)
 "dNy" = (

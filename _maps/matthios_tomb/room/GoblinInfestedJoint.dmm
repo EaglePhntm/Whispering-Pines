@@ -452,7 +452,7 @@
 /turf/open/floor/hexstone,
 /area/rogue/under/tomb)
 "oz" = (
-/turf/closed/mineral/gemeralds,
+/turf/closed/mineral/emeralds,
 /area/rogue/under/tomb/cave/spider)
 "oC" = (
 /turf/closed/wall/mineral/decostone/end{

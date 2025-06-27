@@ -1290,7 +1290,7 @@
 /area/rogue/under/mountains/anvil/dungeon/lower)
 "rs" = (
 /obj/structure/closet/crate/chest,
-/obj/item/clothing/ring/silver/saffira,
+/obj/item/clothing/ring/silver/sapphire,
 /turf/open/floor/churchrough,
 /area/rogue/under/mountains/anvil/dungeon/lower)
 "rv" = (
@@ -2973,7 +2973,7 @@
 /area/rogue/under/mountains/anvil/dungeon)
 "Qx" = (
 /obj/structure/closet/crate/chest,
-/obj/item/clothing/ring/gold/dorpel,
+/obj/item/clothing/ring/gold/diamond,
 /turf/open/floor/churchrough,
 /area/rogue/under/mountains/anvil/dungeon/lower)
 "Qy" = (

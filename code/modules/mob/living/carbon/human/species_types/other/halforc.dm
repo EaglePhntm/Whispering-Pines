@@ -72,7 +72,7 @@
 	enflamed_icon = "widefire"
 
 	exotic_bloodtype = /datum/blood_type/human/horc
-	meat = /obj/item/reagent_containers/food/snacks/meat/strange
+	meat = /obj/item/reagent_containers/food/snacks/meat/human
 
 	customizers = list(
 		/datum/customizer/organ/ears/halforc,

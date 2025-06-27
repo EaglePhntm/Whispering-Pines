@@ -823,7 +823,7 @@
 	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust, /datum/intent/sword/strike, /datum/intent/sword/chop/long)
 	force_wielded = DAMAGE_GREATSWORD_WIELD
 	name = "Steel Claymore"
-	desc = "A steel variant of the standard Claymore, the mainstay weapon of the wandering Mercanary Gallowglass' of Kaledon."
+	desc = "A steel variant of the standard Claymore."
 	icon_state = "steelclaymore"
 	minstr = 10
 	max_blade_int = 300

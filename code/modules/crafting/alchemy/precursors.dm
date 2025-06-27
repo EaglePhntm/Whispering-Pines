@@ -771,7 +771,7 @@ GLOBAL_LIST_INIT(natural_precursor_registry, list())
 		/obj/item/natural/rock/silver,
 		/obj/item/natural/rock/copper,
 		/obj/item/natural/rock/tin,
-		/obj/item/natural/rock/gemerald,
+		/obj/item/natural/rock/emerald,
 		/obj/item/natural/rock/random_ore,
 		/obj/item/natural/rock/random,
 		/obj/item/natural/rock/mana_crystal,

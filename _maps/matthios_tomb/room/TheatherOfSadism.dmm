@@ -748,7 +748,7 @@
 	},
 /area/rogue/under/tomb/indoors/royal)
 "RN" = (
-/obj/item/clothing/ring/gold/toper,
+/obj/item/clothing/ring/gold/topaz,
 /obj/effect/decal/cleanable/blood/gibs/down,
 /obj/effect/decal/cleanable/blood,
 /turf/open/water/swamp,
@@ -951,7 +951,7 @@
 /turf/open/floor/grass/red,
 /area/rogue/under/tomb)
 "Zu" = (
-/obj/item/clothing/ring/gold/dorpel,
+/obj/item/clothing/ring/gold/diamond,
 /obj/effect/decal/cleanable/blood,
 /turf/open/water/swamp,
 /area/rogue/under/tomb)

@@ -17,7 +17,7 @@
 	if(ishuman(target))
 		var/mob/living/carbon/human/targethuman = target
 		if(targethuman.wear_pants)
-			var/obj/item/clothing/under/roguetown/pantsies = targethuman.wear_pants
+			var/obj/item/clothing/pants/pantsies = targethuman.wear_pants
 			if(pantsies.flags_inv & HIDECROTCH)
 				if(!pantsies.genital_access)
 					return FALSE

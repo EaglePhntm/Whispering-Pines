@@ -428,6 +428,6 @@
 	if(!mind)
 		return
 	//the amount of spells you can memorize out of scrolls, seperate from spellpoints learnt ones.
-	spell_slots = max(round(((STAINT/4) + mind.get_skill_level(/datum/skill/magic/arcane) + spell_slots_bonus) - spell_slots_used), 0)
+	spell_slots = max(round(((STAINT/4) + get_skill_level(/datum/skill/magic/arcane) + spell_slots_bonus) - spell_slots_used), 0)
 	if(report_slots)
 		to_chat(src, "I think i can learn [spell_slots] more spells.")

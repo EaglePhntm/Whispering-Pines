@@ -2446,7 +2446,7 @@
 /area/rogue/indoors/lich)
 "ng" = (
 /obj/structure/closet/crate/chest/neu_fancy,
-/obj/item/clothing/ring/silver/saffira,
+/obj/item/clothing/ring/silver/sapphire,
 /obj/item/rope/chain,
 /turf/open/floor/churchrough,
 /area/rogue/indoors/lich)

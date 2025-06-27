@@ -81,7 +81,7 @@
 "bL" = (
 /obj/structure/table/wood/plain,
 /obj/item/gem/green{
-	name = "Gemerald?";
+	name = "emerald?";
 	desc = "Glints with a hint of malice..."
 	},
 /turf/open/floor/naturalstone,
@@ -1048,7 +1048,7 @@
 /turf/open/floor/ruinedwood/spiralfade,
 /area/rogue/under/mountains/anvil/lower/building)
 "pC" = (
-/turf/closed/mineral/gemeralds,
+/turf/closed/mineral/emeralds,
 /area/rogue/under/mountains/anvil/lower/building)
 "pF" = (
 /turf/open/water/cleanshallow,
@@ -1307,7 +1307,7 @@
 /turf/closed/wall/mineral/tent,
 /area/rogue/indoors/mountains/anvil/surface/building)
 "tB" = (
-/obj/item/natural/rock/gemerald,
+/obj/item/natural/rock/emerald,
 /turf/open/floor/volcanic,
 /area/rogue/outdoors/mountains/anvil/snowyforest)
 "tG" = (
@@ -1443,7 +1443,7 @@
 /area/rogue/outdoors/mountains/anvil/snowyforest)
 "vK" = (
 /obj/structure/table/wood/nice/decorated_alt,
-/obj/item/clothing/ring/gold/gemerald,
+/obj/item/clothing/ring/gold/emerald,
 /turf/open/floor/tile/kitchen,
 /area/rogue/under/mountains/anvil/lower/building)
 "vO" = (
@@ -3393,7 +3393,7 @@
 /turf/open/floor/naturalstone,
 /area/rogue/under/mountains/anvil/lower/building)
 "ZH" = (
-/turf/closed/mineral/gemeralds,
+/turf/closed/mineral/emeralds,
 /area/rogue/under/mountains/anvil/lower)
 "ZI" = (
 /obj/structure/fluff/railing/fence{

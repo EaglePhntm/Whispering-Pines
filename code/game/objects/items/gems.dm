@@ -59,35 +59,35 @@
 	..()
 
 /obj/item/gem/green
-	name = "gemerald"
+	name = "emerald"
 	desc = "Glints with verdant brilliance."
 	//color = "#15af158c"
 	icon_state = "emerald_cut"
 	sellprice = 44
 
 /obj/item/gem/blue
-	name = "blortz"
+	name = "quartz"
 	desc = "Pale blue, like a frozen tear."
 	//color = "#1ca5aa8c"
 	icon_state = "quartz_cut"
 	sellprice = 88
 
 /obj/item/gem/yellow
-	name = "toper"
+	name = "topaz"
 	desc = "Its amber hues remind you of the sunset."
 	//color = "#e6a0088c"
 	icon_state = "topaz_cut"
 	sellprice = 25
 
 /obj/item/gem/violet
-	name = "saffira"
+	name = "sapphire"
 	desc = "This gem is admired by many wizards."
 	//color = "#1733b38c"
 	icon_state = "sapphire_cut"
 	sellprice = 56
 
 /obj/item/gem/diamond
-	name = "dorpel"
+	name = "diamond"
 	desc = "Beautifully pure, it demands respect."
 	//color = "#ffffff8c"
 	icon_state = "diamond_cut"

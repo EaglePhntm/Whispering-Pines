@@ -19,7 +19,7 @@
 	if(istype(user, /mob/living/carbon/human))
 		var/mob/living/carbon/human/userhuman = user
 		if(userhuman.wear_pants)
-			var/obj/item/clothing/under/roguetown/pantsies = userhuman.wear_pants
+			var/obj/item/clothing/pants/pantsies = userhuman.wear_pants
 			if(pantsies.flags_inv & HIDECROTCH)
 				return FALSE
 	if(!get_location_accessible(target, BODY_ZONE_PRECISE_MOUTH))

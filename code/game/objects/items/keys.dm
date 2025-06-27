@@ -116,7 +116,7 @@
 
 /obj/item/key/apothecary
 	name = "apothecary's key"
-	desc = "Master key of the bathhouse."
+	desc = "Master key of the apothecary."
 	icon_state = "rustkey"
 	lockids = list(ACCESS_APOTHECARY)
 

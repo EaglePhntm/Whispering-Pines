@@ -729,7 +729,7 @@
 	},
 /obj/effect/mapping_helpers/floor_clothing_equipper,
 /obj/structure/fluff/railing/border,
-/obj/item/clothing/ring/silver/toper,
+/obj/item/clothing/ring/silver/topaz,
 /obj/item/clothing/cloak/half/vet,
 /obj/item/clothing/armor/plate/full,
 /obj/item/clothing/gloves/plate,
@@ -950,7 +950,7 @@
 /obj/item/clothing/gloves/leather/masterwork,
 /obj/item/clothing/head/crown/circlet/sleepless,
 /obj/item/weapon/polearm/woodstaff/quarterstaff/steel,
-/obj/item/clothing/ring/gold/dorpel,
+/obj/item/clothing/ring/gold/diamond,
 /obj/item/clothing/cloak/lordcloak/ladycloak,
 /turf/open/floor/carpet/lord/center,
 /area/rogue/under/tomb/indoors/royal)
@@ -1249,7 +1249,7 @@
 /turf/open/floor/tile/masonic/single,
 /area/rogue/under/tomb/indoors/magic)
 "nv" = (
-/obj/item/clothing/ring/gold/blortz,
+/obj/item/clothing/ring/gold/quartz,
 /turf/open/floor/metal,
 /area/rogue/under/tomb)
 "nw" = (
@@ -1332,7 +1332,7 @@
 	pixel_x = 0;
 	pixel_y = 7
 	},
-/obj/item/clothing/ring/silver/gemerald,
+/obj/item/clothing/ring/silver/emerald,
 /turf/open/floor/ruinedwood/chevron,
 /area/rogue/under/tomb/indoors)
 "nX" = (
@@ -1752,7 +1752,7 @@
 	candodge = 0
 	},
 /obj/effect/mapping_helpers/floor_clothing_equipper,
-/obj/item/clothing/ring/silver/gemerald,
+/obj/item/clothing/ring/silver/emerald,
 /obj/item/weapon/polearm/spear/hoplite,
 /obj/item/weapon/shield/tower/hoplite,
 /obj/item/clothing/armor/plate/rust,
@@ -2516,7 +2516,7 @@
 /turf/open/floor/ruinedwood/chevron,
 /area/rogue/under/tomb/indoors)
 "Bw" = (
-/obj/item/clothing/ring/gold/rontz,
+/obj/item/clothing/ring/gold/ruby,
 /turf/open/floor/tile,
 /area/rogue/under/tomb/indoors/royal)
 "Bz" = (
@@ -2978,7 +2978,7 @@
 	pixel_x = -32;
 	pixel_y = 0
 	},
-/obj/item/clothing/ring/silver/dorpel,
+/obj/item/clothing/ring/silver/diamond,
 /turf/open/floor/tile/masonic/single,
 /area/rogue/under/tomb/indoors/magic)
 "GJ" = (
@@ -3185,7 +3185,7 @@
 /area/rogue/under/tomb/indoors)
 "Iy" = (
 /obj/effect/mapping_helpers/floor_clothing_equipper,
-/obj/item/clothing/ring/silver/dorpel,
+/obj/item/clothing/ring/silver/diamond,
 /obj/item/clothing/cloak/half/guardsecond,
 /mob/living/carbon/human/species/skeleton/npc/no_equipment{
 	base_strength = 15;
@@ -3675,7 +3675,7 @@
 	},
 /obj/effect/mapping_helpers/floor_clothing_equipper,
 /obj/item/weapon/shield/tower/buckleriron,
-/obj/item/clothing/ring/silver/gemerald,
+/obj/item/clothing/ring/silver/emerald,
 /obj/item/clothing/cloak/half/guardsecond,
 /obj/item/weapon/sword/sabre/cutlass,
 /obj/item/clothing/gloves/plate,

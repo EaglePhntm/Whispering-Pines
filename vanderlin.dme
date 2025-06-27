@@ -2826,6 +2826,7 @@
 #include "modular_stonehedge\unlicensed-eaglephntm\code\modules\clothing\rogueclothes\stockings.dm"
 #include "modular_stonehedge\unlicensed-eaglephntm\code\modules\surgery\organs\filling_organ.dm"
 #include "modular_stonehedge\unlicensed-eaglephntm\code\modules\surgery\organs\lewdai.dm"
+#include "modular_whisper\code\game\objects\weapons\melee\whisper_weapons.dm"
 #include "modular_whisper\code\modules\cooking\raw\Human_processing.dm"
 #include "modular_whisper\code\modules\language\english.dm"
 #include "modular_whisper\code\modules\power\basic_power.dm"
@@ -2833,5 +2834,5 @@
 #include "modular_whisper\code\modules\reagents\blood_pack.dm"
 #include "modular_whisper\code\modules\reagents\dropper.dm"
 #include "modular_whisper\code\modules\reagents\syringes.dm"
-#include "modular_whisper\code\game\objects\weapons\melee\whisper_weapons.dm"
+#include "code\modules\jobs\job_types\youngfolk\apothecary.dm"
 // END_INCLUDE

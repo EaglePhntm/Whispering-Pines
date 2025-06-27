@@ -434,7 +434,7 @@
 /turf/open/floor/herringbone,
 /area/rogue/under/mountains/anvil/dungeon)
 "dF" = (
-/turf/closed/mineral/gemeralds/cold,
+/turf/closed/mineral/emeralds/cold,
 /area/rogue/under/cavelava)
 "dG" = (
 /obj/structure/chair/bench/coucha,
@@ -578,7 +578,7 @@
 /area/rogue/under/mountains/anvil/lower)
 "eP" = (
 /obj/structure/closet/crate/chest/gold,
-/obj/item/clothing/ring/silver/rontz,
+/obj/item/clothing/ring/silver/ruby,
 /obj/item/reagent_containers/glass/carafe/gold,
 /turf/open/floor/cobble,
 /area/rogue/under/mountains/anvil/dungeon)
@@ -1006,7 +1006,7 @@
 /area/rogue/under/mountains/anvil/upper)
 "hD" = (
 /obj/structure/closet/crate/coffin,
-/obj/item/clothing/ring/silver/rontz,
+/obj/item/clothing/ring/silver/ruby,
 /turf/open/floor/cobble,
 /area/rogue/under/mountains/anvil/lower)
 "hE" = (
@@ -1570,7 +1570,7 @@
 /turf/open/water/bath,
 /area/rogue/under/mountains/anvil/dungeon)
 "mu" = (
-/obj/item/clothing/ring/gold/dorpel,
+/obj/item/clothing/ring/gold/diamond,
 /obj/item/ore/silver,
 /obj/effect/spawner/map_spawner/loot/common,
 /obj/structure/closet/crate/chest/gold,
@@ -1610,7 +1610,7 @@
 /turf/open/floor/carpet/royalblack,
 /area/rogue/under/mountains/anvil/dungeon/lower)
 "mP" = (
-/turf/closed/mineral/gemeralds/cold,
+/turf/closed/mineral/emeralds/cold,
 /area/rogue/under/mountains/anvil/upper)
 "mQ" = (
 /obj/structure/table/stone_small,
@@ -3075,7 +3075,7 @@
 /turf/open/floor/herringbone,
 /area/rogue/under/mountains/anvil/dungeon/lower)
 "ze" = (
-/obj/item/natural/rock/gemerald,
+/obj/item/natural/rock/emerald,
 /turf/open/floor/grass/red,
 /area/rogue/under/mountains/anvil/upper)
 "zg" = (
@@ -3143,7 +3143,7 @@
 /area/rogue/under/mountains/anvil/upper)
 "zB" = (
 /obj/structure/rack/shelf/biggest,
-/obj/item/clothing/ring/silver/saffira,
+/obj/item/clothing/ring/silver/sapphire,
 /turf/open/floor/herringbone,
 /area/rogue/under/mountains/anvil/dungeon/lower)
 "zF" = (
@@ -3921,7 +3921,7 @@
 /area/rogue/under/mountains/anvil/dungeon/lower)
 "Gd" = (
 /obj/structure/closet/crate/chest/gold,
-/obj/item/clothing/ring/gold/saffira,
+/obj/item/clothing/ring/gold/sapphire,
 /obj/effect/spawner/map_spawner/loot/medium,
 /turf/open/floor/cobble,
 /area/rogue/under/mountains/anvil/lower)
@@ -4138,7 +4138,7 @@
 /area/rogue/under/mountains/anvil/upper)
 "HN" = (
 /obj/structure/fluff/walldeco/vinez/blue,
-/turf/closed/mineral/gemeralds/cold,
+/turf/closed/mineral/emeralds/cold,
 /area/rogue/under/mountains/anvil/upper)
 "HR" = (
 /obj/item/natural/wood/plank,
@@ -5098,7 +5098,7 @@
 /turf/open/floor/cobble,
 /area/rogue/under/mountains/anvil/lower)
 "OP" = (
-/obj/item/clothing/ring/silver/rontz,
+/obj/item/clothing/ring/silver/ruby,
 /turf/open/floor/cobblerock,
 /area/rogue/under/mountains/anvil/dungeon)
 "OU" = (
@@ -5300,7 +5300,7 @@
 /area/rogue/under/mountains/anvil/dungeon/lower)
 "Qs" = (
 /mob/living/simple_animal/hostile/retaliate/infernal/imp,
-/obj/item/natural/rock/gemerald,
+/obj/item/natural/rock/emerald,
 /turf/open/floor/grass/red,
 /area/rogue/under/mountains/anvil/upper)
 "Qt" = (
@@ -5627,7 +5627,7 @@
 /area/rogue/under/mountains/anvil/dungeon/lower)
 "ST" = (
 /obj/structure/closet/crate/chest/old_crate,
-/obj/item/clothing/ring/silver/saffira,
+/obj/item/clothing/ring/silver/sapphire,
 /turf/open/floor/herringbone,
 /area/rogue/under/mountains/anvil/dungeon/lower)
 "SU" = (
@@ -5693,7 +5693,7 @@
 /turf/open/water/bath,
 /area/rogue/under/mountains/anvil/dungeon/lower)
 "Tr" = (
-/obj/item/natural/rock/gemerald,
+/obj/item/natural/rock/emerald,
 /turf/open/floor/cobblerock,
 /area/rogue/under/mountains/anvil/upper)
 "Ts" = (
@@ -5754,7 +5754,7 @@
 /turf/open/floor/carpet/royalblack,
 /area/rogue/under/mountains/anvil/dungeon)
 "TR" = (
-/obj/item/natural/rock/gemerald,
+/obj/item/natural/rock/emerald,
 /turf/open/floor/cobble,
 /area/rogue/under/mountains/anvil/upper)
 "TU" = (
@@ -5944,7 +5944,7 @@
 /turf/open/floor/grass/cold,
 /area/rogue/under/mountains/anvil/upper)
 "Vv" = (
-/turf/closed/mineral/gemeralds/cold,
+/turf/closed/mineral/emeralds/cold,
 /area/rogue/under/mountains/anvil/lower)
 "Vw" = (
 /mob/living/simple_animal/hostile/retaliate/leylinelycan{

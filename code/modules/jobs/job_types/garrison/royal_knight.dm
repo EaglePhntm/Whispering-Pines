@@ -17,7 +17,7 @@
 
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_IMMORTAL)
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_PLAYER_NONDISCRIMINATED
+	allowed_races = RACES_PLAYER_GUARD
 
 	advclass_cat_rolls = list(CTAG_ROYALKNIGHT = 20)
 	give_bank_account = 60
@@ -25,7 +25,7 @@
 
 /datum/advclass/royalknight/knight
 	name = "Royal Knight"
-	tutorial = "The classic Knight in shining armor. Slightly more skilled then their Steam counterpart but has worse armor."
+	tutorial = "The classic Knight in shining armor. But more skilled then their Steam counterpart but has worse armor."
 
 	outfit = /datum/outfit/job/royalknight/knight
 
@@ -65,11 +65,12 @@
 	H.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 	H.adjust_skillrank(/datum/skill/labor/mathematics, 3, TRUE)
 
+	//8 distrib
 	H.change_stat(STATKEY_STR, 3)
-	H.change_stat(STATKEY_PER, 2)
-	H.change_stat(STATKEY_END, 2)
+	H.change_stat(STATKEY_END, 1)
+	H.change_stat(STATKEY_PER, 1)
 	H.change_stat(STATKEY_CON, 2)
-	H.change_stat(STATKEY_INT, 1)
+	H.change_stat(STATKEY_SPD, -2) //no chasing people out of town, you are a bodyguard.
 
 	H.verbs |= /mob/proc/haltyell
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
@@ -158,15 +159,17 @@
 	gloves = /obj/item/clothing/gloves/plate/steam
 	head = /obj/item/clothing/head/helmet/heavy/steam
 
+	//9 distrib when active but less skills and has maintenance i guess.
 	// Steam armour is complex
 	H.change_stat(STATKEY_INT, 2)
 	// Stronger armour than base RK
 	// Stat punishment for not having the armour active
-	H.change_stat(STATKEY_STR, -1)
+	//armor bonus: STATKEY_END = 2, STATKEY_CON = 2, STATKEY_STR = 2, STATKEY_SPD = 2
 	H.change_stat(STATKEY_CON, -1)
 	H.change_stat(STATKEY_END, -1)
 	// Way heavier
 	H.change_stat(STATKEY_SPD, -1)
+
 
 /datum/outfit/job/royalknight/steam/post_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()

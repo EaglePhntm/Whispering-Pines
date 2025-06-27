@@ -118,7 +118,7 @@
 /turf/open/floor/plank,
 /area/rogue/under/tomb/cave/lava)
 "K" = (
-/obj/item/natural/rock/gemerald,
+/obj/item/natural/rock/emerald,
 /turf/open/floor/volcanic,
 /area/rogue/under/tomb/cave/lava)
 "L" = (
@@ -180,7 +180,7 @@
 /turf/open/floor/volcanic,
 /area/rogue/under/tomb/cave/lava)
 "Z" = (
-/obj/item/natural/rock/gemerald,
+/obj/item/natural/rock/emerald,
 /turf/open/floor/naturalstone,
 /area/rogue/under/tomb/cave/lava)
 

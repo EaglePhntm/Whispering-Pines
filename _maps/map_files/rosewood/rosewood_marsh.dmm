@@ -3125,7 +3125,7 @@
 /obj/item/coin/silver/pile/xylix,
 /obj/item/ingot/silver,
 /obj/item/ingot/silver,
-/obj/item/clothing/ring/gold/dorpel,
+/obj/item/clothing/ring/gold/diamond,
 /obj/item/gem/green,
 /obj/item/clothing/ring/silver,
 /turf/open/floor/church/purple,
@@ -3368,7 +3368,7 @@
 /obj/structure/closet/crate/chest/neu,
 /obj/item/storage/belt/leather/plaquesilver,
 /obj/item/plate/silver,
-/obj/item/clothing/ring/silver/rontz,
+/obj/item/clothing/ring/silver/ruby,
 /turf/open/floor/dirt,
 /area/rogue/indoors/mountains)
 "uc" = (
@@ -5097,7 +5097,7 @@
 /obj/item/ingot/gold,
 /obj/item/ingot/gold,
 /obj/item/clothing/ring/silver,
-/obj/item/clothing/ring/silver/gemerald,
+/obj/item/clothing/ring/silver/emerald,
 /obj/item/ingot/silver,
 /obj/item/ingot/silver,
 /turf/open/floor/churchrough/purple,
@@ -7582,7 +7582,7 @@
 /obj/item/coin/gold/pile,
 /obj/item/coin/silver/pile/xylix,
 /obj/item/ingot/silver,
-/obj/item/clothing/ring/silver/blortz,
+/obj/item/clothing/ring/silver/quartz,
 /obj/item/gem/yellow,
 /turf/open/floor/church/purple,
 /area/rogue/indoors/lich)

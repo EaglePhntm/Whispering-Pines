@@ -8,8 +8,8 @@
 	generic_gender_feature_adjust(appearance_list, organ, bodypart, owner, OFFSET_FACE)
 
 /datum/sprite_accessory/crests/rubyb
-	name = "Rontz-Brass Crest"
-	icon_state = "rontzb"
+	name = "ruby-Brass Crest"
+	icon_state = "rubyb"
 
 /datum/sprite_accessory/crests/ironc
 	name = "Iron Crown Crest"

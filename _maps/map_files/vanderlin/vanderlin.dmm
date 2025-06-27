@@ -9954,7 +9954,7 @@
 /turf/open/floor/cobble,
 /area/rogue/outdoors/town)
 "goR" = (
-/obj/item/natural/rock/gemerald,
+/obj/item/natural/rock/emerald,
 /turf/open/water/cleanshallow,
 /area/rogue/under/cave)
 "goV" = (
@@ -23237,7 +23237,7 @@
 /turf/open/transparent/openspace,
 /area/rogue/indoors/villagegarrison)
 "oTV" = (
-/obj/item/natural/rock/gemerald,
+/obj/item/natural/rock/emerald,
 /turf/open/floor/naturalstone,
 /area/rogue/under/cave)
 "oTX" = (

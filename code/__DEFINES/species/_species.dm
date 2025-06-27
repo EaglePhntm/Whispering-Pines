@@ -82,6 +82,15 @@
 	RACE_AASIMAR,\
 	RACE_ELF,\
 	RACE_HALF_ELF,\
+	RACE_DROW,\
+	RACE_HALF_DROW,\
+	RACE_TIEFLING,\
+	RACE_HARPY,\
+	RACE_RAKSHARI,\
+	RACE_TRITON,\
+	RACE_KOBOLD,\
+	RACE_HOLLOWKIN,\
+	RACE_HALF_ORC,\
 )
 
 /// Races who are nonheretical to the church. Excluded races typically have an inhumen god associated, like Zizo. Used for church/faith roles.
@@ -92,8 +101,15 @@
 	RACE_AASIMAR,\
 	RACE_ELF,\
 	RACE_HALF_ELF,\
+	RACE_DROW,\
+	RACE_HALF_DROW,\
+	RACE_TIEFLING,\
 	RACE_HARPY,\
+	RACE_RAKSHARI,\
 	RACE_TRITON,\
+	RACE_KOBOLD,\
+	RACE_HOLLOWKIN,\
+	RACE_HALF_ORC,\
 )
 
 /// Races who are non-exotic to Vanderlin. These are races from foreign lands with no local pull or uncommon races. Used in miscellaneous cases, when they would not be that role.
@@ -158,6 +174,7 @@
 	RACE_AASIMAR,\
 	RACE_ELF,\
 	RACE_HALF_ELF,\
+	RACE_DROW,\
 	RACE_HALF_DROW,\
 	RACE_TIEFLING,\
 	RACE_HARPY,\

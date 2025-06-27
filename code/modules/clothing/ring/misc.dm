@@ -10,33 +10,33 @@
 	icon_state = "guild_mason"
 	sellprice = 0
 
-/obj/item/clothing/ring/silver/dorpel
-	name = "dorpel ring"
+/obj/item/clothing/ring/silver/diamond
+	name = "diamond ring"
 	icon_state = "s_ring_diamond"
 	sellprice = 140
 
-/obj/item/clothing/ring/silver/blortz
-	name = "blortz ring"
+/obj/item/clothing/ring/silver/quartz
+	name = "quartz ring"
 	icon_state = "s_ring_quartz"
 	sellprice = 110
 
-/obj/item/clothing/ring/silver/saffira
-	name = "saffira ring"
+/obj/item/clothing/ring/silver/sapphire
+	name = "sapphire ring"
 	icon_state = "s_ring_sapphire"
 	sellprice = 95
 
-/obj/item/clothing/ring/silver/gemerald
-	name = "gemerald ring"
+/obj/item/clothing/ring/silver/emerald
+	name = "emerald ring"
 	icon_state = "s_ring_emerald"
 	sellprice = 80
 
-/obj/item/clothing/ring/silver/toper
-	name = "toper ring"
+/obj/item/clothing/ring/silver/topaz
+	name = "topaz ring"
 	icon_state = "s_ring_topaz"
 	sellprice = 65
 
-/obj/item/clothing/ring/silver/rontz
-	name = "rontz ring"
+/obj/item/clothing/ring/silver/ruby
+	name = "ruby ring"
 	icon_state = "s_ring_ruby"
 	sellprice = 130
 
@@ -51,33 +51,33 @@
 	icon_state = "guild_mercator"
 	sellprice = 0
 
-/obj/item/clothing/ring/gold/dorpel
-	name = "dorpel ring"
+/obj/item/clothing/ring/gold/diamond
+	name = "diamond ring"
 	icon_state = "g_ring_diamond"
 	sellprice = 270
 
-/obj/item/clothing/ring/gold/blortz
-	name = "blortz ring"
+/obj/item/clothing/ring/gold/quartz
+	name = "quartz ring"
 	icon_state = "g_ring_quartz"
 	sellprice = 245
 
-/obj/item/clothing/ring/gold/saffira
-	name = "saffira ring"
+/obj/item/clothing/ring/gold/sapphire
+	name = "sapphire ring"
 	icon_state = "g_ring_sapphire"
 	sellprice = 200
 
-/obj/item/clothing/ring/gold/gemerald
-	name = "gemerald ring"
+/obj/item/clothing/ring/gold/emerald
+	name = "emerald ring"
 	icon_state = "g_ring_emerald"
 	sellprice = 195
 
-/obj/item/clothing/ring/gold/toper
-	name = "toper ring"
+/obj/item/clothing/ring/gold/topaz
+	name = "topaz ring"
 	icon_state = "g_ring_topaz"
 	sellprice = 180
 
-/obj/item/clothing/ring/gold/rontz
-	name = "rontz ring"
+/obj/item/clothing/ring/gold/ruby
+	name = "ruby ring"
 	icon_state = "g_ring_ruby"
 	sellprice = 255
 

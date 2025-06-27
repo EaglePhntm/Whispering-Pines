@@ -46,8 +46,8 @@
 	new /obj/item/weapon/mace/cudgel(src)
 
 /datum/stock/import/maa
-	name = "Man-at-Arms Equipment Crate"
-	desc = "Starting kit for a new Man-at-Arms."
+	name = "Manor Guard Equipment Crate"
+	desc = "Starting kit for a new Manor Guard."
 	item_type = /obj/structure/closet/crate/chest/steward/manatarms
 	export_price = 350
 	importexport_amt = 1

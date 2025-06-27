@@ -81,6 +81,8 @@
 #define NIGHTMAN    (1<<8)
 #define SCRIBE		(1<<9)
 #define GAFFER		(1<<10)
+#define APOTHECARY  (1<<11)
+#define WENCH    (1<<12)
 
 #define PEASANTS		(1<<4)
 
@@ -192,6 +194,9 @@
 #define JDO_SERVANT 26
 
 #define JDO_INNKEEP 27
+#define JDO_NITEMASTER 27.1
+#define JDO_KNAVEWENCH 27.2
+#define JDO_WENCH 27.3
 #define JDO_INNKEEP_CHILD 27.5
 #define JDO_COOK 28
 

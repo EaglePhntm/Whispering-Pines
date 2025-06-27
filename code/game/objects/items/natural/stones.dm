@@ -434,7 +434,7 @@ GLOBAL_LIST_INIT(stone_personality_descs, list(
 /obj/item/natural/rock/tin
 	mineralType = /obj/item/ore/tin
 
-/obj/item/natural/rock/gemerald
+/obj/item/natural/rock/emerald
 	mineralType = /obj/item/gem
 
 /obj/item/natural/rock/random_ore
@@ -452,7 +452,7 @@ GLOBAL_LIST_INIT(stone_personality_descs, list(
 		/obj/item/natural/rock/silver,
 		/obj/item/natural/rock/copper,
 		/obj/item/natural/rock/tin,
-		/obj/item/natural/rock/gemerald
+		/obj/item/natural/rock/emerald
 	))
 	new theboi(get_turf(src))
 	return INITIALIZE_HINT_QDEL

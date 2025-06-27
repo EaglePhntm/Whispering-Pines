@@ -82,6 +82,17 @@
 		/datum/descriptor_choice/prominent_four_wild,
 	)
 
+	exotic_bloodtype = /datum/blood_type/human/goblin
+	meat = /obj/item/reagent_containers/food/snacks/meat/human
+
+/datum/blood_type/human/goblin
+	name = "Goblin"
+	compatible_types = list(
+		/datum/blood_type/human/o_minus,
+	)
+	reagent_type = /datum/reagent/blood
+	contains_lux = TRUE
+
 /datum/species/goblinp/get_span_language(datum/language/message_language)
 	if(!message_language)
 		return

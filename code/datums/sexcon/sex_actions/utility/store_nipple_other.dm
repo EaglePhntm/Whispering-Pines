@@ -11,7 +11,7 @@
 	if(ishuman(target))
 		var/mob/living/carbon/human/targethuman = target
 		if(targethuman.wear_shirt)
-			var/obj/item/clothing/suit/roguetown/shirtsies = targethuman.wear_shirt
+			var/obj/item/clothing/shirt/shirtsies = targethuman.wear_shirt
 			if(shirtsies.flags_inv & HIDEBOOB)
 				if(shirtsies.genital_access == FALSE)
 					return FALSE
@@ -34,7 +34,7 @@
 	if(ishuman(target))
 		var/mob/living/carbon/human/targethuman = target
 		if(targethuman.wear_shirt)
-			var/obj/item/clothing/suit/roguetown/shirtsies = targethuman.wear_shirt
+			var/obj/item/clothing/shirt/shirtsies = targethuman.wear_shirt
 			if(shirtsies.flags_inv & HIDEBOOB)
 				if(shirtsies.genital_access == FALSE)
 					return FALSE

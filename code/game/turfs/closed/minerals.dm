@@ -304,7 +304,7 @@
 	mineralChance = 30
 	mineralSpawnChanceList = list(/turf/closed/mineral/mana_crystal = 10,
 	/turf/closed/mineral/gold = 40 ,
-	/turf/closed/mineral/gemeralds = 20,
+	/turf/closed/mineral/emeralds = 20,
 	/turf/closed/mineral/silver = 40
 	)
 
@@ -313,7 +313,7 @@
 	mineralChance = 50
 	mineralSpawnChanceList = list(/turf/closed/mineral/mana_crystal = 10,
 	/turf/closed/mineral/gold = 40,
-	/turf/closed/mineral/gemeralds = 20,
+	/turf/closed/mineral/emeralds = 20,
 	/turf/closed/mineral/silver = 40
 	)
 
@@ -322,7 +322,7 @@
 	mineralChance = 70
 	mineralSpawnChanceList = list(/turf/closed/mineral/mana_crystal = 10,
 	/turf/closed/mineral/gold = 40 ,
-	/turf/closed/mineral/gemeralds = 20,
+	/turf/closed/mineral/emeralds = 20,
 	/turf/closed/mineral/silver = 40
 	)
 
@@ -441,15 +441,15 @@
 	icon = MAP_SWITCH('icons/turf/smooth/walls/mineral_blue.dmi', 'icons/turf/mining.dmi')
 	icon_state = MAP_SWITCH("mineral", "coal_ice")
 
-/turf/closed/mineral/gemeralds
+/turf/closed/mineral/emeralds
 	icon = MAP_SWITCH('icons/turf/smooth/walls/mineral.dmi', 'icons/turf/mining.dmi')
 	icon_state = MAP_SWITCH("mineral", "gem")
 	mineralType = /obj/item/gem
-	rockType = /obj/item/natural/rock/gemerald
+	rockType = /obj/item/natural/rock/emerald
 	spreadChance = 3
 	spread = 2
 
-/turf/closed/mineral/gemeralds/cold
+/turf/closed/mineral/emeralds/cold
 	icon = MAP_SWITCH('icons/turf/smooth/walls/mineral_blue.dmi', 'icons/turf/mining.dmi')
 	icon_state = MAP_SWITCH("mineral", "gem_ice")
 

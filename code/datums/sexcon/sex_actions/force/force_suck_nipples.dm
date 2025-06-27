@@ -19,7 +19,7 @@
 	if(ishuman(user))
 		var/mob/living/carbon/human/userhuman = user
 		if(userhuman.wear_shirt)
-			var/obj/item/clothing/suit/roguetown/shirtsies = userhuman.wear_shirt
+			var/obj/item/clothing/shirt/shirtsies = userhuman.wear_shirt
 			if(shirtsies.flags_inv & HIDEBOOB)
 				if(shirtsies.genital_access == FALSE)
 					return FALSE

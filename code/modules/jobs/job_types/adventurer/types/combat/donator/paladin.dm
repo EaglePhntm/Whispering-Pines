@@ -100,7 +100,7 @@
 	shoes = /obj/item/clothing/shoes/boots/armor
 	belt = /obj/item/storage/belt/leather/steel
 	beltl = /obj/item/storage/belt/pouch/coins/mid
-	ring = /obj/item/clothing/ring/silver/toper
+	ring = /obj/item/clothing/ring/silver/topaz
 	cloak = /obj/item/clothing/cloak/tabard/crusader
 	neck = /obj/item/clothing/neck/chaincoif
 	gloves = /obj/item/clothing/gloves/plate

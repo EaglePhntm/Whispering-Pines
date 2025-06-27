@@ -470,7 +470,7 @@
 /turf/open/floor/grass/yel,
 /area/rogue/under/tomb/cave)
 "Oh" = (
-/obj/item/natural/rock/gemerald,
+/obj/item/natural/rock/emerald,
 /turf/open/floor/cobblerock,
 /area/rogue/under/tomb/cave)
 "OL" = (

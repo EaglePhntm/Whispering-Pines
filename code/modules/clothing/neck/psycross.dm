@@ -1,7 +1,7 @@
 
 /obj/item/clothing/neck/psycross
-	name = "psycross"
-	desc = "Let His name be naught but forgot'n."
+	name = "old god cross"
+	desc = "One of the old world religions' cross."
 	icon_state = "psycross_wood"
 	//dropshrink = 0.75
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_HIP|ITEM_SLOT_WRISTS
@@ -11,8 +11,8 @@
 // SILVER PSYCROSS START
 
 /obj/item/clothing/neck/psycross/silver
-	name = "silver psycross"
-	desc = "Let His name be naught but forgot'n. Let the wicked undead burn at my touch."
+	name = "silver old god cross"
+	desc = "One of the old world religions' cross. Let the wicked undead burn at my touch."
 	icon_state = "psycross_silver"
 	resistance_flags = FIRE_PROOF
 	sellprice = 50
@@ -30,7 +30,7 @@
 // Only non-refactored psycross because Lunaria likes vamps. Neeeerd!
 /obj/item/clothing/neck/psycross/lunaria
 	name = "amulet of Lunaria"
-	desc = "Diligence, study, pursuit of truth and wisdom. Let nothing deter you from it."
+	desc = "Moonlight continues to bathe all even when sun has to go."
 	icon_state = "noc"
 	resistance_flags = FIRE_PROOF
 
@@ -48,13 +48,13 @@
 
 /obj/item/clothing/neck/psycross/silver/last_death
 	name = "amulet of Last Death"
-	desc = "Where, grave, thy victory? I triumph still while the Veiled Lady abides by me."
+	desc = "We are but souls in a husk of flesh, all we achieve is ours forever."
 	icon_state = "necra"
 	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/neck/psycross/silver/wanderer
-	name = "amulet of Wanderer"
-	desc = "Struggle. Challenge. And rise to struggle again. That is the sword of he who yet lives to fight again."
+	name = "amulet of The Wanderer"
+	desc = "Lead the lost to their righteous way.."
 	icon_state = "ravox"
 	resistance_flags = FIRE_PROOF
 
@@ -66,8 +66,10 @@
 
 /obj/item/clothing/neck/psycross/silver/moonbeam
 	name = "amulet of Moonbeam"
-	desc = "And I love thee because thou art love."
-	icon_state = "eora"
+	desc = "Where can you go when it's all in your mind? Enjoy life for it is chaos that takes without warning."
+	icon = 'modular_whisper/icons/clothing/neck.dmi'
+	mob_overlay_icon = 'modular_whisper/icons/clothing/onmob/neck.dmi'
+	icon_state = "moonbeam"
 	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/neck/psycross/silver/holy/moonbeam

@@ -44,7 +44,7 @@
 	flaws = "Exhibitionism, Isolationism, Unfiltered Honesty"
 	worshippers = "Magic Practitioners, Scholars, Scribes"
 	sins = "Suppressing Truth, Doing drugs."
-	boons = "You enjoy night time."
+	boons = "You enjoy night time more than others."
 	added_traits = list(TRAIT_NIGHT_OWL)
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
 	t1 = /obj/effect/proc_holder/spell/invoked/invisibility
@@ -222,8 +222,8 @@ accend to the astral plane as the god of the desert where he has watched over al
 	t2 = /obj/effect/proc_holder/spell/invoked/projectile/eoracurse
 	t3 = /obj/effect/proc_holder/spell/invoked/bud
 	confess_lines = list(
-		"MOONBEAM BRINGS US TOGETHER!",
-		"HER BEAUTY IS EVEN IN THIS TORMENT!",
-		"I LOVE YOU, EVEN AS YOU TRESPASS AGAINST ME!",
+		"TAKE ME TO YOUR ASTRAL EMBRACE!",
+		"LADY MOONBEAM, WAKE ME FROM THIS BAD DREAM!",
+		"LIFE IS INVALUABLE!",
 	)
 	storyteller = /datum/storyteller/moonbeam

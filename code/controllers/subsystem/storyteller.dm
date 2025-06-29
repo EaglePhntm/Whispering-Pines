@@ -287,6 +287,12 @@ SUBSYSTEM_DEF(gamemode)
 				"...your heart is a loom... dreams pass through it, weaving bonds to people you’ve never met, yet feel you’ve always known..."
 			),
 
+			"The Wanderer"= list(
+				"...the scorching desert burns your skin, shade of a cloak of sands take over...",
+				"...beacon far off the horizon calls your name...",
+				"...every step taken resonate with greater effect as you head through the lost trails..."
+			),
+
 			//Inhumen Pantheon
 
 			"Matthios"= list(

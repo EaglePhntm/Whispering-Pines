@@ -475,22 +475,24 @@ GLOBAL_LIST_EMPTY(respawncounts)
 	var/last_death_followers = GLOB.patron_follower_counts["Last Death"] || 0
 	var/pestra_followers = GLOB.patron_follower_counts["Pestra"] || 0
 	var/dendor_followers = GLOB.patron_follower_counts["Blissrose"] || 0
-	var/ravox_followers = GLOB.patron_follower_counts["Wanderer"] || 0
+	var/ravox_followers = GLOB.patron_follower_counts["Ravox"] || 0
 	var/xylix_followers = GLOB.patron_follower_counts["Xylix"] || 0
 	var/malum_followers = GLOB.patron_follower_counts["Malum"] || 0
 	var/abyssor_followers = GLOB.patron_follower_counts["Abyssor"] || 0
 	var/eora_followers = GLOB.patron_follower_counts["Moonbeam"] || 0
+	var/wanderer_followers = GLOB.patron_follower_counts["The Wanderer"] || 0
 
 	var/astrata_storyteller = /datum/storyteller/astrata
 	var/noc_storyteller = /datum/storyteller/lunaria
 	var/last_death_storyteller = /datum/storyteller/last_death
 	var/pestra_storyteller = /datum/storyteller/pestra
 	var/dendor_storyteller = /datum/storyteller/blissrose
-	var/ravox_storyteller = /datum/storyteller/wanderer
+	var/ravox_storyteller = /datum/storyteller/ravox
 	var/xylix_storyteller = /datum/storyteller/xylix
 	var/malum_storyteller = /datum/storyteller/malum
 	var/abyssor_storyteller = /datum/storyteller/abyssor
 	var/eora_storyteller = /datum/storyteller/moonbeam
+	var/wanderer_storyteller = /datum/storyteller/wanderer
 
 	data += "<div style='text-align: center; font-size: 1.3em; color: #c0a828; margin: 20px 0 10px 0;'><b>NEW GODS</b></div>"
 	data += "<div style='border-top: 3px solid #404040; margin: 0 auto 30px; width: 91.5%;'></div>"
@@ -532,7 +534,8 @@ GLOBAL_LIST_EMPTY(respawncounts)
 		Number of parents: [GLOB.vanderlin_round_stats[STATS_PARENTS]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(eora_storyteller, STATS_PARENTS))])<br>\
 		Hugs made: [GLOB.vanderlin_round_stats[STATS_HUGS_MADE]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(eora_storyteller, STATS_HUGS_MADE))])<br>\
 		Hands held: [GLOB.vanderlin_round_stats[STATS_HANDS_HELD]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(eora_storyteller, STATS_HANDS_HELD))])<br>\
-		Number of pacifists: [GLOB.vanderlin_round_stats[STATS_PACIFISTS]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(eora_storyteller, STATS_PACIFISTS))])", eora_storyteller)
+		Number of pacifists: [GLOB.vanderlin_round_stats[STATS_PACIFISTS]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(eora_storyteller, STATS_PACIFISTS))])\
+		Skills dreamed: [GLOB.vanderlin_round_stats[STATS_SKILLS_DREAMED]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(noc_storyteller, STATS_SKILLS_DREAMED))])", eora_storyteller)
 
 	// Last Death
 	data += god_ui_block("LAST DEATH", "#2a2459", "#4c82a8", "\
@@ -593,6 +596,14 @@ GLOBAL_LIST_EMPTY(respawncounts)
 		Animals bred: [GLOB.vanderlin_round_stats[STATS_ANIMALS_BRED]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(pestra_storyteller, STATS_ANIMALS_BRED))])", pestra_storyteller)
 
 	data += "</div></div>"
+
+	// Wanderer
+	data += god_ui_block("WANDERER", "#50090f", "#bbace0", "\
+		Number of followers: [wanderer_followers] ([get_colored_influence_value(SSgamemode.get_follower_influence(wanderer_storyteller))])<br>\
+		People drowned: [GLOB.vanderlin_round_stats[STATS_PEOPLE_DROWNED]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(wanderer_storyteller, STATS_PEOPLE_DROWNED))])<br>\
+		Forest deaths: [GLOB.vanderlin_round_stats[STATS_FOREST_DEATHS]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(wanderer_storyteller, STATS_FOREST_DEATHS))])<br>\
+		Laws and decrees: [GLOB.vanderlin_round_stats[STATS_LAWS_AND_DECREES_MADE]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(wanderer_storyteller, STATS_LAWS_AND_DECREES_MADE))])<br>\
+		Water consumed: [GLOB.vanderlin_round_stats[STATS_WATER_CONSUMED]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(wanderer_storyteller, STATS_WATER_CONSUMED))])", wanderer_storyteller)
 
 	// Inhumen Gods Section
 	var/zizo_followers = GLOB.patron_follower_counts["Tenebrase"] || 0

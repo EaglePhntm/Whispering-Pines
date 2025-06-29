@@ -3,11 +3,7 @@
 	/datum/storyteller/astrata, \
 	/datum/storyteller/lunaria, \
 	/datum/storyteller/wanderer, \
-	/datum/storyteller/abyssor, \
-	/datum/storyteller/xylix, \
 	/datum/storyteller/last_death, \
-	/datum/storyteller/pestra, \
-	/datum/storyteller/malum, \
 	/datum/storyteller/moonbeam, \
 	/datum/storyteller/blissrose, \
 )
@@ -16,8 +12,6 @@
 #define INHUMEN_STORYTELLERS list( \
 	/datum/storyteller/tenebrase, \
 	/datum/storyteller/lamashtu, \
-	/datum/storyteller/graggar, \
-	/datum/storyteller/matthios, \
 )
 
 /// All storytellers
@@ -62,8 +56,8 @@
 		STATS_MANA_SPENT = list("points" = 0.0175, "capacity" = 100),
 	)
 
-/datum/storyteller/wanderer
-	name = "Wanderer"
+/datum/storyteller/ravox
+	name = "Ravox"
 	desc = "Wanderer will cause raids to happen naturally instead of only when people are dying a lot."
 	welcome_text = "The drums of war grow louder."
 	weight = 4
@@ -246,6 +240,7 @@
 		STATS_HUGS_MADE = list("points" = 1.75, "capacity" = 60),
 		STATS_HANDS_HELD = list("points" = 1.75, "capacity" = 60),
 		STATS_PACIFISTS = list("points" = 10, "capacity" = 70),
+		STATS_SKILLS_DREAMED = list("points" = 0.325, "capacity" = 100),
 	)
 
 /datum/storyteller/blissrose
@@ -417,3 +412,33 @@
 	)
 
 	cost_variance = 15  // Keeps a balance between predictability and randomness
+
+/datum/storyteller/wanderer
+	name = "Wanderer"
+	desc = "Wanderer will cause trade and raid events more often."
+	welcome_text = "The wanderer guides the lost to their way."
+	weight = 4
+	always_votable = TRUE
+	color_theme = "#f7c183"
+
+	point_gains_multipliers = list(
+		EVENT_TRACK_MUNDANE = 1,
+		EVENT_TRACK_PERSONAL = 1.2,
+		EVENT_TRACK_MODERATE = 1,
+		EVENT_TRACK_INTERVENTION = 2,
+		EVENT_TRACK_CHARACTER_INJECTION = 1,
+		EVENT_TRACK_OMENS = 1,
+		EVENT_TRACK_RAIDS = 1.1,
+	)
+
+	tag_multipliers = list(
+		TAG_TRADE = 1.2,
+		TAG_RAID = 1.1,
+	)
+
+	influence_factors = list(
+		STATS_WATER_CONSUMED = list("points" = 0.0125, "capacity" = 90),
+		STATS_FOREST_DEATHS = list("points" = -6.5, "capacity" = 90),
+		STATS_LAWS_AND_DECREES_MADE = list("points" = 6.5, "capacity" = 75),
+		STATS_PEOPLE_DROWNED = list("points" = -9, "capacity" = 75),
+	)

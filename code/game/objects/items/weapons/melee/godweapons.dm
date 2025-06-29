@@ -117,7 +117,7 @@
 
 /obj/item/weapon/polearm/neant/Initialize(mapload, ...)
 	. = ..()
-	AddElement(/datum/element/divine_intervention, /datum/patron/inhumen/zizo, PUNISHMENT_BURN, /datum/stressevent/divine_punishment, TRUE)
+	AddElement(/datum/element/divine_intervention, /datum/patron/inhumen/tenebrase, PUNISHMENT_BURN, /datum/stressevent/divine_punishment, TRUE)
 
 /obj/item/weapon/polearm/neant/attack(mob/living/M, mob/living/user)
 	if(user.used_intent.tranged)
@@ -252,7 +252,7 @@
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/bow/turbulenta/Initialize(mapload, ...)
 	. = ..()
-	AddElement(/datum/element/divine_intervention, /datum/patron/inhumen/baotha, PUNISHMENT_STRESS, /datum/stressevent/divine_punishment, TRUE)
+	AddElement(/datum/element/divine_intervention, /datum/patron/inhumen/lamashtu, PUNISHMENT_STRESS, /datum/stressevent/divine_punishment, TRUE)
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/bow/turbulenta/getonmobprop(tag)
 	if(tag)

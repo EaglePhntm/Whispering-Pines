@@ -203,10 +203,11 @@
 		OFFSET_NECK = list(0,-5), OFFSET_MOUTH = list(0,-5), OFFSET_PANTS = list(0,0), \
 		OFFSET_SHIRT = list(0,0), OFFSET_ARMOR = list(0,0), OFFSET_BUTT = list(0,-4),\ OFFSET_UNDIES = list(0,-4)
 		)
+	dam_icon_f = null
+	dam_icon_m = null
 	damage_overlay_type = ""
 	changesource_flags = WABBAJACK
 	custom_clothes = TRUE
-	swap_male_clothes = TRUE
 	var/raceicon = "goblin"
 
 /datum/species/goblin/regenerate_icons(mob/living/carbon/human/H)

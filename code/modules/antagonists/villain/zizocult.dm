@@ -8,8 +8,8 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	antag_hud_type = ANTAG_HUD_ZIZOID
 	antag_hud_name = "zizoid_lackey"
 	confess_lines = list(
-		"DEATH TO THE TEN!",
-		"PRAISE ZIZO!",
+		"DEATH TO NEW GODS!",
+		"PRAISE TENEBRASE!",
 		"I AM THE FUTURE!",
 		"NO GODS! ONLY MASTERS!",
 	)
@@ -52,7 +52,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	. = ..()
 	var/mob/living/carbon/human/H = owner.current
 	SSmapping.retainer.cultists |= owner
-	H.set_patron(/datum/patron/inhumen/zizo)
+	H.set_patron(/datum/patron/inhumen/tenebrase)
 
 	owner.special_role = "Zizoid Lackey"
 	H.cmode_music = 'sound/music/cmode/antag/combat_cult.ogg'
@@ -72,7 +72,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 		H.change_stat(STATKEY_INT, -2)
 		return
 
-	add_objective(/datum/objective/zizo)
+	add_objective(/datum/objective/tenebrase)
 	owner.special_role = ROLE_ZIZOIDCULTIST
 	H.verbs |= /mob/living/carbon/human/proc/release_minion
 	if(!change_stats)
@@ -116,13 +116,13 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	cult_mind.add_antag_datum(/datum/antagonist/zizocultist)
 	return TRUE
 
-/datum/objective/zizo
+/datum/objective/tenebrase
 	name = "ASCEND"
 	explanation_text = "Ensure that I ascend."
 	team_explanation_text = "Ensure that I ascend."
 	triumph_count = 5
 
-/datum/objective/zizo/check_completion()
+/datum/objective/tenebrase/check_completion()
 	if(SSmapping.retainer.cult_ascended)
 		return TRUE
 
@@ -187,18 +187,18 @@ GLOBAL_LIST_EMPTY(ritualslist)
 
 /mob/living/carbon/human/proc/praise()
 	set name = "Praise the Dark Lady!"
-	set category = "ZIZO"
+	set category = "TENEBRASE"
 
 	if(stat >= UNCONSCIOUS || !can_speak_vocal())
 		return
 	GLOB.vanderlin_round_stats[STATS_ZIZO_PRAISED]++
-	audible_message("\The [src] praises <span class='bold'>Zizo</span>!")
+	audible_message("\The [src] praises <span class='bold'>Tenebrase</span>!")
 	playsound(src.loc, 'sound/vo/cult/praise.ogg', 45, 1)
-	log_say("[src] has praised zizo! (zizo cultist verb)")
+	log_say("[src] has praised tenebrase! (tenebrase cultist verb)")
 
 /mob/living/carbon/human/proc/communicate()
 	set name = "Communicate with Cult"
-	set category = "ZIZO"
+	set category = "TENEBRASE"
 
 	if(stat >= UNCONSCIOUS || !can_speak_vocal())
 		return
@@ -234,7 +234,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 
 	if(ishuman(user))
 		var/mob/living/carbon/human/human_user = user
-		if(human_user.patron.type == /datum/patron/inhumen/zizo)
+		if(human_user.patron.type == /datum/patron/inhumen/tenebrase)
 			to_chat(user, "It is of the [sigil_type] circle.")
 
 /obj/effect/decal/cleanable/sigil/Initialize(mapload)
@@ -278,7 +278,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	var/list/rituals = list()
 	if(icon_state != "center") // fucking awful but it has to be this way
 		return
-	if(user.patron.type != /datum/patron/inhumen/zizo)
+	if(user.patron.type != /datum/patron/inhumen/tenebrase)
 		return
 	for(var/G in GLOB.ritualslist)
 		var/datum/ritual/path = GLOB.ritualslist[G]
@@ -428,7 +428,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 
 /mob/living/carbon/human/proc/draw_sigil()
 	set name = "Draw Sigil"
-	set category = "ZIZO"
+	set category = "TENEBRASE"
 	if(incapacitated(ignore_grab = TRUE) || stat >= UNCONSCIOUS)
 		return
 
@@ -448,7 +448,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 
 /mob/living/carbon/human/proc/release_minion()
 	set name = "Release Lackey"
-	set category = "ZIZO"
+	set category = "TENEBRASE"
 
 	var/list/mob/living/carbon/human/possible = list()
 	for(var/datum/mind/V in SSmapping.retainer.cultists)
@@ -460,7 +460,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 		var/alert = alert(src, "Are you sure?", "VANDERLIN", "Yes", "Cancel")
 		if(alert == "Yes")
 			visible_message("<span class='danger'>[src] reaches out, ripping up [choice]'s soul!</span>")
-			to_chat(choice, "<span class='userdanger'>I HAVE FAILED MY LEADER! I HAVE FAILED ZIZO! NOTHING ELSE BUT DEATH REMAINS FOR ME NOW!</span>")
+			to_chat(choice, "<span class='userdanger'>I HAVE FAILED MY LEADER! I HAVE FAILED TENEBRASE! NOTHING ELSE BUT DEATH REMAINS FOR ME NOW!</span>")
 			sleep(20)
 			choice.gib() // Cooler than dusting.
 			SSmapping.retainer.cultists -= choice.mind
@@ -631,7 +631,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 /obj/item/corruptedheart/attack(mob/living/M, mob/living/user)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		if(user.patron.type == /datum/patron/inhumen/zizo)
+		if(user.patron.type == /datum/patron/inhumen/tenebrase)
 			H.blood_volume = BLOOD_VOLUME_MAXIMUM
 			to_chat(H, "<span class='notice'>My elixir of life is stagnant once again.</span>")
 			qdel(src)
@@ -668,8 +668,8 @@ GLOBAL_LIST_EMPTY(ritualslist)
 						found_assassin = TRUE
 						for(var/obj/item/I in carbon.get_all_gear()) // Checks to see if the assassin has their dagger on them. If so, the dagger will let them know of a new target.
 							if(istype(I, /obj/item/weapon/knife/dagger/steel/profane)) // Checks to see if the assassin has their dagger on them.
-								// carbon.visible_message("profane dagger whispers, <span class='danger'>\"The terrible Zizo has called for our aid. Hunt and strike down our common foe, [HL.real_name]!\"</span>")
-								to_chat(carbon, "profane dagger whispers, <span class='danger'>\"The terrible Zizo has called for our aid. Hunt and strike down our common foe, [HL.real_name]!\"</span>")
+								// carbon.visible_message("profane dagger whispers, <span class='danger'>\"The terrible Tenebrase has called for our aid. Hunt and strike down our common foe, [HL.real_name]!\"</span>")
+								to_chat(carbon, "profane dagger whispers, <span class='danger'>\"The terrible Tenebrase has called for our aid. Hunt and strike down our common foe, [HL.real_name]!\"</span>")
 				if(found_assassin == TRUE)
 					ADD_TRAIT(HL, TRAIT_ZIZOID_HUNTED, TRAIT_GENERIC) // Gives the victim a trait to track that they are wanted dead.
 					log_hunted("[key_name(HL)] playing as [HL] had the hunted flaw by Zizoid curse.")
@@ -841,7 +841,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	for(var/mob/living/carbon/human/H in C.contents)
 		H.playsound_local(C, 'sound/misc/vampirespell.ogg', 100, FALSE, pressure_affected = FALSE)
 		H.fully_heal()
-		to_chat(H.mind, "<span class='notice'>ZIZO EMPOWERS ME!</span>")
+		to_chat(H.mind, "<span class='notice'>TENEBRASE EMPOWERS ME!</span>")
 		break
 
 /datum/ritual/darkeyes
@@ -970,7 +970,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 			VIRGIN.gib()
 		SSmapping.retainer.cult_ascended = TRUE
 		addomen(OMEN_ASCEND)
-		to_chat(user.mind, "<span class='userdanger'>I HAVE DONE IT! I HAVE REACHED A HIGHER FORM! ZIZO SMILES UPON ME WITH MALICE IN HER EYES TOWARD THE ONES WHO LACK KNOWLEDGE AND UNDERSTANDING!</span>")
+		to_chat(user.mind, "<span class='userdanger'>I HAVE DONE IT! I HAVE REACHED A HIGHER FORM! TENEBRASE SMILES UPON ME WITH MALICE IN HER EYES TOWARD THE ONES WHO LACK KNOWLEDGE AND UNDERSTANDING!</span>")
 		var/mob/living/trl = new /mob/living/simple_animal/hostile/retaliate/blood/ascended(C)
 		trl.ckey = H.ckey
 		H.gib()

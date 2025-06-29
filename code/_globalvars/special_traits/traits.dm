@@ -103,7 +103,7 @@
 
 /datum/special_trait/night_owl
 	name = "Night Owl"
-	greet_text = span_notice("I've always preferred Noc over his other half.")
+	greet_text = span_notice("I've always preferred Lunaria over his other half.")
 	weight = 100
 
 /datum/special_trait/night_owl/on_apply(mob/living/carbon/human/character, silent)
@@ -561,8 +561,8 @@
 /datum/special_trait/thinker
 	name = "The Thinker"
 	greet_text = span_notice("Physique, Endurance, Constitution. The trinity of what builds a great leader and an even greater kingdom... or whatever those nimrods were yapping about! <b>I cast FIREBALL!!!</b>")
-	req_text = "Monarch, worship Noc or Zizo"
-	allowed_patrons = list(/datum/patron/divine/noc, /datum/patron/inhumen/zizo)
+	req_text = "Monarch, worship Lunaria or Tenebrase"
+	allowed_patrons = list(/datum/patron/divine/lunaria, /datum/patron/inhumen/tenebrase)
 	allowed_jobs = list(/datum/job/lord)
 	weight = 25 //Should be fine.
 

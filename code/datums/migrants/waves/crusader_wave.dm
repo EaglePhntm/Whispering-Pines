@@ -1,6 +1,6 @@
 /datum/migrant_role/inquisitor
 	name = "Episcopal Inquisitor"
-	greet_text = "These lands have forfeited Psydon and the Ten. You have come to restore the True faith to these people and tear out the rot festering within."
+	greet_text = "These lands have forfeited Psydon and new gods. You have come to restore the True faith to these people and tear out the rot festering within."
 	antag_datum = /datum/antagonist/purishep
 	outfit = /datum/outfit/job/specialinquisitor
 	allowed_races = RACES_PLAYER_GRENZ

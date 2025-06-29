@@ -778,8 +778,8 @@ GLOBAL_LIST(teleport_runes)
 	can_be_scribed = TRUE
 
 /obj/effect/decal/cleanable/roguerune/arcyne/summoning/max	//224x224 rune t3(7x7 tile)
-	name = "noc's eye warded sealate confinement matrix"
-	desc = "An thoroughly warded confinement matrix improved with a Noc's eye sealing measure and the addition of a sealate matrix; used to hold the largest, most dangerous things summonable."
+	name = "lunaria's eye warded sealate confinement matrix"
+	desc = "An thoroughly warded confinement matrix improved with a Lunaria's eye sealing measure and the addition of a sealate matrix; used to hold the largest, most dangerous things summonable."
 	icon = 'icons/effects/224x224.dmi'
 	icon_state = "huge_runeblued"
 	runesize = 3

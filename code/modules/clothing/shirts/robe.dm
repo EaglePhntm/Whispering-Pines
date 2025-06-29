@@ -51,9 +51,9 @@
 	icon_state = "astratarobe"
 	sleeved = null
 
-/obj/item/clothing/shirt/robe/noc
+/obj/item/clothing/shirt/robe/lunaria
 	name = "moon robe"
-	desc = "The cloth of a follower of Noc."
+	desc = "The cloth of a follower of Lunaria."
 	icon_state = "nocrobe"
 	sleeved = null
 
@@ -63,25 +63,25 @@
 	icon_state = "warlock"
 	sleeved = null
 
-/obj/item/clothing/shirt/robe/dendor
+/obj/item/clothing/shirt/robe/blissrose
 	name = "briar robe"
 	desc = "Nature nurtures us and we, in turn, will nurture it back in the end."
 	icon_state = "dendorrobe"
 
-/obj/item/clothing/shirt/robe/eora
-	name = "eoran robe"
-	desc = "Holy robes, intended for use by followers of Eora"
+/obj/item/clothing/shirt/robe/moonbeam
+	name = "moonbeamite robe"
+	desc = "Holy robes, intended for use by followers of Moonbeam"
 	icon_state = "eorarobes"
 
-/obj/item/clothing/shirt/robe/eora/alt
-	name = "eoran straps"
-	desc = "Sanctified, form fitting straps. Used by more radical followers of the Eoran Church"
+/obj/item/clothing/shirt/robe/moonbeam/alt
+	name = "moonbeamite straps"
+	desc = "Sanctified, form fitting straps. Used by more radical followers of the Moonbeamite Church"
 	icon_state = "eorastraps"
 
-/obj/item/clothing/shirt/robe/necra
+/obj/item/clothing/shirt/robe/last_death
 	name = "mourning robe"
 	desc = "Black robes which cover the body not unlike those in depictions of the Carriageman himself."
-	icon_state = "necrarobe"
+	icon_state = "last deathrobe"
 
 /obj/item/clothing/shirt/robe/priest
 	name = "solar vestments"

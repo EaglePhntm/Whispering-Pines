@@ -97,7 +97,7 @@
 	body_parts_covered = HEAD|EARS|HAIR|NOSE|EYES
 
 
-//................ Briar Thorns ............... //	- Dendor Briar
+//................ Briar Thorns ............... //	- Blissrose Briar
 /obj/item/clothing/head/padded/briarthorns
 	name = "briar thorns"
 	desc = "The pain it causes perhaps can distract from the whispers of a mad God overpowering your sanity..."

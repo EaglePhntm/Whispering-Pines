@@ -647,7 +647,7 @@
 /area/rogue/under/tomb/indoors/church)
 "xM" = (
 /obj/structure/closet/crate/chest/crate,
-/obj/item/clothing/neck/psycross/noc,
+/obj/item/clothing/neck/psycross/lunaria,
 /turf/open/floor/churchmarble,
 /area/rogue/under/tomb/indoors/church)
 "yc" = (
@@ -731,7 +731,7 @@
 /area/rogue/under/tomb/indoors/church)
 "Cl" = (
 /obj/structure/closet/crate/crafted_closet,
-/obj/item/clothing/cloak/stabard/templar/eora,
+/obj/item/clothing/cloak/stabard/templar/moonbeam,
 /turf/open/floor/churchmarble,
 /area/rogue/under/tomb/indoors/church)
 "Cp" = (
@@ -1046,7 +1046,7 @@
 /area/rogue/under/tomb/indoors/church)
 "OD" = (
 /obj/structure/closet/crate/chest/crate,
-/obj/item/clothing/neck/psycross/silver/necra,
+/obj/item/clothing/neck/psycross/silver/last_death,
 /obj/item/clothing/neck/psycross/silver/astrata,
 /turf/open/floor/churchmarble,
 /area/rogue/under/tomb/indoors/church)

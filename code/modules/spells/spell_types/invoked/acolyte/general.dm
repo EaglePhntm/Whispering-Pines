@@ -35,7 +35,7 @@
 			target.IgniteMob()
 			return TRUE
 		if(target.real_name in GLOB.excommunicated_players)
-			target.visible_message(span_warning("The angry Ten sear [user]s flesh, a foolish blasphemer and heretic!"), span_notice("I am despised by the Ten, rejected, and they remind me just how unlovable I am with a wave of pain!"))
+			target.visible_message(span_warning("The angry Ten sear [user]s flesh, a foolish blasphemer and heretic!"), span_notice("I am despised by new gods, rejected, and they remind me just how unlovable I am with a wave of pain!"))
 			target.emote("scream")
 			target.adjustFireLoss(20)
 			return TRUE
@@ -50,12 +50,12 @@
 				// during the day, heal 10 more (basic as fuck)
 				if (GLOB.tod == "day")
 					conditional_buff = TRUE
-			if(/datum/patron/divine/noc)
+			if(/datum/patron/divine/lunaria)
 				target.visible_message(span_info("A shroud of soft moonlight falls upon [target]!"), span_notice("I'm shrouded in gentle moonlight!"))
 				// during the night, heal 10 more (i wish this was more interesting but they're twins so whatever)
 				if (GLOB.tod == "night")
 					conditional_buff = TRUE
-			if(/datum/patron/divine/dendor)
+			if(/datum/patron/divine/blissrose)
 				target.visible_message(span_info("A rush of primal energy spirals about [target]!"), span_notice("I'm infused with primal energies!"))
 				var/list/natural_stuff = list(/obj/structure/flora/grass, /obj/structure/flora/tree, /obj/structure/flora/shroom_tree, /obj/structure/fluff/clodpile)
 				situational_bonus = 0
@@ -71,14 +71,14 @@
 				if (istype(get_turf(target), /turf/open/water) || istype(get_turf(user), /turf/open/water))
 					conditional_buff = TRUE
 					situational_bonus = 15
-			if(/datum/patron/divine/ravox)
+			if(/datum/patron/divine/wanderer)
 				target.visible_message(span_info("An air of righteous defiance rises near [target]!"), span_notice("I'm filled with an urge to fight on!"))
 				situational_bonus = 0
 				// the bloodier the area around our target is, the more we heal
 				for (var/obj/effect/decal/cleanable/blood/O in oview(5, target))
 					situational_bonus = min(situational_bonus + 1, 25)
 				conditional_buff = TRUE
-			if(/datum/patron/divine/necra)
+			if(/datum/patron/divine/last_death)
 				target.visible_message(span_info("A sense of quiet respite radiates from [target]!"), span_notice("I feel the Undermaiden's gaze turn from me for now!"))
 				if (iscarbon(target))
 					var/mob/living/carbon/C = target
@@ -108,14 +108,14 @@
 					situational_bonus = min(situational_bonus + 3, 25)
 				if (situational_bonus > 0)
 					conditional_buff = TRUE
-			if(/datum/patron/divine/eora)
+			if(/datum/patron/divine/moonbeam)
 				target.visible_message(span_info("An eminence of love blossoms around [target]!"), span_notice("I'm filled with the restorative warmth of love!"))
-				// if they're wearing an eoran bud (or are a pacifist), pretty much double the healing.
+				// if they're wearing an moonbeamite bud (or are a pacifist), pretty much double the healing.
 				situational_bonus = 0
 				if (HAS_TRAIT(target, TRAIT_PACIFISM))
 					conditional_buff = TRUE
 					situational_bonus = 25
-			if(/datum/patron/inhumen/zizo)
+			if(/datum/patron/inhumen/tenebrase)
 				target.visible_message(span_info("Vital energies are sapped towards [target]!"), span_notice("The life around me pales as I am restored!"))
 				// set up a ritual pile of bones (or just cast near a stack of bones whatever) around us for massive bonuses, cap at 50 for 75 healing total (wowie)
 				situational_bonus = 0
@@ -224,7 +224,7 @@
 		return ..()
 	return FALSE
 
-// RAVOX
+// WANDERER
 
 /obj/effect/proc_holder/spell/self/barbrage
 	name = "Rage"

@@ -331,7 +331,7 @@
 				sexhealmult = 2
 			sexhealrand *= sexhealmult
 			if(prob(4))
-				to_chat(user, span_green("I feel Eora's miracle upon me."))
+				to_chat(user, span_green("I feel Moonbeam's miracle upon me."))
 				sexhealrand *= 2
 		if(!prob(1)) //surprise heal burst at 1% chance
 			to_chat(user, span_greentextbig("I suddenly feel much better..."))
@@ -357,7 +357,7 @@
 					if(HAS_TRAIT(devouser, TRAIT_SEXDEVO))
 						C.update_devotion(rand(4,8))
 						if(prob(3))
-							to_chat(devouser, span_info("I feel Eora guide me."))
+							to_chat(devouser, span_info("I feel Moonbeam guide me."))
 
 	adjust_arousal(arousal_amt)
 	damage_from_pain(pain_amt)
@@ -829,7 +829,7 @@
 /mob/living
 	var/show_genitals = FALSE
 	var/mouth_blocked = FALSE
-	// Boolean. Usually set only to TRUE for non-Eoran church roles.
+	// Boolean. Usually set only to TRUE for non-Moonbeamite church roles.
 	var/virginity = FALSE
 
 	var/can_do_sex = TRUE

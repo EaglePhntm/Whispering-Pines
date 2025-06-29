@@ -1,5 +1,5 @@
 /datum/round_event_control/dendor_vines_malus
-	name = "Dendor's Vines (Malus)"
+	name = "Blissrose's Vines (Malus)"
 	track = EVENT_TRACK_INTERVENTION
 	typepath = /datum/round_event/dendor_vines
 	weight = 2
@@ -7,7 +7,7 @@
 	max_occurrences = 2
 	min_players = 3
 	todreq = list("dusk", "night", "dawn", "day")
-	allowed_storytellers = list(/datum/storyteller/dendor)
+	allowed_storytellers = list(/datum/storyteller/blissrose)
 
 /datum/round_event/dendor_vines/start()
 	var/list/turfs = list() //list of all the empty floor turfs in the hallway areas
@@ -31,7 +31,7 @@
 
 
 /datum/round_event_control/dendor_vines_boon
-	name = "Dendor's Vines (Boon)"
+	name = "Blissrose's Vines (Boon)"
 	track = EVENT_TRACK_INTERVENTION
 	typepath = /datum/round_event/dendor_vines_good
 	earliest_start = 0 SECONDS
@@ -39,7 +39,7 @@
 	max_occurrences = 2
 	min_players = 3
 	todreq = list("dusk", "night", "dawn", "day")
-	allowed_storytellers = list(/datum/storyteller/dendor)
+	allowed_storytellers = list(/datum/storyteller/blissrose)
 
 /datum/round_event/dendor_vines_good/start()
 	var/list/turfs = list() //list of all the empty floor turfs in the hallway areas
@@ -63,27 +63,27 @@
 
 
 /datum/round_event_control/dendor_fertility
-	name = "Dendor's Blessing"
+	name = "Blissrose's Blessing"
 	track = EVENT_TRACK_INTERVENTION
 	typepath = /datum/round_event/dendor_fertility
 	weight = 2
 	earliest_start = 0 SECONDS
 	max_occurrences = 2
 	min_players = 3
-	allowed_storytellers = list(/datum/storyteller/dendor)
+	allowed_storytellers = list(/datum/storyteller/blissrose)
 
 /datum/round_event/dendor_fertility/start()
 	SSmapping.add_world_trait(/datum/world_trait/dendor_fertility, 20 MINUTES)
 
 /datum/round_event_control/dendor_ire
-	name = "Dendor's Ire"
+	name = "Blissrose's Ire"
 	track = EVENT_TRACK_INTERVENTION
 	typepath = /datum/round_event/dendor_ire
 	weight = 2
 	earliest_start = 0 SECONDS
 	max_occurrences = 2
 	min_players = 3
-	allowed_storytellers = list(/datum/storyteller/dendor)
+	allowed_storytellers = list(/datum/storyteller/blissrose)
 
 /datum/round_event/dendor_ire/start()
 	SSmapping.add_world_trait(/datum/world_trait/dendor_drought, 10 MINUTES)

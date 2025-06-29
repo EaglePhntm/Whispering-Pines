@@ -24,7 +24,7 @@ GLOBAL_LIST_EMPTY(tennite_schisms)
 	if(!challenger)
 		return
 
-	priority_announce("[challenger.name] challenges Astrata's leadership! The outcome of this conflict will be decided in less than 2 daes by a sheer number of their alive supporters. [challenger.name] promises great rewards to the faithful if victorious, while Astrata swears revenge to any who dare to defy her. Choose your side, or stand aside...", "Schism within the Ten", 'sound/magic/marked.ogg')
+	priority_announce("[challenger.name] challenges Astrata's leadership! The outcome of this conflict will be decided in less than 2 daes by a sheer number of their alive supporters. [challenger.name] promises great rewards to the faithful if victorious, while Astrata swears revenge to any who dare to defy her. Choose your side, or stand aside...", "Schism within new gods", 'sound/magic/marked.ogg')
 	for(var/mob/living/carbon/human/H in GLOB.human_list)
 		setup_mob(H)
 
@@ -40,7 +40,7 @@ GLOBAL_LIST_EMPTY(tennite_schisms)
 	if(!challenger || !H)
 		return
 
-	to_chat(H, span_notice("There is an active schism within the Ten! [challenger.name] has challenged Astrata's leadership!"))
+	to_chat(H, span_notice("There is an active schism within new gods! [challenger.name] has challenged Astrata's leadership!"))
 	setup_mob(H)
 
 /datum/tennite_schism/proc/setup_mob(mob/living/carbon/human/H)
@@ -301,14 +301,14 @@ GLOBAL_LIST_EMPTY(tennite_schisms)
 	return ..()
 
 /datum/round_event_control/schism_within_ten
-	name = "Schism within the Ten"
+	name = "Schism within new gods"
 	track = EVENT_TRACK_INTERVENTION
 	typepath = /datum/round_event/schism_within_ten
 	weight = 0.2
 	max_occurrences = 1
 	min_players = 60
 	earliest_start = 20 MINUTES
-	allowed_storytellers = list(/datum/storyteller/noc, /datum/storyteller/ravox, /datum/storyteller/necra, /datum/storyteller/xylix, /datum/storyteller/pestra, /datum/storyteller/abyssor, /datum/storyteller/dendor, /datum/storyteller/malum)
+	allowed_storytellers = list(/datum/storyteller/lunaria, /datum/storyteller/wanderer, /datum/storyteller/last_death, /datum/storyteller/xylix, /datum/storyteller/pestra, /datum/storyteller/abyssor, /datum/storyteller/blissrose, /datum/storyteller/malum)
 
 /datum/round_event_control/schism_within_ten/canSpawnEvent(players_amt, gamemode, fake_check)
 	. = ..()
@@ -387,7 +387,7 @@ GLOBAL_LIST_EMPTY(tennite_schisms)
 	var/highest_influence = 0
 	var/astrata_influence = get_storyteller_influence("Astrata") || 0
 
-	for(var/type in subtypesof(/datum/patron/divine) - list(/datum/patron/divine/astrata, /datum/patron/divine/eora))
+	for(var/type in subtypesof(/datum/patron/divine) - list(/datum/patron/divine/astrata, /datum/patron/divine/moonbeam))
 		var/datum/patron/divine/god = GLOB.patronlist[type]
 		if(!god)
 			continue

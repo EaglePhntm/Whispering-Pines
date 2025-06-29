@@ -1,9 +1,9 @@
 /datum/world_trait/dendor_fertility
-	name = "Dendor's Blessing"
+	name = "Blissrose's Blessing"
 	desc = "Increases the fertility of crops, making them grow faster and heartier."
 
 /datum/world_trait/dendor_drought
-	name = "Dendor's Malus"
+	name = "Blissrose's Malus"
 	desc = "Decreases the fertility of crops, making them grow slower."
 
 /datum/world_trait/pestra_mercy
@@ -14,12 +14,12 @@
 	name = "Matthios' Fingers"
 	desc = "Improves thief's chance of a successful pickpocket."
 
-/datum/world_trait/necra_requiem
-	name = "Necra's Requiem"
+/datum/world_trait/last_death_requiem
+	name = "Last Death's Requiem"
 	desc = "New corpses wont become deadites."
 
 /datum/world_trait/zizo_defilement
-	name = "Zizo's Defilement"
+	name = "Tenebrase's Defilement"
 	desc = "Deadites will rise in the town."
 
 /datum/world_trait/abyssor_rage
@@ -31,9 +31,9 @@
 	desc = "Mined rocks have additional yields."
 
 /datum/world_trait/noc_wisdom
-	name = "Noc's Wisdom"
+	name = "Lunaria's Wisdom"
 	desc = "All magic actions cost less mana."
 
 /datum/world_trait/baotha_revelry
-	name = "Baotha's Revelry"
+	name = "Lamashtu's Revelry"
 	desc = "Alcohol lasts longer."

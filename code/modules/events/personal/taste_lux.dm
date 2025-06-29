@@ -19,7 +19,7 @@
 	for(var/mob/living/carbon/human/H in GLOB.player_list)
 		if(!istype(H) || H.stat == DEAD || !H.client)
 			continue
-		if(!H.patron || !istype(H.patron, /datum/patron/inhumen/baotha))
+		if(!H.patron || !istype(H.patron, /datum/patron/inhumen/lamashtu))
 			continue
 		if(!H.is_noble())
 			continue
@@ -33,7 +33,7 @@
 	for(var/mob/living/carbon/human/human_mob in GLOB.player_list)
 		if(!istype(human_mob) || human_mob.stat == DEAD || !human_mob.client)
 			continue
-		if(!human_mob.patron || !istype(human_mob.patron, /datum/patron/inhumen/baotha))
+		if(!human_mob.patron || !istype(human_mob.patron, /datum/patron/inhumen/lamashtu))
 			continue
 		if(!human_mob.is_noble())
 			continue
@@ -47,8 +47,8 @@
 	var/datum/objective/taste_lux/new_objective = new(owner = chosen_one.mind)
 	chosen_one.mind.add_personal_objective(new_objective)
 
-	to_chat(chosen_one, span_userdanger("YOU ARE BAOTHA'S CHOSEN!"))
-	to_chat(chosen_one, span_notice("Seek out and taste Lux to experience true pleasure and make Baotha proud! You might need to grind it first though..."))
+	to_chat(chosen_one, span_userdanger("YOU ARE LAMASHTU'S CHOSEN!"))
+	to_chat(chosen_one, span_notice("Seek out and taste Lux to experience true pleasure and make Lamashtu proud! You might need to grind it first though..."))
 	chosen_one.playsound_local(chosen_one, 'sound/misc/gods/baotha_omen.ogg', 100)
 
 	chosen_one.mind.announce_personal_objectives()

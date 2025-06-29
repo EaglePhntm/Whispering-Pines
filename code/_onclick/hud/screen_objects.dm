@@ -1778,7 +1778,7 @@
 		if("dusk")
 			name = "Astrata - Dusk"
 		if("night")
-			name = "Noc"
+			name = "Lunaria"
 		if("dawn")
 			name = "Astrata - Dawn"
 	return ..()

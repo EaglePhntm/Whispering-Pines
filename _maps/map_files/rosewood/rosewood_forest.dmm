@@ -1415,8 +1415,8 @@
 /obj/structure/fluff/statue/astrata/bling{
 	pixel_x = -17;
 	pixel_y = 0;
-	name = "Statue of NOC!?!?!?!?!?";
-	desc = "Blinged out Noc Here"
+	name = "Statue of LUNARIA!?!?!?!?!?";
+	desc = "Blinged out Lunaria Here"
 	},
 /turf/open/floor/cobblerock,
 /area/rogue/outdoors/woods)

@@ -9,14 +9,14 @@
 	update_explanation_text()
 
 /datum/objective/embrace_death/update_explanation_text()
-	explanation_text = "Your time has come. Embrace death through Necra's gift to achieve final rest and secure your soul."
+	explanation_text = "Your time has come. Embrace death through Last Death's gift to achieve final rest and secure your soul."
 
 /obj/effect/proc_holder/spell/self/embrace_death
 	name = "Embrace Death"
-	overlay_state = "necra"
+	overlay_state = "last death"
 	antimagic_allowed = TRUE
 	recharge_time = 0
-	invocation = "NECRA, I AM READY!"
+	invocation = "LAST DEATH, I AM READY!"
 	invocation_type = "shout"
 	sound = 'sound/ambience/noises/genspooky (1).ogg'
 
@@ -29,8 +29,8 @@
 	if(confirm != "Yes")
 		return FALSE
 
-	user.visible_message(span_userdanger("[user] begins chanting Necra's last rites!"), \
-						span_userdanger("You feel Necra's presence as you start the final ritual..."))
+	user.visible_message(span_userdanger("[user] begins chanting Last Death's last rites!"), \
+						span_userdanger("You feel Last Death's presence as you start the final ritual..."))
 
 	if(!do_after(user, 10 SECONDS, target = user))
 		to_chat(user, span_warning("The ritual was interrupted!"))
@@ -40,10 +40,10 @@
 	if(confirm != "Embrace Death")
 		return FALSE
 
-	user.say("NECRA, EMBRACE ME!", forced = "necra_ritual")
+	user.say("LAST DEATH, EMBRACE ME!", forced = "last death_ritual")
 	playsound(user, 'sound/magic/churn.ogg', 100)
-	ADD_TRAIT(user, TRAIT_NECRA_CURSE, "necra_ritual")
-	ADD_TRAIT(user, TRAIT_BURIED_COIN_GIVEN, "necra_ritual")
+	ADD_TRAIT(user, TRAIT_LAST_DEATH_CURSE, "last death_ritual")
+	ADD_TRAIT(user, TRAIT_BURIED_COIN_GIVEN, "last death_ritual")
 	user.death()
 
 	if(user.mind)
@@ -51,7 +51,7 @@
 		if(objective && !objective.completed)
 			objective.completed = TRUE
 			user.adjust_triumphs(4)
-			adjust_storyteller_influence("Necra", 25)
+			adjust_storyteller_influence("Last Death", 25)
 			objective.escalate_objective()
 
 	return ..()

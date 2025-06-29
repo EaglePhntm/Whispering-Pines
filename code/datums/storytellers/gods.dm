@@ -1,21 +1,21 @@
 /// Divine pantheon storytellers
 #define DIVINE_STORYTELLERS list( \
 	/datum/storyteller/astrata, \
-	/datum/storyteller/noc, \
-	/datum/storyteller/ravox, \
+	/datum/storyteller/lunaria, \
+	/datum/storyteller/wanderer, \
 	/datum/storyteller/abyssor, \
 	/datum/storyteller/xylix, \
-	/datum/storyteller/necra, \
+	/datum/storyteller/last_death, \
 	/datum/storyteller/pestra, \
 	/datum/storyteller/malum, \
-	/datum/storyteller/eora, \
-	/datum/storyteller/dendor, \
+	/datum/storyteller/moonbeam, \
+	/datum/storyteller/blissrose, \
 )
 
 /// Inhumen pantheon storytellers
 #define INHUMEN_STORYTELLERS list( \
-	/datum/storyteller/zizo, \
-	/datum/storyteller/baotha, \
+	/datum/storyteller/tenebrase, \
+	/datum/storyteller/lamashtu, \
 	/datum/storyteller/graggar, \
 	/datum/storyteller/matthios, \
 )
@@ -39,9 +39,9 @@
 		STATS_SLURS_SPOKEN = list("points" = 0.8, "capacity" = 80),
 	)
 
-/datum/storyteller/noc
-	name = "Noc"
-	desc = "Noc will try to send more magical events."
+/datum/storyteller/lunaria
+	name = "Lunaria"
+	desc = "Lunaria will try to send more magical events."
 	welcome_text = "The veil between realms shimmers in your presence."
 	weight = 4
 	always_votable = TRUE
@@ -62,9 +62,9 @@
 		STATS_MANA_SPENT = list("points" = 0.0175, "capacity" = 100),
 	)
 
-/datum/storyteller/ravox
-	name = "Ravox"
-	desc = "Ravox will cause raids to happen naturally instead of only when people are dying a lot."
+/datum/storyteller/wanderer
+	name = "Wanderer"
+	desc = "Wanderer will cause raids to happen naturally instead of only when people are dying a lot."
 	welcome_text = "The drums of war grow louder."
 	weight = 4
 	always_votable = TRUE
@@ -141,9 +141,9 @@
 		STATS_SONGS_PLAYED = list("points" = 0.75, "capacity" = 70),
 	)
 
-/datum/storyteller/necra
-	name = "Necra"
-	desc = "Necra takes things very slow, rarely bringing in newcomers."
+/datum/storyteller/last_death
+	name = "Last Death"
+	desc = "Last Death takes things very slow, rarely bringing in newcomers."
 	welcome_text = "The grave whispers, patience is virtue."
 	weight = 4
 	always_votable = TRUE
@@ -219,9 +219,9 @@
 		STATS_BLACKSTEEL_SMELTED = list("points" = 5, "capacity" = 65),
 	)
 
-/datum/storyteller/eora
-	name = "Eora"
-	desc = "Eora hates death and promotes love. Raids will never naturally progress, only death will bring them."
+/datum/storyteller/moonbeam
+	name = "Moonbeam"
+	desc = "Moonbeam hates death and promotes love. Raids will never naturally progress, only death will bring them."
 	welcome_text = "Life shall flourish under my watchful gaze."
 	color_theme = "#9966CC"
 
@@ -248,9 +248,9 @@
 		STATS_PACIFISTS = list("points" = 10, "capacity" = 70),
 	)
 
-/datum/storyteller/dendor
-	name = "Dendor"
-	desc = "Dendor likes to send nature-themed events."
+/datum/storyteller/blissrose
+	name = "Blissrose"
+	desc = "Blissrose likes to send nature-themed events."
 	welcome_text = "The wilds whisper your name."
 	weight = 4
 	always_votable = TRUE
@@ -280,9 +280,9 @@
 
 // INHUMEN
 
-/datum/storyteller/zizo
-	name = "Zizo"
-	desc = "Zizo thrives on risk and reward, favoring the daring and unpredictable."
+/datum/storyteller/tenebrase
+	name = "Tenebrase"
+	desc = "Tenebrase thrives on risk and reward, favoring the daring and unpredictable."
 	welcome_text = "You will kneel."
 	weight = 4
 	always_votable = TRUE
@@ -316,9 +316,9 @@
 
 	cost_variance = 50  // Events will be highly variable in cost
 
-/datum/storyteller/baotha
-	name = "Baotha"
-	desc = "Baotha revels in chaos, making events and reality unpredictable."
+/datum/storyteller/lamashtu
+	name = "Lamashtu"
+	desc = "Lamashtu revels in chaos, making events and reality unpredictable."
 	welcome_text = "The world bends to my whims."
 	weight = 4
 	always_votable = TRUE

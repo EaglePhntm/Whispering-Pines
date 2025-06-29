@@ -1,24 +1,29 @@
-#define ALL_TEMPLE_PATRONS 		list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/dendor, /datum/patron/divine/abyssor, /datum/patron/divine/necra, /datum/patron/divine/ravox, /datum/patron/divine/xylix, /datum/patron/divine/pestra, /datum/patron/divine/malum, /datum/patron/divine/eora)
-#define ALL_CLERIC_PATRONS 		list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/dendor, /datum/patron/divine/abyssor, /datum/patron/divine/necra, /datum/patron/divine/ravox, /datum/patron/divine/xylix, /datum/patron/divine/pestra, /datum/patron/divine/malum, /datum/patron/divine/eora, /datum/patron/inhumen/graggar, /datum/patron/inhumen/zizo, /datum/patron/inhumen/matthios, /datum/patron/inhumen/baotha)
-#define ALL_TEMPLAR_PATRONS 	list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/eora, /datum/patron/divine/necra, /datum/patron/divine/ravox, /datum/patron/divine/pestra, /datum/patron/divine/dendor, /datum/patron/divine/abyssor, /datum/patron/divine/malum, /datum/patron/divine/xylix)
+/*
+#define ALL_TEMPLE_PATRONS 		list(/datum/patron/divine/astrata, /datum/patron/divine/lunaria, /datum/patron/divine/blissrose, /datum/patron/divine/abyssor, /datum/patron/divine/last_death, /datum/patron/divine/wanderer, /datum/patron/divine/xylix, /datum/patron/divine/pestra, /datum/patron/divine/malum, /datum/patron/divine/moonbeam)
+#define ALL_CLERIC_PATRONS 		list(/datum/patron/divine/astrata, /datum/patron/divine/lunaria, /datum/patron/divine/blissrose, /datum/patron/divine/abyssor, /datum/patron/divine/last_death, /datum/patron/divine/wanderer, /datum/patron/divine/xylix, /datum/patron/divine/pestra, /datum/patron/divine/malum, /datum/patron/divine/moonbeam, /datum/patron/inhumen/tenebrase, /datum/patron/inhumen/matthios, /datum/patron/inhumen/lamashtu)
+#define ALL_TEMPLAR_PATRONS 	list(/datum/patron/divine/astrata, /datum/patron/divine/lunaria, /datum/patron/divine/moonbeam, /datum/patron/divine/last_death, /datum/patron/divine/wanderer, /datum/patron/divine/pestra, /datum/patron/divine/blissrose, /datum/patron/divine/abyssor, /datum/patron/divine/malum, /datum/patron/divine/xylix)
+*/
+#define ALL_TEMPLE_PATRONS 		list(/datum/patron/divine/lunaria, /datum/patron/divine/blissrose, /datum/patron/divine/last_death, /datum/patron/divine/wanderer, /datum/patron/divine/moonbeam,)
+#define ALL_CLERIC_PATRONS 		list(/datum/patron/divine/lunaria, /datum/patron/divine/blissrose, /datum/patron/divine/last_death, /datum/patron/divine/wanderer, /datum/patron/divine/moonbeam, /datum/patron/inhumen/tenebrase, /datum/patron/inhumen/lamashtu,)
+#define ALL_TEMPLAR_PATRONS 	list(/datum/patron/divine/lunaria, /datum/patron/divine/moonbeam, /datum/patron/divine/last_death, /datum/patron/divine/wanderer, /datum/patron/divine/blissrose,)
 
 GLOBAL_LIST_INIT(curse_names, list())
 
 #define TEN_CURSES list(\
 	/datum/curse/astrata,\
-	/datum/curse/noc,\
-	/datum/curse/ravox,\
-	/datum/curse/necra,\
+	/datum/curse/lunaria,\
+	/datum/curse/wanderer,\
+	/datum/curse/last_death,\
 	/datum/curse/xylix,\
 	/datum/curse/pestra,\
-	/datum/curse/eora\
+	/datum/curse/moonbeam\
 )
 
 #define INHUMEN_CURSES list(\
-	/datum/curse/zizo,\
+	/datum/curse/tenebrase,\
 	/datum/curse/graggar,\
 	/datum/curse/matthios,\
-	/datum/curse/baotha\
+	/datum/curse/lamashtu\
 )
 #define SPECIAL_CURSES list(\
 	/datum/curse/atheism\

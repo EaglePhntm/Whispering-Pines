@@ -740,7 +740,7 @@
 
 
 /obj/structure/fluff/statue/zizo
-	name = "statue of Zizo"
+	name = "statue of Tenebrase"
 	desc = "The Dark Lady. Even in stone, you feel unsettled looking at it."
 	icon = 'icons/roguetown/misc/64x128.dmi'
 	icon_state = "zizo"
@@ -784,7 +784,7 @@
 	var/message2send = ""
 	switch(random_message)
 		if(1)
-			message2send = "You can see Noc rotating."
+			message2send = "You can see Lunaria rotating."
 		if(2)
 			message2send = "Looking at Astrata blinds you!"
 		if(3)
@@ -802,9 +802,9 @@
 			if(affecting && affecting.receive_damage(0, 5))
 				H.update_damage_overlays()
 
-	if(message2send == "You can see noc rotating!")
+	if(message2send == "You can see lunaria rotating!")
 		if(do_after(H, 25, target = src))
-			to_chat(H, span_warning("Noc's glow seems to help clear your thoughts."))
+			to_chat(H, span_warning("Lunaria's glow seems to help clear your thoughts."))
 			H.apply_status_effect(/datum/status_effect/buff/nocblessing)
 
 /obj/structure/fluff/globe
@@ -982,7 +982,7 @@
 
 /obj/structure/fluff/psycross
 	name = "pantheon cross"
-	desc = "A towering monument to the Ten. Marriages are performed under its shadow."
+	desc = "A towering monument to new gods. Marriages are performed under its shadow."
 	icon_state = "psycross"
 	icon = 'icons/roguetown/misc/tallstructure.dmi'
 	break_sound = 'sound/combat/hits/onwood/destroyfurniture.ogg'
@@ -1062,24 +1062,24 @@
 	dir = SOUTH
 
 /obj/structure/fluff/psycross/crafted/shrine/dendor_volf
-	name = "shrine to Dendor"
+	name = "shrine to Blissrose"
 	desc = "The life force of a Volf has consecrated this holy place.<br/> Present several blood bait here to craft a worthy sacrifice."
 	icon_state = "shrine_dendor_volf"
 
 /obj/structure/fluff/psycross/crafted/shrine/dendor_saiga
-	name = "shrine to Dendor"
+	name = "shrine to Blissrose"
 	desc = "The life force of a Saiga has consecrated this holy place.<br/> Present jacksberries, westleach leaves, and eels for crafting a worthy sacrifice."
 	icon_state = "shrine_dendor_saiga"
 
 /obj/structure/fluff/psycross/crafted/shrine/dendor_gote
-	name = "shrine to Dendor"
+	name = "shrine to Blissrose"
 	desc = "The life force of a Gote has consecrated this holy place.<br/> Present poppies, swampweed leaves, and silk grubs for crafting a worthy sacrifice."
 	icon_state = "shrine_dendor_gote"
 
 /obj/structure/fluff/psycross/attackby(obj/item/W, mob/living/carbon/human/user, params)
 	if(user.mind)
 		if((is_priest_job(user.mind.assigned_role)) \
-			|| (is_monk_job(user.mind.assigned_role) && (user.patron.type == /datum/patron/divine/eora)))
+			|| (is_monk_job(user.mind.assigned_role) && (user.patron.type == /datum/patron/divine/moonbeam)))
 
 			if(istype(W, /obj/item/reagent_containers/food/snacks/produce/fruit/apple))
 				if(!istype(get_area(user), /area/rogue/indoors/town/church/chapel))

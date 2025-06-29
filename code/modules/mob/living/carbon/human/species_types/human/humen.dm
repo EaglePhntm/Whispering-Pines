@@ -1,6 +1,6 @@
 	/*==============*
 	*				*
-	*	 Humen		*
+	*	 Human		*
 	*				*
 	*===============*/
 
@@ -10,7 +10,7 @@
 	race = /datum/species/human/northern
 
 /datum/species/human/northern
-	name = "Humen"
+	name = "Human"
 	id = "human"
 	desc = "Humenity, creation in Psydon's image. \
 	\n\n\

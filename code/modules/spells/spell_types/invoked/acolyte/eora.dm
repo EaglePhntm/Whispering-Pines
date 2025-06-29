@@ -1,12 +1,12 @@
-//eora
+//moonbeam
 
 /obj/effect/proc_holder/spell/invoked/instill_perfection
 	name = "Instill Perfection"
 	desc = "Grants target a super-natural beauty for a time, increasing their mood."
 	overlay_state = "perfume"
 	recharge_time = 2 MINUTES
-	req_items = list(/obj/item/clothing/neck/psycross/silver/eora)
-	invocation = "Eora, lend some of your devine beauty!"
+	req_items = list(/obj/item/clothing/neck/psycross/silver/moonbeam)
+	invocation = "Moonbeam, lend some of your devine beauty!"
 	invocation_type = "shout"
 	releasedrain = 30
 	miracle = TRUE
@@ -24,8 +24,8 @@
 
 
 /obj/item/clothing/head/peaceflower
-	name = "eoran bud"
-	desc = "A flower of gentle petals, associated with Eora or Necra. Usually adorned as a headress or laid at graves as a symbol of love or peace."
+	name = "moonbeamite bud"
+	desc = "A flower of gentle petals, associated with Moonbeam or Last Death. Usually adorned as a headress or laid at graves as a symbol of love or peace."
 	icon = 'icons/roguetown/items/produce.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/head_items.dmi'
 	icon_state = "peaceflower"
@@ -45,7 +45,7 @@
 	if(slot & ITEM_SLOT_HEAD)
 		RegisterSignal(user, COMSIG_MOB_UNEQUIPPED_ITEM, PROC_REF(item_removed))
 		ADD_TRAIT(user, TRAIT_PACIFISM, "peaceflower_[REF(src)]")
-		user.add_stress(/datum/stressevent/eora)
+		user.add_stress(/datum/stressevent/moonbeam)
 
 /obj/item/clothing/head/peaceflower/proc/item_removed(mob/living/carbon/wearer, obj/item/dropped_item)
 	SIGNAL_HANDLER
@@ -53,7 +53,7 @@
 		return
 	UnregisterSignal(wearer, COMSIG_MOB_UNEQUIPPED_ITEM)
 	REMOVE_TRAIT(wearer, TRAIT_PACIFISM, "peaceflower_[REF(src)]")
-	wearer.remove_stress(/datum/stressevent/eora)
+	wearer.remove_stress(/datum/stressevent/moonbeam)
 
 /obj/item/clothing/head/peaceflower/proc/peace_check(mob/living/user)
 	// return true if we should be unequippable, return false if not
@@ -77,7 +77,7 @@
 //Putting this here for now until we have a better place. Ook wants this to inject drugs eventually. I guess this is decent for now.
 /obj/item/clothing/head/corruptflower
 	name = "baothan bud"
-	desc = "A flower of dark petals and sharp thorns, associated with Baotha. It is said that these allow their wearer to better commune with their goddess."
+	desc = "A flower of dark petals and sharp thorns, associated with Lamashtu. It is said that these allow their wearer to better commune with their goddess."
 	icon = 'icons/roguetown/items/produce.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/head_items.dmi'
 	icon_state = "corruptflower"
@@ -96,7 +96,7 @@
 	. = ..()
 	if(slot & ITEM_SLOT_HEAD)
 		ADD_TRAIT(user, TRAIT_CRACKHEAD, "corruptflower_[REF(src)]")
-		user.add_curse(/datum/curse/baotha)
+		user.add_curse(/datum/curse/lamashtu)
 		to_chat(user, "<span class='userdanger'>FUCK YES. Party on!</b></span>")
 
 /obj/item/clothing/head/corruptflower/proc/item_removed(mob/living/carbon/human/wearer, obj/item/dropped_item)
@@ -104,8 +104,8 @@
 	if(dropped_item != src)
 		return
 	UnregisterSignal(wearer, COMSIG_MOB_UNEQUIPPED_ITEM)
-	wearer.remove_curse(/datum/curse/baotha)
-	if(wearer.patron != /datum/patron/inhumen/baotha)
+	wearer.remove_curse(/datum/curse/lamashtu)
+	if(wearer.patron != /datum/patron/inhumen/lamashtu)
 		REMOVE_TRAIT(wearer, TRAIT_CRACKHEAD, "corruptflower_[REF(src)]")
 
 /obj/item/clothing/head/corruptflower/proc/cursed_check(mob/living/user)
@@ -126,12 +126,12 @@
 		return ..()
 
 /obj/effect/proc_holder/spell/invoked/bud
-	name = "Eoran Bloom"
+	name = "Moonbeamite Bloom"
 	desc = ""
 	range = 2
 	overlay_state = "pflower"
 	sound = list('sound/magic/magnet.ogg')
-	req_items = list(/obj/item/clothing/neck/psycross/silver/eora)
+	req_items = list(/obj/item/clothing/neck/psycross/silver/moonbeam)
 	releasedrain = 40
 	chargetime = 40
 	warnie = "spellwarning"
@@ -150,29 +150,29 @@
 		if(!C.cmode && !C.get_item_by_slot(ITEM_SLOT_HEAD))
 			var/obj/item/clothing/head/peaceflower/F = new(get_turf(C))
 			C.equip_to_slot_if_possible(F, ITEM_SLOT_HEAD, TRUE, TRUE)
-			to_chat(C, "<span class='info'><b style='color:pink'>A flower of Eora blooms on my head. I feel at peace.</b></span>")
+			to_chat(C, "<span class='info'><b style='color:pink'>A flower of Moonbeam blooms on my head. I feel at peace.</b></span>")
 			return ..()
 		else
-			to_chat(user, "<span class='warning'>The target's head is covered. The flowers of Eora need an open space to bloom.</span>")
+			to_chat(user, "<span class='warning'>The target's head is covered. The flowers of Moonbeam need an open space to bloom.</span>")
 			return FALSE
 	var/turf/T = get_turf(targets[1])
 	if(!isclosedturf(T))
 		new /obj/item/clothing/head/peaceflower(T)
 		return ..()
-	to_chat(user, "<span class='warning'>The targeted location is blocked. The flowers of Eora refuse to bloom.</span>")
+	to_chat(user, "<span class='warning'>The targeted location is blocked. The flowers of Moonbeam refuse to bloom.</span>")
 	return FALSE
 
 /obj/effect/proc_holder/spell/invoked/projectile/eoracurse
-	name = "Eora's Curse"
+	name = "Moonbeam's Curse"
 	overlay_state = "curse2"
 	releasedrain = 50
 	chargetime = 20
 	range = 7
-	projectile_type = /obj/projectile/magic/eora
+	projectile_type = /obj/projectile/magic/moonbeam
 	warnie = "sydwarning"
 	movement_interrupt = FALSE
 	chargedloop = null
-	req_items = list(/obj/item/clothing/neck/psycross/silver/eora)
+	req_items = list(/obj/item/clothing/neck/psycross/silver/moonbeam)
 	sound = 'sound/magic/whiteflame.ogg'
 	invocation = "Nulla felicitas sine amore!"
 	invocation_type = "shout"
@@ -182,7 +182,7 @@
 	miracle = TRUE
 	devotion_cost = 60
 
-/obj/projectile/magic/eora
+/obj/projectile/magic/moonbeam
 	name = "wine bubble"
 	icon_state = "leaper"
 	paralyze = 0
@@ -192,7 +192,7 @@
 	nondirectional_sprite = TRUE
 	impact_effect_type = /obj/effect/temp_visual/wine_projectile_impact
 
-/obj/projectile/magic/eora/on_hit(atom/target, blocked = FALSE)
+/obj/projectile/magic/moonbeam/on_hit(atom/target, blocked = FALSE)
 	. = ..()
 	if(iscarbon(target))
 		var/mob/living/carbon/C = target
@@ -210,7 +210,7 @@
 //		L.adjustHealth(25)
 	on_range()
 
-/obj/projectile/magic/eora/on_range()
+/obj/projectile/magic/moonbeam/on_range()
 	var/turf/T = get_turf(src)
 	..()
 	new /obj/structure/wine_bubble(T)
@@ -265,7 +265,7 @@
 	warnie = "sydwarning"
 	movement_interrupt = FALSE
 	chargedloop = /datum/looping_sound/invokegen
-	req_items = list(/obj/item/clothing/neck/psycross/silver/eora)
+	req_items = list(/obj/item/clothing/neck/psycross/silver/moonbeam)
 	sound = list('sound/magic/whiteflame.ogg')
 	invocation = "Experiamur vim amoris!"
 	invocation_type = "shout"
@@ -278,8 +278,8 @@
 /obj/effect/proc_holder/spell/invoked/eoracharm/cast(list/targets, mob/living/user)
 	if(isliving(targets[1]))
 		var/mob/living/target = targets[1]
-		var/charm_to_public = pick("<b style='color:pink'>[user] is influenced by the beauty of Eora's follower.</b>", "<b style='color:pink'>[target] stares mesmerized at [user] and does not move.</b>")
-		var/charm_to_target = pick("<b style='color:pink'>Your eyes cannot move away from [user].</b>", "<b style='color:pink'>You are enchanted by the beauty of the follower of Eora.</b>")
+		var/charm_to_public = pick("<b style='color:pink'>[user] is influenced by the beauty of Moonbeam's follower.</b>", "<b style='color:pink'>[target] stares mesmerized at [user] and does not move.</b>")
+		var/charm_to_target = pick("<b style='color:pink'>Your eyes cannot move away from [user].</b>", "<b style='color:pink'>You are enchanted by the beauty of the follower of Moonbeam.</b>")
 		target.visible_message(span_warning("[charm_to_public]"), span_warning("[charm_to_target]"))
 		target.apply_status_effect(/datum/status_effect/eorapacify)
 		target.Immobilize(85)

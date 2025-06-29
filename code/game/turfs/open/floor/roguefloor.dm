@@ -162,7 +162,7 @@
 
 /turf/open/floor/grass/red
 	name = "red grass"
-	desc = "Grass, ripe with Dendor's blood."
+	desc = "Grass, ripe with Blissrose's blood."
 	icon_state = "grass_red"
 	neighborlay = "grass_rededge"
 
@@ -184,7 +184,7 @@
 	icon_state = "hellgrass"
 	neighborlay = "hellgrass"
 
-/turf/open/floor/grass/eora
+/turf/open/floor/grass/moonbeam
 	icon_state = "hellgrass"
 	neighborlay = "hellgrass"
 /*	..................   Snow   ................... */
@@ -383,7 +383,7 @@
 
 /turf/open/floor/underworld/space
 	name = "void"
-	desc = "The shifting blanket of Necra's realm."
+	desc = "The shifting blanket of Last Death's realm."
 	icon_state = "undervoid"
 	footstep = FOOTSTEP_SAND
 	barefootstep = FOOTSTEP_SOFT_BAREFOOT
@@ -393,12 +393,12 @@
 
 /turf/open/floor/underworld/space/sparkle_quiet
 	name = "void"
-	desc = "The shifting blanket of Necra's realm."
+	desc = "The shifting blanket of Last Death's realm."
 	icon_state = "undervoid2"
 
 /turf/open/floor/underworld/space/quiet
 	name = "void"
-	desc = "The shifting blanket of Necra's realm."
+	desc = "The shifting blanket of Last Death's realm."
 	icon_state = "undervoid3"
 
 /turf/open/floor/volcanic

@@ -23,10 +23,10 @@
 	Merchants often spend vast amounts of coin to have them aboard their trade vessels, fending off pirates or guiding their boats through turbulent weather. \
 	Be it on or within the sea, they excel- on land, however, it is a different story. \
 	With their awkward and gangly fins, long, sharp talons, ghastly, lipless teeth, \
-	and milky, foreign eyes, they seem unfit to walk amongst the people. Humen children are often afraid of them due to their appearances. \
+	and milky, foreign eyes, they seem unfit to walk amongst the people. Human children are often afraid of them due to their appearances. \
 	\n\n\
 	Their species is not without its tribalism, however. Large sections of the kin have broken away form their father, \
-	to consider themselves Noc's chosen. Due to their sexual dimorphism, \
+	to consider themselves Lunaria's chosen. Due to their sexual dimorphism, \
 	males of this species are more likely to pursue magick with their weaker frames compared to their female counterparts."
 
 	possible_ages = NORMAL_AGES_LIST
@@ -61,7 +61,7 @@
 	exotic_bloodtype = /datum/blood_type/human/triton
 	enflamed_icon = "widefire"
 
-	// FEMALE from Male Humen
+	// FEMALE from Male Human
 	offset_features_m = list(
 		OFFSET_RING = list(0,0),\
 		OFFSET_GLOVES = list(0,0),\
@@ -81,7 +81,7 @@
 		OFFSET_UNDIES = list(0,0),\
 	)
 
-	// MALE from Female Humen
+	// MALE from Female Human
 	offset_features_f = list(
 		OFFSET_RING = list(0,-1),\
 		OFFSET_GLOVES = list(0,0),\

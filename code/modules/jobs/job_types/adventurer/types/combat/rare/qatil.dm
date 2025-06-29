@@ -3,7 +3,7 @@
 	tutorial = "Hailing from Zybantine lands, you are a killer for hire that is trained both in murdering unseen and seen with your trusty knife."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
-		"Humen",
+		"Human",
 		"Elf",
 		"Half-Elf",
 		"Tiefling",

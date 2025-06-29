@@ -72,7 +72,7 @@
 		modifier += 1
 
 	if(has_world_trait(/datum/world_trait/dendor_fertility))
-		feedback = "Praise Dendor for our harvest is bountiful."
+		feedback = "Praise Blissrose for our harvest is bountiful."
 		modifier += 3
 
 	record_featured_stat(FEATURED_STATS_FARMERS, user)

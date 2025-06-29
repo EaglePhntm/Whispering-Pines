@@ -41,7 +41,7 @@
 
 	for(var/mob/living/L in range(area_of_effect, T))
 		if(L.anti_magic_check())
-			visible_message(span_warning("The tendrils of force can't seem to latch onto [L] "))  //antimagic needs some testing
+			visible_message(span_warning("New godsdrils of force can't seem to latch onto [L] "))  //antimagic needs some testing
 			playsound(get_turf(L), 'sound/magic/magic_nulled.ogg', 100)
 			return
 		L.Immobilize(duration)

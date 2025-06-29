@@ -394,7 +394,7 @@
 	axe_cut = 10
 	sellprice = 30
 
-/obj/item/weapon/polearm/halberd/bardiche/dendor
+/obj/item/weapon/polearm/halberd/bardiche/blissrose
 	name = "summer scythe"
 	desc = "Summer's verdancy runs through the head of this scythe. All the more to sow."
 	icon_state = "dendorscythe"

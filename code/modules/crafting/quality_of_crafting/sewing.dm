@@ -442,9 +442,9 @@
 	craftdiff = 3
 	category = "Cloak"
 
-/datum/repeatable_crafting_recipe/sewing/necratemplar
-	name = "necran surcoat"
-	output = /obj/item/clothing/cloak/stabard/templar/necra
+/datum/repeatable_crafting_recipe/sewing/last_deathtemplar
+	name = "Last Deathen surcoat"
+	output = /obj/item/clothing/cloak/stabard/templar/last_death
 	requirements = list(/obj/item/natural/cloth = 3,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 3
@@ -452,7 +452,7 @@
 
 /datum/repeatable_crafting_recipe/sewing/dendortemplar
 	name = "dendorian surcoat"
-	output = /obj/item/clothing/cloak/stabard/templar/dendor
+	output = /obj/item/clothing/cloak/stabard/templar/blissrose
 	requirements = list(/obj/item/natural/cloth = 3,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 3
@@ -460,7 +460,7 @@
 
 /datum/repeatable_crafting_recipe/sewing/noctemplar
 	name = "lunar surcoat"
-	output = /obj/item/clothing/cloak/stabard/templar/noc
+	output = /obj/item/clothing/cloak/stabard/templar/lunaria
 	requirements = list(/obj/item/natural/cloth = 3,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 3
@@ -483,8 +483,8 @@
 	category = "Cloak"
 
 /datum/repeatable_crafting_recipe/sewing/eoratemplar
-	name = "eoran surcoat"
-	output = /obj/item/clothing/cloak/stabard/templar/eora
+	name = "moonbeamite surcoat"
+	output = /obj/item/clothing/cloak/stabard/templar/moonbeam
 	requirements = list(/obj/item/natural/cloth = 3,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 3

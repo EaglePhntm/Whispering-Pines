@@ -643,8 +643,8 @@
 	pixel_x = 7;
 	pixel_y = 8
 	},
-/turf/open/floor/grass/eora,
-/area/rogue/outdoors/eora)
+/turf/open/floor/grass/moonbeam,
+/area/rogue/outdoors/moonbeam)
 "att" = (
 /obj/structure/table/wood/plain,
 /obj/item/kitchen/spoon{
@@ -773,8 +773,8 @@
 /area/rogue/indoors/town/church/inquisition)
 "awV" = (
 /obj/structure/hotspring/border/eight,
-/turf/open/floor/grass/eora,
-/area/rogue/outdoors/eora)
+/turf/open/floor/grass/moonbeam,
+/area/rogue/outdoors/moonbeam)
 "axm" = (
 /obj/structure/fluff/walldeco/church/line{
 	dir = 4
@@ -1179,7 +1179,7 @@
 	},
 /obj/structure/fluff/railing/wood,
 /obj/structure/fluff/signage{
-	name = "Church of the Ten - East"
+	name = "Church of new gods - East"
 	},
 /turf/open/floor/dirt,
 /area/rogue/outdoors/town)
@@ -3372,8 +3372,8 @@
 /area/rogue/under/cave)
 "bYM" = (
 /obj/structure/hotspring/border/thirteen,
-/turf/open/floor/grass/eora,
-/area/rogue/outdoors/eora)
+/turf/open/floor/grass/moonbeam,
+/area/rogue/outdoors/moonbeam)
 "bYO" = (
 /obj/machinery/light/fueled/wallfire/candle{
 	pixel_y = -32
@@ -4148,7 +4148,7 @@
 /area/rogue/indoors/town)
 "cAG" = (
 /turf/closed/wall/mineral/decorstone,
-/area/rogue/outdoors/eora)
+/area/rogue/outdoors/moonbeam)
 "cBf" = (
 /obj/structure/window/stained/yellow,
 /turf/open/floor/church,
@@ -4469,8 +4469,8 @@
 /area/rogue/indoors/town/manor)
 "cLX" = (
 /obj/structure/hotspring/border,
-/turf/open/floor/grass/eora,
-/area/rogue/outdoors/eora)
+/turf/open/floor/grass/moonbeam,
+/area/rogue/outdoors/moonbeam)
 "cMd" = (
 /obj/effect/decal/remains/human,
 /turf/open/floor/blocks,
@@ -5425,8 +5425,8 @@
 "dsA" = (
 /obj/effect/decal/cobblerockedge/alt,
 /obj/effect/decal/cobblerockedge/alt,
-/turf/open/floor/grass/eora,
-/area/rogue/outdoors/eora)
+/turf/open/floor/grass/moonbeam,
+/area/rogue/outdoors/moonbeam)
 "dsC" = (
 /obj/structure/closet/dirthole/grave,
 /turf/open/floor/dirt/road,
@@ -5920,8 +5920,8 @@
 "dIp" = (
 /obj/structure/fluff/railing/wood,
 /obj/structure/table/wood/plain/alt,
-/obj/item/clothing/neck/psycross/silver/dendor,
-/obj/item/clothing/shirt/robe/dendor,
+/obj/item/clothing/neck/psycross/silver/blissrose,
+/obj/item/clothing/shirt/robe/blissrose,
 /turf/open/floor/ruinedwood/chevron,
 /area/rogue/outdoors/mountains)
 "dIr" = (
@@ -6039,8 +6039,8 @@
 /area/rogue/indoors/town/bath)
 "dLY" = (
 /obj/structure/hotspring/border/seven,
-/turf/open/floor/grass/eora,
-/area/rogue/outdoors/eora)
+/turf/open/floor/grass/moonbeam,
+/area/rogue/outdoors/moonbeam)
 "dMf" = (
 /obj/structure/fluff/walldeco/masonflag,
 /turf/closed/wall/mineral/craftstone,
@@ -6252,8 +6252,8 @@
 /mob/living/simple_animal/pet/cat/cabbit{
 	color = "#e09dda"
 	},
-/turf/open/floor/grass/eora,
-/area/rogue/outdoors/eora)
+/turf/open/floor/grass/moonbeam,
+/area/rogue/outdoors/moonbeam)
 "dRy" = (
 /obj/structure/flora/grass/water,
 /turf/open/floor/dirt,
@@ -6331,7 +6331,7 @@
 	pixel_y = -6
 	},
 /turf/open/water,
-/area/rogue/outdoors/eora)
+/area/rogue/outdoors/moonbeam)
 "dTe" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/blocks/paving,
@@ -7030,8 +7030,8 @@
 /area/rogue/indoors/town/church)
 "eqB" = (
 /obj/structure/hotspring/border/three,
-/turf/open/floor/grass/eora,
-/area/rogue/outdoors/eora)
+/turf/open/floor/grass/moonbeam,
+/area/rogue/outdoors/moonbeam)
 "eqD" = (
 /obj/structure/lever/hidden/keep{
 	redstone_id = 519
@@ -7925,12 +7925,12 @@
 /area/rogue/indoors/town/bath)
 "eUJ" = (
 /obj/structure/table/church,
-/obj/item/clothing/neck/psycross/silver/eora{
+/obj/item/clothing/neck/psycross/silver/moonbeam{
 	pixel_x = -2;
 	pixel_y = 11
 	},
 /turf/open/floor/cobblerock/alt,
-/area/rogue/outdoors/eora)
+/area/rogue/outdoors/moonbeam)
 "eVk" = (
 /obj/machinery/light/fueled/wallfire/candle/blue/r,
 /turf/open/floor/blocks/bluestone,
@@ -8138,8 +8138,8 @@
 /area/rogue/outdoors/town)
 "fbx" = (
 /obj/structure/flora/grass/bush_meagre,
-/turf/open/floor/grass/eora,
-/area/rogue/outdoors/eora)
+/turf/open/floor/grass/moonbeam,
+/area/rogue/outdoors/moonbeam)
 "fbJ" = (
 /obj/item/natural/poo,
 /obj/structure/closet/crate/chest/gold,
@@ -8309,8 +8309,8 @@
 	pixel_x = -7;
 	pixel_y = 10
 	},
-/turf/open/floor/grass/eora,
-/area/rogue/outdoors/eora)
+/turf/open/floor/grass/moonbeam,
+/area/rogue/outdoors/moonbeam)
 "fhm" = (
 /obj/structure/flora/newtree,
 /turf/open/floor/cobble/mossy,
@@ -9641,7 +9641,7 @@
 	pixel_y = 2
 	},
 /obj/item/clothing/neck/psycross/silver/astrata,
-/obj/item/clothing/neck/psycross/silver/ravox,
+/obj/item/clothing/neck/psycross/silver/wanderer,
 /obj/machinery/light/fueled/wallfire/candle{
 	pixel_y = -32
 	},
@@ -9816,7 +9816,7 @@
 "gji" = (
 /obj/structure/hotspring,
 /turf/open/water,
-/area/rogue/outdoors/eora)
+/area/rogue/outdoors/moonbeam)
 "gjq" = (
 /obj/machinery/light/fueled/wallfire/candle/blue/r,
 /turf/open/floor/woodturned,
@@ -10124,12 +10124,12 @@
 /obj/structure/table/church{
 	dir = 1
 	},
-/obj/item/clothing/neck/psycross/silver/eora{
+/obj/item/clothing/neck/psycross/silver/moonbeam{
 	pixel_x = -2;
 	pixel_y = 11
 	},
 /turf/open/floor/cobblerock/alt,
-/area/rogue/outdoors/eora)
+/area/rogue/outdoors/moonbeam)
 "gtZ" = (
 /obj/structure/fluff/walldeco/customflag,
 /turf/closed/wall/mineral/stone,
@@ -10226,7 +10226,7 @@
 /area/rogue/outdoors/town)
 "gxM" = (
 /obj/structure/table/wood/plain/alt,
-/obj/item/clothing/neck/psycross/silver/dendor,
+/obj/item/clothing/neck/psycross/silver/blissrose,
 /obj/item/clothing/head/padded/briarthorns,
 /turf/open/floor/ruinedwood/chevron,
 /area/rogue/outdoors/mountains)
@@ -11228,8 +11228,8 @@
 /area/rogue/indoors/town/bath)
 "hfp" = (
 /obj/structure/flora/grass/herb/random,
-/turf/open/floor/grass/eora,
-/area/rogue/outdoors/eora)
+/turf/open/floor/grass/moonbeam,
+/area/rogue/outdoors/moonbeam)
 "hft" = (
 /obj/structure/closet/crate/crafted_closet,
 /obj/item/clothing/shirt/undershirt/puritan,
@@ -11352,11 +11352,11 @@
 /area/rogue/indoors/town/shop)
 "hiK" = (
 /obj/structure/rack,
-/obj/item/clothing/neck/psycross/silver/eora,
+/obj/item/clothing/neck/psycross/silver/moonbeam,
 /obj/item/clothing/neck/psycross/silver/malum_steel,
 /obj/item/clothing/neck/psycross/silver/pestra,
 /obj/item/clothing/neck/psycross/silver/xylix,
-/obj/item/clothing/neck/psycross/noc,
+/obj/item/clothing/neck/psycross/lunaria,
 /obj/machinery/light/fueled/wallfire/candle{
 	pixel_y = -32
 	},
@@ -12371,8 +12371,8 @@
 /area/rogue/indoors/villagegarrison)
 "hRg" = (
 /obj/structure/flora/grass/bush,
-/turf/open/floor/grass/eora,
-/area/rogue/outdoors/eora)
+/turf/open/floor/grass/moonbeam,
+/area/rogue/outdoors/moonbeam)
 "hRw" = (
 /obj/structure/chair/stool/crafted,
 /obj/effect/landmark/start/matron_assistant,
@@ -14002,7 +14002,7 @@
 /obj/structure/flora/rock/jungle,
 /obj/item/clothing/head/peaceflower,
 /turf/open/water,
-/area/rogue/outdoors/eora)
+/area/rogue/outdoors/moonbeam)
 "iVT" = (
 /obj/machinery/light/fueled/wallfire/candle/blue,
 /turf/open/floor/blocks/stonered/tiny,
@@ -14568,7 +14568,7 @@
 /area/rogue/indoors/villagegarrison)
 "jmJ" = (
 /turf/open/floor/cobblerock/alt,
-/area/rogue/outdoors/eora)
+/area/rogue/outdoors/moonbeam)
 "jmW" = (
 /obj/structure/table/wood{
 	dir = 1;
@@ -15704,7 +15704,7 @@
 /turf/open/water/river{
 	dir = 8
 	},
-/area/rogue/outdoors/eora)
+/area/rogue/outdoors/moonbeam)
 "jYT" = (
 /obj/machinery/light/fueled/wallfire/candle/blue{
 	pixel_x = -32;
@@ -16996,8 +16996,8 @@
 /area/rogue/indoors/town/manor)
 "kLl" = (
 /obj/structure/hotspring/border/five,
-/turf/open/floor/grass/eora,
-/area/rogue/outdoors/eora)
+/turf/open/floor/grass/moonbeam,
+/area/rogue/outdoors/moonbeam)
 "kLy" = (
 /obj/structure/fake_machine/scomm/l,
 /turf/open/floor/blocks/newstone/alt,
@@ -17026,8 +17026,8 @@
 	pixel_x = 12;
 	pixel_y = 2
 	},
-/turf/open/floor/grass/eora,
-/area/rogue/outdoors/eora)
+/turf/open/floor/grass/moonbeam,
+/area/rogue/outdoors/moonbeam)
 "kMs" = (
 /turf/closed/wall/mineral/roofwall/outercorner{
 	dir = 4
@@ -17647,8 +17647,8 @@
 	pixel_x = -7;
 	pixel_y = -2
 	},
-/turf/open/floor/grass/eora,
-/area/rogue/outdoors/eora)
+/turf/open/floor/grass/moonbeam,
+/area/rogue/outdoors/moonbeam)
 "ljN" = (
 /turf/open/floor/ruinedwood,
 /area/rogue/indoors/town/merc_guild)
@@ -17669,8 +17669,8 @@
 /obj/effect/decal/cobblerockedge/alt{
 	dir = 4
 	},
-/turf/open/floor/grass/eora,
-/area/rogue/outdoors/eora)
+/turf/open/floor/grass/moonbeam,
+/area/rogue/outdoors/moonbeam)
 "lkC" = (
 /obj/machinery/light/fueled/torchholder/l{
 	dir = 8
@@ -18228,7 +18228,7 @@
 "lFf" = (
 /obj/machinery/light/fueled/firebowl/church,
 /turf/open/floor/cobblerock/alt,
-/area/rogue/outdoors/eora)
+/area/rogue/outdoors/moonbeam)
 "lFG" = (
 /obj/effect/decal/cobbleedge{
 	dir = 1;
@@ -18727,8 +18727,8 @@
 /turf/open/floor/hexstone,
 /area/rogue/indoors/town/church)
 "lWI" = (
-/turf/open/floor/grass/eora,
-/area/rogue/outdoors/eora)
+/turf/open/floor/grass/moonbeam,
+/area/rogue/outdoors/moonbeam)
 "lWL" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 9
@@ -18747,7 +18747,7 @@
 /area/rogue/outdoors/town/roofs)
 "lXT" = (
 /turf/open/water/river,
-/area/rogue/outdoors/eora)
+/area/rogue/outdoors/moonbeam)
 "lXW" = (
 /obj/machinery/light/fueled/wallfire/candle/blue,
 /obj/structure/bars/pipe{
@@ -18792,8 +18792,8 @@
 /area/rogue/indoors/town)
 "mao" = (
 /obj/structure/hotspring/border/nine,
-/turf/open/floor/grass/eora,
-/area/rogue/outdoors/eora)
+/turf/open/floor/grass/moonbeam,
+/area/rogue/outdoors/moonbeam)
 "mbh" = (
 /obj/item/reagent_containers/food/snacks/smallrat,
 /turf/open/floor/blocks,
@@ -19104,8 +19104,8 @@
 /area/rogue/indoors/town/orphanage)
 "mmb" = (
 /obj/structure/hotspring/border/eleven,
-/turf/open/floor/grass/eora,
-/area/rogue/outdoors/eora)
+/turf/open/floor/grass/moonbeam,
+/area/rogue/outdoors/moonbeam)
 "mmY" = (
 /turf/closed/wall/mineral/roofwall/outercorner{
 	dir = 8
@@ -19679,8 +19679,8 @@
 	pixel_x = -9;
 	pixel_y = 17
 	},
-/turf/open/floor/grass/eora,
-/area/rogue/outdoors/eora)
+/turf/open/floor/grass/moonbeam,
+/area/rogue/outdoors/moonbeam)
 "mGp" = (
 /obj/structure/fluff/railing/border{
 	dir = 10
@@ -20729,22 +20729,22 @@
 /area/rogue/indoors/town/merc_guild)
 "nnf" = (
 /obj/structure/hotspring/border/fourteen,
-/turf/open/floor/grass/eora,
-/area/rogue/outdoors/eora)
+/turf/open/floor/grass/moonbeam,
+/area/rogue/outdoors/moonbeam)
 "nnv" = (
 /obj/effect/decal/remains/human{
 	pixel_x = -3;
 	pixel_y = 7
 	},
-/obj/item/clothing/shirt/robe/eora{
+/obj/item/clothing/shirt/robe/moonbeam{
 	pixel_y = 2
 	},
-/obj/item/clothing/head/roguehood/eora{
+/obj/item/clothing/head/roguehood/moonbeam{
 	pixel_x = -7;
 	pixel_y = 7
 	},
-/turf/open/floor/grass/eora,
-/area/rogue/outdoors/eora)
+/turf/open/floor/grass/moonbeam,
+/area/rogue/outdoors/moonbeam)
 "nnw" = (
 /obj/item/natural/rock/random_ore,
 /turf/open/floor/naturalstone,
@@ -20759,12 +20759,12 @@
 /area/rogue/indoors/soilsons)
 "nnH" = (
 /obj/structure/closet/crate/crafted_closet,
-/obj/item/clothing/shirt/robe/eora,
-/obj/item/clothing/shirt/robe/eora,
-/obj/item/clothing/shirt/robe/eora,
-/obj/item/clothing/head/roguehood/eora,
-/obj/item/clothing/head/roguehood/eora,
-/obj/item/clothing/head/roguehood/eora,
+/obj/item/clothing/shirt/robe/moonbeam,
+/obj/item/clothing/shirt/robe/moonbeam,
+/obj/item/clothing/shirt/robe/moonbeam,
+/obj/item/clothing/head/roguehood/moonbeam,
+/obj/item/clothing/head/roguehood/moonbeam,
+/obj/item/clothing/head/roguehood/moonbeam,
 /turf/open/floor/churchmarble,
 /area/rogue/indoors/town/church)
 "nnK" = (
@@ -22617,8 +22617,8 @@
 	pixel_x = -8;
 	pixel_y = 7
 	},
-/turf/open/floor/grass/eora,
-/area/rogue/outdoors/eora)
+/turf/open/floor/grass/moonbeam,
+/area/rogue/outdoors/moonbeam)
 "oxn" = (
 /obj/structure/flora/grass/water/reeds,
 /obj/structure/flora/grass/water,
@@ -23748,7 +23748,7 @@
 	pixel_y = 10
 	},
 /turf/open/floor/cobblerock/alt,
-/area/rogue/outdoors/eora)
+/area/rogue/outdoors/moonbeam)
 "pmj" = (
 /obj/structure/closet/crate/crafted_closet/inn,
 /obj/item/clothing/shoes/boots,
@@ -24292,8 +24292,8 @@
 /area/rogue/indoors/town)
 "pFL" = (
 /obj/structure/hotspring/border/four,
-/turf/open/floor/grass/eora,
-/area/rogue/outdoors/eora)
+/turf/open/floor/grass/moonbeam,
+/area/rogue/outdoors/moonbeam)
 "pGe" = (
 /obj/structure/table/wood{
 	icon_state = "longtable_mid"
@@ -24659,7 +24659,7 @@
 	color = "#e09dda"
 	},
 /turf/open/floor/churchbrick,
-/area/rogue/outdoors/eora)
+/area/rogue/outdoors/moonbeam)
 "pSu" = (
 /obj/structure/table/wood{
 	icon_state = "tablewood1"
@@ -24959,7 +24959,7 @@
 "qdt" = (
 /obj/structure/hotspring/border/two,
 /turf/open/water,
-/area/rogue/outdoors/eora)
+/area/rogue/outdoors/moonbeam)
 "qdD" = (
 /obj/structure/chair/wood/alt{
 	dir = 1
@@ -24989,8 +24989,8 @@
 /area/rogue/indoors/town/merc_guild)
 "qeb" = (
 /obj/effect/spawner/map_spawner/treeorbush,
-/turf/open/floor/grass/eora,
-/area/rogue/outdoors/eora)
+/turf/open/floor/grass/moonbeam,
+/area/rogue/outdoors/moonbeam)
 "qev" = (
 /obj/structure/table/wood/counter{
 	dir = 4
@@ -25253,7 +25253,7 @@
 	pixel_y = -2
 	},
 /turf/open/water,
-/area/rogue/outdoors/eora)
+/area/rogue/outdoors/moonbeam)
 "qoU" = (
 /obj/effect/decal/cleanable/dirt/cobweb{
 	dir = 1
@@ -27268,7 +27268,7 @@
 	pixel_x = 3;
 	pixel_y = -3
 	},
-/obj/item/clothing/neck/psycross/silver/necra{
+/obj/item/clothing/neck/psycross/silver/last_death{
 	pixel_x = -8;
 	pixel_y = 4
 	},
@@ -28013,7 +28013,7 @@
 "sgd" = (
 /obj/effect/waterfall,
 /turf/open/water,
-/area/rogue/outdoors/eora)
+/area/rogue/outdoors/moonbeam)
 "sgi" = (
 /obj/structure/closet/crate/crafted_closet,
 /turf/open/floor/ruinedwood,
@@ -28058,8 +28058,8 @@
 /area/rogue/under/town/basement)
 "shO" = (
 /obj/structure/hotspring/border/ten,
-/turf/open/floor/grass/eora,
-/area/rogue/outdoors/eora)
+/turf/open/floor/grass/moonbeam,
+/area/rogue/outdoors/moonbeam)
 "shR" = (
 /obj/structure/mannequin/male/decorative,
 /turf/open/floor/blocks/stonered/tiny,
@@ -30033,7 +30033,7 @@
 /area/rogue/under/cavewet)
 "ttm" = (
 /turf/closed/mineral,
-/area/rogue/outdoors/eora)
+/area/rogue/outdoors/moonbeam)
 "ttp" = (
 /obj/effect/landmark/start/merchant{
 	dir = 1
@@ -30080,7 +30080,7 @@
 	pixel_x = 13
 	},
 /turf/open/water,
-/area/rogue/outdoors/eora)
+/area/rogue/outdoors/moonbeam)
 "tus" = (
 /obj/structure/table/wood/plain_alt,
 /turf/open/floor/blocks,
@@ -30484,7 +30484,7 @@
 /obj/structure/hotspring,
 /obj/effect/lily_petal,
 /turf/open/water,
-/area/rogue/outdoors/eora)
+/area/rogue/outdoors/moonbeam)
 "tHF" = (
 /obj/structure/fluff/signage{
 	name = "Vanderlin Train Station"
@@ -30593,7 +30593,7 @@
 /area/rogue/outdoors/town)
 "tKp" = (
 /turf/open/transparent/openspace,
-/area/rogue/outdoors/eora)
+/area/rogue/outdoors/moonbeam)
 "tKI" = (
 /obj/structure/window/openclose{
 	dir = 8
@@ -31575,7 +31575,7 @@
 /obj/structure/hotspring,
 /obj/effect/lily_petal/two,
 /turf/open/water,
-/area/rogue/outdoors/eora)
+/area/rogue/outdoors/moonbeam)
 "uqd" = (
 /obj/structure/fake_machine/scomm/l,
 /turf/open/floor/greenstone,
@@ -32049,8 +32049,8 @@
 /area/rogue/indoors/town/merc_guild)
 "uFQ" = (
 /obj/effect/decal/cobblerockedge/alt,
-/turf/open/floor/grass/eora,
-/area/rogue/outdoors/eora)
+/turf/open/floor/grass/moonbeam,
+/area/rogue/outdoors/moonbeam)
 "uFW" = (
 /turf/open/floor/rooftop{
 	dir = 8
@@ -32293,8 +32293,8 @@
 /obj/effect/decal/cobblerockedge/alt{
 	dir = 10
 	},
-/turf/open/floor/grass/eora,
-/area/rogue/outdoors/eora)
+/turf/open/floor/grass/moonbeam,
+/area/rogue/outdoors/moonbeam)
 "uNZ" = (
 /obj/effect/spawner/map_spawner/treeorstump,
 /turf/open/floor/dirt,
@@ -32423,8 +32423,8 @@
 	pixel_x = -6;
 	pixel_y = 2
 	},
-/turf/open/floor/grass/eora,
-/area/rogue/outdoors/eora)
+/turf/open/floor/grass/moonbeam,
+/area/rogue/outdoors/moonbeam)
 "uSc" = (
 /turf/open/floor/cobble,
 /area/rogue/indoors/dungeon)
@@ -33783,7 +33783,7 @@
 	icon_state = "5"
 	},
 /turf/open/floor/churchbrick,
-/area/rogue/outdoors/eora)
+/area/rogue/outdoors/moonbeam)
 "vQx" = (
 /obj/item/gem/blue,
 /turf/open/floor/tile/checker,
@@ -34337,9 +34337,9 @@
 /area/rogue/under/town/basement)
 "wjH" = (
 /obj/structure/closet/crate/crafted_closet,
-/obj/item/clothing/shirt/robe/noc,
-/obj/item/clothing/shirt/robe/noc,
-/obj/item/clothing/shirt/robe/noc,
+/obj/item/clothing/shirt/robe/lunaria,
+/obj/item/clothing/shirt/robe/lunaria,
+/obj/item/clothing/shirt/robe/lunaria,
 /obj/item/clothing/head/roguehood/nochood,
 /obj/item/clothing/head/roguehood/nochood,
 /obj/item/clothing/head/roguehood/nochood,
@@ -34814,8 +34814,8 @@
 /obj/effect/decal/cobblerockedge/alt{
 	dir = 8
 	},
-/turf/open/floor/grass/eora,
-/area/rogue/outdoors/eora)
+/turf/open/floor/grass/moonbeam,
+/area/rogue/outdoors/moonbeam)
 "wzm" = (
 /obj/structure/bars/pipe{
 	dir = 5
@@ -35428,8 +35428,8 @@
 /area/rogue/outdoors/town/roofs)
 "wUv" = (
 /obj/structure/hotspring/border/twelve,
-/turf/open/floor/grass/eora,
-/area/rogue/outdoors/eora)
+/turf/open/floor/grass/moonbeam,
+/area/rogue/outdoors/moonbeam)
 "wUA" = (
 /obj/structure/toilet,
 /obj/effect/decal/cleanable/blood,
@@ -36587,8 +36587,8 @@
 /area/rogue/indoors/town/church/inquisition)
 "xKk" = (
 /obj/structure/hotspring/border/two,
-/turf/open/floor/grass/eora,
-/area/rogue/outdoors/eora)
+/turf/open/floor/grass/moonbeam,
+/area/rogue/outdoors/moonbeam)
 "xKo" = (
 /obj/structure/stairs{
 	dir = 4
@@ -36875,8 +36875,8 @@
 /obj/effect/decal/cobblerockedge/alt{
 	dir = 6
 	},
-/turf/open/floor/grass/eora,
-/area/rogue/outdoors/eora)
+/turf/open/floor/grass/moonbeam,
+/area/rogue/outdoors/moonbeam)
 "xUU" = (
 /obj/structure/fluff/walldeco/church/line{
 	dir = 8
@@ -37344,8 +37344,8 @@
 /area/rogue/indoors/town/church/inquisition)
 "ykJ" = (
 /obj/structure/flora/grass/herb/salvia,
-/turf/open/floor/grass/eora,
-/area/rogue/outdoors/eora)
+/turf/open/floor/grass/moonbeam,
+/area/rogue/outdoors/moonbeam)
 "ykK" = (
 /obj/structure/fluff/walldeco/church/line{
 	dir = 8

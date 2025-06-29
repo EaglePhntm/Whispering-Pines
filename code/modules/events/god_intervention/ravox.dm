@@ -1,18 +1,18 @@
 /datum/round_event_control/ravox_resolve
-	name = "Ravox's Resolve"
+	name = "Wanderer's Resolve"
 	track = EVENT_TRACK_INTERVENTION
 	typepath = /datum/round_event/ravox_resolve
 	weight = 8
 	earliest_start = 25 MINUTES
 	max_occurrences = 1
 	min_players = 30
-	allowed_storytellers = list(/datum/storyteller/ravox)
+	allowed_storytellers = list(/datum/storyteller/wanderer)
 
 /datum/round_event_control/ravox_resolve/canSpawnEvent(players_amt, gamemode, fake_check)
 	. = ..()
 	if(!.)
 		return FALSE
-	if(GLOB.patron_follower_counts["Ravox"] < 3)
+	if(GLOB.patron_follower_counts["Wanderer"] < 3)
 		return FALSE
 
 /datum/round_event/ravox_resolve/start()
@@ -22,7 +22,7 @@
 		if(!istype(human_mob) || human_mob.stat == DEAD || !human_mob.client)
 			continue
 
-		if(!human_mob.patron || !istype(human_mob.patron, /datum/patron/divine/ravox))
+		if(!human_mob.patron || !istype(human_mob.patron, /datum/patron/divine/wanderer))
 			continue
 
 		if(!weakest)
@@ -41,5 +41,5 @@
 	weakest.set_stat_modifier("ravox_resolve", STATKEY_STR, 1)
 	weakest.set_stat_modifier("ravox_resolve", STATKEY_END, 1)
 	weakest.set_stat_modifier("ravox_resolve", STATKEY_CON, 1)
-	to_chat(weakest, span_green("You may be weak compared to your fellow warriors of justice, but still you persevere. Ravox honors those who fight even when victory seems impossible. Let his gift of strength be your whetstone — now strike!"))
+	to_chat(weakest, span_green("You may be weak compared to your fellow warriors of justice, but still you persevere. Wanderer honors those who fight even when victory seems impossible. Let his gift of strength be your whetstone — now strike!"))
 	weakest.playsound_local(weakest, 'sound/vo/male/knight/rage (6).ogg', 70)

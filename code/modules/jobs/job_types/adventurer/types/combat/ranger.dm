@@ -1,6 +1,6 @@
 /datum/advclass/combat/ranger
 	name = "Ranger"
-	tutorial = "Humen and elf rangers often live among each other, as these bow-wielding \
+	tutorial = "Human and elf rangers often live among each other, as these bow-wielding \
 	adventurers are often scouting the lands for the same purpose."
 	allowed_sexes = list(MALE, FEMALE)
 	outfit = /datum/outfit/job/adventurer/ranger

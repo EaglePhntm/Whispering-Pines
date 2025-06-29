@@ -50,7 +50,7 @@
 	ring = /obj/item/scomstone
 	beltl = /obj/item/gun/ballistic/revolver/grenadelauncher/pistol
 	switch(H.patron?.type)
-		if(/datum/patron/inhumen/baotha)
+		if(/datum/patron/inhumen/lamashtu)
 			H.cmode_music = 'sound/music/cmode/antag/CombatBaotha.ogg'
 	if(H.gender == FEMALE)
 		H.change_stat(STATKEY_SPD, 1)

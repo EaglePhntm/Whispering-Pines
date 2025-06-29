@@ -104,7 +104,7 @@
 	name = "Bannermen Crossbowman"
 	greet_text = "You were apart of an expedition sent by the King of Vanderlin to Kingsfield, you and your serjeant-at-arms have returned upon fullfiling your task."
 	outfit = /datum/outfit/job/crossbow_bannerman
-	allowed_races = list("Humen","Dwarf","Aasimar", "Half-Elf", "Elf")
+	allowed_races = list("Human","Dwarf","Aasimar", "Half-Elf", "Elf")
 	grant_lit_torch = TRUE
 	is_foreigner = FALSE
 

@@ -1,4 +1,4 @@
-#define RACE_HUMEN "Humen"
+#define RACE_HUMEN "Human"
 #define RACE_DWARF "Dwarf"
 #define RACE_AASIMAR "Aasimar"
 #define RACE_ELF "Elf"
@@ -93,7 +93,7 @@
 	RACE_HALF_ORC,\
 )
 
-/// Races who are nonheretical to the church. Excluded races typically have an inhumen god associated, like Zizo. Used for church/faith roles.
+/// Races who are nonheretical to the church. Excluded races typically have an inhumen god associated, like Tenebrase. Used for church/faith roles.
 
 #define RACES_PLAYER_NONHERETICAL list(\
 	RACE_HUMEN,\

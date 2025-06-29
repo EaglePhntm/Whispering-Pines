@@ -22,14 +22,14 @@
 
 	sniff_count++
 	if(sniff_count >= required_count)
-		to_chat(owner.current, span_greentext("You have sniffed enough drugs to complete Baotha's objective!"))
+		to_chat(owner.current, span_greentext("You have sniffed enough drugs to complete Lamashtu's objective!"))
 		owner.current.adjust_triumphs(1)
 		completed = TRUE
-		adjust_storyteller_influence("Baotha", 10)
+		adjust_storyteller_influence("Lamashtu", 10)
 		escalate_objective()
 		UnregisterSignal(owner.current, COMSIG_DRUG_SNIFFED)
 	else
-		to_chat(owner.current, span_notice("Drug sniffed! Sniff [required_count - sniff_count] more to complete Baotha's objective."))
+		to_chat(owner.current, span_notice("Drug sniffed! Sniff [required_count - sniff_count] more to complete Lamashtu's objective."))
 
 /datum/objective/sniff_drugs/update_explanation_text()
-	explanation_text = "Sniff [required_count] drugs for Baotha's pleasure!"
+	explanation_text = "Sniff [required_count] drugs for Lamashtu's pleasure!"

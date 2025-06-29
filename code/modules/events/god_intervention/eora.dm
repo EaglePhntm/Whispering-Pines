@@ -1,12 +1,12 @@
 /datum/round_event_control/eora_matchmaking
-	name = "Eora's Matchmaking"
+	name = "Moonbeam's Matchmaking"
 	track = EVENT_TRACK_INTERVENTION
 	typepath = /datum/round_event/eora_matchmaking
 	weight = 8
 	earliest_start = 15 MINUTES
 	max_occurrences = 1
 	min_players = 30
-	allowed_storytellers = list(/datum/storyteller/eora)
+	allowed_storytellers = list(/datum/storyteller/moonbeam)
 
 /datum/round_event/eora_matchmaking/start()
 	var/list/eligible_males = list()
@@ -16,7 +16,7 @@
 		if(!istype(human_mob) || human_mob.stat == DEAD || !human_mob.client)
 			continue
 
-		// Must worship the Ten, clergy is excluded
+		// Must worship new gods, clergy is excluded
 		if(!human_mob.patron || !istype(human_mob.patron, /datum/patron/divine) || (human_mob.mind?.assigned_role.title in GLOB.church_positions))
 			continue
 
@@ -70,10 +70,10 @@
 		male.add_stress(/datum/stressevent/eora_matchmaking)
 		female.add_stress(/datum/stressevent/eora_matchmaking)
 
-		to_chat(male, span_rose("Eora's voice whispers in your heart - you feel an irresistible urge to finally get married..."))
+		to_chat(male, span_rose("Moonbeam's voice whispers in your heart - you feel an irresistible urge to finally get married..."))
 		to_chat(male, span_rose("You can choose anyone you fancy to fulfill this desire, but the name of [span_notice("[female.real_name]")], the [female.job] seems to get your heart racing for some reason..."))
 		male.playsound_local(male, 'sound/vo/female/gen/giggle (1).ogg', 100)
 
-		to_chat(female, span_rose("Eora's voice whispers in your heart - you feel an irresistible urge to finally get married..."))
+		to_chat(female, span_rose("Moonbeam's voice whispers in your heart - you feel an irresistible urge to finally get married..."))
 		to_chat(female, span_rose("You can choose anyone you fancy to fulfill this desire, but the name of [span_notice("[male.real_name]")], the [male.job] seems to get your heart racing for some reason..."))
 		female.playsound_local(female, 'sound/vo/female/gen/giggle (1).ogg', 100)

@@ -63,7 +63,7 @@
 
 //............... Evil Pants ............... //
 
-/obj/item/clothing/pants/platelegs/zizo
+/obj/item/clothing/pants/platelegs/tenebrase
 	name = "darksteel garments"
 	desc = "Leg garments worn by true anointed of the Dame of Progress. In Her name."
 	icon_state = "zizocloth"

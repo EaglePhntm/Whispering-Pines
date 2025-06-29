@@ -1,7 +1,7 @@
 /datum/advclass/pilgrim/hunter
 	name = "Hunter"
 	tutorial = "Peasants that thrive on the woods, hunting creechers for pelt and hide, \
-				or the boons of Dendor for their meat to sell, or consume."
+				or the boons of Blissrose for their meat to sell, or consume."
 	allowed_sexes = list(MALE)
 
 	outfit = /datum/outfit/job/adventurer/hunter
@@ -55,10 +55,10 @@
 /datum/advclass/pilgrim/huntress
 	name = "Huntress"
 	tutorial = "Women that thrive on the woods, hunting creechers for pelt and hide, \
-				or the boons of Dendor for their meat to sell, or consume."
+				or the boons of Blissrose for their meat to sell, or consume."
 	allowed_sexes = list(FEMALE)
 	allowed_races = list(
-		"Humen",
+		"Human",
 		"Rakshari",
 		"Elf",
 		"Half-Elf",

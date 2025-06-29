@@ -3,7 +3,7 @@
 	tutorial = "A mercanary hailing from Kaledon, you fight under your Gallowglass or for your own coin, you fled with your fellow countrymen to escape the Grenzelhoftian Occupation of your homeland."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
-		"Humen",
+		"Human",
 		"Half-Elf",
 		"Dwarf"
 	)

@@ -59,7 +59,7 @@
 		target.apply_damage(5, BRUTE, BPG)
 	else if(!(HAS_TRAIT(target, TRAIT_TINY)) && HAS_TRAIT(user, TRAIT_TINY)) //Seelie on Non-Seelie action
 		user.visible_message(span_warning("[user] inserts their tiny cock into [target]'s cunt."))
-	else //Normal humen sized creatures or Seelie on Seelie (which would be normal)
+	else //Normal human sized creatures or Seelie on Seelie (which would be normal)
 		user.visible_message(span_warning("[user] slides their cock into [target]'s cunt!"))
 	playsound(target, list('sound/misc/mat/insert (1).ogg','sound/misc/mat/insert (2).ogg'), 20, TRUE, ignore_walls = FALSE)
 
@@ -98,7 +98,7 @@
 
 /datum/sex_action/vaginal_sex/on_finish(mob/living/user, mob/living/target)
 	..()
-	if(!(HAS_TRAIT(target, TRAIT_TINY)) && HAS_TRAIT(user, TRAIT_TINY)) //Male seelie trying to fuck normal size humen
+	if(!(HAS_TRAIT(target, TRAIT_TINY)) && HAS_TRAIT(user, TRAIT_TINY)) //Male seelie trying to fuck normal size human
 		user.visible_message(span_warning("[user] stops trying to insert their tiny cock into [target]'s cunt."))
 	else
 		user.visible_message(span_warning("[user] pulls their cock out of [target]'s cunt."))

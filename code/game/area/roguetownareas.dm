@@ -233,8 +233,8 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound_dusk = 'sound/music/area/septimus.ogg'
 	droning_sound_night = 'sound/music/area/sleeping.ogg'
 
-/area/rogue/outdoors/eora
-	name = "eoran grove"
+/area/rogue/outdoors/moonbeam
+	name = "moonbeamite grove"
 	icon_state = "eora"
 	ambientsounds = AMB_JUNGLEDAY
 	ambientnight = AMB_JUNGLENIGHT
@@ -522,7 +522,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 
 /area/rogue/indoors/town/church/chapel
 	icon_state = "chapel"
-	first_time_text = "THE HOUSE OF THE TEN"
+	first_time_text = "THE HOUSE OF NEW GODS"
 
 /area/rogue/indoors/town/church/inquisition
 	name = "inquisition"
@@ -806,7 +806,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	if(!damned || !message)
 		return
 
-	var/static/list/profane_words = list("zizo","cock","dick","fuck","shit","pussy","cuck","cunt","asshole")
+	var/static/list/profane_words = list("tenebrase","cock","dick","fuck","shit","pussy","cuck","cunt","asshole")
 	var/prayer = sanitize_hear_message(message)
 
 	for(var/profanity in profane_words)

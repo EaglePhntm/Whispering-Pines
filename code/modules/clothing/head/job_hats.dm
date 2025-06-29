@@ -1,7 +1,7 @@
 /obj/item/clothing/head/fisherhat
 	name = "straw hat"
 	desc = "Wenches shall lust for thee. Fishe will fear thee. \
-			Humen will cast their gaze aside. As thou walk, \
+			Human will cast their gaze aside. As thou walk, \
 			no creecher shall dare make a sound on thy presence. \
 			Thou wilt be alone on these barren lands."
 	icon_state = "fisherhat"

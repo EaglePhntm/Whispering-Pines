@@ -2,9 +2,9 @@
 
 /datum/advclass/combat/lancer
 	name = "Lancer"
-	tutorial = "Working for many years as a famous mercenary in the southern Humen kingdoms, you've started heading north to avoid the skeletons of your past. With your polearm by your side, you can face down any foe."
+	tutorial = "Working for many years as a famous mercenary in the southern Human kingdoms, you've started heading north to avoid the skeletons of your past. With your polearm by your side, you can face down any foe."
 	allowed_sexes = list(MALE)
-	allowed_races = list("Humen")
+	allowed_races = list("Human")
 	outfit = /datum/outfit/job/adventurer/lancer
 	maximum_possible_slots = 1
 	pickprob = 15

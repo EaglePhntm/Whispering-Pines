@@ -14,7 +14,7 @@
 	bypass_lastclass = TRUE
 
 	allowed_races = list(
-		"Humen",
+		"Human",
 		"Elf",
 		"Half-Elf",
 		"Dwarf",

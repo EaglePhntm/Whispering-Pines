@@ -87,13 +87,13 @@
 
 /obj/structure/flora/tree/wise
 	name = "wise tree"
-	desc = "Dendor's favored. It seems to watch you with ancient awareness."
+	desc = "Blissrose's favored. It seems to watch you with ancient awareness."
 	icon_state = "mystical"
 	var/activated = FALSE
 	var/cooldown = FALSE
 	var/retaliation_messages = list(
 		"LEAVE FOREST ALONE!",
-		"DENDOR PROTECTS!",
+		"BLISSROSE PROTECTS!",
 		"NATURE'S WRATH!",
 		"BEGONE, INTERLOPER!"
 	)

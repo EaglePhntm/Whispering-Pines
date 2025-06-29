@@ -251,8 +251,8 @@ GLOBAL_LIST_EMPTY(thieves_guild_doors)
 		"vision",
 		"hunger",
 		"lust",
-		"necra",
-		"noc",
+		"last death",
+		"lunaria",
 		"psydon"
 		)
 	return pick(magic_word)

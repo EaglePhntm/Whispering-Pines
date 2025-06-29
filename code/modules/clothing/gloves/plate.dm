@@ -40,7 +40,7 @@
 
 	//............... Evil Gloves ............... //
 
-/obj/item/clothing/gloves/plate/zizo
+/obj/item/clothing/gloves/plate/tenebrase
 	name = "darksteel gauntlets"
 	desc = "darksteel plate gauntlets. Called forth from the edge of what should be known. In Her name."
 	icon_state = "zizogauntlets"

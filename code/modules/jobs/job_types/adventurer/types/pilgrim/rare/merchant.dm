@@ -4,7 +4,7 @@
 	You've picked up many wears on your various adventures, now it's time to peddle them to these locals."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
-		"Humen",
+		"Human",
 		"Elf",
 		"Half-Elf",
 		"Dwarf",

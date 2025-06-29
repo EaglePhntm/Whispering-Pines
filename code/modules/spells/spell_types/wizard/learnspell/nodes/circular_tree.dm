@@ -270,7 +270,7 @@
 
 /datum/spell_node/arcyne_affinity
 	name = "Arcyne Affinity"
-	desc = "Devote yourself to Noc."
+	desc = "Devote yourself to Lunaria."
 	cost = 3
 	node_x = DOWN_X_LEFT
 	node_y = DOWN_Y_TIER_1
@@ -279,7 +279,7 @@
 
 /datum/spell_node/arcyne_affinity/on_node_buy(mob/user)
 	user.mana_pool?.adjust_attunement(/datum/attunement/arcyne, 0.15)
-	to_chat(user, span_notice("Noc whispers to you."))
+	to_chat(user, span_notice("Lunaria whispers to you."))
 
 /datum/spell_node/air_affinity
 	name = "Air Affinity"

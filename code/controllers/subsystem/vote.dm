@@ -238,9 +238,9 @@ SUBSYSTEM_DEF(vote)
 			if("endround")
 				var/rng = rand(1, 1000)
 				if(rng > 200) // 80%
-					initiator_key = pick("Astrata", "Noc", "Dendor", "Abyssor", "Necra", "Ravox", "Xylix", "Pestra", "Malum", "Eora")
+					initiator_key = pick("Astrata", "Lunaria", "Blissrose", "Abyssor", "Last Death", "Wanderer", "Xylix", "Pestra", "Malum", "Moonbeam")
 				else if(rng > 50) // 15%
-					initiator_key = pick("Zizo", "Graggar", "Matthios", "Baotha")
+					initiator_key = pick("Tenebrase", "Graggar", "Matthios", "Lamashtu")
 				else
 					initiator_key = "Psydon"
 				choices.Add("Continue Playing","End Round")

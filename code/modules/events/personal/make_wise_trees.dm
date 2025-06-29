@@ -21,7 +21,7 @@
 	for(var/mob/living/carbon/human/H in GLOB.player_list)
 		if(!istype(H) || H.stat == DEAD || !H.client)
 			continue
-		if(!H.patron || !istype(H.patron, /datum/patron/divine/dendor))
+		if(!H.patron || !istype(H.patron, /datum/patron/divine/blissrose))
 			continue
 		if(locate(/obj/effect/proc_holder/spell/invoked/transform_tree) in H.mind.spell_list)
 			continue
@@ -35,7 +35,7 @@
 	for(var/mob/living/carbon/human/human_mob in GLOB.player_list)
 		if(!istype(human_mob) || human_mob.stat == DEAD || !human_mob.client)
 			continue
-		if(!human_mob.patron || !istype(human_mob.patron, /datum/patron/divine/dendor))
+		if(!human_mob.patron || !istype(human_mob.patron, /datum/patron/divine/blissrose))
 			continue
 		if(locate(/obj/effect/proc_holder/spell/invoked/transform_tree) in human_mob.mind.spell_list)
 			continue
@@ -52,10 +52,10 @@
 	var/obj/effect/proc_holder/spell/invoked/transform_tree/tree_spell = new()
 	chosen_one.mind.AddSpell(tree_spell)
 
-	to_chat(chosen_one, span_userdanger("YOU ARE DENDOR'S CHOSEN!"))
-	to_chat(chosen_one, span_biginfo("Dendor wants you to choose suitable trees, which are to become guardians of the forest! [new_objective.explanation_text]"))
+	to_chat(chosen_one, span_userdanger("YOU ARE BLISSROSE'S CHOSEN!"))
+	to_chat(chosen_one, span_biginfo("Blissrose wants you to choose suitable trees, which are to become guardians of the forest! [new_objective.explanation_text]"))
 	chosen_one.playsound_local(chosen_one, 'sound/ambience/noises/genspooky (1).ogg', 100)
 
-	to_chat(chosen_one, span_notice("Dendor grants you the power to transform trees into wise trees!"))
+	to_chat(chosen_one, span_notice("Blissrose grants you the power to transform trees into wise trees!"))
 
 	chosen_one.mind.announce_personal_objectives()

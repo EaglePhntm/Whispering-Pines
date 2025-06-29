@@ -63,7 +63,7 @@
 				GLOB.vanderlin_round_stats[STATS_DEADITES_KILLED]++
 
 	if(!gibbed)
-		if(!has_world_trait(/datum/world_trait/necra_requiem))
+		if(!has_world_trait(/datum/world_trait/last_death_requiem))
 			if(!is_in_roguetown(src) || has_world_trait(/datum/world_trait/zizo_defilement))
 				zombie_check()
 

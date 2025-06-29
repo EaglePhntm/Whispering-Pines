@@ -46,7 +46,7 @@
 
 /datum/sex_action/anal_sex/on_start(mob/living/user, mob/living/target)
 	..()
-	if(HAS_TRAIT(target, TRAIT_TINY) && !(HAS_TRAIT(user, TRAIT_TINY)))	//Humen on Seelie
+	if(HAS_TRAIT(target, TRAIT_TINY) && !(HAS_TRAIT(user, TRAIT_TINY)))	//Human on Seelie
 		//Scream and rib break
 		user.visible_message(span_warning("[user] forces their cock into [target]'s tiny butt!"))
 		var/obj/item/bodypart/BPG = target.get_bodypart(BODY_ZONE_PRECISE_GROIN)
@@ -57,7 +57,7 @@
 				BPG.add_wound(/datum/wound/fracture/groin)
 		target.apply_damage(5, BRUTE, BPC)
 		target.apply_damage(5, BRUTE, BPG)
-	else if(!(HAS_TRAIT(target, TRAIT_TINY)) && HAS_TRAIT(user, TRAIT_TINY))	//Seelie on Humen
+	else if(!(HAS_TRAIT(target, TRAIT_TINY)) && HAS_TRAIT(user, TRAIT_TINY))	//Seelie on Human
 		user.visible_message(span_warning("[user] inserts their tiny cock into [target]'s butt!"))
 	else
 		user.visible_message(span_warning("[user] slides his cock into [target]'s butt!"))
@@ -97,7 +97,7 @@
 
 /datum/sex_action/anal_sex/on_finish(mob/living/user, mob/living/target)
 	..()
-	if(!(HAS_TRAIT(target, TRAIT_TINY)) && HAS_TRAIT(user, TRAIT_TINY)) //Male seelie trying to fuck normal size humen
+	if(!(HAS_TRAIT(target, TRAIT_TINY)) && HAS_TRAIT(user, TRAIT_TINY)) //Male seelie trying to fuck normal size human
 		user.visible_message(span_warning("[user] stops trying to insert hit tiny cock into [target]'s ass."))
 	else
 		user.visible_message(span_warning("[user] pulls his cock out of [target]'s ass."))

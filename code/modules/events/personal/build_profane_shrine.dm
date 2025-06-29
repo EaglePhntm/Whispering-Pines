@@ -21,7 +21,7 @@
 	for(var/mob/living/carbon/human/H in GLOB.player_list)
 		if(!istype(H) || H.stat == DEAD || !H.client)
 			continue
-		if(!H.patron || !istype(H.patron, /datum/patron/inhumen/zizo))
+		if(!H.patron || !istype(H.patron, /datum/patron/inhumen/tenebrase))
 			continue
 		if(H.get_skill_level(/datum/skill/craft/crafting) < 1)
 			continue
@@ -35,7 +35,7 @@
 	for(var/mob/living/carbon/human/human_mob in GLOB.player_list)
 		if(!istype(human_mob) || human_mob.stat == DEAD || !human_mob.client)
 			continue
-		if(!human_mob.patron || !istype(human_mob.patron, /datum/patron/inhumen/zizo))
+		if(!human_mob.patron || !istype(human_mob.patron, /datum/patron/inhumen/tenebrase))
 			continue
 		if(human_mob.get_skill_level(/datum/skill/craft/crafting) < 1)
 			continue
@@ -49,8 +49,8 @@
 	var/datum/objective/build_zizo_shrine/new_objective = new(owner = chosen_one.mind)
 	chosen_one.mind.add_personal_objective(new_objective)
 
-	to_chat(chosen_one, span_userdanger("YOU ARE ZIZO'S CHOSEN!"))
-	to_chat(chosen_one, span_biginfo("Zizo wants you to spread corruption! Construct [new_objective.target_count] profane shrines using your newly gained knowledge to complete Zizo's will!"))
+	to_chat(chosen_one, span_userdanger("YOU ARE TENEBRASE'S CHOSEN!"))
+	to_chat(chosen_one, span_biginfo("Tenebrase wants you to spread corruption! Construct [new_objective.target_count] profane shrines using your newly gained knowledge to complete Tenebrase's will!"))
 	to_chat(chosen_one, span_notice("You can construct unholy shrines with one small log, two stones and three wooden stakes."))
 	chosen_one.playsound_local(chosen_one, 'sound/misc/gods/zizo_omen.ogg', 100)
 

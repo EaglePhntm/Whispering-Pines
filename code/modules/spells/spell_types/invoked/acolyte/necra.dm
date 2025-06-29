@@ -16,7 +16,7 @@
 
 /obj/effect/proc_holder/spell/targeted/burialrite/cast(list/targets,mob/user = usr)
 	. = ..()
-	if(user.is_holding_item_of_type(/obj/item/weapon/knife/dagger/steel/profane)) // If you are holding an assassin's cursed dagger, break it and free the souls contained within, sending them into the lukewarm arms of Necra.
+	if(user.is_holding_item_of_type(/obj/item/weapon/knife/dagger/steel/profane)) // If you are holding an assassin's cursed dagger, break it and free the souls contained within, sending them into the lukewarm arms of Last Death.
 		var/obj/item/weapon/knife/dagger/steel/profane/held_profane = user.is_holding_item_of_type(/obj/item/weapon/knife/dagger/steel/profane)
 		var/saved_souls = held_profane.release_profane_souls(user) // Releases the trapped souls and breaks the dagger. Gets the number of souls saved by destroying the dagger.
 		user.adjust_triumphs(saved_souls) // Every soul saved earns you a big fat triumph.
@@ -41,7 +41,7 @@
 	overlay_state = "speakwithdead"
 	releasedrain = 30
 	recharge_time = 75 SECONDS
-	req_items = list(/obj/item/clothing/neck/psycross/silver/necra)
+	req_items = list(/obj/item/clothing/neck/psycross/silver/last_death)
 	max_targets = 0
 	cast_without_targets = TRUE
 	sound = 'sound/magic/churn.ogg'
@@ -136,7 +136,7 @@
 	recharge_time = 30 SECONDS
 	max_targets = 0
 	cast_without_targets = TRUE
-	req_items = list(/obj/item/clothing/neck/psycross/silver/necra)
+	req_items = list(/obj/item/clothing/neck/psycross/silver/last_death)
 	sound = 'sound/magic/churn.ogg'
 	associated_skill = /datum/skill/magic/holy
 	invocation = "The Undermaiden rebukes!"
@@ -172,7 +172,7 @@
 			if(isvampire)
 				undead_prob -= 20
 			if(prob(undead_prob))
-				L.visible_message("<span class='warning'>[L] HAS BEEN CHURNED BY NECRA'S GRIP!</span>", "<span class='danger'>I'VE BEEN CHURNED BY NECRA'S GRIP!</span>")
+				L.visible_message("<span class='warning'>[L] HAS BEEN CHURNED BY LAST DEATH'S GRIP!</span>", "<span class='danger'>I'VE BEEN CHURNED BY LAST DEATH'S GRIP!</span>")
 				explosion(get_turf(L), light_impact_range = 1, flame_range = 1, smoke = FALSE)
 				L.Stun(50)
 				if(istype(L, /mob/living/simple_animal/hostile/retaliate/poltergeist))

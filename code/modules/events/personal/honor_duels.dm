@@ -20,7 +20,7 @@
 	for(var/mob/living/carbon/human/H in GLOB.player_list)
 		if(!istype(H) || H.stat == DEAD || !H.client)
 			continue
-		if(!H.patron || !istype(H.patron, /datum/patron/divine/ravox))
+		if(!H.patron || !istype(H.patron, /datum/patron/divine/wanderer))
 			continue
 		return TRUE
 
@@ -32,7 +32,7 @@
 	for(var/mob/living/carbon/human/human_mob in GLOB.player_list)
 		if(!istype(human_mob) || human_mob.stat == DEAD || !human_mob.client)
 			continue
-		if(!human_mob.patron || !istype(human_mob.patron, /datum/patron/divine/ravox))
+		if(!human_mob.patron || !istype(human_mob.patron, /datum/patron/divine/wanderer))
 			continue
 		valid_targets += human_mob
 
@@ -44,8 +44,8 @@
 	var/datum/objective/ravox_duel/new_objective = new(owner = chosen_one.mind)
 	chosen_one.mind.add_personal_objective(new_objective)
 
-	to_chat(chosen_one, span_userdanger("YOU ARE RAVOX'S CHOSEN!"))
-	to_chat(chosen_one, span_notice("Ravox wants you to challenge others to honor duels! Win [new_objective.duels_required] duels to prove your worth! Duels end when a fighter yields or is knocked unconscious."))
+	to_chat(chosen_one, span_userdanger("YOU ARE WANDERER'S CHOSEN!"))
+	to_chat(chosen_one, span_notice("Wanderer wants you to challenge others to honor duels! Win [new_objective.duels_required] duels to prove your worth! Duels end when a fighter yields or is knocked unconscious."))
 	chosen_one.playsound_local(chosen_one, 'sound/vo/male/knight/rage (6).ogg', 70)
 
 	chosen_one.mind.announce_personal_objectives()

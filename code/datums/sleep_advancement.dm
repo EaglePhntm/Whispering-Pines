@@ -111,10 +111,10 @@
 
 	if(dreamwatcher)
 		to_chat(mind.current, span_notice(pick(
-			"You feel the gaze of Noc before all else..",
+			"You feel the gaze of Lunaria before all else..",
 			"A silver thread weaves through your thoughts..",
 			"You step into a dream that feels... familiar.",
-			"Noc whispers, not in words, but in meaning.",
+			"Lunaria whispers, not in words, but in meaning.",
 		)))
 
 
@@ -130,7 +130,7 @@
 
 	dream_dust += mind.current.STAINT * DREAM_DUST_PER_INT //25% dream points for each int
 	if(dreamwatcher)
-		to_chat(mind.current, span_notice("I can feel Noc’s presence... symbols shift, forgotten places stir, and ancient beings whisper through the veil."))
+		to_chat(mind.current, span_notice("I can feel Lunaria’s presence... symbols shift, forgotten places stir, and ancient beings whisper through the veil."))
 	else if(int < 10)
 		to_chat(mind.current, span_boldwarning("My shallow imagination makes them dull..."))
 	else if (int > 10)
@@ -139,7 +139,7 @@
 	var/stress_median = stress_amount / stress_cycles
 
 	if(dreamwatcher)
-		to_chat(mind.current, span_notice("Noc opens the dreamworld before me, a realm of impossible beauty and boundless thought."))
+		to_chat(mind.current, span_notice("Lunaria opens the dreamworld before me, a realm of impossible beauty and boundless thought."))
 		dream_dust += 100
 		inspirations++
 	else if(stress_median <= 1.0)
@@ -154,10 +154,10 @@
 
 	if(dreamwatcher)
 		var/list/intro_lines = list(
-			span_boldwarning("Noc stirs beneath the surface of your dreams... the world around you distorts, familiar faces blur, and the stars themselves tremble in disquiet."),
+			span_boldwarning("Lunaria stirs beneath the surface of your dreams... the world around you distorts, familiar faces blur, and the stars themselves tremble in disquiet."),
 			span_boldwarning("The dreamscape writhes, pulling at the edges of reality... fleeting images dance across your vision, too tangled to grasp, too distant to recall."),
 			span_boldwarning("A shadow stretches across the stars, swallowing all that once was... whispers echo, but the words slip from your grasp like smoke."),
-			span_boldwarning("Noc’s touch lingers in the space between thoughts... your mind flickers like a dying ember, lost in the endless night."),
+			span_boldwarning("Lunaria’s touch lingers in the space between thoughts... your mind flickers like a dying ember, lost in the endless night."),
 			span_boldwarning("The fabric of dreams unravels around you... shapes and voices blur, an eternal puzzle without an answer."),
 			span_boldwarning("A ripple of thought trembles through the dreamworld... each shift a new question, each answer a fleeting illusion.")
 		)

@@ -22,25 +22,25 @@
 			head = /obj/item/clothing/head/helmet/heavy/necked/astrata
 			wrists = /obj/item/clothing/neck/psycross/silver/astrata
 			H.cmode_music = 'sound/music/cmode/church/CombatAstrata.ogg'
-		if(/datum/patron/divine/noc)
-			head = /obj/item/clothing/head/helmet/heavy/necked/noc
-			wrists = /obj/item/clothing/neck/psycross/noc
+		if(/datum/patron/divine/lunaria)
+			head = /obj/item/clothing/head/helmet/heavy/necked/lunaria
+			wrists = /obj/item/clothing/neck/psycross/lunaria
 			H.cmode_music = 'sound/music/cmode/adventurer/CombatMonk.ogg'
-		if(/datum/patron/divine/dendor)
+		if(/datum/patron/divine/blissrose)
 			head = /obj/item/clothing/head/helmet/heavy/necked/dendorhelm
-			wrists = /obj/item/clothing/neck/psycross/silver/dendor
+			wrists = /obj/item/clothing/neck/psycross/silver/blissrose
 			H.cmode_music = 'sound/music/cmode/garrison/CombatForestGarrison.ogg'
 		if(/datum/patron/divine/abyssor)
 			head = /obj/item/clothing/head/helmet/heavy/necked // Placeholder
 			wrists = /obj/item/clothing/neck/psycross/silver/abyssor
 			H.cmode_music = 'sound/music/cmode/adventurer/CombatMonk.ogg'
-		if(/datum/patron/divine/necra)
-			head = /obj/item/clothing/head/helmet/heavy/necked/necra
-			wrists = /obj/item/clothing/neck/psycross/silver/necra
+		if(/datum/patron/divine/last_death)
+			head = /obj/item/clothing/head/helmet/heavy/necked/last_death
+			wrists = /obj/item/clothing/neck/psycross/silver/last_death
 			H.cmode_music = 'sound/music/cmode/church/CombatGravekeeper.ogg'
-		if(/datum/patron/divine/ravox)
-			head = /obj/item/clothing/head/helmet/heavy/necked/ravox
-			wrists = /obj/item/clothing/neck/psycross/silver/ravox
+		if(/datum/patron/divine/wanderer)
+			head = /obj/item/clothing/head/helmet/heavy/necked/wanderer
+			wrists = /obj/item/clothing/neck/psycross/silver/wanderer
 			H.cmode_music = 'sound/music/cmode/adventurer/CombatOutlander2.ogg'
 		if(/datum/patron/divine/xylix)
 			head = /obj/item/clothing/head/helmet/heavy/necked // Placeholder
@@ -54,9 +54,9 @@
 			head = /obj/item/clothing/head/helmet/heavy/necked/malumhelm
 			wrists = /obj/item/clothing/neck/psycross/silver/malum
 			H.cmode_music = 'sound/music/cmode/adventurer/CombatOutlander2.ogg'
-		if(/datum/patron/divine/eora)
-			head = /obj/item/clothing/head/helmet/sallet/eoran
-			wrists = /obj/item/clothing/neck/psycross/silver/eora
+		if(/datum/patron/divine/moonbeam)
+			head = /obj/item/clothing/head/helmet/sallet/moonbeamite
+			wrists = /obj/item/clothing/neck/psycross/silver/moonbeam
 			H.cmode_music = 'sound/music/cmode/church/CombatEora.ogg'
 			H.virginity = FALSE
 			ADD_TRAIT(H, TRAIT_BEAUTIFUL, TRAIT_GENERIC)
@@ -68,7 +68,7 @@
 		if(/datum/patron/inhumen/graggar_zizo)
 			head = /obj/item/clothing/head/helmet/heavy/sinistar
 			H.cmode_music = 'sound/music/cmode/antag/combat_werewolf.ogg'
-		if(/datum/patron/inhumen/zizo)
+		if(/datum/patron/inhumen/tenebrase)
 			head = /obj/item/clothing/head/helmet/skullcap/cult
 			H.cmode_music = 'sound/music/cmode/antag/combat_cult.ogg'
 			H.change_stat(STATKEY_LCK, -2)
@@ -78,7 +78,7 @@
 			H.cmode_music = 'sound/music/cmode/antag/CombatBandit1.ogg'
 			H.change_stat(STATKEY_LCK, -2)
 			GLOB.heretical_players += H.real_name
-		if(/datum/patron/inhumen/baotha)
+		if(/datum/patron/inhumen/lamashtu)
 			head = /obj/item/clothing/head/crown/circlet
 			mask = /obj/item/clothing/face/spectacles/sglasses
 			H.cmode_music = 'sound/music/cmode/antag/CombatBaotha.ogg'

@@ -4,9 +4,9 @@
 
 	profane_words = list()
 	confess_lines = list(
-		"PSYDON AND HIS CHILDREN ARE THE DEMIURGE!",
-		"THE TEN ARE WORTHLESS COWARDS!",
-		"THE TEN ARE DECEIVERS!"
+		"OLD AND NEW GODS ARE THE DEMIURGE!",
+		"NEW GODS ARE WORTHLESS COWARDS!",
+		"NEW GODS ARE DECEIVERS!"
 	)
 
 /datum/patron/inhumen/can_pray(mob/living/follower)
@@ -19,21 +19,28 @@
 
 /* ----------------- */
 
-/datum/patron/inhumen/zizo
-	name = "Zizo"
-	domain = "Ascended Goddess of Forbidden Magic, Domination, and Power"
-	desc = "Snow Elf who slaughtered Her kind in ascension, conquered and remade the Dark Elven empires in Her name. She proves that any with will can achieve divinity... though at a cost."
+/datum/patron/inhumen/tenebrase
+	name = "Tenebrase"
+	domain = "Primordial Darkness, Evil, Chaos, Darkness, Undeath"
+	desc = "Tenebrase the Primordial Darkness. Tenebrase's history is a mystery to all, only way she shown her existence to the mortal\
+realm is through the underdark, as undead dug from their resting places towards the newly built\
+underdark city beneath no man's land at the west, they conveyed her message and demanded worship, slaying those who refuse and rebel.\
+Now mostly drow and other people worship her mostly due fear, others for personal gains, and so on.\
+She is known as a female figure in a pale mask, her long flowing hair and her whole form tinted in matte dark\
+steel coloring, her mask looking quite ancient in artwork which has an unnerving, smile with blank\
+open eyes with no pupils or irises. She does not speak, only use proxies or convey her messages by\
+creative punis- 'Tests' to her believers that are often lethal to the weak. Tenebrase is one of the few living old gods."
 	flaws = "Hubris, Superiority, Fury"
 	worshippers = "Dark Elves, Aspirants, Necromancers"
-	sins = "Pearl-clutching, Moralism, Wastefulness"
-	boons = "You know other followers of Zizo when you see them."
+	sins = "Moralism, Weakness"
+	boons = "You know other followers of Tenebrase when you see them."
 	added_traits = list(TRAIT_CABAL)
 	confess_lines = list(
-		"I FOLLOW THE PATH OF ZIZO!",
-		"LONG LIVE QUEEN ZIZO!",
-		"ZIZO SHOWED ME THE WAY!",
+		"I FOLLOW THE PATH OF TENEBRASE!",
+		"LONG LIVE THE DARK EMPRESS!",
+		"TENEBRASE SHOWED ME THE WAY!",
 	)
-	storyteller = /datum/storyteller/zizo
+	storyteller = /datum/storyteller/tenebrase
 	added_verbs = list(
 		/mob/living/carbon/human/proc/draw_sigil,
 		/mob/living/carbon/human/proc/praise,
@@ -58,7 +65,7 @@
 /datum/patron/inhumen/matthios
 	name = "Matthios"
 	domain = "God of Thievery, Ill-Gotten Gains, and Highwaymen"
-	desc = "Legendary humen bandit whose greatest thievery was a spark of divinity through which He ascended himself. It is because of He that nobles clutch their coin purses to their chests in town."
+	desc = "Legendary human bandit whose greatest thievery was a spark of divinity through which He ascended himself. It is because of He that nobles clutch their coin purses to their chests in town."
 	flaws = "Pride, Greed, Orneryness"
 	worshippers = "Outlaws, Noble-Haters, Downtrodden Peasantry"
 	sins = "Clumsiness, Stupidity, Humility"
@@ -71,21 +78,29 @@
 	)
 	storyteller = /datum/storyteller/matthios
 
-/datum/patron/inhumen/baotha
-	name = "Baotha"
-	domain = "Goddess of Drugs, Self-Preservation, and Remorseless Joy"
-	desc = "Ascended, formerly disgraced tiefling consort notorious for having a mind elsewhere. Through Her envy and callous distaste, she traded her family's life for a shipment of powder. As she preaches to her followers, 'Joy at all costs!'"
+/datum/patron/inhumen/lamashtu
+	name = "Lamashtu"
+	domain = "Goddess of Monsters, Family, Breeding"
+	desc = "Mother of Monsters and demon-goddess of family. A demonic gnoll, she is primarily worshipped by \
+evil creatures, though any being who plans on starting a family can follow her. Good creatures who \
+follow her are generally looked down on by the rest of her followers, who feel that they cannot truly \
+understand who she is as a mother of monsters. One of her primary rites is to commit coitus at one \
+of her sacred locations with the primary intent to breed. \
+Before she was a goddess, Lamashtu was simply a minor demon lord, who's small realm was primarily \
+inhabited by sex demons. But during a demonic war that occurred at the same time as the apocalypse, \
+two major demon lords died, and Lamashtu managed to capture the leftover power, elevating her to \
+the power of a minor goddess.'"
 	flaws = "Enviousness, Self-Destruction, Willingness to Sacrifice Others"
-	worshippers = "Addicts, Hedonists, the Motherless and Maidenless"
+	worshippers = "Monsters, the Motherless and Maidenless"
 	sins = "Sobriety, Self-Sacrifice, Faltering Willpower"
-	boons = "You will never overdose on drugs."
-	added_traits = list(TRAIT_CRACKHEAD)
+	boons = "You are better in bed, and gain devotion if you are able."
+	added_traits = list(TRAIT_GOODLOVER, TRAIT_SEXDEVO)
 	confess_lines = list(
-		"LIVE, LAUGH, LOVE! IN BAOTHA'S NAME!",
-		"JOY AT ALL COSTS! BAOTHA'S TEACHINGS REIGN!",
-		"BAOTHA'S WHISPERS CALM MY MIND!",
+		"BREED IN LAMASHTU'S NAME!",
+		"MULTIPLY TO A HORDE FOR LAMASHTU!",
+		"LAMASHTU, MOTHER OF MONSTERS!",
 	)
-	storyteller = /datum/storyteller/baotha
+	storyteller = /datum/storyteller/lamashtu
 
 /// Maniac Patron
 /datum/patron/inhumen/graggar_zizo
@@ -95,7 +110,7 @@
 	flaws = "Rage, Superiority, Bloodthirst"
 	worshippers = "Dark Elves, The Revenge-Driven, Necromancers"
 	sins = "Compassion, Wastefulness, Servility"
-	boons = "You are drawn to the flavour of other followers of Zizo, and may see them when you consume without worry."
+	boons = "You are drawn to the flavour of other followers of Tenebrase, and may see them when you consume without worry."
 	added_traits = list(TRAIT_ORGAN_EATER, TRAIT_CABAL)
 	confess_lines = list(
 		"WHERE AM I!",

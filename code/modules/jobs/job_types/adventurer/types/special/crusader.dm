@@ -2,14 +2,14 @@
 	name = "Totod Order Emissary"
 	tutorial = "The Crusaders are knights who have pledged their wealth and lands to the Church, \
 	taking up the banner of the Totod Order dedicated to retaking Valoria. \
-	Three cults provide knights for the Order: Astrata, Necra and Psydon. \
+	Three cults provide knights for the Order: Astrata, Last Death and Psydon. \
 	You were sent to Vanderlin by the Order to get any and all assistance from the faithful for the Crusade."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
-		"Humen",
+		"Human",
 		"Dwarf"
 	)
-	allowed_patrons = list(/datum/patron/divine/astrata, /datum/patron/divine/necra, /datum/patron/psydon)
+	allowed_patrons = list(/datum/patron/divine/astrata, /datum/patron/divine/last_death, /datum/patron/psydon)
 	outfit = /datum/outfit/job/adventurer/crusader
 	category_tags = list(CTAG_ADVENTURER)
 	maximum_possible_slots = 1
@@ -17,7 +17,7 @@
 	min_pq = 0
 
 /datum/outfit/job/adventurer/crusader
-	allowed_patrons = list(/datum/patron/divine/astrata, /datum/patron/divine/necra, /datum/patron/psydon)
+	allowed_patrons = list(/datum/patron/divine/astrata, /datum/patron/divine/last_death, /datum/patron/psydon)
 
 /datum/outfit/job/adventurer/crusader/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -39,10 +39,10 @@
 			H.cmode_music = 'sound/music/cmode/church/CombatAstrata.ogg'
 			cloak = /obj/item/clothing/cloak/stabard/crusader // Gold for Astrata regardless of gender
 			wrists = /obj/item/clothing/neck/psycross/silver/astrata
-		if("Necra")
+		if("Last Death")
 			H.cmode_music = 'sound/music/cmode/church/CombatGravekeeper.ogg'
-			cloak = /obj/item/clothing/cloak/stabard/templar/necra
-			wrists = /obj/item/clothing/neck/psycross/silver/necra
+			cloak = /obj/item/clothing/cloak/stabard/templar/last_death
+			wrists = /obj/item/clothing/neck/psycross/silver/last_death
 		if("Psydon")
 			H.cmode_music = 'sound/music/cmode/church/CombatInquisitor.ogg'
 			wrists = /obj/item/clothing/neck/psycross/silver

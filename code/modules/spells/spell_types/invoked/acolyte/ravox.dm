@@ -3,7 +3,7 @@
 	desc = "Grants you and all allies nearby a buff to their strength, endurance, and constitution."
 	overlay_state = "call_to_arms"
 	recharge_time = 5 MINUTES
-	req_items = list(/obj/item/clothing/neck/psycross/silver/ravox)
+	req_items = list(/obj/item/clothing/neck/psycross/silver/wanderer)
 	invocation = "MAY THE FIGHT BE BLOODY!"
 	invocation_type = "shout"
 	sound = 'sound/magic/timestop.ogg'
@@ -34,9 +34,9 @@
 	charging_slowdown = 2
 	chargedloop = null
 	associated_skill = /datum/skill/magic/holy
-	req_items = list(/obj/item/clothing/neck/psycross/silver/ravox)
+	req_items = list(/obj/item/clothing/neck/psycross/silver/wanderer)
 	sound = 'sound/magic/timestop.ogg'
-	invocation = "Ravox guides my strike against the unjust!"
+	invocation = "Wanderer guides my strike against the unjust!"
 	invocation_type = "shout"
 	antimagic_allowed = TRUE
 	miracle = TRUE
@@ -116,7 +116,7 @@
 	. = ..()
 
 /atom/movable/screen/alert/status_effect/debuff/ravox_burden
-	name = "Ravox's Burden"
+	name = "Wanderer's Burden"
 	desc = "My arms and legs are restrained by divine chains!\n"
 	icon_state = "restrained"
 
@@ -128,9 +128,9 @@
 	chargetime = 0
 	range = 7
 	warnie = "sydwarning"
-	req_items = list(/obj/item/clothing/neck/psycross/silver/ravox)
+	req_items = list(/obj/item/clothing/neck/psycross/silver/wanderer)
 	sound = 'sound/magic/timestop.ogg'
-	invocation = "Ravox deems your persistence worthy!"
+	invocation = "Wanderer deems your persistence worthy!"
 	invocation_type = "shout"
 	associated_skill = /datum/skill/magic/holy
 	antimagic_allowed = TRUE
@@ -155,7 +155,7 @@
 				phy.pain_mod *= 1.5
 				addtimer(VARSET_CALLBACK(phy, bleed_mod, phy.bleed_mod /= 1.5), 19 SECONDS)
 				addtimer(VARSET_CALLBACK(phy, pain_mod, phy.pain_mod /= 1.5), 19 SECONDS)
-				human_target.visible_message(span_danger("[target]'s wounds become inflammed as their vitality is sapped away!"), span_userdanger("Ravox inflammes my wounds and weakens my body!"))
+				human_target.visible_message(span_danger("[target]'s wounds become inflammed as their vitality is sapped away!"), span_userdanger("Wanderer inflammes my wounds and weakens my body!"))
 				return ..()
 			return FALSE
 
@@ -164,7 +164,7 @@
 		for(var/obj/effect/decal/cleanable/blood/O in oview(5, target))
 			situational_bonus = min(situational_bonus + 0.015, 1)
 		if(situational_bonus > 0.25)
-			to_chat(user, "Channeling Ravox's power is easier in these conditions!")
+			to_chat(user, "Channeling Wanderer's power is easier in these conditions!")
 
 		if(iscarbon(target))
 			var/mob/living/carbon/C = target

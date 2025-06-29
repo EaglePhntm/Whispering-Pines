@@ -3,7 +3,7 @@
 	tutorial = "An Emir hailing from the Zybantu Ziggurat, here on business for the Mercator's Guild to Vanderlin."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
-		"Humen",
+		"Human",
 		"Rakshari",
 		"Elf",
 		"Half-Elf",

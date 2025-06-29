@@ -6,7 +6,7 @@
 	outfit = /datum/outfit/job/gaoler
 	is_foreigner = FALSE
 	allowed_races = list(
-		"Humen",
+		"Human",
 		"Elf",
 		"Half-Elf",
 		"Dwarf",

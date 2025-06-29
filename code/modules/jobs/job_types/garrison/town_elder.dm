@@ -254,7 +254,7 @@
 /datum/advclass/town_elder/hearth_acolyte
 	name = "Hearth Acolyte"
 
-	tutorial = "As an Acolyte, you dedicated your life to faith and service, expecting nothing in return. When you saved a noble, they repaid you with a home and gold, but you accepted it as the will of the Ten. Though you stepped away from the Church, you found a new purpose, not in grand temples, but in the rhythm of the streets. Your voice, once raised in hymns and prayers, now carries through alleyways and taverns, offering solace in melody and verse. Whether through healing, wisdom, or song, your faith endures. Only now, your congregation is the town itself."
+	tutorial = "As an Acolyte, you dedicated your life to faith and service, expecting nothing in return. When you saved a noble, they repaid you with a home and gold, but you accepted it as the will of new gods. Though you stepped away from the Church, you found a new purpose, not in grand temples, but in the rhythm of the streets. Your voice, once raised in hymns and prayers, now carries through alleyways and taverns, offering solace in melody and verse. Whether through healing, wisdom, or song, your faith endures. Only now, your congregation is the town itself."
 	outfit = /datum/outfit/job/town_elder/hearth_acolyte
 
 	//An acolyte that left the church and now serve and help the town people.
@@ -280,17 +280,17 @@
 		if(/datum/patron/divine/astrata)
 			neck = /obj/item/clothing/neck/psycross/silver/astrata
 			H.cmode_music = 'sound/music/cmode/adventurer/CombatMonk.ogg'
-		if(/datum/patron/divine/necra)
-			neck = /obj/item/clothing/neck/psycross/silver/necra
+		if(/datum/patron/divine/last_death)
+			neck = /obj/item/clothing/neck/psycross/silver/last_death
 			H.cmode_music = 'sound/music/cmode/church/CombatGravekeeper.ogg'
-		if(/datum/patron/divine/eora)
-			neck = /obj/item/clothing/neck/psycross/silver/eora
+		if(/datum/patron/divine/moonbeam)
+			neck = /obj/item/clothing/neck/psycross/silver/moonbeam
 			H.cmode_music = 'sound/music/cmode/church/CombatEora.ogg'
 			ADD_TRAIT(H, TRAIT_BEAUTIFUL, TRAIT_GENERIC)
 			ADD_TRAIT(H, TRAIT_EMPATH, TRAIT_GENERIC)
 			H.virginity = FALSE
-		if(/datum/patron/divine/noc)
-			neck = /obj/item/clothing/neck/psycross/noc
+		if(/datum/patron/divine/lunaria)
+			neck = /obj/item/clothing/neck/psycross/lunaria
 			H.cmode_music = 'sound/music/cmode/adventurer/CombatMonk.ogg'
 			var/language = pickweight(list("Dwarvish" = 1, "Elvish" = 1, "Hellspeak" = 1, "Zybantu" = 1, "Orcish" = 1,))
 			switch(language)
@@ -323,8 +323,8 @@
 			neck = /obj/item/clothing/neck/psycross/silver/pestra
 			H.cmode_music = 'sound/music/cmode/adventurer/CombatMonk.ogg'
 			backpack_contents += /obj/item/needle/blessed
-		if(/datum/patron/divine/dendor)
-			neck = /obj/item/clothing/neck/psycross/silver/dendor
+		if(/datum/patron/divine/blissrose)
+			neck = /obj/item/clothing/neck/psycross/silver/blissrose
 			H.cmode_music = 'sound/music/cmode/garrison/CombatForestGarrison.ogg'
 			H.adjust_skillrank(/datum/skill/labor/farming, 2, TRUE)
 			H.adjust_skillrank(/datum/skill/labor/taming, 1, TRUE)
@@ -333,8 +333,8 @@
 			neck = /obj/item/clothing/neck/psycross/silver/abyssor
 			H.cmode_music = 'sound/music/cmode/adventurer/CombatMonk.ogg'
 			H.adjust_skillrank(/datum/skill/labor/fishing, 2, TRUE)
-		if(/datum/patron/divine/ravox)
-			neck = /obj/item/clothing/neck/psycross/silver/ravox
+		if(/datum/patron/divine/wanderer)
+			neck = /obj/item/clothing/neck/psycross/silver/wanderer
 			H.cmode_music = 'sound/music/cmode/adventurer/CombatOutlander2.ogg'
 			H.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
 		if(/datum/patron/divine/xylix)
@@ -438,10 +438,10 @@
 /datum/advclass/town_elder/dreamwatcher
 	name = "Dreamwatcher"
 
-	tutorial = "Your dreams have always been vivid, filled with colors, voices, and shadows that seemed to watch. As a child, you feared them. As an adult, you began to listen. The Church speaks of Noc as the keeper of magic, but to you, he is something deeper: a silent guide whose truths are not written in scripture, but in sleep. Over time, you learned to echo those truths in your own way, through murmured lullabies, whispered verses, and songs shaped from silence. Now, as Elder of this town, you offer more than leadership. You help others find clarity in the quiet spaces of their hearts, through signs, symbols, and melodies only the soul remembers. Some call it intuition. Others call it wisdom. You know it simply as listening.(Not all your dreams are true, some may lie)"
+	tutorial = "Your dreams have always been vivid, filled with colors, voices, and shadows that seemed to watch. As a child, you feared them. As an adult, you began to listen. The Church speaks of Lunaria as the keeper of magic, but to you, he is something deeper: a silent guide whose truths are not written in scripture, but in sleep. Over time, you learned to echo those truths in your own way, through murmured lullabies, whispered verses, and songs shaped from silence. Now, as Elder of this town, you offer more than leadership. You help others find clarity in the quiet spaces of their hearts, through signs, symbols, and melodies only the soul remembers. Some call it intuition. Others call it wisdom. You know it simply as listening.(Not all your dreams are true, some may lie)"
 	outfit = /datum/outfit/job/town_elder/dreamwatcher
 
-	//Not a Magician nor an Acolyte, but something more, blessed by Noc since they were born, being capable of Visions and Feelings through dreams, they can feel the highest god influence or and get a hint about any of the active antags.
+	//Not a Magician nor an Acolyte, but something more, blessed by Lunaria since they were born, being capable of Visions and Feelings through dreams, they can feel the highest god influence or and get a hint about any of the active antags.
 	category_tags = list(CTAG_TOWN_ELDER)
 
 
@@ -454,11 +454,11 @@
 	beltl = /obj/item/flashlight/flare/torch/lantern
 	backl = /obj/item/storage/backpack/satchel
 	wrists = /obj/item/clothing/wrists/nocwrappings
-	neck = /obj/item/clothing/neck/psycross/noc
+	neck = /obj/item/clothing/neck/psycross/lunaria
 	backpack_contents = list(/obj/item/storage/belt/pouch/coins/poor = 1, /obj/item/needle = 1 )
 
-	if(H.patron != /datum/patron/divine/noc)
-		H.set_patron(/datum/patron/divine/noc)
+	if(H.patron != /datum/patron/divine/lunaria)
+		H.set_patron(/datum/patron/divine/lunaria)
 
 	H.apply_status_effect(/datum/status_effect/buff/nocblessed)
 	// 3 INT and 2 PER buff, stats will be lowered because of that

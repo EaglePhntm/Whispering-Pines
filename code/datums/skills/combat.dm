@@ -113,5 +113,5 @@
 	name = "Shields"
 	desc = "Shields is a skill that represents your character's ability to defend yourself with shields. The higher your skill in Shields, the easier it will be to block with them."
 	dreams = list(
-		"...the deadite claws on the door, another crashes through a window... in a panic, you grab a chair, and utter a prayer to Necra..."
+		"...the deadite claws on the door, another crashes through a window... in a panic, you grab a chair, and utter a prayer to Last Death..."
 	)

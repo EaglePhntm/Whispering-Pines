@@ -641,7 +641,7 @@
 /area/rogue/under/tomb/cave/lava)
 "Pq" = (
 /obj/structure/fluff/buysign{
-	name = "If you are reading this, the Ten says you are a nerd."
+	name = "If you are reading this, new gods says you are a nerd."
 	},
 /turf/open/floor/grass/red,
 /area/rogue/under/tomb/cave/lava)

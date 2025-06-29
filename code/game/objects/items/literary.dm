@@ -56,7 +56,7 @@
 	if(istype(I, /obj/item/natural/feather))
 		if(skilltoteach)
 			return
-		var/skill = input(user, "What kind of textbook will you write", "NOC") as null|anything in teachable_skills
+		var/skill = input(user, "What kind of textbook will you write", "LUNARIA") as null|anything in teachable_skills
 		if(!skill)
 			return
 		var/userskill = user.get_skill_level(teachable_skills[skill])
@@ -69,7 +69,7 @@
 			if(level > userskill - 1)
 				break
 			possible_skill_levels[skill_names[level]] = level
-		var/level_name = input(user, "What level of difficulty should the textbook be?", "NOC") as null|anything in possible_skill_levels
+		var/level_name = input(user, "What level of difficulty should the textbook be?", "LUNARIA") as null|anything in possible_skill_levels
 		if(!level_name)
 			return
 		if(skilltoteach)

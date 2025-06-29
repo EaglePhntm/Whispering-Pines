@@ -15,7 +15,7 @@
 
 	spells = list(/obj/effect/proc_holder/spell/self/convertrole/servant)
 	allowed_races = list(
-		"Humen",
+		"Human",
 		"Half-Elf",
 		"Elf",
 		"Dwarf"
@@ -95,7 +95,7 @@
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NUTCRACKER, TRAIT_GENERIC)
 	switch(H.patron?.type)
-		if(/datum/patron/inhumen/baotha)
+		if(/datum/patron/inhumen/lamashtu)
 			H.cmode_music = 'sound/music/cmode/antag/CombatBaotha.ogg'
 
 /datum/advclass/consort/courtesan
@@ -139,7 +139,7 @@
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NUTCRACKER, TRAIT_GENERIC)
 	switch(H.patron?.type)
-		if(/datum/patron/inhumen/baotha)
+		if(/datum/patron/inhumen/lamashtu)
 			H.cmode_music = 'sound/music/cmode/antag/CombatBaotha.ogg'
 
 /datum/advclass/consort/lowborn
@@ -182,7 +182,7 @@
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NUTCRACKER, TRAIT_GENERIC)
 	switch(H.patron?.type)
-		if(/datum/patron/inhumen/baotha)
+		if(/datum/patron/inhumen/lamashtu)
 			H.cmode_music = 'sound/music/cmode/antag/CombatBaotha.ogg'
 
 /datum/advclass/consort/courtesan/night_spy

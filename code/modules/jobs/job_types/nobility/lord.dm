@@ -24,7 +24,7 @@ GLOBAL_LIST_EMPTY(lord_titles)
 	)
 
 	allowed_races = list(
-		"Humen",
+		"Human",
 		"Elf",
 		"Half-Elf",
 		"Dwarf"

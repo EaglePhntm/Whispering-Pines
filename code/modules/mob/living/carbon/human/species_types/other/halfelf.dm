@@ -10,14 +10,14 @@
 /datum/species/human/halfelf
 	name = "Half-Elf"
 	id = "human"
-	desc = "The child of Elf and Humen. \
+	desc = "The child of Elf and Human. \
 	\n\n\
 	Half-Elves are generally frowned upon by more conservative peoples, \
 	although as species tensions lower, more and more half-elves are being born. \
 	To the point that some scholars worry that someday, \
 	it may be impossible to distinguish the two species. \
 	\n\n\
-	Half-Elves are extraordinarily diverse, as they combine both Humen and Elvish culture. \
+	Half-Elves are extraordinarily diverse, as they combine both Human and Elvish culture. \
 	It is widely considered that Half-Elf culture is simply a melting pot of \
 	various others condensing into one vibrant entity. \
 	\n\n\

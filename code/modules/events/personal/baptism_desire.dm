@@ -20,7 +20,7 @@
 	for(var/mob/living/carbon/human/H in GLOB.player_list)
 		if(!istype(H) || H.stat == DEAD || !H.client)
 			continue
-		if(!H.patron || !istype(H.patron, /datum/patron/divine/noc))
+		if(!H.patron || !istype(H.patron, /datum/patron/divine/lunaria))
 			continue
 		if(!H.is_noble())
 			continue
@@ -34,7 +34,7 @@
 	for(var/mob/living/carbon/human/human_mob in GLOB.player_list)
 		if(!istype(human_mob) || human_mob.stat == DEAD || !human_mob.client)
 			continue
-		if(!human_mob.patron || !istype(human_mob.patron, /datum/patron/divine/noc))
+		if(!human_mob.patron || !istype(human_mob.patron, /datum/patron/divine/lunaria))
 			continue
 		if(!human_mob.is_noble())
 			continue
@@ -49,8 +49,8 @@
 	var/datum/objective/baptism/new_objective = new(owner = chosen_one.mind)
 	chosen_one.mind.add_personal_objective(new_objective)
 
-	to_chat(chosen_one, span_userdanger("YOU ARE NOC'S CHOSEN!"))
-	to_chat(chosen_one, span_notice("Noc demands that you learn the ways of the arcane! Seek baptism in the mana fountain to earn Noc's favor!"))
+	to_chat(chosen_one, span_userdanger("YOU ARE LUNARIA'S CHOSEN!"))
+	to_chat(chosen_one, span_notice("Lunaria demands that you learn the ways of the arcane! Seek baptism in the mana fountain to earn Lunaria's favor!"))
 	chosen_one.playsound_local(chosen_one, 'sound/ambience/noises/mystical (4).ogg', 100)
 
 	chosen_one.mind.announce_personal_objectives()

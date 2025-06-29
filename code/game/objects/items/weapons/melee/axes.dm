@@ -183,7 +183,7 @@
 	force_wielded = DAMAGE_AXE_WIELD
 	possible_item_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
 	name = "psydonian axe"
-	desc = "An axe forged of silver with a small psycross attached, Dendor and his foul beastmen be damned."
+	desc = "An axe forged of silver with a small psycross attached, Blissrose and his foul beastmen be damned."
 	icon_state = "psyaxe"
 	max_blade_int = 200
 	max_integrity = INTEGRITY_STANDARD
@@ -243,7 +243,7 @@
 //................ Steel Axe ............... //
 /obj/item/weapon/axe/steel
 	name = "steel axe"
-	desc = "A bearded steel axe revered by dwarf, humen and elf alike. Performs much better than its iron counterpart."
+	desc = "A bearded steel axe revered by dwarf, human and elf alike. Performs much better than its iron counterpart."
 	icon_state = "saxe"
 	force = DAMAGE_AXE
 	force_wielded = DAMAGE_AXE_WIELD

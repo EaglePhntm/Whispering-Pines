@@ -4,25 +4,25 @@
 /// Base tag for god-related logic and identification
 #define TAG_GOD "god"
 
-/// Tag used for blessings granted by Eora
+/// Tag used for blessings granted by Moonbeam
 #define TAG_BOON "boon"
 
 /// Tag reserved for curse mechanics (unused by gods)
 #define TAG_CURSE "curse"
 
-/// Tag associated with hauntings, used by Noc and Necra
+/// Tag associated with hauntings, used by Lunaria and Last Death
 #define TAG_HAUNTED "haunted"
 
 /// Tag reserved for combat logic (unused by gods)
 #define TAG_COMBAT "combat"
 
-/// Tag used for raid events, associated with Ravox
+/// Tag used for raid events, associated with Wanderer
 #define TAG_RAID "raid"
 
 /// Tag representing trade interactions, used by Abyssor and Matthios
 #define TAG_TRADE "trade"
 
-/// Tag denoting widespread effects, utilized by Eora
+/// Tag denoting widespread effects, utilized by Moonbeam
 #define TAG_WIDESPREAD "widespread"
 
 /// Tag reserved for villain roles or actions (unused by gods)
@@ -34,7 +34,7 @@
 /// Tag for alchemy-related actions or systems, belonging to Pestra
 #define TAG_ALCHEMY "alchemy"
 
-/// Tag for nature-related events, tied to Pestra and Dendor
+/// Tag for nature-related events, tied to Pestra and Blissrose
 #define TAG_NATURE "nature"
 
 /// Tag representing work-related actions or influence, used by Malum
@@ -43,7 +43,7 @@
 /// Tag for water-related actions or effects, used by Abyssor
 #define TAG_WATER "water"
 
-/// Tag representing magical influence or events, used by Noc and Zizo
+/// Tag representing magical influence or events, used by Lunaria and Tenebrase
 #define TAG_MAGICAL "magical"
 
 /// Tag denoting battle-related effects, associated with Graggar
@@ -55,22 +55,22 @@
 /// Tag representing war-like influence, tied to Graggar
 #define TAG_WAR "war"
 
-/// Tag for gambling-related systems or events, used by Zizo
+/// Tag for gambling-related systems or events, used by Tenebrase
 #define TAG_GAMBLE "gamble"
 
-/// Tag symbolizing trickery, mischief, or deception, belonging to Zizo
+/// Tag symbolizing trickery, mischief, or deception, belonging to Tenebrase
 #define TAG_TRICKERY "trickery"
 
-/// Tag representing unexpected outcomes or randomness, tied to Zizo
+/// Tag representing unexpected outcomes or randomness, tied to Tenebrase
 #define TAG_UNEXPECTED "unexpected"
 
-/// Tag representing insanity-related mechanics, used by Baotha
+/// Tag representing insanity-related mechanics, used by Lamashtu
 #define TAG_INSANITY "insanity"
 
-/// Tag for magic-related influence or systems, belonging to Baotha
+/// Tag for magic-related influence or systems, belonging to Lamashtu
 #define TAG_MAGIC "magic"
 
-/// Tag denoting disaster-related events or effects, tied to Baotha
+/// Tag denoting disaster-related events or effects, tied to Lamashtu
 #define TAG_DISASTER "disaster"
 
 /// Tag representing corruption, used by Matthios

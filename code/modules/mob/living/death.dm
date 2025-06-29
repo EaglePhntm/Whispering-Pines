@@ -153,12 +153,12 @@
 		if ("the bog", "bog", "dense bog", "latejoin cave")
 			locale = "a wretched, fetid bog"
 		if ("coast", "coastforest", "river")
-			locale = "somewhere betwixt Abyssor's realm and Dendor's bounty"
+			locale = "somewhere betwixt Abyssor's realm and Blissrose's bounty"
 		if ("indoors", "shop", "physician", "outdoors", "roofs", "manor", "wizard's tower", "garrison","village garrison", "dungeon cell", "baths", "tavern", "basement")
 			locale = "the city of [SSmapping.config.map_name] and all its bustling souls"
 		if ("sewers")
 			locale = "somwhere under the city of [SSmapping.config.map_name] and all its bustling souls"
 		if ("church")
-			locale = "a hallowed place, sworn to the Ten" // special bit for the church since it's sacred ground
+			locale = "a hallowed place, sworn to new gods" // special bit for the church since it's sacred ground
 
 	return locale

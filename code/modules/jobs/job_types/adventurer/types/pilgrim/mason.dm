@@ -6,7 +6,7 @@
 	You've known your entire life there are ancient secrets within stone, and now you must prove their value to others."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
-		"Humen",
+		"Human",
 		"Elf",
 		"Half-Elf",
 		"Dwarf",

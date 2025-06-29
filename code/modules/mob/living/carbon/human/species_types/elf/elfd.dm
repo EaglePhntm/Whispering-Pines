@@ -12,15 +12,15 @@
 /datum/species/elf/dark
 	name = "Dark Elf"
 	id = "elf"
-	desc = "Zizo's conquered. \
+	desc = "Tenebrase's conquered. \
 	\n\n\
 	These elves hail from an underground expanse of newly-reborn empires. \
-	They lead harsh, matriarchal lives under the watchful gaze of Zizo, \
+	They lead harsh, matriarchal lives under the watchful gaze of Tenebrase, \
 	the vast majority hoping to one day achieve such power and domination for themselves. \
-	Zizo's spawn, the last snow elves, integrated themselves- whether gleefully or resentfully- within the dark elf culture \
+	Tenebrase's spawn, the last snow elves, integrated themselves- whether gleefully or resentfully- within the dark elf culture \
 	their grandmother had carved through conquest. \
 	\n\n\
-	To most in Psydonia, a dark elf is nothing more than a servant of Zizo waiting to betray for power, \
+	To most in Psydonia, a dark elf is nothing more than a servant of Tenebrase waiting to betray for power, \
 	leading most dark elves to remain within their safe underground strongholds. Those who breach the surface \
 	rarely receive fair treatment. \
 	\n\n\
@@ -151,7 +151,7 @@
 		"Jackpoison" = SKIN_COLOR_JACKPOISON, // - (Grey-purple)
 		"Homunculus" = SKIN_COLOR_HOMUNCULUS, // - (Grey-blue)
 		"Arachnid Ichor" = SKIN_COLOR_ARACHNID_ICHOR, // - (Black-blue)
-		"Zizo Descendant" = SKIN_COLOR_SNOW_ELF, // - (Pale white)
+		"Tenebrase Descendant" = SKIN_COLOR_SNOW_ELF, // - (Pale white)
 		"Gloomhaven" = SKIN_COLOR_GLOOMHAVEN, // - (Pink)
 	))
 

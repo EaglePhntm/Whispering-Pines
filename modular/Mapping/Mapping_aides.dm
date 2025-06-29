@@ -248,10 +248,10 @@
 			return TRUE
 	return FALSE
 
-/*	..................   NOC Device (Fixed scrying ball)   ................... */
+/*	..................   LUNARIA Device (Fixed scrying ball)   ................... */
 /obj/structure/nocdevice
-	name = "NOC Device"
-	desc = "A intricate lunar observation machine, that allows its user to study the face of Noc in the sky, reflecting he true whereabouts of hidden beings.."
+	name = "LUNARIA Device"
+	desc = "A intricate lunar observation machine, that allows its user to study the face of Lunaria in the sky, reflecting he true whereabouts of hidden beings.."
 	icon = 'icons/roguetown/misc/96x96.dmi'
 	icon_state = "nocdevice"
 	plane = -1
@@ -263,7 +263,7 @@
 	var/mob/living/carbon/human/H = user
 	if(H.virginity)
 		if(world.time < last_scry + 30 SECONDS)
-			to_chat(user, "<span class='warning'>I peer into the sky but cannot focus the lens on the face of Noc. Maybe I should wait.</span>")
+			to_chat(user, "<span class='warning'>I peer into the sky but cannot focus the lens on the face of Lunaria. Maybe I should wait.</span>")
 			return
 		var/input = stripped_input(user, "Who are you looking for?", "Scrying Orb")
 		if(!input)
@@ -271,7 +271,7 @@
 		if(!user.key)
 			return
 		if(world.time < last_scry + 30 SECONDS)
-			to_chat(user, "<span class='warning'>I peer into the sky but cannot focus the lens on the face of Noc. Maybe I should wait.</span>")
+			to_chat(user, "<span class='warning'>I peer into the sky but cannot focus the lens on the face of Lunaria. Maybe I should wait.</span>")
 			return
 		if(!user.mind || !user.mind.do_i_know(name=input))
 			to_chat(user, "<span class='warning'>I don't know anyone by that name.</span>")
@@ -299,10 +299,10 @@
 					if(HL.STAPER >= 11)
 						to_chat(HL, "<span class='warning'>I feel a pair of unknown eyes on me.</span>")
 				return
-		to_chat(user, "<span class='warning'>I peer into the viewpiece, but Noc does not reveal where [input] is.</span>")
+		to_chat(user, "<span class='warning'>I peer into the viewpiece, but Lunaria does not reveal where [input] is.</span>")
 		return
 	else
-		to_chat(user, "<span class='notice'>Noc looks angry with me...</span>")
+		to_chat(user, "<span class='notice'>Lunaria looks angry with me...</span>")
 
 
 /*	..................   Floor decoration   ................... */

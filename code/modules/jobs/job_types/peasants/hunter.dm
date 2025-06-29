@@ -1,8 +1,8 @@
 /datum/job/hunter
 	title = "Hunter"
 	f_title = "Huntress"
-	tutorial = "Silent and yet full of life, the forests of Dendor grant you both happiness and misery. \
-	In tales you've heard of small woodland creechers frolicking, now there is only the beastspawn of Graggar and Dendor... \
+	tutorial = "Silent and yet full of life, the forests of Blissrose grant you both happiness and misery. \
+	In tales you've heard of small woodland creechers frolicking, now there is only the beastspawn of Graggar and Blissrose... \
 	And yet you seek beasts small enough to skin, scalp, and sell. Take heed, lest you become a beast yourself."
 	flag = HUNTER
 	department_flag = PEASANTS

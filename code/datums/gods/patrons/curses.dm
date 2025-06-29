@@ -74,20 +74,20 @@
 	description = "I am forsaken by the Sun. Healing miracles have no effect on me."
 	trait = TRAIT_ASTRATA_CURSE
 
-/datum/curse/noc
-	name = "Noc's Curse"
+/datum/curse/lunaria
+	name = "Lunaria's Curse"
 	description = "Magical knowledge is now beyond my grasp."
 	trait = TRAIT_NOC_CURSE
 
-/datum/curse/ravox
-	name = "Ravox's Curse"
-	description = "Violence disgusts me. I cannot bring myself to wield any kind of weapon."
-	trait = TRAIT_RAVOX_CURSE
+/datum/curse/wanderer
+	name = "Wanderer's Curse"
+	description = "The wanderer abandons me, I lost my way and I can no longer distinguish reality from delusion."
+	trait = TRAIT_SCHIZO_FLAW
 
-/datum/curse/necra
-	name = "Necra's Curse"
-	description = "Necra has claimed my soul. No one will bring me back from the dead."
-	trait = TRAIT_NECRA_CURSE
+/datum/curse/last_death
+	name = "Last Death's Curse"
+	description = "Last Death has claimed my soul. No one will bring me back from the dead."
+	trait = TRAIT_LAST_DEATH_CURSE
 
 /datum/curse/xylix
 	name = "Xylix's Curse"
@@ -99,21 +99,21 @@
 	description = "I feel sick to my stomach, and my skin is slowly starting to rot."
 	trait = TRAIT_PESTRA_CURSE
 
-/datum/curse/eora
-	name = "Eora's Curse"
-	description = "I am unable to show any kind of affection or love, whether carnal or platonic."
-	trait = TRAIT_EORA_CURSE
+/datum/curse/moonbeam
+	name = "Moonbeam's Curse"
+	description = "I am unable to sleep, no matter how tired I am. She turns me from the doors of the astral plane."
+	trait = TRAIT_INSOMNIA
 
 //////////////////////
 /// INHUMEN CURSES ///
 //////////////////////
-/datum/curse/zizo
-	name = "Zizo's Curse"
+/datum/curse/tenebrase
+	name = "Tenebrase's Curse"
 	description = "I can no longer distinguish reality from delusion."
 	trait = TRAIT_ZIZO_CURSE
 	var/atom/movable/screen/fullscreen/maniac/hallucinations
 
-/datum/curse/schizophrenic //zizo curse but without the jumpscares and meta hallucinations
+/datum/curse/schizophrenic //tenebrase curse but without the jumpscares and meta hallucinations
 	name = "Schizophrenic"
 	description = "I can see and hear things others cannot."
 	trait = TRAIT_SCHIZO_FLAW
@@ -128,8 +128,8 @@
 	description = "I hate the sight of wealth, and I cannot have anything to do with mammons."
 	trait = TRAIT_MATTHIOS_CURSE
 
-/datum/curse/baotha
-	name = "Baotha's Curse"
+/datum/curse/lamashtu
+	name = "Lamashtu's Curse"
 	description = "I'm in a constant state of ecstacy."
 	trait = TRAIT_BAOTHA_CURSE
 //////////////////////
@@ -146,10 +146,10 @@
 	owner.set_patron(old_patron)
 	owner.cure_trauma_type(/datum/brain_trauma/mild/phobia/religion)
 
-/datum/curse/zizo/on_gain(mob/living/carbon/human/owner)
+/datum/curse/tenebrase/on_gain(mob/living/carbon/human/owner)
 	. = ..()
 	hallucinations = owner.overlay_fullscreen("maniac", /atom/movable/screen/fullscreen/maniac)
-/datum/curse/zizo/on_loss(mob/living/carbon/human/owner)
+/datum/curse/tenebrase/on_loss(mob/living/carbon/human/owner)
 	. = ..()
 	hallucinations = null
 
@@ -185,7 +185,7 @@
 			owner.playsound_local(get_turf(owner), 'sound/foley/butcher.ogg', 80, FALSE, pressure_affected = FALSE)
 			owner.regenerate_icons()
 
-/datum/curse/baotha/on_life(mob/living/carbon/human/owner)
+/datum/curse/lamashtu/on_life(mob/living/carbon/human/owner)
 	. = ..()
 	if(!MOBTIMER_FINISHED(owner, MT_CURSE_BAOTHA, rand(15, 60) SECONDS)) //this isn't how mob timers work
 		return
@@ -207,7 +207,7 @@
 		break
 
 // Currently calls maniac hallucinations
-/datum/curse/zizo/on_life(mob/living/carbon/human/owner)
+/datum/curse/tenebrase/on_life(mob/living/carbon/human/owner)
 	. = ..()
 	handle_maniac_visions(owner, hallucinations)
 	handle_maniac_hallucinations(owner)

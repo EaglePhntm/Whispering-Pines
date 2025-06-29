@@ -99,7 +99,7 @@
 #define UPGRADE_NOTAX		(1<<0)
 
 /obj/structure/fake_machine/drugmachine
-	name = "PURITY"
+	name = "WINGMAN"
 	desc = "You want to destroy your life."
 	icon = 'icons/roguetown/misc/machines.dmi'
 	icon_state = "goldvendor"
@@ -134,7 +134,7 @@
 		var/money = I.get_real_price()
 		budget += money
 		qdel(I)
-		to_chat(user, span_info("I put [money] mammon in [src]."))
+		to_chat(user, span_info("I put [money] casings in [src]."))
 		playsound(get_turf(src), 'sound/misc/machinevomit.ogg', 100, TRUE, -1)
 		return attack_hand(user)
 
@@ -209,7 +209,7 @@
 	var/canread = user.can_read(src, TRUE)
 	var/contents
 	contents = "<center>PURITY - In the pursuit of pleasure.<BR>"
-	contents += "<a href='byond://?src=[REF(src)];change=1'>MAMMON LOADED:</a> [budget]<BR>"
+	contents += "<a href='byond://?src=[REF(src)];change=1'>CASINGS LOADED:</a> [budget]<BR>"
 
 	var/mob/living/carbon/human/H = user
 	if(H.job == "Apothecary")

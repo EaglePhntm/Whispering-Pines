@@ -362,7 +362,7 @@
 				"<span class='danger'>Save me...</span>",
 				"<span class='danger'>It's cold...</span>",
 				"<span class='danger'>Free us...please...</span>",
-				"<span class='danger'>Necra...deliver...us...</span>")
+				"<span class='danger'>Last Death...deliver...us...</span>")
 //			H.visible_message("profane dagger whispers, \"[message]\"")
 			to_chat(M, "profane dagger whispers, \"[message]\"")
 		else
@@ -462,7 +462,7 @@
 /obj/item/weapon/knife/dagger/steel/profane/proc/get_profane_ghost(mob/living/carbon/human/target, mob/user)
 	var/mob/dead/observer/chosen_ghost
 	var/mob/living/carbon/spirit/underworld_spirit = target.get_spirit() //Check if a soul has already gone to the underworld
-	if(underworld_spirit) // If they are in the underworld, pull them back to the real world and make them a normal ghost. Necra can't save you now!
+	if(underworld_spirit) // If they are in the underworld, pull them back to the real world and make them a normal ghost. Last Death can't save you now!
 		var/mob/dead/observer/ghost = underworld_spirit.ghostize()
 		chosen_ghost = ghost.get_ghost(TRUE,TRUE)
 	else //Otherwise, try to get a ghost from the real world
@@ -477,7 +477,7 @@
 /obj/item/weapon/knife/dagger/steel/profane/proc/release_profane_souls(mob/user) // For ways to release the souls trapped within a profane dagger, such as a Necrite burial rite. Returns the number of freed souls.
 	var/freed_souls = 0
 	for(var/mob/dead/observer/profane/A in src) // for every trapped soul in the dagger, whether they have left the game or not
-		to_chat(A, "<b>I have been freed from my vile prison, I await Necra's cold grasp. Salvation!</b>")
+		to_chat(A, "<b>I have been freed from my vile prison, I await Last Death's cold grasp. Salvation!</b>")
 		A.returntolobby() //Send the trapped soul back to the lobby
 		user.visible_message("<span class='warning'>The [A.name] flows out from the profane dagger, finally free of its grasp.</span>")
 		freed_souls += 1

@@ -16,8 +16,8 @@
 	switch(category)
 		if("Divine")
 			blessing_path = input("Choose Divine Blessing") as null|anything in list( \
-				/datum/status_effect/buff/noc, \
-				/datum/status_effect/buff/ravox, \
+				/datum/status_effect/buff/lunaria, \
+				/datum/status_effect/buff/wanderer, \
 				/datum/status_effect/buff/beastsense, \
 				/datum/status_effect/buff/trollshape, \
 				/datum/status_effect/buff/divine_beauty, \
@@ -154,7 +154,7 @@
 /// Returns the immersive flavor text based on both the target's patron and the specific blessing applied
 /// Falls back to generic patron text or a default generic divine message
 /// Returns the immersive flavor text based on both the target's patron and the specific blessing applied
-/// Fully extended for Abyssor, Astrata, Baotha, Dendor, Eora, Graggar, Malum, Matthios, Necra, Noc, Pestra, Ravox, Xylix, Zizo
+/// Fully extended for Abyssor, Astrata, Lamashtu, Blissrose, Moonbeam, Graggar, Malum, Matthios, Last Death, Lunaria, Pestra, Wanderer, Xylix, Tenebrase
 /proc/get_patron_blessing_text(mob/living/carbon/human/M, blessing_path)
 	var/patron_type = M.patron?.type
 	if(!patron_type)
@@ -195,52 +195,52 @@
 			/datum/status_effect/buff/barbrage = "Astrata declareth: \"LET THY RIGHTEOUS FURY BURN AS MINE SUN.\""
 		),
 
-		/// Baotha - The Mad God
-		/datum/patron/inhumen/baotha = list(
-			/datum/status_effect/buff/beastsense = "Baotha shrieks: \"See it! Smell it! Rip it apart! Or hug it! Both are valid!\"",
-			/datum/status_effect/buff/trollshape = "Baotha howls: \"Big. Ugly. Perfect. You’re gonna cause SUCH a scene!\"",
-			/datum/status_effect/buff/divine_beauty = "Baotha swoons: \"Beauty fit for a queen. I'd know.\"",
-			/datum/status_effect/buff/call_to_arms = "Baotha cackles: \"Ready to finally have some FUN?\"",
-			/datum/status_effect/buff/craft_buff = "Baotha snorts: \"Glue it wrong. Smash it anyway! If it works, it’s ART!\"",
-			/datum/status_effect/buff/foodbuff = "Baotha hoots: \"Eat it! If it giggles back... bonus!\"",
-			/datum/status_effect/buff/clean_plus = "Baotha coughs: \"CLEAN? Hah! Let’s see how long it lasts, neat freak.\"",
-			/datum/status_effect/buff/duration_modification/featherfall = "Baotha shrieks: \"WHEEEEE! Don’t die!\"",
-			/datum/status_effect/buff/duration_modification/darkvision = "Baotha giggles: \"Oooo, secrets! Don’t blink or you’ll miss the eyes!\"",
-			/datum/status_effect/buff/duration_modification/haste = "Baotha screams: \"FASTER! It’s a dance, not a walk!\"",
-			/datum/status_effect/buff/calm = "Baotha reassures: \"Sink into the serenity of mindlessness. Let NO-ONE stop you!\"",
-			/datum/status_effect/buff/barbrage = "Baotha squeals: \"BREAK SOMETHING BEAUTIFUL! It’s therapeutic!\""
+		/// Lamashtu - The Mad God
+		/datum/patron/inhumen/lamashtu = list(
+			/datum/status_effect/buff/beastsense = "Lamashtu shrieks: \"See it! Smell it! Rip it apart! Or hug it! Both are valid!\"",
+			/datum/status_effect/buff/trollshape = "Lamashtu howls: \"Big. Ugly. Perfect. You’re gonna cause SUCH a scene!\"",
+			/datum/status_effect/buff/divine_beauty = "Lamashtu swoons: \"Beauty fit for a queen. I'd know.\"",
+			/datum/status_effect/buff/call_to_arms = "Lamashtu cackles: \"Ready to finally have some FUN?\"",
+			/datum/status_effect/buff/craft_buff = "Lamashtu snorts: \"Glue it wrong. Smash it anyway! If it works, it’s ART!\"",
+			/datum/status_effect/buff/foodbuff = "Lamashtu hoots: \"Eat it! If it giggles back... bonus!\"",
+			/datum/status_effect/buff/clean_plus = "Lamashtu coughs: \"CLEAN? Hah! Let’s see how long it lasts, neat freak.\"",
+			/datum/status_effect/buff/duration_modification/featherfall = "Lamashtu shrieks: \"WHEEEEE! Don’t die!\"",
+			/datum/status_effect/buff/duration_modification/darkvision = "Lamashtu giggles: \"Oooo, secrets! Don’t blink or you’ll miss the eyes!\"",
+			/datum/status_effect/buff/duration_modification/haste = "Lamashtu screams: \"FASTER! It’s a dance, not a walk!\"",
+			/datum/status_effect/buff/calm = "Lamashtu reassures: \"Sink into the serenity of mindlessness. Let NO-ONE stop you!\"",
+			/datum/status_effect/buff/barbrage = "Lamashtu squeals: \"BREAK SOMETHING BEAUTIFUL! It’s therapeutic!\""
 		),
 
-		/// Dendor - The Wildfather
-		/datum/patron/divine/dendor = list(
-			/datum/status_effect/buff/beastsense = "Dendor growls: \"The hunt begins. Death follows.\"",
-			/datum/status_effect/buff/trollshape = "Dendor mutters: \"Flesh grows thick, bone bends. Still, rot awaits.\"",
-			/datum/status_effect/buff/divine_beauty = "Dendor sighs: \"Bloom... then wilt.\"",
-			/datum/status_effect/buff/call_to_arms = "Dendor commands: \"Tear the earth, spill the blood. Return it all to soil.\"",
-			/datum/status_effect/buff/craft_buff = "Dendor states: \"Stone. Wood. All things decay. But build... while you can.\"",
-			/datum/status_effect/buff/foodbuff = "Dendor grunts: \"Eat. All feeds the earth, eventually.\"",
-			/datum/status_effect/buff/clean_plus = "Dendor rasps: \"You wipe the rot... but it returns.\"",
-			/datum/status_effect/buff/duration_modification/featherfall = "Dendor warns: \"Even leaves fall in the end.\"",
-			/datum/status_effect/buff/duration_modification/darkvision = "Dendor growls: \"See the dark roots. Smell the rot.\"",
-			/datum/status_effect/buff/duration_modification/haste = "Dendor grumbles: \"Run fast. The wolves do.\"",
-			/datum/status_effect/buff/calm = "Dendor breathes: \"Stillness... before the end.\"",
-			/datum/status_effect/buff/barbrage = "Dendor growls: \"Rend them. Spill the red.\""
+		/// Blissrose - The Wildfather
+		/datum/patron/divine/blissrose = list(
+			/datum/status_effect/buff/beastsense = "Blissrose growls: \"The hunt begins. Death follows.\"",
+			/datum/status_effect/buff/trollshape = "Blissrose mutters: \"Flesh grows thick, bone bends. Still, rot awaits.\"",
+			/datum/status_effect/buff/divine_beauty = "Blissrose sighs: \"Bloom... then wilt.\"",
+			/datum/status_effect/buff/call_to_arms = "Blissrose commands: \"Tear the earth, spill the blood. Return it all to soil.\"",
+			/datum/status_effect/buff/craft_buff = "Blissrose states: \"Stone. Wood. All things decay. But build... while you can.\"",
+			/datum/status_effect/buff/foodbuff = "Blissrose grunts: \"Eat. All feeds the earth, eventually.\"",
+			/datum/status_effect/buff/clean_plus = "Blissrose rasps: \"You wipe the rot... but it returns.\"",
+			/datum/status_effect/buff/duration_modification/featherfall = "Blissrose warns: \"Even leaves fall in the end.\"",
+			/datum/status_effect/buff/duration_modification/darkvision = "Blissrose growls: \"See the dark roots. Smell the rot.\"",
+			/datum/status_effect/buff/duration_modification/haste = "Blissrose grumbles: \"Run fast. The wolves do.\"",
+			/datum/status_effect/buff/calm = "Blissrose breathes: \"Stillness... before the end.\"",
+			/datum/status_effect/buff/barbrage = "Blissrose growls: \"Rend them. Spill the red.\""
 		),
 
-		/// Eora - The Heart of Psydon
-		/datum/patron/divine/eora = list(
-			/datum/status_effect/buff/beastsense = "Eora whispers: \"Even the beasts know love's call.\"",
-			/datum/status_effect/buff/trollshape = "Eora coos: \"Strong arms, tender heart.\"",
-			/datum/status_effect/buff/divine_beauty = "Eora smiles: \"You shine, beloved. All gaze upon you with wonder.\"",
-			/datum/status_effect/buff/call_to_arms = "Eora urges: \"Fight for love. For them.\"",
-			/datum/status_effect/buff/craft_buff = "Eora hums: \"Hands that build with love make wonders eternal.\"",
-			/datum/status_effect/buff/foodbuff = "Eora sings: \"Eat well, my sweet. Love fuels you.\"",
-			/datum/status_effect/buff/clean_plus = "Eora beams: \"I wash away your hurts, my dear.\"",
-			/datum/status_effect/buff/duration_modification/featherfall = "Eora hums: \"Softly now. I hold you.\"",
-			/datum/status_effect/buff/duration_modification/darkvision = "Eora comforts: \"See even where light fears to go.\"",
-			/datum/status_effect/buff/duration_modification/haste = "Eora nudges: \"Hurry, beloved. They wait for you.\"",
-			/datum/status_effect/buff/calm = "Eora soothes: \"Hush... Breathe... You are safe.\"",
-			/datum/status_effect/buff/barbrage = "Eora whispers: \"Love rages too. Protect what’s yours.\""
+		/// Moonbeam - The Heart of Psydon
+		/datum/patron/divine/moonbeam = list(
+			/datum/status_effect/buff/beastsense = "Moonbeam whispers: \"Even the beasts know love's call.\"",
+			/datum/status_effect/buff/trollshape = "Moonbeam coos: \"Strong arms, tender heart.\"",
+			/datum/status_effect/buff/divine_beauty = "Moonbeam smiles: \"You shine, beloved. All gaze upon you with wonder.\"",
+			/datum/status_effect/buff/call_to_arms = "Moonbeam urges: \"Fight for love. For them.\"",
+			/datum/status_effect/buff/craft_buff = "Moonbeam hums: \"Hands that build with love make wonders eternal.\"",
+			/datum/status_effect/buff/foodbuff = "Moonbeam sings: \"Eat well, my sweet. Love fuels you.\"",
+			/datum/status_effect/buff/clean_plus = "Moonbeam beams: \"I wash away your hurts, my dear.\"",
+			/datum/status_effect/buff/duration_modification/featherfall = "Moonbeam hums: \"Softly now. I hold you.\"",
+			/datum/status_effect/buff/duration_modification/darkvision = "Moonbeam comforts: \"See even where light fears to go.\"",
+			/datum/status_effect/buff/duration_modification/haste = "Moonbeam nudges: \"Hurry, beloved. They wait for you.\"",
+			/datum/status_effect/buff/calm = "Moonbeam soothes: \"Hush... Breathe... You are safe.\"",
+			/datum/status_effect/buff/barbrage = "Moonbeam whispers: \"Love rages too. Protect what’s yours.\""
 		),
 
 		/// Graggar - The Warborn Beast
@@ -291,36 +291,36 @@
 			/datum/status_effect/buff/barbrage = "Matthios yells: \"Break stuff. Blame someone else!\""
 		),
 
-		/// Necra - The Undermaiden
-		/datum/patron/divine/necra = list(
-			/datum/status_effect/buff/beastsense = "Necra murmurs: \"The grave knows your scent... and waits.\"",
-			/datum/status_effect/buff/trollshape = "Necra hums: \"Mass returns to earth. Let the soil remember you.\"",
-			/datum/status_effect/buff/divine_beauty = "Necra whispers: \"Even beauty rots. But for now... wear it.\"",
-			/datum/status_effect/buff/call_to_arms = "Necra states: \"Raise thy blade. All paths end the same.\"",
-			/datum/status_effect/buff/craft_buff = "Necra sighs: \"All things break. But make them still.\"",
-			/datum/status_effect/buff/foodbuff = "Necra croons: \"Feast while you breathe. The hunger ends soon.\"",
-			/datum/status_effect/buff/clean_plus = "Necra sighs: \"You may wash the flesh... but not the fate.\"",
-			/datum/status_effect/buff/duration_modification/featherfall = "Necra hums: \"Fall gently. The earth shall catch you.\"",
-			/datum/status_effect/buff/duration_modification/darkvision = "Necra whispers: \"The dark is not empty. It welcomes.\"",
-			/datum/status_effect/buff/duration_modification/haste = "Necra murmurs: \"Quickly now. Time thins beneath your feet.\"",
-			/datum/status_effect/buff/calm = "Necra soothes: \"Rest... the silence shall come for all.\"",
-			/datum/status_effect/buff/barbrage = "Necra intones: \"Rage, if you must. The dead are silent, but not still.\""
+		/// Last Death - The Undermaiden
+		/datum/patron/divine/last_death = list(
+			/datum/status_effect/buff/beastsense = "Last Death murmurs: \"The grave knows your scent... and waits.\"",
+			/datum/status_effect/buff/trollshape = "Last Death hums: \"Mass returns to earth. Let the soil remember you.\"",
+			/datum/status_effect/buff/divine_beauty = "Last Death whispers: \"Even beauty rots. But for now... wear it.\"",
+			/datum/status_effect/buff/call_to_arms = "Last Death states: \"Raise thy blade. All paths end the same.\"",
+			/datum/status_effect/buff/craft_buff = "Last Death sighs: \"All things break. But make them still.\"",
+			/datum/status_effect/buff/foodbuff = "Last Death croons: \"Feast while you breathe. The hunger ends soon.\"",
+			/datum/status_effect/buff/clean_plus = "Last Death sighs: \"You may wash the flesh... but not the fate.\"",
+			/datum/status_effect/buff/duration_modification/featherfall = "Last Death hums: \"Fall gently. The earth shall catch you.\"",
+			/datum/status_effect/buff/duration_modification/darkvision = "Last Death whispers: \"The dark is not empty. It welcomes.\"",
+			/datum/status_effect/buff/duration_modification/haste = "Last Death murmurs: \"Quickly now. Time thins beneath your feet.\"",
+			/datum/status_effect/buff/calm = "Last Death soothes: \"Rest... the silence shall come for all.\"",
+			/datum/status_effect/buff/barbrage = "Last Death intones: \"Rage, if you must. The dead are silent, but not still.\""
 		),
 
-		/// Noc - The Shadow Walker
-		/datum/patron/divine/noc = list(
-			/datum/status_effect/buff/beastsense = "Noc whispers: \"The dark sees what the day fears.\"",
-			/datum/status_effect/buff/trollshape = "Noc hisses: \"Shadows swell your shape... for now.\"",
-			/datum/status_effect/buff/divine_beauty = "Noc murmurs: \"Beauty hidden. Power unseen.\"",
-			/datum/status_effect/buff/call_to_arms = "Noc fades: \"Strike from shadow. Leave none to tell.\"",
-			/datum/status_effect/buff/craft_buff = "Noc breathes: \"Build in secret. None must know.\"",
-			/datum/status_effect/buff/foodbuff = "Noc hisses: \"Feed. But stay unseen.\"",
-			/datum/status_effect/buff/clean_plus = "Noc rasps: \"Shadows clean better than light.\"",
-			/datum/status_effect/buff/duration_modification/featherfall = "Noc whispers: \"Float... like shadow.\"",
-			/datum/status_effect/buff/duration_modification/darkvision = "Noc hisses: \"See what others fear.\"",
-			/datum/status_effect/buff/duration_modification/haste = "Noc murmurs: \"Swift... unseen...\"",
-			/datum/status_effect/buff/calm = "Noc soothes: \"Quiet... the dark waits.\"",
-			/datum/status_effect/buff/barbrage = "Noc snarls: \"Kill... from the dark.\""
+		/// Lunaria - The Shadow Walker
+		/datum/patron/divine/lunaria = list(
+			/datum/status_effect/buff/beastsense = "Lunaria whispers: \"The dark sees what the day fears.\"",
+			/datum/status_effect/buff/trollshape = "Lunaria hisses: \"Shadows swell your shape... for now.\"",
+			/datum/status_effect/buff/divine_beauty = "Lunaria murmurs: \"Beauty hidden. Power unseen.\"",
+			/datum/status_effect/buff/call_to_arms = "Lunaria fades: \"Strike from shadow. Leave none to tell.\"",
+			/datum/status_effect/buff/craft_buff = "Lunaria breathes: \"Build in secret. None must know.\"",
+			/datum/status_effect/buff/foodbuff = "Lunaria hisses: \"Feed. But stay unseen.\"",
+			/datum/status_effect/buff/clean_plus = "Lunaria rasps: \"Shadows clean better than light.\"",
+			/datum/status_effect/buff/duration_modification/featherfall = "Lunaria whispers: \"Float... like shadow.\"",
+			/datum/status_effect/buff/duration_modification/darkvision = "Lunaria hisses: \"See what others fear.\"",
+			/datum/status_effect/buff/duration_modification/haste = "Lunaria murmurs: \"Swift... unseen...\"",
+			/datum/status_effect/buff/calm = "Lunaria soothes: \"Quiet... the dark waits.\"",
+			/datum/status_effect/buff/barbrage = "Lunaria snarls: \"Kill... from the dark.\""
 		),
 
 		/// Pestra - The Plague Mother
@@ -339,20 +339,20 @@
 			/datum/status_effect/buff/barbrage = "Pestra shrieks: \"Break what you cannot understand. Reassembly is half the fun.\""
 		),
 
-		/// Ravox - The Warlord
-		/datum/patron/divine/ravox = list(
-			/datum/status_effect/buff/beastsense = "Ravox growls: \"Smell your enemy. Hunt him down with purpose.\"",
-			/datum/status_effect/buff/trollshape = "Ravox commands: \"Let might serve justice. Let strength carry duty.\"",
-			/datum/status_effect/buff/divine_beauty = "Ravox declares: \"Wear your glory well, warrior. Let honor shine brighter.\"",
-			/datum/status_effect/buff/call_to_arms = "Ravox bellows: \"To war! Let no coward stain the front lines.\"",
-			/datum/status_effect/buff/craft_buff = "Ravox nods: \"Forge victory with your hands. Let each blow ring true.\"",
-			/datum/status_effect/buff/foodbuff = "Ravox grunts: \"Eat. Even the strong must endure the march.\"",
-			/datum/status_effect/buff/clean_plus = "Ravox commands: \"Clean your blade. It shall be tainted again soon.\"",
-			/datum/status_effect/buff/duration_modification/featherfall = "Ravox scoffs: \"Even the bold must fall with grace.\"",
-			/datum/status_effect/buff/duration_modification/darkvision = "Ravox growls: \"See the coward. Bring them to justice.\"",
-			/datum/status_effect/buff/duration_modification/haste = "Ravox barks: \"Swift feet carry righteous blades.\"",
-			/datum/status_effect/buff/calm = "Ravox grunts: \"Still thy heart. The battle shall come.\"",
-			/datum/status_effect/buff/barbrage = "Ravox roars: \"BE FILLED WITH RIGHTEOUS ANGER!\""
+		/// Wanderer - The Warlord
+		/datum/patron/divine/wanderer = list(
+			/datum/status_effect/buff/beastsense = "Wanderer growls: \"Smell your enemy. Hunt him down with purpose.\"",
+			/datum/status_effect/buff/trollshape = "Wanderer commands: \"Let might serve justice. Let strength carry duty.\"",
+			/datum/status_effect/buff/divine_beauty = "Wanderer declares: \"Wear your glory well, warrior. Let honor shine brighter.\"",
+			/datum/status_effect/buff/call_to_arms = "Wanderer bellows: \"To war! Let no coward stain the front lines.\"",
+			/datum/status_effect/buff/craft_buff = "Wanderer nods: \"Forge victory with your hands. Let each blow ring true.\"",
+			/datum/status_effect/buff/foodbuff = "Wanderer grunts: \"Eat. Even the strong must endure the march.\"",
+			/datum/status_effect/buff/clean_plus = "Wanderer commands: \"Clean your blade. It shall be tainted again soon.\"",
+			/datum/status_effect/buff/duration_modification/featherfall = "Wanderer scoffs: \"Even the bold must fall with grace.\"",
+			/datum/status_effect/buff/duration_modification/darkvision = "Wanderer growls: \"See the coward. Bring them to justice.\"",
+			/datum/status_effect/buff/duration_modification/haste = "Wanderer barks: \"Swift feet carry righteous blades.\"",
+			/datum/status_effect/buff/calm = "Wanderer grunts: \"Still thy heart. The battle shall come.\"",
+			/datum/status_effect/buff/barbrage = "Wanderer roars: \"BE FILLED WITH RIGHTEOUS ANGER!\""
 		),
 
 		/// Xylix - The Trickster
@@ -371,20 +371,20 @@
 			/datum/status_effect/buff/barbrage = "Xylix roars: \"Break it! Then break it twice!\""
 		),
 
-		/// Zizo - The Ascended Goddess
-		/datum/patron/inhumen/zizo = list(
-			/datum/status_effect/buff/beastsense = "Zizo hisses: \"Zey crawl. Zey beg. Zey are prey. Hunt zem.\"",
-			/datum/status_effect/buff/trollshape = "Zizo croons: \"Zis form? Power. Ztrength. Zat is mine gift.\"",
-			/datum/status_effect/buff/divine_beauty = "Zizo sneers: \"Zey shall kneel before zis visage. Et zey shall weep.\"",
-			/datum/status_effect/buff/call_to_arms = "Zizo commands: \"Fight. Et break zem. Only strength matters.\"",
-			/datum/status_effect/buff/craft_buff = "Zizo states: \"Ztrong. Unbending. Prove ze craft is worthy.\"",
-			/datum/status_effect/buff/foodbuff = "Zizo smirks: \"Eat. Power grows.\"",
-			/datum/status_effect/buff/clean_plus = "Zizo sneers: \"Clean. Now you are worthy of gaze.\"",
-			/datum/status_effect/buff/duration_modification/featherfall = "Zizo hisses: \"Float above zem. They are beneath you.\"",
-			/datum/status_effect/buff/duration_modification/darkvision = "Zizo purrs: \"See what zey hide. See all.\"",
-			/datum/status_effect/buff/duration_modification/haste = "Zizo commands: \"Move. Do not stumble.\"",
-			/datum/status_effect/buff/calm = "Zizo whispers: \"Calm now. Power awaits.\"",
-			/datum/status_effect/buff/barbrage = "Zizo roars: \"Rend zem. Show zis strength!\""
+		/// Tenebrase - The Ascended Goddess
+		/datum/patron/inhumen/tenebrase = list(
+			/datum/status_effect/buff/beastsense = "Tenebrase hisses: \"Zey crawl. Zey beg. Zey are prey. Hunt zem.\"",
+			/datum/status_effect/buff/trollshape = "Tenebrase croons: \"Zis form? Power. Ztrength. Zat is mine gift.\"",
+			/datum/status_effect/buff/divine_beauty = "Tenebrase sneers: \"Zey shall kneel before zis visage. Et zey shall weep.\"",
+			/datum/status_effect/buff/call_to_arms = "Tenebrase commands: \"Fight. Et break zem. Only strength matters.\"",
+			/datum/status_effect/buff/craft_buff = "Tenebrase states: \"Ztrong. Unbending. Prove ze craft is worthy.\"",
+			/datum/status_effect/buff/foodbuff = "Tenebrase smirks: \"Eat. Power grows.\"",
+			/datum/status_effect/buff/clean_plus = "Tenebrase sneers: \"Clean. Now you are worthy of gaze.\"",
+			/datum/status_effect/buff/duration_modification/featherfall = "Tenebrase hisses: \"Float above zem. They are beneath you.\"",
+			/datum/status_effect/buff/duration_modification/darkvision = "Tenebrase purrs: \"See what zey hide. See all.\"",
+			/datum/status_effect/buff/duration_modification/haste = "Tenebrase commands: \"Move. Do not stumble.\"",
+			/datum/status_effect/buff/calm = "Tenebrase whispers: \"Calm now. Power awaits.\"",
+			/datum/status_effect/buff/barbrage = "Tenebrase roars: \"Rend zem. Show zis strength!\""
 		)
 	)
 

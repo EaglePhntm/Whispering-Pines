@@ -1409,7 +1409,7 @@
 	pixel_y = -1
 	},
 /obj/structure/fluff/signage{
-	name = "Church of the Ten - North"
+	name = "Church of new gods - North"
 	},
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/outdoors/town)
@@ -9612,9 +9612,9 @@
 /obj/item/clothing/head/roguehood/nochood,
 /obj/item/clothing/head/roguehood/nochood,
 /obj/item/clothing/head/roguehood/nochood,
-/obj/item/clothing/shirt/robe/noc,
-/obj/item/clothing/shirt/robe/noc,
-/obj/item/clothing/shirt/robe/noc,
+/obj/item/clothing/shirt/robe/lunaria,
+/obj/item/clothing/shirt/robe/lunaria,
+/obj/item/clothing/shirt/robe/lunaria,
 /turf/open/floor/churchmarble,
 /area/rogue/indoors/town/church)
 "jtE" = (
@@ -9720,15 +9720,15 @@
 /area/rogue/indoors/town/manor)
 "jAv" = (
 /obj/structure/closet/crate/crafted_closet,
-/obj/item/clothing/head/roguehood/eora,
-/obj/item/clothing/head/roguehood/eora,
-/obj/item/clothing/head/roguehood/eora,
-/obj/item/clothing/shirt/robe/eora,
-/obj/item/clothing/shirt/robe/eora,
-/obj/item/clothing/shirt/robe/eora,
-/obj/item/clothing/shirt/robe/dendor,
-/obj/item/clothing/shirt/robe/dendor,
-/obj/item/clothing/shirt/robe/dendor,
+/obj/item/clothing/head/roguehood/moonbeam,
+/obj/item/clothing/head/roguehood/moonbeam,
+/obj/item/clothing/head/roguehood/moonbeam,
+/obj/item/clothing/shirt/robe/moonbeam,
+/obj/item/clothing/shirt/robe/moonbeam,
+/obj/item/clothing/shirt/robe/moonbeam,
+/obj/item/clothing/shirt/robe/blissrose,
+/obj/item/clothing/shirt/robe/blissrose,
+/obj/item/clothing/shirt/robe/blissrose,
 /turf/open/floor/churchmarble,
 /area/rogue/indoors/town/church)
 "jAO" = (
@@ -14268,7 +14268,7 @@
 /obj/item/book/law,
 /obj/item/book/festus,
 /obj/item/book/magicaltheory,
-/obj/item/book/necra,
+/obj/item/book/last_death,
 /obj/item/book/arcyne,
 /obj/item/book/blackmountain,
 /obj/item/book/sword,
@@ -18650,9 +18650,9 @@
 /obj/item/clothing/shirt/robe/phys,
 /obj/item/clothing/shirt/robe/phys,
 /obj/item/clothing/shirt/robe/phys,
-/obj/item/clothing/shirt/robe/necra,
-/obj/item/clothing/shirt/robe/necra,
-/obj/item/clothing/shirt/robe/necra,
+/obj/item/clothing/shirt/robe/last_death,
+/obj/item/clothing/shirt/robe/last_death,
+/obj/item/clothing/shirt/robe/last_death,
 /obj/item/clothing/head/padded/pestra,
 /obj/item/clothing/shirt/robe/pestra,
 /obj/item/clothing/head/padded/pestra,
@@ -18737,11 +18737,11 @@
 /area/rogue/indoors/town)
 "ssQ" = (
 /obj/structure/rack,
-/obj/item/clothing/neck/psycross/silver/eora{
+/obj/item/clothing/neck/psycross/silver/moonbeam{
 	pixel_y = 4;
 	pixel_x = -6
 	},
-/obj/item/clothing/neck/psycross/silver/eora,
+/obj/item/clothing/neck/psycross/silver/moonbeam,
 /obj/item/clothing/neck/psycross/silver{
 	pixel_x = 7;
 	pixel_y = 2
@@ -18750,8 +18750,8 @@
 	pixel_x = -5;
 	pixel_y = 8
 	},
-/obj/item/clothing/neck/psycross/silver/ravox,
-/obj/item/clothing/neck/psycross/silver/ravox{
+/obj/item/clothing/neck/psycross/silver/wanderer,
+/obj/item/clothing/neck/psycross/silver/wanderer{
 	pixel_x = 7;
 	pixel_y = -5
 	},
@@ -19401,18 +19401,18 @@
 	pixel_y = 7;
 	pixel_x = 9
 	},
-/obj/item/clothing/neck/psycross/noc{
+/obj/item/clothing/neck/psycross/lunaria{
 	pixel_y = 7;
 	pixel_x = 3
 	},
-/obj/item/clothing/neck/psycross/noc,
+/obj/item/clothing/neck/psycross/lunaria,
 /obj/item/clothing/neck/psycross/silver/astrata,
 /obj/item/clothing/neck/psycross/silver/astrata{
 	pixel_y = 4;
 	pixel_x = 5
 	},
-/obj/item/clothing/neck/psycross/silver/necra,
-/obj/item/clothing/neck/psycross/silver/necra{
+/obj/item/clothing/neck/psycross/silver/last_death,
+/obj/item/clothing/neck/psycross/silver/last_death{
 	pixel_y = -3;
 	pixel_x = 9
 	},
@@ -19628,7 +19628,7 @@
 /area/rogue/indoors/town/steward)
 "tiG" = (
 /obj/structure/table/wood/plain/alt,
-/obj/item/clothing/neck/psycross/silver/dendor{
+/obj/item/clothing/neck/psycross/silver/blissrose{
 	pixel_x = 5;
 	pixel_y = -3
 	},
@@ -21487,14 +21487,14 @@
 	pixel_y = 7;
 	pixel_x = 8
 	},
-/obj/item/clothing/neck/psycross/silver/dendor{
+/obj/item/clothing/neck/psycross/silver/blissrose{
 	pixel_y = 7;
 	pixel_x = -7
 	},
 /obj/structure/fluff/walldeco/church/line{
 	dir = 4
 	},
-/obj/item/clothing/neck/psycross/silver/dendor,
+/obj/item/clothing/neck/psycross/silver/blissrose,
 /turf/open/floor/churchmarble,
 /area/rogue/indoors/town/church)
 "uWb" = (
@@ -22846,7 +22846,7 @@
 	pixel_x = -1;
 	pixel_y = 5
 	},
-/obj/item/clothing/shirt/robe/dendor{
+/obj/item/clothing/shirt/robe/blissrose{
 	pixel_x = 6;
 	pixel_y = -5
 	},

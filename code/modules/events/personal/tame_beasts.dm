@@ -19,7 +19,7 @@
 	for(var/mob/living/carbon/human/H in GLOB.player_list)
 		if(!istype(H) || H.stat == DEAD || !H.client)
 			continue
-		if(!H.patron || !istype(H.patron, /datum/patron/divine/dendor))
+		if(!H.patron || !istype(H.patron, /datum/patron/divine/blissrose))
 			continue
 		return TRUE
 
@@ -31,7 +31,7 @@
 	for(var/mob/living/carbon/human/human_mob in GLOB.player_list)
 		if(!istype(human_mob) || human_mob.stat == DEAD || !human_mob.client)
 			continue
-		if(!human_mob.patron || !istype(human_mob.patron, /datum/patron/divine/dendor))
+		if(!human_mob.patron || !istype(human_mob.patron, /datum/patron/divine/blissrose))
 			continue
 		valid_targets += human_mob
 
@@ -43,8 +43,8 @@
 	var/datum/objective/tame_animal/new_objective = new(owner = chosen_one.mind)
 	chosen_one.mind.add_personal_objective(new_objective)
 
-	to_chat(chosen_one, span_userdanger("YOU ARE DENDOR'S CHOSEN!"))
-	to_chat(chosen_one, span_notice("Dendor calls you to bond with the wild creatures! Tame an animal to earn Dendor's favor!"))
+	to_chat(chosen_one, span_userdanger("YOU ARE BLISSROSE'S CHOSEN!"))
+	to_chat(chosen_one, span_notice("Blissrose calls you to bond with the wild creatures! Tame an animal to earn Blissrose's favor!"))
 	chosen_one.playsound_local(chosen_one, 'sound/magic/barbroar.ogg', 100)
 
 	chosen_one.mind.announce_personal_objectives()

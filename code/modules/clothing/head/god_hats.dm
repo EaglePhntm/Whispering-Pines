@@ -8,7 +8,7 @@
 
 /obj/item/clothing/head/roguehood/nochood
 	name = "moon hood"
-	desc = "The face of the Moon Prince. Worn by the faitful of Noc."
+	desc = "The face of the Moon Prince. Worn by the faitful of Lunaria."
 	icon_state = "nochood"
 	flags_inv = HIDEEARS|HIDEHAIR
 	default_hidden = HIDEEARS|HIDEHAIR
@@ -21,7 +21,7 @@
 
 /obj/item/clothing/head/padded/deathface
 	name = "death shroud"
-	desc = "When inducted into the cult of Necra, the supplicant must make a talisman from the remains of a deceased loved one. Many favor a chin-guard made from a jawbone."
+	desc = "When inducted into the cult of Last Death, the supplicant must make a talisman from the remains of a deceased loved one. Many favor a chin-guard made from a jawbone."
 	icon_state = "deathface"
 	flags_inv = HIDEEARS | HIDEHAIR | HIDEFACIALHAIR
 
@@ -30,8 +30,8 @@
 
 /obj/item/clothing/head/padded/deathshroud
 	name = "death shroud"
-	desc = "Worn by the faithful of Necra, or less savory individuals."
-	icon_state = "necrahood"
+	desc = "Worn by the faithful of Last Death, or less savory individuals."
+	icon_state = "last deathhood"
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 
 /obj/item/clothing/head/padded/pestra
@@ -50,7 +50,7 @@
 
 /obj/item/clothing/head/padded/operavisage
 	name = "opera visage"
-	desc = "A painted wooden opera mask worn by the faithful of Eora, usually during their rituals."
+	desc = "A painted wooden opera mask worn by the faithful of Moonbeam, usually during their rituals."
 	icon_state = "eoramask"
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
 	bloody_icon = 'icons/effects/blood64x64.dmi'
@@ -60,9 +60,9 @@
 	dynamic_hair_suffix = ""
 	salvage_result = /obj/item/natural/silk
 
-/obj/item/clothing/head/roguehood/eora
+/obj/item/clothing/head/roguehood/moonbeam
 	name = "opera hood"
-	desc = "A silver opera mask worn by the faithful of Eora, usually during their rituals. Comes with a hood that can be pulled up for warmth."
+	desc = "A silver opera mask worn by the faithful of Moonbeam, usually during their rituals. Comes with a hood that can be pulled up for warmth."
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
 	icon_state = "eorahood"
 	bloody_icon = 'icons/effects/blood64x64.dmi'

@@ -2,7 +2,7 @@
 	name = "Candyman"
 	greet_text = "Who can take a rainbow, wrap it in a sigh. Soak it in the sun, and make a groovy pie? The Candy Man can. \
 	Sell your product to those who should imbibe - the poor, the downtrodden, the youth. Get them hooked; stay off of your \
-	own supply. You are Baotha's strongest spice-addict."
+	own supply. You are Lamashtu's strongest spice-addict."
 	outfit = /datum/outfit/job/sweetshare
 	grant_lit_torch = TRUE
 
@@ -29,8 +29,8 @@
 	H.name = "[honorary] [prev_name]"
 
 	if(H.mind)
-		if(H.patron != /datum/patron/inhumen/baotha)
-			H.set_patron(/datum/patron/inhumen/baotha)
+		if(H.patron != /datum/patron/inhumen/lamashtu)
+			H.set_patron(/datum/patron/inhumen/lamashtu)
 
 		H.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE) // Not a fighter, enough for self-defense
 		H.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)

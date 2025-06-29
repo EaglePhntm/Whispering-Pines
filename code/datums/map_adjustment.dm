@@ -15,7 +15,7 @@
 	var/list/blacklist
 	/// Jobs that have slots changed /datum/job = num
 	var/list/slot_adjust
-	/// Jobs that have species adjustments /datum/job = list("humen")
+	/// Jobs that have species adjustments /datum/job = list("human")
 	var/list/species_adjust
 
 /// called on map config is loaded.

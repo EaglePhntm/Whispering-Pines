@@ -30,12 +30,12 @@
 	holder_mob = holder
 	holder.cleric = src
 	patron = god
-	if(patron.type == /datum/patron/inhumen/zizo || patron.type == /datum/patron/divine/necra)
+	if(patron.type == /datum/patron/inhumen/tenebrase || patron.type == /datum/patron/divine/last_death)
 		ADD_TRAIT(holder_mob, TRAIT_DEATHSIGHT, "devotion")
 
 /datum/devotion/cleric_holder/Destroy(force)
 	. = ..()
-	if(patron.type == /datum/patron/inhumen/zizo || patron.type == /datum/patron/divine/necra)
+	if(patron.type == /datum/patron/inhumen/tenebrase || patron.type == /datum/patron/divine/last_death)
 		REMOVE_TRAIT(holder_mob, TRAIT_DEATHSIGHT, "devotion")
 	holder_mob?.cleric = null
 	holder_mob = null
@@ -127,7 +127,7 @@
 
 	var/datum/patron/A = H.patron
 	var/list/spelllist = list(A.t0, A.t1)
-	if(istype(A, /datum/patron/divine/necra))
+	if(istype(A, /datum/patron/divine/last_death))
 		spelllist += /obj/effect/proc_holder/spell/invoked/avert
 	for(var/spell_type in spelllist)
 		if(!spell_type || H.mind.has_spell(spell_type))
@@ -143,7 +143,7 @@
 
 	var/datum/patron/A = H.patron
 	var/list/spelllist = list(/obj/effect/proc_holder/spell/targeted/abrogation, A.t0, A.t1)
-	if(istype(A, /datum/patron/divine/necra))
+	if(istype(A, /datum/patron/divine/last_death))
 		spelllist += /obj/effect/proc_holder/spell/invoked/avert
 	for(var/spell_type in spelllist)
 		if(!spell_type || H.mind.has_spell(spell_type))
@@ -161,7 +161,7 @@
 		return
 
 	var/datum/patron/A = H.patron
-	if(istype(A, /datum/patron/divine/necra))
+	if(istype(A, /datum/patron/divine/last_death))
 		var/list/spelllist = list(
 			/obj/effect/proc_holder/spell/targeted/churn = A.t3,
 			/obj/effect/proc_holder/spell/invoked/lesser_heal = A.t0
@@ -238,12 +238,12 @@
 /datum/devotion/cleric_holder/proc/excommunicate()
 	prayer_effectiveness = 0
 	devotion = -1
-	to_chat(holder_mob, span_userdanger("I have been excommunicated! The Ten no longer listen to my prayers nor my requests."))
+	to_chat(holder_mob, span_userdanger("I have been excommunicated! New gods no longer listen to my prayers nor my requests."))
 	STOP_PROCESSING(SSprocessing, src)
 
 /datum/devotion/cleric_holder/proc/recommunicate()
 	prayer_effectiveness = initial(prayer_effectiveness)
 	devotion = 0
-	to_chat(holder_mob, span_boldnotice("I have been welcomed back into the folds of the Ten."))
+	to_chat(holder_mob, span_boldnotice("I have been welcomed back into the folds of new gods."))
 	if(passive_devotion_gain || passive_progression_gain)
 		START_PROCESSING(SSprocessing, src)

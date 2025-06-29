@@ -20,7 +20,7 @@
 	for(var/mob/living/carbon/human/H in GLOB.player_list)
 		if(!istype(H) || H.stat == DEAD || !H.client)
 			continue
-		if(!H.patron || !istype(H.patron, /datum/patron/inhumen/baotha))
+		if(!H.patron || !istype(H.patron, /datum/patron/inhumen/lamashtu))
 			continue
 		return TRUE
 
@@ -32,7 +32,7 @@
 	for(var/mob/living/carbon/human/human_mob in GLOB.player_list)
 		if(!istype(human_mob) || human_mob.stat == DEAD || !human_mob.client)
 			continue
-		if(!human_mob.patron || !istype(human_mob.patron, /datum/patron/inhumen/baotha))
+		if(!human_mob.patron || !istype(human_mob.patron, /datum/patron/inhumen/lamashtu))
 			continue
 		valid_targets += human_mob
 
@@ -44,8 +44,8 @@
 	var/datum/objective/sniff_drugs/new_objective = new(owner = chosen_one.mind)
 	chosen_one.mind.add_personal_objective(new_objective)
 
-	to_chat(chosen_one, span_userdanger("YOU ARE BAOTHA'S CHOSEN!"))
-	to_chat(chosen_one, span_notice("Baotha demands chemical ecstasy! Sniff drugs to earn Baotha's favor!"))
+	to_chat(chosen_one, span_userdanger("YOU ARE LAMASHTU'S CHOSEN!"))
+	to_chat(chosen_one, span_notice("Lamashtu demands chemical ecstasy! Sniff drugs to earn Lamashtu's favor!"))
 	chosen_one.playsound_local(chosen_one, 'sound/misc/gods/baotha_omen.ogg', 100)
 
 	chosen_one.mind.announce_personal_objectives()

@@ -30,7 +30,7 @@
 
 /datum/sex_action/tailpegging_vaginal/on_start(mob/living/user, mob/living/target)
 	..()
-	if(HAS_TRAIT(target, TRAIT_TINY) && !(HAS_TRAIT(user, TRAIT_TINY)))	//Humen on Seelie
+	if(HAS_TRAIT(target, TRAIT_TINY) && !(HAS_TRAIT(user, TRAIT_TINY)))	//Human on Seelie
 		//Scream and rib break
 		user.visible_message(span_warning("[user] forces their tail into [target]'s tiny cunt!"))
 		var/obj/item/bodypart/BPG = target.get_bodypart(BODY_ZONE_PRECISE_GROIN)
@@ -41,7 +41,7 @@
 				BPG.add_wound(/datum/wound/fracture/groin)
 		target.apply_damage(5, BRUTE, BPC)
 		target.apply_damage(5, BRUTE, BPG)
-	else if(!(HAS_TRAIT(target, TRAIT_TINY)) && HAS_TRAIT(user, TRAIT_TINY))	//Seelie on Humen
+	else if(!(HAS_TRAIT(target, TRAIT_TINY)) && HAS_TRAIT(user, TRAIT_TINY))	//Seelie on Human
 		user.visible_message(span_warning("[user] inserts their tiny tail into [target]'s cunt!"))
 	else
 		user.visible_message(span_warning("[user] slides their tail into [target]'s cunt!"))

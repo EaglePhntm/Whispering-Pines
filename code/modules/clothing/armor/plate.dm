@@ -89,9 +89,9 @@
 	desc = "A halfplate decorated with an gold ornament on the chestplate and a fine silk corset. More for decoration then actual use."
 	icon_state = "halfplate_decorated_corset"
 
-//................ Zizo Armor ...............//
+//................ Tenebrase Armor ...............//
 
-/obj/item/clothing/armor/plate/full/zizo
+/obj/item/clothing/armor/plate/full/tenebrase
 	name = "darksteel fullplate"
 	desc = "Full plate. Called forth from the edge of what should be known. In Her name."
 	icon_state = "zizoplate"

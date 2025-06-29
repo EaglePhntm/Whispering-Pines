@@ -1,6 +1,6 @@
 
 /*-----------------\
-|  Dendor Miracles |
+|  Blissrose Miracles |
 \-----------------*/
 
 //===========================================================================================
@@ -13,12 +13,12 @@
 	overlay_state = "blesscrop"
 	releasedrain = 30
 	recharge_time = 30 SECONDS
-	req_items = list(/obj/item/clothing/neck/psycross/silver/dendor)
+	req_items = list(/obj/item/clothing/neck/psycross/silver/blissrose)
 	max_targets = 0
 	cast_without_targets = TRUE
 	sound = 'sound/magic/churn.ogg'
 	associated_skill = /datum/skill/magic/holy
-	invocation = "The Treefather commands thee, be fruitful!"
+	invocation = "The Plantmother commands thee, be fruitful!"
 	invocation_type = "shout" //can be none, whisper, emote and shout
 	miracle = TRUE
 	devotion_cost = 15
@@ -40,7 +40,7 @@
 		if(amount_blessed >= 5)
 			break
 	if(growed)
-		visible_message("<FONT COLOR='green'>[usr] blesses the crop with Dendor's Favour!</FONT><BR>")
+		visible_message("<FONT COLOR='green'>[usr] blesses the crop with Blissrose's Favour!</FONT><BR>")
 		return ..()
 	return FALSE
 //===========================================================================================
@@ -52,7 +52,7 @@
 	desc = "Grants the Dendorite a keen sense of smell and excellent vision, to better hunt with."
 	overlay_state = "bestialsense"
 	recharge_time = 12 MINUTES
-	req_items = list(/obj/item/clothing/neck/psycross/silver/dendor)
+	req_items = list(/obj/item/clothing/neck/psycross/silver/blissrose)
 	invocation = "Beast-Lord, lend me the eyes of the zad, the nose of the volf."
 	invocation_type = "whisper"
 	cooldown_min = 10 MINUTES
@@ -87,7 +87,7 @@
 	overlay_state = "tamebeast"
 	releasedrain = 30
 	recharge_time = 6 MINUTES
-	req_items = list(/obj/item/clothing/neck/psycross/silver/dendor)
+	req_items = list(/obj/item/clothing/neck/psycross/silver/blissrose)
 	max_targets = 0
 	cast_without_targets = TRUE
 	sound = 'sound/magic/churn.ogg'
@@ -114,7 +114,7 @@
 
 /obj/effect/proc_holder/spell/targeted/beasttame/cast(list/targets,mob/user = usr)
 	playsound(get_turf(user), 'sound/vo/smokedrag.ogg', 100, TRUE)
-	visible_message("<FONT COLOR='green'>[usr] soothes the beastblood with Dendor's whisper.</FONT><BR>")
+	visible_message("<FONT COLOR='green'>[usr] soothes the beastblood with Blissrose's whisper.</FONT><BR>")
 	for(var/mob/living/simple_animal/hostile/retaliate/B in oview(2))
 		if(!B.ai_controller)
 			continue
@@ -150,7 +150,7 @@
 	associated_skill = /datum/skill/magic/holy
 	antimagic_allowed = TRUE
 	sound = 'sound/items/dig_shovel.ogg'
-	invocation = "By the Treefather's will, entwine and restrain."
+	invocation = "By the Plantmother's will, entwine and restrain."
 	invocation_type = "whisper"
 	recharge_time = 50 SECONDS
 	devotion_cost = 15
@@ -161,7 +161,7 @@
 	if (targets[1] == user) // adds the green thumb item when you target yourself
 		var/obj/item/melee/touch_attack/greenthumb/I = new /obj/item/melee/touch_attack/greenthumb
 		user.put_in_hands(I)
-		to_chat(user, "You feel the power of Dendor course through your thumb.")
+		to_chat(user, "You feel the power of Blissrose course through your thumb.")
 		user.visible_message("<font color='green'>[user]'s thumb turns green.</font>")
 		return TRUE
 	user.faction |= FACTION_PLANTS
@@ -171,7 +171,7 @@
 	var/obj/structure/flora/grass/tangler/real/already_grown = locate(/obj/structure/flora/grass/tangler/real) in (T.contents)
 	var/area/area = get_area(T)
 	if (!area.outdoors)
-		to_chat(user, span_notice("The open air is more suited for Dendor's miracles..."))
+		to_chat(user, span_notice("The open air is more suited for Blissrose's miracles..."))
 		return FALSE
 	if (already_grown)
 		to_chat(user, span_notice("There's no room for more vines..."))
@@ -216,11 +216,11 @@
 	var/mob/living/mob_target = target
 	if (istype(mob_target, /mob/living/carbon/human/species/skeleton) || istype(mob_target, /mob/living/carbon/human/species/goblin))// prevents taming of monsters
 	{
-		to_chat(user, "<font color='red'>[mob_target] is incompatible with the Treefather's mark.")
+		to_chat(user, "<font color='red'>[mob_target] is incompatible with the Plantmother's mark.")
 		return
 	}
 	var/action = apply ? "adding" : "removing"
-	user.visible_message("[user] presses thumb on [mob_target]'s forehead and begins [action] Dendor's mark to [mob_target].")
+	user.visible_message("[user] presses thumb on [mob_target]'s forehead and begins [action] Blissrose's mark to [mob_target].")
 	if(do_after(user, 5 SECONDS, mob_target))//5 second application
 		if (apply)
 			add_vinemark(mob_target, user)
@@ -253,8 +253,8 @@
 	cast_without_targets = TRUE
 	sound = 'sound/items/dig_shovel.ogg'
 	associated_skill = /datum/skill/magic/holy
-	req_items = list(/obj/item/clothing/neck/psycross/silver/dendor)
-	invocation = "Treefather light the way."
+	req_items = list(/obj/item/clothing/neck/psycross/silver/blissrose)
+	invocation = "Plantmother light the way."
 	invocation_type = "whisper" //can be none, whisper, emote and shout
 	attunements = list(
 		/datum/attunement/earth = 0.6,
@@ -286,8 +286,8 @@
 	desc = "Borrow power from the Troll, his favored beast."
 	overlay_state = "trollshape"
 	recharge_time = 12 MINUTES // cast once every 30 minutes, lasts for 3 minutes || Monkey station edit, changed it down from 30 to 12!
-	req_items = list(/obj/item/clothing/neck/psycross/silver/dendor)
-	invocation = "DENDOR; LEND ME YOUR POWER!!"
+	req_items = list(/obj/item/clothing/neck/psycross/silver/blissrose)
+	invocation = "BLISSROSE; LEND ME YOUR POWER!!"
 	invocation_type = "shout"
 	cooldown_min = 6 MINUTES
 	releasedrain = 100
@@ -306,7 +306,7 @@
 	sleep(30)
 	playsound(get_turf(user), 'sound/foley/sewflesh.ogg', 100, TRUE)
 	user.emote("pain", forced = TRUE)
-	to_chat(user, span_warning("My body is transforming, growing! Unbearable pain, Dendor has answered your prayers!"))
+	to_chat(user, span_warning("My body is transforming, growing! Unbearable pain, Blissrose has answered your prayers!"))
 	user.do_jitter_animation(40)
 	user.Immobilize(40)
 	sleep(40)

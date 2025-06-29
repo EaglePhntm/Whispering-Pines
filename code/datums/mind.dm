@@ -342,7 +342,7 @@ GLOBAL_LIST_EMPTY(personal_objective_minds)
 	check_learnspell() //check if we need to add or remove the learning spell
 
 
-/// set the last_death time of a mind to the current world time
+/// set the /last_death time of a mind to the current world time
 /datum/mind/proc/set_death_time()
 	last_death = world.time
 

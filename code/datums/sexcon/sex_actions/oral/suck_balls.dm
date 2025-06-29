@@ -11,7 +11,7 @@
 		return FALSE
 	if(!target.getorganslot(ORGAN_SLOT_TESTICLES))
 		return FALSE
-	if(HAS_TRAIT(target, TRAIT_TINY))	//Someone else can figure out how a full sized humen gives a tiny seelie a ball sucking...
+	if(HAS_TRAIT(target, TRAIT_TINY))	//Someone else can figure out how a full sized human gives a tiny seelie a ball sucking...
 		return FALSE
 	return TRUE
 

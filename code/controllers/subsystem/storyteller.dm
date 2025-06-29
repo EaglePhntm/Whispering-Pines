@@ -232,13 +232,13 @@ SUBSYSTEM_DEF(gamemode)
 				"...a glare pierces your soul... you feel seen, judged, burned, yet safe... the light watches, unwavering and eternal..."
 			),
 
-			"Noc" = list(
+			"Lunaria" = list(
 				"...silver light spills across ink-black halls... you hear pages fluttering without wind, and a voice speaks in riddles...",
 				"...a tapestry of stars weaves itself in your mind... patterns emerge and vanish, revealing truths never spoken aloud...",
 				"...moonlight coils into a key... you reach for it, but your hands are made of questions..."
 			),
 
-			"Necra"= list(
+			"Last Death"= list(
 				"...the dream begins with a closed door... you knock. Silence answers... when it opens, everything you were is counted, weighed...",
 				"...everything is still... you are the last heartbeat in a world already buried... a cold smile waits just past the veil...",
 				"...a quiet woman sits by a river made of ash... she nods once, counting your breath..."
@@ -250,7 +250,7 @@ SUBSYSTEM_DEF(gamemode)
 				"...you see a flower bloom in ash. It dies and returns, brighter, stranger. The rhythm of endings comforts you...",
 			),
 
-			"Ravox"= list(
+			"Wanderer"= list(
 				"...a sword rests beside a scale... neither tips...",
 				"...steel sings in your dreams... a verdict is written in blood and flame, but justice waits before it lands...",
 				"...you duel a mirror image of yourself... the victor is neither, yet the fight continues... law and war share the same breath..."
@@ -262,7 +262,7 @@ SUBSYSTEM_DEF(gamemode)
 				"...endless clanging fills your mind... with each strike, something within you hardens, reforged in smoke and effort..."
 			),
 
-			"Dendor"= list(
+			"Blissrose"= list(
 				"...animals scream in tongues you almost understand... trees whisper old pain, searching for their shepherd...",
 				"...vines coil around your limbs. Roots burst from your feet... the forest within you howls, a kingdom lost to madness...",
 				"...eyes glow among tangled thorns... something ancient, betrayed, hungers again..."
@@ -281,7 +281,7 @@ SUBSYSTEM_DEF(gamemode)
 				"...every path splits... every answer lies... yet you smile... trickery is truth when worn well..."
 			),
 
-			"Eora"= list(
+			"Moonbeam"= list(
 				"...you dream in color,red threads, gold loops, blue knots... all pulling gently...",
 				"...a weaving surrounds you... every face you’ve loved or hated is there...",
 				"...your heart is a loom... dreams pass through it, weaving bonds to people you’ve never met, yet feel you’ve always known..."
@@ -295,7 +295,7 @@ SUBSYSTEM_DEF(gamemode)
 				"...you follow footprints that vanish behind you... no one walks beside you, yet you’re never alone..."
 			),
 
-			"Baotha" = list(
+			"Lamashtu" = list(
 				"...everything glows with joy... then it melts, and you, giggle anyway...",
 				"...you float through a city of glass, laughter echoing in colors... you smile with no mouth and sing without sound...",
 				"...your body dances without thought... every breath tastes like honey and smoke... you forget, and it feels divine..."
@@ -307,7 +307,7 @@ SUBSYSTEM_DEF(gamemode)
 				"...an ancient drum beats under your ribs... it demands violence in return for peace..."
 			),
 
-			"Zizo"= list(
+			"Tenebrase"= list(
 				"...eyes stare from skulls that still weep... you cradle a child made of frost and ash... it whispers secrets backwards...",
 				"...your name is forgotten by everyone in your dream... only bones remember...",
 				"...a girl with white eyes smiles at you... her lullaby stitches flesh to spirit..."

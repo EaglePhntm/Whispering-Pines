@@ -15,7 +15,7 @@
 	bypass_lastclass = TRUE
 
 	allowed_races = list(MALE, FEMALE)
-	allowed_races = list("Humen")
+	allowed_races = list("Human")
 
 	outfit = /datum/outfit/job/inquisitor
 	is_foreigner = TRUE
@@ -180,7 +180,7 @@
 	if(H.add_stress(/datum/stressevent/tortured))
 		SEND_SIGNAL(src, COMSIG_TORTURE_PERFORMED, H)
 		var/static/list/faith_lines = list(
-			"DO YOU DENY PSYDON AND THE TEN?",
+			"DO YOU DENY PSYDON AND NEW GODS?",
 			"WHO IS YOUR GOD?",
 			"ARE YOU FAITHFUL?",
 			"TO WHICH SHEPHERD DO YOU FLOCK TO?",
@@ -254,7 +254,7 @@
 			var/datum/patron/victim_patron = patron
 			switch(interrogator_patron.associated_faith.type)
 				if(/datum/faith/psydon)
-					if(ispath(victim_patron.type, /datum/patron/divine) && victim_patron.type != /datum/patron/divine/necra) //lore
+					if(ispath(victim_patron.type, /datum/patron/divine) && victim_patron.type != /datum/patron/divine/last_death) //lore
 						interrogator.add_stress(/datum/stressevent/torture_small_penalty)
 					else if(victim_patron.type == /datum/patron/psydon/progressive)
 						interrogator.add_stress(/datum/stressevent/torture_small_penalty)
@@ -296,14 +296,14 @@
 					if("Zizoid Cultist")
 						held_confession.bad_type = "A SERVANT OF THE FORBIDDEN ONE"
 						held_confession.antag = antag_type
-					if("Zizo")
+					if("Tenebrase")
 						held_confession.bad_type = "A FOLLOWER OF THE FORBIDDEN ONE"
 						held_confession.antag = "worshiper of " + antag_type
 					if("Verewolf")
-						held_confession.bad_type = "A BEARER OF DENDOR'S CURSE"
+						held_confession.bad_type = "A BEARER OF BLISSROSE'S CURSE"
 						held_confession.antag = antag_type
 					if("Lesser Verewolf")
-						held_confession.bad_type = "A BEARER OF DENDOR'S CURSE"
+						held_confession.bad_type = "A BEARER OF BLISSROSE'S CURSE"
 						held_confession.antag = antag_type
 					if("Vampire")
 						held_confession.bad_type = "A SCION OF KAINE"
@@ -323,7 +323,7 @@
 					if("Godless")
 						held_confession.bad_type = "A DAMNED ANTI-THEIST"
 						held_confession.antag = "worshiper of nothing"
-					if("Baotha")
+					if("Lamashtu")
 						held_confession.bad_type = "A FOLLOWER OF THE REMORSELESS RUINER"
 						held_confession.antag = "worshiper of " + antag_type
 					if("Peasant Rebel")

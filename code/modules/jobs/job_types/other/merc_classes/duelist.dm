@@ -3,7 +3,7 @@
 	tutorial = "A swordsman from Valoria, wielding a rapier with deadly precision and driven by honor and a thirst for coin, they duel with unmatched precision, seeking glory and wealth."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
-	"Humen",
+	"Human",
 	"Elf",
 	"Tiefling",
 	"Half-Elf",

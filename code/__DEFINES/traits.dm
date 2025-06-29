@@ -53,7 +53,7 @@
 #define TRAIT_POISONBITE				"Poison Bite"
 #define TRAIT_FORAGER					"Foraging Knowledge" //Can tell which berries are good to eat when examining
 #define TRAIT_TINY 						"Tiny"
-#define TRAIT_DREAM_WATCHER				"Noc Blessed" //Unique Trait of the Dream Watcher Town Elder Class, they have a chance to know about antags or gods influences.
+#define TRAIT_DREAM_WATCHER				"Lunaria Blessed" //Unique Trait of the Dream Watcher Town Elder Class, they have a chance to know about antags or gods influences.
 #define TRAIT_HOLLOWBONES				"Hollow Bones"
 #define TRAIT_AMAZING_BACK				"Light Load"
 #define TRAIT_KITTEN_MOM				"Loved By Kittens"
@@ -65,9 +65,9 @@
 #define TRAIT_RECRUITED					"Recruit" //Trait used to give foreigners their new title
 
 // Divine patron trait bonuses:
-#define TRAIT_SOUL_EXAMINE				"Blessing of Necra"  //can check bodies to see if they have departed
+#define TRAIT_SOUL_EXAMINE				"Blessing of Last Death"  //can check bodies to see if they have departed
 #define TRAIT_ROT_EATER					"Blessing of Pestra" //can eat rotten food
-#define TRAIT_KNEESTINGER_IMMUNITY		"Blessing of Dendor" //Can move through kneestingers.
+#define TRAIT_KNEESTINGER_IMMUNITY		"Blessing of Blissrose" //Can move through kneestingers.
 #define TRAIT_LEECHIMMUNE				"Unleechable" //leeches drain very little blood
 #define TRAIT_SHARPER_BLADES			"Sharper Blades" //Weapons lose less blade integrity
 #define TRAIT_BETTER_SLEEP				"Better Sleep" //Recover more energy (blue bar) when sleeping
@@ -77,9 +77,9 @@
 #define TRAIT_BLACKLEG					"Blackleg" //Rig coin, dice, cards in your favor
 
 // Inhumen patron trait bonuses:
-#define TRAIT_ORGAN_EATER				"Blessing of Graggar"//Can eat organs (duh.) and raw meat
-#define TRAIT_CRACKHEAD					"Blessing of Baotha" //No overdose on drugs.
-#define TRAIT_CABAL                     "Of the Cabal" //Zizo cultists recognize each other too
+#define TRAIT_ORGAN_EATER				"Raw eater"//Can eat organs (duh.) and raw meat
+#define TRAIT_CRACKHEAD					"Blessing of Lamashtu" //No overdose on drugs.
+#define TRAIT_CABAL                     "Of the Cabal" //Tenebrase cultists recognize each other too
 #define TRAIT_MATTHIOS_EYES				"Eyes of Matthios" //Examine to see the most expensive item someone has
 
 #define TRAIT_BASHDOORS "bashdoors"
@@ -121,18 +121,20 @@
 #define TRAIT_ATHEISM_CURSE "Curse of Atheism"
 #define TRAIT_PSYDON_CURSE "Psydon's Curse"
 #define TRAIT_ASTRATA_CURSE "Astrata's Curse"
-#define TRAIT_NOC_CURSE "Noc's Curse"
-#define TRAIT_RAVOX_CURSE "Ravox's Curse"
-#define TRAIT_NECRA_CURSE "Necra's Curse"
+#define TRAIT_NOC_CURSE "Lunaria's Curse"
+#define TRAIT_RAVOX_CURSE "Wanderer's Curse"
+#define TRAIT_LAST_DEATH_CURSE "Last Death's Curse"
 #define TRAIT_XYLIX_CURSE "Xylix's Curse"
 #define TRAIT_PESTRA_CURSE "Pestra's Curse"
 #define TRAIT_EORA_CURSE "Eora's Curse"
-#define TRAIT_ZIZO_CURSE "Zizo's Curse"
+#define TRAIT_ZIZO_CURSE "Tenebrase's Curse"
 #define TRAIT_GRAGGAR_CURSE "Graggar's Curse"
 #define TRAIT_MATTHIOS_CURSE "Matthios' Curse"
-#define TRAIT_BAOTHA_CURSE "Baotha's Curse"
+#define TRAIT_BAOTHA_CURSE "Lamashtu's Curse"
+
 
 //Whisperingpines
+#define TRAIT_INSOMNIA "Moonbeam's Curse"
 #define TRAIT_GOODLOVER "Good Lover"
 #define TRAIT_LIMPDICK 	"Limp Dick"
 #define TRAIT_DEATHBYSNOOSNOO "Bed Breaker" // double sex damage (requires strong intent)
@@ -169,7 +171,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_NUDIST = "I <b>refuse</b> to wear clothes. They are a hindrance to my freedom.",
 	TRAIT_KNEESTINGER_IMMUNITY = "I am immune to the shock of kneestingers.",
 	TRAIT_INHUMANE_ANATOMY = "My anatomy is inhumen, preventing me from wearing hats and shoes.",
-	TRAIT_NASTY_EATER = span_dead("I can eat bad food, and water that would be toxic to humen will not affect me."),
+	TRAIT_NASTY_EATER = span_dead("I can eat bad food, and water that would be toxic to human will not affect me."),
 	TRAIT_NOFALLDAMAGE1 = span_info("I can easily handle minor falls."),
 	TRAIT_NOFALLDAMAGE2 = span_info("I can handle a fall from any height."),
 	TRAIT_ROT_EATER = span_necrosis("I can eat rotten food."),
@@ -182,7 +184,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_LEECHIMMUNE = "Leeches are reluctant to drain my blood.",
 	TRAIT_ASSASSIN = "My soul has been tainted by Graggar, god of murder.",
 	TRAIT_BARDIC_TRAINING = "Xylixian inspiration grants my songs boons and ailments.",
-	TRAIT_GRAVEROBBER = "Necra favors my grim deeds, I can unearth graves without being cursed by her.",
+	TRAIT_GRAVEROBBER = "Last Death favors my grim deeds, I can unearth graves without being cursed by her.",
 	TRAIT_MISSING_NOSE = span_warning("I struggle to breathe."),
 	TRAIT_DISFIGURED = span_warning("No one can recognize me..."),
 	TRAIT_BEAUTIFUL = span_love("My face was shaped by the gods!"),
@@ -230,7 +232,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_FOREIGNER = span_notice("I'm not from around here."),
 	TRAIT_BURDEN = "I carry the Burden of HEAD EATER's hunger...",
 	TRAIT_OLDPARTY = "In years long passed, me and a group of fellow adventurers saved this city!",
-	TRAIT_DREAM_WATCHER = span_notice("I'm blessed by Noc, my dreams tell more than the average person.."),
+	TRAIT_DREAM_WATCHER = span_notice("I'm blessed by Lunaria, my dreams tell more than the average person.."),
 	TRAIT_AMAZING_BACK = span_notice("I'm able to carry far more on my back!"),
 	TRAIT_HOLLOWBONES = span_danger("My bones are light as air, Its hard to wear armor."),
 	TRAIT_RECRUITED = "I have been recruited!",

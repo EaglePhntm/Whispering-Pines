@@ -73,7 +73,7 @@
 // Vampire Lord is no longer as OP, but the armor should protect against dreaded stabs or it makes the vitae spent on it pointless.
 /obj/item/clothing/head/helmet/heavy/savoyard
 	name = "savoyard"
-	desc = "A terrifying yet crude iron helmet shaped like a humen skull. Commands the inspiring terror of inhumen tyrants from yils past."
+	desc = "A terrifying yet crude iron helmet shaped like a human skull. Commands the inspiring terror of inhumen tyrants from yils past."
 	icon_state = "savoyard"
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
 	smeltresult = /obj/item/ingot/iron
@@ -97,9 +97,9 @@
 	prevent_crits = ALL_CRITICAL_HITS
 	item_weight = 9 * IRON_MULTIPLIER
 
-//............... Zizo Frog Helmet ............... //
+//............... Tenebrase Frog Helmet ............... //
 
-/obj/item/clothing/head/helmet/heavy/zizo
+/obj/item/clothing/head/helmet/heavy/tenebrase
 	name = "darksteel frog helmet"
 	desc = "A darksteel frog helmet. This one has an adjustable visor. Called forth from the edge of what should be known. In Her name."
 	adjustable = CAN_CADJUST
@@ -159,33 +159,33 @@
 	icon_state = "astratahelm"
 	item_weight = 6 * GOLD_MULITPLIER
 
-//............... Noc Helmet ............... //
-/obj/item/clothing/head/helmet/heavy/necked/noc
-	name = "noc helmet"
-	desc = "A sleek and rounded heavy helmet with a maille neck cover. Its unique craft is said to allow holy warriors of Noc additional insight before battle."
+//............... Lunaria Helmet ............... //
+/obj/item/clothing/head/helmet/heavy/necked/lunaria
+	name = "lunaria helmet"
+	desc = "A sleek and rounded heavy helmet with a maille neck cover. Its unique craft is said to allow holy warriors of Lunaria additional insight before battle."
 	icon_state = "nochelm"
 	item_weight = 6 * SILVER_MULTIPLIER
 	flags_inv = HIDEEARS
 
-//............... Necra Helmet ............... //
-/obj/item/clothing/head/helmet/heavy/necked/necra
-	name = "necra helmet"
+//............... Last Death Helmet ............... //
+/obj/item/clothing/head/helmet/heavy/necked/last_death
+	name = "last death helmet"
 	desc = "A reinforced helmet shaped into the visage of a skull with a maille neck cover under the cloth. A symbol of authority for the battle servants of the Undermaiden."
-	icon_state = "necrahelm"
+	icon_state = "last deathhelm"
 	item_weight = 6 * IRON_MULTIPLIER
 
-//............... Dendor Helmet ............... //	This one seems a bit out of place
+//............... Blissrose Helmet ............... //	This one seems a bit out of place
 /obj/item/clothing/head/helmet/heavy/necked/dendorhelm
-	name = "dendor helmet"
+	name = "blissrose helmet"
 	desc = "A great helmet with twisted metalwork that imitates the twisting of bark, or the horns of a beast."
 	icon_state = "dendorhelm"
 	prevent_crits = ALL_EXCEPT_BLUNT
 	item_weight = 6 * IRON_MULTIPLIER
 
-//............... Eora Helmet ............... //
-/obj/item/clothing/head/helmet/sallet/eoran
-	name = "eora helmet"
-	desc = "A standard helmet forged in the style typical of Eoran worshippers, a simple yet practical protective piece of equipment. Upon it lays several laurels of flowers and other colorful ornaments, followed by several symbols and standards of the user's chapter, accomplishments or even punishment"
+//............... Moonbeam Helmet ............... //
+/obj/item/clothing/head/helmet/sallet/moonbeamite
+	name = "moonbeam helmet"
+	desc = "A standard helmet forged in the style typical of Moonbeamite worshippers, a simple yet practical protective piece of equipment. Upon it lays several laurels of flowers and other colorful ornaments, followed by several symbols and standards of the user's chapter, accomplishments or even punishment"
 	icon_state = "eorahelm"
 	item_state = "eorahelm"
 	item_weight = 5 * IRON_MULTIPLIER
@@ -207,9 +207,9 @@
 	item_state = "malumhelm"
 	item_weight = 6 * IRON_MULTIPLIER
 
-/obj/item/clothing/head/helmet/heavy/necked/ravox
+/obj/item/clothing/head/helmet/heavy/necked/wanderer
 	name = "ravoxian helmet"
-	desc = "Headwear commonly worn by Templars in service to Ravox. It resembles an heavily adorned visored sallet."
+	desc = "Headwear commonly worn by Templars in service to Wanderer. It resembles an heavily adorned visored sallet."
 	icon_state = "ravoxhelm"
 	item_state = "ravoxhelm"
 	item_weight = 6 * IRON_MULTIPLIER

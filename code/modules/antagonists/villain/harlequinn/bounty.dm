@@ -1553,7 +1553,7 @@ GLOBAL_LIST_INIT(bounty_rep, list())  // ckey -> reputation score
 			// Remove curse status if they have the graverobber trait (blessed burial)
 			if(HAS_TRAIT(living_harlequinn, TRAIT_GRAVEROBBER))
 				living_harlequinn.remove_status_effect(/datum/status_effect/debuff/cursed)
-				to_chat(harlequinn, span_notice("Necra smiles upon this proper burial. Any curses are lifted."))
+				to_chat(harlequinn, span_notice("Last Death smiles upon this proper burial. Any curses are lifted."))
 			else
 				to_chat(harlequinn, span_notice("The proper burial brings peace to the departed soul."))
 

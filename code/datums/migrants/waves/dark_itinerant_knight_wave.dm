@@ -9,16 +9,16 @@
 
 /datum/outfit/job/dark_itinerant_knight/pre_equip(mob/living/carbon/human/H)
 	..()
-	head = /obj/item/clothing/head/helmet/heavy/zizo
-	gloves = /obj/item/clothing/gloves/plate/zizo
-	pants = /obj/item/clothing/pants/platelegs/zizo
+	head = /obj/item/clothing/head/helmet/heavy/tenebrase
+	gloves = /obj/item/clothing/gloves/plate/tenebrase
+	pants = /obj/item/clothing/pants/platelegs/tenebrase
 	shirt = /obj/item/clothing/shirt/shadowshirt
-	armor = /obj/item/clothing/armor/plate/full/zizo
-	shoes = /obj/item/clothing/shoes/boots/armor/zizo
+	armor = /obj/item/clothing/armor/plate/full/tenebrase
+	shoes = /obj/item/clothing/shoes/boots/armor/tenebrase
 	beltl = /obj/item/flashlight/flare/torch/lantern
 	belt = /obj/item/storage/belt/leather/steel
 	backr = /obj/item/storage/backpack/satchel
-	backl = /obj/item/weapon/sword/long/greatsword/zizo
+	backl = /obj/item/weapon/sword/long/greatsword/tenebrase
 
 	if(H.mind)
 		H.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
@@ -102,7 +102,7 @@
 		/datum/migrant_role/dark_itinerant_knight = 1,
 		/datum/migrant_role/dark_itinerant_squire = 1,
 	)
-	greet_text = "These lands have insulted once more Zizo, you are here to remind them of her prowess."
+	greet_text = "These lands have insulted once more Tenebrase, you are here to remind them of her prowess."
 
 /datum/migrant_wave/evil_knight_down
 	name = "The Unknightly journey"
@@ -112,4 +112,4 @@
 	roles = list(
 		/datum/migrant_role/dark_itinerant_knight = 1,
 	)
-	greet_text = "These lands have insulted once more Zizo, you are here to remind them of her prowess."
+	greet_text = "These lands have insulted once more Tenebrase, you are here to remind them of her prowess."

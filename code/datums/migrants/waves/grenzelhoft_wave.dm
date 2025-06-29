@@ -57,7 +57,7 @@
 	greet_text = "A Countess hailing from the Grenzelhoft Imperiate, here on an official visit to the Isle of the Enigma alongside her beloved convoy and husband."
 	allowed_sexes = list(FEMALE)
 	allowed_races = list(
-		"Humen",
+		"Human",
 		"Dwarf"
 	)
 	outfit = /datum/outfit/job/grenzelhoft_migration/countess
@@ -111,7 +111,7 @@
 	name = "Grenzelhoft Knight"
 	greet_text = "Your liege, the count and the countess have both took the duty gaved by the Kaiser itself to voyage to the Isle of Enigma, ensure their survival and obey their orders."
 	allowed_sexes = list(MALE)
-	allowed_races = list("Humen")
+	allowed_races = list("Human")
 	outfit = /datum/outfit/job/grenzelhoft_migration/grenzelhoft_knight
 	is_foreigner = FALSE
 
@@ -160,7 +160,7 @@
 	greet_text = "You and your fellows are men at arms from Grenzelhoft, except your local liege has been sent to the Isle of Enigma, obey the Ritter and make sure the nobles goes home."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
-		"Humen",
+		"Human",
 		"Dwarf"
 	)
 	outfit = /datum/outfit/job/grenzelhoft_migration/grenzelhoft_men_at_arms

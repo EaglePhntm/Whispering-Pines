@@ -332,8 +332,8 @@
 |		 	 	|
 \---------------*/
 
-// ---------------------- DIVINE KNOWLEDGE ( NOC ) ----------------------------
-/datum/status_effect/buff/noc
+// ---------------------- DIVINE KNOWLEDGE ( LUNARIA ) ----------------------------
+/datum/status_effect/buff/lunaria
 	id = "nocbuff"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/nocbuff
 	effectedstats = list(STATKEY_INT = 3)
@@ -346,11 +346,11 @@
 
 
 
-// ---------------------- DIVINE POWER ( RAVOX ) ----------------------------
-/datum/status_effect/buff/ravox
+// ---------------------- DIVINE POWER ( WANDERER ) ----------------------------
+/datum/status_effect/buff/wanderer
 	id = "ravoxbuff"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/ravoxbuff
-	effectedstats = list(STATKEY_CON = 1, STATKEY_END = 1, STATKEY_STR = 1)
+	effectedstats = list(STATKEY_CON = 1, STATKEY_END = 1, STATKEY_SPD = 3)
 	duration = 240 MINUTES
 
 /atom/movable/screen/alert/status_effect/buff/ravoxbuff
@@ -360,10 +360,10 @@
 
 
 /*-----------------\
-|  Dendor Miracles |
+|  Blissrose Miracles |
 \-----------------*/
 
-// ---------------------- EYES OF THE BEAST ( DENDOR ) ----------------------------
+// ---------------------- EYES OF THE BEAST ( BLISSROSE ) ----------------------------
 /datum/status_effect/buff/beastsense
 	id = "beastsense"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/beastsense
@@ -402,7 +402,7 @@
 
 
 
-// ---------------------- TROLL SHAPE ( DENDOR ) ----------------------------
+// ---------------------- TROLL SHAPE ( BLISSROSE ) ----------------------------
 /datum/status_effect/buff/trollshape
 	id = "trollshape"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/trollshape
@@ -436,7 +436,7 @@
 		C.RemoveElement(/datum/element/footstep, FOOTSTEP_MOB_HEAVY, 1, -2)
 		C.AddElement(/datum/element/footstep, C.footstep_type, 1, -6)
 
-// ---------------------- BRIAR'S RAGE ( DENDOR ) ----------------------------
+// ---------------------- BRIAR'S RAGE ( BLISSROSE ) ----------------------------
 /datum/status_effect/buff/barbrage/briarrage //barbarian rage but it's permanent and exclusive to the briar
 	id = "briarrage"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/barbrage/briarrage
@@ -444,12 +444,12 @@
 	duration = -1
 
 /atom/movable/screen/alert/status_effect/buff/barbrage/briarrage
-	name = "Dendor's frenzy"
+	name = "Blissrose's frenzy"
 	desc = span_nicegreen("EMBRACE WILDERNESS")
 	icon_state = "bestialsense"
 
 /*-----------------\
-|   Eora Miracles  |
+|   Moonbeam Miracles  |
 \-----------------*/
 
 /datum/status_effect/buff/divine_beauty
@@ -475,7 +475,7 @@
 	icon_state = "beauty"
 
 /*-----------------\
-|   Ravox Miracles |
+|   Wanderer Miracles |
 \-----------------*/
 
 /datum/status_effect/buff/call_to_arms
@@ -575,13 +575,13 @@
 	name = "Inspiring"
 
 // TIER 5 - MASTER
-/datum/status_effect/bardicbuff/ravox
+/datum/status_effect/bardicbuff/wanderer
 	name = "Empowering (+1 STR, +1 PER)"
 	id = "bardbuff_str"
 	effectedstats = list(STATKEY_STR = 1, STATKEY_PER = 1)
-	alert_type = /atom/movable/screen/alert/status_effect/bardbuff/ravox
+	alert_type = /atom/movable/screen/alert/status_effect/bardbuff/wanderer
 
-/atom/movable/screen/alert/status_effect/bardbuff/ravox
+/atom/movable/screen/alert/status_effect/bardbuff/wanderer
 	name = "Empowering"
 
 // TIER 6 - LEGENDARY
@@ -795,8 +795,8 @@
 	duration = 30 MINUTES
 
 /atom/movable/screen/alert/status_effect/buff/nocblessing
-	name = "Noc's blessing"
-	desc = "Gazing Noc helps me think."
+	name = "Lunaria's blessing"
+	desc = "Gazing Lunaria helps me think."
 	icon_state = "buff"
 
 /datum/status_effect/buff/nocblessed
@@ -806,8 +806,8 @@
 	duration = 300 MINUTES
 
 /atom/movable/screen/alert/status_effect/buff/nocblessed
-	name = "Blessed by Noc"
-	desc = "I have been blessed by Noc since i was born, with his help i can see and think better than anyone."
+	name = "Blessed by Lunaria"
+	desc = "I have been blessed by Lunaria since i was born, with his help i can see and think better than anyone."
 	icon_state = "intelligence"
 
 

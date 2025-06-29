@@ -229,3 +229,33 @@ GLOBAL_LIST_EMPTY(global_biomass_storage)
 	description = "<span class='nicered'>All my blood was taken....</span>\n"
 	mood_change = -4
 	timeout = 7 MINUTES
+
+//cloning pod
+//wip
+/obj/machinery/fake_powered/cloning_pod
+	name = "Automated Cloning Pod"
+	desc = "Used to reclone people and defy old gods' way. Recloning is costly and tend to put people in debt to the kingdom."
+	icon = 'modular_whisper/icons/misc/machines.dmi'
+	icon_state = "clonepod"
+	var/last_alert = 0
+
+/obj/machinery/fake_powered/cloning_pod/examine(mob/user)
+	. = ..()
+	. += "<span class='warning'>There is enough biomass to make [GLOB.global_biomass_storage] bodies.</span>"
+
+/obj/machinery/fake_powered/cloning_pod/Initialize(mapload, ...)
+	. = ..()
+	GLOB.cloning_bays += src
+
+/obj/machinery/fake_powered/cloning_pod/proc/send_manual_alert()
+	playsound(loc, 'sound/foley/industrial/machineoff.ogg', 50, FALSE, -1)
+	say("ALERT. A saved mind is trying to reclone, but there is Insufficent biomass stored!", language = /datum/language/ancient_english)
+
+/obj/machinery/fake_powered/cloning_pod/process()
+	. = ..()
+	if(world.time < last_alert+30 SECONDS)
+		return
+	if(GLOB.global_biomass_storage > 1)
+		return
+	playsound(loc, 'sound/foley/industrial/machineoff.ogg', 50, FALSE, -1)
+	say("Warning; Insufficent biomass stored.", language = /datum/language/ancient_english)

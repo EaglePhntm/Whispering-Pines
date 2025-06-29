@@ -457,7 +457,7 @@ GLOBAL_LIST_EMPTY(respawncounts)
 
 	data += "<div style='flex: 1; padding-left: 60px;'>"
 	data += "Number of apostates: [apostasy_followers] ([get_colored_influence_value(apostasy_followers * -20)])<br>"
-	data += "Humen deaths: [GLOB.vanderlin_round_stats[STATS_HUMEN_DEATHS]] ([get_colored_influence_value(GLOB.vanderlin_round_stats[STATS_HUMEN_DEATHS] * -10)])<br>"
+	data += "Human deaths: [GLOB.vanderlin_round_stats[STATS_HUMEN_DEATHS]] ([get_colored_influence_value(GLOB.vanderlin_round_stats[STATS_HUMEN_DEATHS] * -10)])<br>"
 	data += "Lux harvested: [GLOB.vanderlin_round_stats[STATS_LUX_HARVESTED]] ([get_colored_influence_value(GLOB.vanderlin_round_stats[STATS_LUX_HARVESTED] * -50)])<br>"
 	data += "Number of demonspawns: [GLOB.vanderlin_round_stats[STATS_ALIVE_TIEFLINGS]] ([get_colored_influence_value(GLOB.vanderlin_round_stats[STATS_ALIVE_TIEFLINGS] * -20)])<br>"
 	data += "God's status: [psydonite_user ? "ALIVE" : "DEAD"] ([get_colored_influence_value(psydonite_user ? 10000 : -10000)])<br>"
@@ -469,30 +469,30 @@ GLOBAL_LIST_EMPTY(respawncounts)
 	data += "<div style='text-align: center;'>Total Influence: [get_colored_influence_value(psydon_influence)]</div>"
 	data += "</div></div></div>"
 
-	// The Ten Section
+	// New gods Section
 	var/astrata_followers = GLOB.patron_follower_counts["Astrata"] || 0
-	var/noc_followers = GLOB.patron_follower_counts["Noc"] || 0
-	var/necra_followers = GLOB.patron_follower_counts["Necra"] || 0
+	var/noc_followers = GLOB.patron_follower_counts["Lunaria"] || 0
+	var/last_death_followers = GLOB.patron_follower_counts["Last Death"] || 0
 	var/pestra_followers = GLOB.patron_follower_counts["Pestra"] || 0
-	var/dendor_followers = GLOB.patron_follower_counts["Dendor"] || 0
-	var/ravox_followers = GLOB.patron_follower_counts["Ravox"] || 0
+	var/dendor_followers = GLOB.patron_follower_counts["Blissrose"] || 0
+	var/ravox_followers = GLOB.patron_follower_counts["Wanderer"] || 0
 	var/xylix_followers = GLOB.patron_follower_counts["Xylix"] || 0
 	var/malum_followers = GLOB.patron_follower_counts["Malum"] || 0
 	var/abyssor_followers = GLOB.patron_follower_counts["Abyssor"] || 0
-	var/eora_followers = GLOB.patron_follower_counts["Eora"] || 0
+	var/eora_followers = GLOB.patron_follower_counts["Moonbeam"] || 0
 
 	var/astrata_storyteller = /datum/storyteller/astrata
-	var/noc_storyteller = /datum/storyteller/noc
-	var/necra_storyteller = /datum/storyteller/necra
+	var/noc_storyteller = /datum/storyteller/lunaria
+	var/last_death_storyteller = /datum/storyteller/last_death
 	var/pestra_storyteller = /datum/storyteller/pestra
-	var/dendor_storyteller = /datum/storyteller/dendor
-	var/ravox_storyteller = /datum/storyteller/ravox
+	var/dendor_storyteller = /datum/storyteller/blissrose
+	var/ravox_storyteller = /datum/storyteller/wanderer
 	var/xylix_storyteller = /datum/storyteller/xylix
 	var/malum_storyteller = /datum/storyteller/malum
 	var/abyssor_storyteller = /datum/storyteller/abyssor
-	var/eora_storyteller = /datum/storyteller/eora
+	var/eora_storyteller = /datum/storyteller/moonbeam
 
-	data += "<div style='text-align: center; font-size: 1.3em; color: #c0a828; margin: 20px 0 10px 0;'><b>THE TEN</b></div>"
+	data += "<div style='text-align: center; font-size: 1.3em; color: #c0a828; margin: 20px 0 10px 0;'><b>NEW GODS</b></div>"
 	data += "<div style='border-top: 3px solid #404040; margin: 0 auto 30px; width: 91.5%;'></div>"
 
 	data += "<div style='width: 91.5%; margin: 0 auto 40px;'>"
@@ -507,17 +507,17 @@ GLOBAL_LIST_EMPTY(respawncounts)
 		Laws and decrees: [GLOB.vanderlin_round_stats[STATS_LAWS_AND_DECREES_MADE]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(astrata_storyteller, STATS_LAWS_AND_DECREES_MADE))])<br>\
 		Slurs spoken: [GLOB.vanderlin_round_stats[STATS_SLURS_SPOKEN]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(astrata_storyteller, STATS_SLURS_SPOKEN))])", astrata_storyteller)
 
-	// Dendor
-	data += god_ui_block("DENDOR", "#412938", "#66745c", "\
+	// Blissrose
+	data += god_ui_block("BLISSROSE", "#412938", "#66745c", "\
 		Number of followers: [dendor_followers] ([get_colored_influence_value(SSgamemode.get_follower_influence(dendor_storyteller))])<br>\
 		Trees felled: [GLOB.vanderlin_round_stats[STATS_TREES_CUT]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(dendor_storyteller, STATS_TREES_CUT))])<br>\
 		Plants harvested: [GLOB.vanderlin_round_stats[STATS_PLANTS_HARVESTED]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(dendor_storyteller, STATS_PLANTS_HARVESTED))])<br>\
 		Forest deaths: [GLOB.vanderlin_round_stats[STATS_FOREST_DEATHS]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(dendor_storyteller, STATS_FOREST_DEATHS))])<br>\
 		Number of verewolves: [GLOB.vanderlin_round_stats[STATS_WEREVOLVES]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(dendor_storyteller, STATS_WEREVOLVES))])<br>\
-		Sacrifices to Dendor: [GLOB.vanderlin_round_stats[STATS_DENDOR_SACRIFICES]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(dendor_storyteller, STATS_DENDOR_SACRIFICES))])", dendor_storyteller)
+		Sacrifices to Blissrose: [GLOB.vanderlin_round_stats[STATS_DENDOR_SACRIFICES]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(dendor_storyteller, STATS_DENDOR_SACRIFICES))])", dendor_storyteller)
 
-	// Ravox
-	data += god_ui_block("RAVOX", "#2c232d", "#710f0f", "\
+	// Wanderer
+	data += god_ui_block("WANDERER", "#2c232d", "#710f0f", "\
 		Number of followers: [ravox_followers] ([get_colored_influence_value(SSgamemode.get_follower_influence(ravox_storyteller))])<br>\
 		Combat skills learned: [GLOB.vanderlin_round_stats[STATS_COMBAT_SKILLS]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(ravox_storyteller, STATS_COMBAT_SKILLS))])<br>\
 		Parries made: [GLOB.vanderlin_round_stats[STATS_PARRIES]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(ravox_storyteller, STATS_PARRIES))])<br>\
@@ -525,8 +525,8 @@ GLOBAL_LIST_EMPTY(respawncounts)
 		Warcries made: [GLOB.vanderlin_round_stats[STATS_WARCRIES]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(ravox_storyteller, STATS_WARCRIES))])<br>\
 		Yields made: [GLOB.vanderlin_round_stats[STATS_YIELDS]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(ravox_storyteller, STATS_YIELDS))])", ravox_storyteller)
 
-	// Eora
-	data += god_ui_block("EORA", "#a95063", "#e7c3da", "\
+	// Moonbeam
+	data += god_ui_block("MOONBEAM", "#a95063", "#e7c3da", "\
 		Number of followers: [eora_followers] ([get_colored_influence_value(SSgamemode.get_follower_influence(eora_storyteller))])<br>\
 		Marriages made: [GLOB.vanderlin_round_stats[STATS_MARRIAGES]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(eora_storyteller, STATS_MARRIAGES))])<br>\
 		Number of parents: [GLOB.vanderlin_round_stats[STATS_PARENTS]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(eora_storyteller, STATS_PARENTS))])<br>\
@@ -534,21 +534,21 @@ GLOBAL_LIST_EMPTY(respawncounts)
 		Hands held: [GLOB.vanderlin_round_stats[STATS_HANDS_HELD]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(eora_storyteller, STATS_HANDS_HELD))])<br>\
 		Number of pacifists: [GLOB.vanderlin_round_stats[STATS_PACIFISTS]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(eora_storyteller, STATS_PACIFISTS))])", eora_storyteller)
 
-	// Necra
-	data += god_ui_block("NECRA", "#2a2459", "#4c82a8", "\
-		Number of followers: [necra_followers] ([get_colored_influence_value(SSgamemode.get_follower_influence(necra_storyteller))])<br>\
-		Total deaths: [GLOB.vanderlin_round_stats[STATS_DEATHS]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(necra_storyteller, STATS_DEATHS))])<br>\
-		Graves consecrated: [GLOB.vanderlin_round_stats[STATS_GRAVES_CONSECRATED]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(necra_storyteller, STATS_GRAVES_CONSECRATED))])<br>\
-		Graves robbed: [GLOB.vanderlin_round_stats[STATS_GRAVES_ROBBED]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(necra_storyteller, STATS_GRAVES_ROBBED))])<br>\
-		Deadites killed: [GLOB.vanderlin_round_stats[STATS_DEADITES_KILLED]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(necra_storyteller, STATS_DEADITES_KILLED))])<br>\
-		Vampires killed: [GLOB.vanderlin_round_stats[STATS_VAMPIRES_KILLED]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(necra_storyteller, STATS_VAMPIRES_KILLED))])", necra_storyteller)
+	// Last Death
+	data += god_ui_block("LAST DEATH", "#2a2459", "#4c82a8", "\
+		Number of followers: [last_death_followers] ([get_colored_influence_value(SSgamemode.get_follower_influence(last_death_storyteller))])<br>\
+		Total deaths: [GLOB.vanderlin_round_stats[STATS_DEATHS]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(last_death_storyteller, STATS_DEATHS))])<br>\
+		Graves consecrated: [GLOB.vanderlin_round_stats[STATS_GRAVES_CONSECRATED]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(last_death_storyteller, STATS_GRAVES_CONSECRATED))])<br>\
+		Graves robbed: [GLOB.vanderlin_round_stats[STATS_GRAVES_ROBBED]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(last_death_storyteller, STATS_GRAVES_ROBBED))])<br>\
+		Deadites killed: [GLOB.vanderlin_round_stats[STATS_DEADITES_KILLED]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(last_death_storyteller, STATS_DEADITES_KILLED))])<br>\
+		Vampires killed: [GLOB.vanderlin_round_stats[STATS_VAMPIRES_KILLED]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(last_death_storyteller, STATS_VAMPIRES_KILLED))])", last_death_storyteller)
 
 	data += "</div>"
 
 	data += "<div style='display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px;'>"
 
-	// Noc
-	data += god_ui_block("NOC", "#4e72a1", "#282137", "\
+	// Lunaria
+	data += god_ui_block("LUNARIA", "#4e72a1", "#282137", "\
 		Number of followers: [noc_followers] ([get_colored_influence_value(SSgamemode.get_follower_influence(noc_storyteller))])<br>\
 		Books printed: [GLOB.vanderlin_round_stats[STATS_BOOKS_PRINTED]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(noc_storyteller, STATS_BOOKS_PRINTED))])<br>\
 		Literacy taught: [GLOB.vanderlin_round_stats[STATS_LITERACY_TAUGHT]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(noc_storyteller, STATS_LITERACY_TAUGHT))])<br>\
@@ -595,14 +595,14 @@ GLOBAL_LIST_EMPTY(respawncounts)
 	data += "</div></div>"
 
 	// Inhumen Gods Section
-	var/zizo_followers = GLOB.patron_follower_counts["Zizo"] || 0
+	var/zizo_followers = GLOB.patron_follower_counts["Tenebrase"] || 0
 	var/graggar_followers = GLOB.patron_follower_counts["Graggar"] || 0
-	var/baotha_followers = GLOB.patron_follower_counts["Baotha"] || 0
+	var/baotha_followers = GLOB.patron_follower_counts["Lamashtu"] || 0
 	var/matthios_followers = GLOB.patron_follower_counts["Matthios"] || 0
 
-	var/zizo_storyteller = /datum/storyteller/zizo
+	var/zizo_storyteller = /datum/storyteller/tenebrase
 	var/graggar_storyteller = /datum/storyteller/graggar
-	var/baotha_storyteller = /datum/storyteller/baotha
+	var/baotha_storyteller = /datum/storyteller/lamashtu
 	var/matthios_storyteller = /datum/storyteller/matthios
 
 	data += "<div style='text-align: center; font-size: 1.3em; color: #AA0000; margin: 20px 0 10px 0;'><b>INHUMEN GODS</b></div>"
@@ -620,8 +620,8 @@ GLOBAL_LIST_EMPTY(respawncounts)
 		Value offered to his idol: [GLOB.vanderlin_round_stats[STATS_SHRINE_VALUE]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(matthios_storyteller, STATS_SHRINE_VALUE))])<br>\
 		Number of greedy people: [GLOB.vanderlin_round_stats[STATS_GREEDY_PEOPLE]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(matthios_storyteller, STATS_GREEDY_PEOPLE))])", matthios_storyteller)
 
-	// Baotha
-	data += god_ui_block("BAOTHA", "#46254a", "#e2abee", "\
+	// Lamashtu
+	data += god_ui_block("LAMASHTU", "#46254a", "#e2abee", "\
 		Number of followers: [baotha_followers] ([get_colored_influence_value(SSgamemode.get_follower_influence(baotha_storyteller))])<br>\
 		Alcohol consumed: [round(GLOB.vanderlin_round_stats[STATS_ALCOHOL_CONSUMED])] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(baotha_storyteller, STATS_ALCOHOL_CONSUMED))])<br>\
 		Drugs snorted: [GLOB.vanderlin_round_stats[STATS_DRUGS_SNORTED]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(baotha_storyteller, STATS_DRUGS_SNORTED))])<br>\
@@ -638,10 +638,10 @@ GLOBAL_LIST_EMPTY(respawncounts)
 		Organs eaten: [GLOB.vanderlin_round_stats[STATS_ORGANS_EATEN]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(graggar_storyteller, STATS_ORGANS_EATEN))])<br>\
 		People gibbed: [GLOB.vanderlin_round_stats[STATS_PEOPLE_GIBBED]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(graggar_storyteller, STATS_PEOPLE_GIBBED))])", graggar_storyteller)
 
-	// Zizo
-	data += god_ui_block("ZIZO", "#661239", "#ed9da3", "\
+	// Tenebrase
+	data += god_ui_block("TENEBRASE", "#661239", "#ed9da3", "\
 		Number of followers: [zizo_followers] ([get_colored_influence_value(SSgamemode.get_follower_influence(zizo_storyteller))])<br>\
-		Zizo praised: [GLOB.vanderlin_round_stats[STATS_ZIZO_PRAISED]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(zizo_storyteller, STATS_ZIZO_PRAISED))])<br>\
+		Tenebrase praised: [GLOB.vanderlin_round_stats[STATS_ZIZO_PRAISED]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(zizo_storyteller, STATS_ZIZO_PRAISED))])<br>\
 		Deadites woken up: [GLOB.vanderlin_round_stats[STATS_DEADITES_WOKEN_UP]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(zizo_storyteller, STATS_DEADITES_WOKEN_UP))])<br>\
 		Tortures performed: [GLOB.vanderlin_round_stats[STATS_TORTURES]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(zizo_storyteller, STATS_TORTURES))])<br>\
 		Nobles killed: [GLOB.vanderlin_round_stats[STATS_NOBLE_DEATHS]] ([get_colored_influence_value(SSgamemode.calculate_specific_influence(zizo_storyteller, STATS_NOBLE_DEATHS))])<br>\

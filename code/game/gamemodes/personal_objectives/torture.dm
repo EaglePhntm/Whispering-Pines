@@ -25,12 +25,12 @@
 		complete_objective(victim)
 
 /datum/objective/torture/proc/complete_objective(mob/living/victim)
-	to_chat(owner.current, span_greentext("You have extracted the truth through pain, satisfying Zizo!"))
+	to_chat(owner.current, span_greentext("You have extracted the truth through pain, satisfying Tenebrase!"))
 	owner.current.adjust_triumphs(2)
 	completed = TRUE
-	adjust_storyteller_influence("Zizo", 20)
+	adjust_storyteller_influence("Tenebrase", 20)
 	escalate_objective()
 	UnregisterSignal(owner.current, COMSIG_TORTURE_PERFORMED)
 
 /datum/objective/torture/update_explanation_text()
-	explanation_text = "Torture someone until they beg for mercy to please Zizo!"
+	explanation_text = "Torture someone until they beg for mercy to please Tenebrase!"

@@ -10,7 +10,7 @@
 /datum/species/human/halfdrow
 	name = "Half-Drow"
 	id = "human"
-	desc = "The child of a Dark Elf and Humen. \
+	desc = "The child of a Dark Elf and Human. \
 	\n\n\
 	The distinction between Half-Elves and 'Half-Drow' has been a subject of debate for centuries. \
 	While similar in physicality and longevity to their non-drow cousins, their origins cause them to face discrimination akin to their elven side. \
@@ -120,7 +120,7 @@
 
 /datum/species/human/halfdrow/get_skin_list()
 	return sortList(list(
-		"Zizo-Cursed" = SKIN_COLOR_ZIZO_CURSED, // - (Pale)
+		"Tenebrase-Cursed" = SKIN_COLOR_ZIZO_CURSED, // - (Pale)
 		"Parasite-Taineted" = SKIN_COLOUR_PARASITE_TAINTED, // - (Light purple)
 		"Mushroom-Minded" = SKIN_COLOR_MUSHROOM_MINDED, // - (Mid purple)
 		"Cave-Attuned" = SKIN_COLOR_CAVE_ATTUNED, // - (Deep purple)

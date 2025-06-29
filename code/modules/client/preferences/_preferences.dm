@@ -1528,7 +1528,7 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 								if(!name)
 									name = "Slot[i]"
 								choices[name] = i
-					var/choice = browser_input_list(user, "WHO IS YOUR HERO?", "NECRA AWAITS", choices, real_name)
+					var/choice = browser_input_list(user, "WHO IS YOUR HERO?", "LAST DEATH AWAITS", choices, real_name)
 					if(choice)
 						choice = choices[choice]
 						if(!load_character(choice))

@@ -7,7 +7,7 @@
 	outfit = /datum/outfit/job/adventurer/vaquero
 	horse = /mob/living/simple_animal/hostile/retaliate/saigabuck/tame/saddled
 	cmode_music = 'sound/music/cmode/adventurer/combat_vaquero.ogg'
-	category_tags = list(CTAG_ADVENTURER)
+	category_tags = list(CTAG_DISABLED)
 	min_pq = 1
 	pickprob = 30
 	maximum_possible_slots = 1

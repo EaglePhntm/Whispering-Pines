@@ -3,7 +3,7 @@
 	greet_text = "An Emir hailing from the Zybantu Ziggurat, here on business for the Mercator's Guild to the Isle of the Enigma."
 	allowed_sexes = list(MALE)
 	allowed_races = list(
-		"Humen",
+		"Human",
 		"Rakshari",
 		"Elf",
 		"Half-Elf",
@@ -67,7 +67,7 @@
 	greet_text = "An Amirah hailing from the Zybantu Ziggurat, here on business for the Mercator's Guild to the Isle of the Enigma."
 	allowed_sexes = list(FEMALE)
 	allowed_races = list(
-		"Humen",
+		"Human",
 		"Rakshari",
 		"Elf",
 		"Half-Elf",
@@ -126,7 +126,7 @@
 	greet_text = "You are a furusiyya, pledged to the Emir and the Amirah. Make sure they come out alive of that place."
 	allowed_sexes = list(MALE)
 	allowed_races = list(
-	"Humen",
+	"Human",
 	"Elf",
 	"Half-Elf",
 	"Dwarf",
@@ -240,7 +240,7 @@
 	greet_text = "You are the Amirah's confident and most loyal protector, you shan't let them die in these wretched lands."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
-		"Humen",
+		"Human",
 		"Elf",
 		"Rakshari",
 		"Half-Elf",

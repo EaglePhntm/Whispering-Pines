@@ -393,27 +393,27 @@ GLOBAL_LIST_INIT(badomens, list())
 	GLOB.badomens -= input
 
 /datum/round_event_control/proc/badomen(eventreason)
-	var/used = "Zizo."
+	var/used = "Tenebrase."
 	var/title = "Bad Omen"
 	var/sound = 'sound/misc/evilevent.ogg'
 	switch(eventreason)
 		if(OMEN_ROUNDSTART)
 			used = pick( \
-				"Zizo.", \
+				"Tenebrase.", \
 				"Unholy invocations channel the will of Her.", \
 				"Forbidden rituals cause echoes through the plane.", \
 				"Whispers of the Dark Lady in the shadows.", \
-				"The servants of Zizo undermine the Ten.", \
+				"The servants of Tenebrase undermine new gods.", \
 				"Her influence becomes more tangible...", \
 				"A foul curse temporarily takes the land.", \
 				"The dead churn and dig at their graves.", \
 			)
 			title = pick( \
-				"Zizo Sneers", \
+				"Tenebrase Sneers", \
 				"The Dark Lady Watches", \
-				"Zizo's Attention", \
+				"Tenebrase's Attention", \
 				"She Peers", \
-				"Zizo Smirks", \
+				"Tenebrase Smirks", \
 			)
 			sound = 'sound/misc/gods/zizo_omen.ogg'
 		if(OMEN_NOLORD)
@@ -427,7 +427,7 @@ GLOBAL_LIST_INIT(badomens, list())
 		if(OMEN_SKELETONSIEGE)
 			used = "Unwelcome visitors!"
 		if("ascend")
-			used = "Zizo will rise once again."
+			used = "Tenebrase will rise once again."
 		if("psycross")
 			used = "You have angered the gods!"
 	if(!eventreason)

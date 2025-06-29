@@ -315,9 +315,9 @@
 	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/gatemaster.dmi'
 	icon_state = "master_helm"
 
-//................. Zizo Barbute .............. //
+//................. Tenebrase Barbute .............. //
 
-/obj/item/clothing/head/helmet/visored/zizo
+/obj/item/clothing/head/helmet/visored/tenebrase
 	name = "darksteel barbute"
 	desc = "A darksteel barbute. This one has an adjustable visor. Called forth from the edge of what should be known. In Her name."
 	icon_state = "zizobarbute"

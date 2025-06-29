@@ -427,6 +427,19 @@
 	duration = 20 SECONDS
 
 /atom/movable/screen/alert/status_effect/debuff/drunk
-	name = "Eoran Wine"
+	name = "Moonbeamite Wine"
 	desc = span_warning("I am intoxicated from ambromsia not meant for mortal mouths.\n")
 	icon_state = "drunk"
+
+
+
+/datum/status_effect/debuff/recloned
+	id = "recloned"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/recloned
+	duration = 15 MINUTES
+	effectedstats = list(STATKEY_STR = -8, STATKEY_SPD = -4, STATKEY_END = -6, STATKEY_CON = -8)
+
+/atom/movable/screen/alert/status_effect/debuff/recloned
+	name = "Cloning Sickness"
+	desc = "<span class='warning'>Where am I? What happened? I feel so weak and sick...</span>\n"
+	icon_state = "muscles"

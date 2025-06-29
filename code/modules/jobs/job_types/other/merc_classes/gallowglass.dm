@@ -4,7 +4,7 @@
 	tutorial = "A claymore wielding mercanary hailing from the land of Kaledon, you are a fighter for coin, having fled the Grenzelhoftian occupation of your homeland. Your Kerns fight under you."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
-		"Humen",
+		"Human",
 		"Half-Elf",
 		"Dwarf"
 	)

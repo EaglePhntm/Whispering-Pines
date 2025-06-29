@@ -12,7 +12,7 @@
 
 /obj/item/bouquet/rosa
 	name = "rosa bouquet"
-	desc =  "A bouquet of rosas, one of eora's most beautiful flowers. They are a symbol of love and devotion."
+	desc =  "A bouquet of rosas, one of moonbeam's most beautiful flowers. They are a symbol of love and devotion."
 	icon_state = "bouquet_rosa"
 
 /obj/item/bouquet/salvia
@@ -47,7 +47,7 @@
 
 /obj/item/clothing/head/flowercrown/rosa
 	name = "rosa crown"
-	desc = "A crown of rosas, often worn during weddings officated by Eoran priests."
+	desc = "A crown of rosas, often worn during weddings officated by Moonbeamite priests."
 	item_state = "rosa_crown"
 	icon_state = "rosa_crown"
 

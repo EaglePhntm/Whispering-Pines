@@ -1,5 +1,5 @@
 /obj/structure/fake_machine/atm
-	name = "MEISTER"
+	name = "AMMOBIN"
 	desc = "Stores and withdraws currency for accounts managed by the Kingdom."
 	icon = 'icons/roguetown/misc/machines.dmi'
 	icon_state = "atm"
@@ -31,21 +31,21 @@
 			return
 		var/list/choicez = list()
 		if(amt >= 10)
-			choicez += "GOLD"
+			choicez += "LARGE"
 		if(amt >= 5)
-			choicez += "SILVER"
-		if(amt > 1) choicez += "BRONZE"
+			choicez += "MEDIUM"
+		if(amt > 1) choicez += "SMALL"
 		var/selection = input(user, "Make a Selection", src) as null|anything in choicez
 		if(!selection)
 			return
 		amt = SStreasury.bank_accounts[H]
 		var/mod = 1
-		if(selection == "GOLD")
+		if(selection == "LARGE")
 			mod = 10
-		if(selection == "SILVER")
+		if(selection == "MEDIUM")
 			mod = 5
-		if(selection == "BRONZE") mod = 1
-		var/coin_amt = input(user, "There is [SStreasury.treasury_value] mammon in the treasury. You may withdraw [amt/mod] [selection] COINS from your account.", src) as null|num
+		if(selection == "SMALL") mod = 1
+		var/coin_amt = input(user, "There is [SStreasury.treasury_value] casings in the treasury. You may withdraw [amt/mod] [selection] CALS from your account.", src) as null|num
 		coin_amt = round(coin_amt)
 		if(coin_amt < 1)
 			return
@@ -60,10 +60,9 @@
 			return
 		budget2change(coin_amt*mod, user, selection)
 	else
-		to_chat(user, "<span class='warning'>The machine bites my finger.</span>")
+		to_chat(user, "<span class='warning'>The machine scans my fingerprint.</span>")
 		icon_state = "atm-b"
-		H.flash_fullscreen("redflash3")
-		playsound(H, 'sound/combat/hits/bladed/genstab (1).ogg', 100, FALSE, -1)
+		playsound(H, 'sound/misc/machineyes.ogg', 100, FALSE, -1)
 		SStreasury.create_bank_account(H)
 		if(H.mind)
 			var/datum/job/target_job = SSjob.GetJob(H.mind.assigned_role)
@@ -98,7 +97,7 @@
 				var/list/deposit_results = SStreasury.generate_money_account(P.get_real_price(), H)
 				if(islist(deposit_results))
 					if(deposit_results[2] != 0)
-						say("Your deposit was taxed [deposit_results[2]] mammon.")
+						say("Your deposit was taxed [deposit_results[2]] casings.")
 						record_featured_stat(FEATURED_STATS_TAX_PAYERS, H, deposit_results[2])
 						GLOB.vanderlin_round_stats[STATS_TAXES_COLLECTED] += deposit_results[2]
 				qdel(P)

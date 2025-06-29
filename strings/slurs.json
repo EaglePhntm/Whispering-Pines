@@ -1,6 +1,6 @@
 {
 	"slurs": {
-		"Humen": [
+		"Human": [
 			"spoon ear",
 			"round ear",
 			"humie",
@@ -29,8 +29,8 @@
 			"dagger ear",
 			"dagger head",
 			"cursed blood",
-			"zizo cursed",
-			"zizo dominated",
+			"tenebrase cursed",
+			"tenebrase dominated",
 			"spider kisser",
 			"dirt elf",
 			"dirt elves",
@@ -52,8 +52,8 @@
 			"half breed",
 			"halfie",
 			"cursed blood",
-			"zizo cursed",
-			"zizo dominated",
+			"tenebrase cursed",
+			"tenebrase dominated",
 			"drow"
 		],
 		"Dwarf": [
@@ -126,14 +126,14 @@
 			"rock rat"
 		],
 		"Demihuman": [
-			"zizo's pet",
-			"drow pet",
-			"drow spawn",
+			"furry demon",
+			"hair ball",
+			"beast spawn",
 			"flea bitten",
 			"homunculus"
 		],
 		"Harpy": [
-			"eora's pet",
+			"moonbeam's pet",
 			"birdbrain",
 			"egg layer",
 			"feather head",

@@ -64,7 +64,7 @@
 #define SKIN_COLOR_FUNGUS_STAINED "897489" //Pink
 #define SKIN_COLOR_DEPTH_DEPARTED "5f5f70" //Grey-blue
 
-//HUMEN SKIN TONES
+//HUMAN SKIN TONES
 #define SKIN_COLOR_ICECAP "fff0e9" //Pale as SHIT!!
 #define SKIN_COLOR_ARCTIC "ffe0d1" //White 1
 #define SKIN_COLOR_TUNDRA "fcccb3" //White 2

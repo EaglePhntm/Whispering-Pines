@@ -138,10 +138,10 @@
 	stressadd = -3
 	desc = span_green("This music is divine.")
 
-/datum/stressevent/eora
+/datum/stressevent/moonbeam
 	stressadd = -4
 	timer = INFINITY
-	desc = span_boldgreen("Eora brings me peace.")
+	desc = span_boldgreen("Moonbeam brings me peace.")
 
 // Bard buffs below
 

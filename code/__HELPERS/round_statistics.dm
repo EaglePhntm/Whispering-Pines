@@ -61,14 +61,14 @@
 #define STATS_ASTRATA_REVIVALS "astrata_revivals"
 #define STATS_SLURS_SPOKEN "slurs_spoken"
 
-// Noc
+// Lunaria
 #define STATS_BOOKS_PRINTED "books_printed"
 #define STATS_LITERACY_TAUGHT "literacy_taught"
 #define STATS_ILLITERATES "illiterates"
 #define STATS_SKILLS_DREAMED "skills_dreamed"
 #define STATS_MANA_SPENT "mana_spent"
 
-// Necra
+// Last Death
 #define STATS_DEATHS "deaths"
 #define STATS_GRAVES_CONSECRATED "graves_consecrated"
 #define STATS_GRAVES_ROBBED "graves_robbed"
@@ -82,14 +82,14 @@
 #define STATS_ANIMALS_BRED "animals_bred"
 #define STATS_FOOD_ROTTED "food_rotted"
 
-// Dendor
+// Blissrose
 #define STATS_TREES_CUT "trees_cut"
 #define STATS_PLANTS_HARVESTED "plants_harvested"
 #define STATS_WEREVOLVES "werevolves"
 #define STATS_DENDOR_SACRIFICES "dendor_sacrifices"
 #define STATS_FOREST_DEATHS "forest_deaths"
 
-// Ravox
+// Wanderer
 #define STATS_COMBAT_SKILLS "combat_skills"
 #define STATS_PARRIES "parries"
 #define STATS_WARCRIES "warcries"
@@ -117,14 +117,14 @@
 #define STATS_LEECHES_EMBEDDED "leeches_embedded"
 #define STATS_PEOPLE_DROWNED "people_drowned"
 
-// Eora
+// Moonbeam
 #define STATS_PARENTS "parents"
 #define STATS_MARRIAGES "marriages"
 #define STATS_HUGS_MADE "hugs_made"
 #define STATS_HANDS_HELD "hands_held"
 #define STATS_PACIFISTS "pacifists"
 
-// Zizo
+// Tenebrase
 #define STATS_ZIZO_PRAISED "zizo_praised"
 #define STATS_DEADITES_WOKEN_UP "deadites_woken_up"
 #define STATS_CLERGY_DEATHS "clergy_deaths"
@@ -137,7 +137,7 @@
 #define STATS_ASSASSINATIONS "assassinations"
 #define STATS_LIMBS_BITTEN "limbs_bitten"
 
-// Baotha
+// Lamashtu
 #define STATS_DRUGS_SNORTED "snorted_drugs"
 #define STATS_ALCOHOL_CONSUMED "alcohol_consumed"
 #define STATS_ALCOHOLICS "alcoholics"

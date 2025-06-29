@@ -298,5 +298,5 @@
 
 /obj/item/clothing/neck/menears
 	name = "menear necklace"
-	desc = "A grim necklace made to show off the wearer's macabre collection of cut off humen ears."
+	desc = "A grim necklace made to show off the wearer's macabre collection of cut off human ears."
 	icon_state = "menears"

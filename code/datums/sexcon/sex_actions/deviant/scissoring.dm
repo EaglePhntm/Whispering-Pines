@@ -12,7 +12,7 @@
 		return
 	if(!target.getorganslot(ORGAN_SLOT_VAGINA))
 		return
-	if((HAS_TRAIT(target, TRAIT_TINY) && !(HAS_TRAIT(user, TRAIT_TINY))) || (HAS_TRAIT(user, TRAIT_TINY) && !(HAS_TRAIT(target, TRAIT_TINY)))) //Big check to make sure only seelie<->seelie can do this, not seelie<->humen
+	if((HAS_TRAIT(target, TRAIT_TINY) && !(HAS_TRAIT(user, TRAIT_TINY))) || (HAS_TRAIT(user, TRAIT_TINY) && !(HAS_TRAIT(target, TRAIT_TINY)))) //Big check to make sure only seelie<->seelie can do this, not seelie<->human
 		return FALSE
 	return TRUE
 

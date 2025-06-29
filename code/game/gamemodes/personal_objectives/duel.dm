@@ -13,10 +13,10 @@
 /datum/objective/ravox_duel/proc/on_duel_won()
 	duels_won++
 	if(duels_won >= duels_required && !completed)
-		to_chat(owner.current, span_greentext("You have proven your worth in combat! Ravox is pleased!"))
+		to_chat(owner.current, span_greentext("You have proven your worth in combat! Wanderer is pleased!"))
 		owner.current.adjust_triumphs(2)
 		completed = TRUE
-		adjust_storyteller_influence("Ravox", 25)
+		adjust_storyteller_influence("Wanderer", 25)
 		escalate_objective()
 
 /datum/objective/ravox_duel/update_explanation_text()

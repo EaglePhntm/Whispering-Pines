@@ -1,9 +1,9 @@
 /datum/job/undertaker
 	title = "Gravetender"
-	tutorial = "As a servant of Necra, you embody the sanctity of her domain, \
+	tutorial = "As a servant of Last Death, you embody the sanctity of her domain, \
 	ensuring the dead rest peacefully within the earth. \
 	You are the bane of grave robbers and necromancers, \
-	and your holy magic brings undead back into Necra's embrace: \
+	and your holy magic brings undead back into Last Death's embrace: \
 	the only rightful place for lost souls."
 	flag = GRAVETENDER
 	department_flag = CHURCHMEN
@@ -17,22 +17,22 @@
 
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_PLAYER_NONHERETICAL
-	allowed_patrons = list(/datum/patron/divine/necra)
+	allowed_patrons = list(/datum/patron/divine/last_death)
 
 	outfit = /datum/outfit/job/undertaker
 	give_bank_account = TRUE
 	cmode_music = 'sound/music/cmode/church/CombatGravekeeper.ogg'
 
 /datum/outfit/job/undertaker
-	allowed_patrons = list(/datum/patron/divine/necra)
+	allowed_patrons = list(/datum/patron/divine/last_death)
 	job_bitflag = BITFLAG_CHURCH
 
 /datum/outfit/job/undertaker/pre_equip(mob/living/carbon/human/H)
 	..()
 	head = /obj/item/clothing/head/padded/deathshroud
-	neck = /obj/item/clothing/neck/psycross/silver/necra
+	neck = /obj/item/clothing/neck/psycross/silver/last_death
 	pants = /obj/item/clothing/pants/trou/leather/mourning
-	armor = /obj/item/clothing/shirt/robe/necra
+	armor = /obj/item/clothing/shirt/robe/last_death
 	shoes = /obj/item/clothing/shoes/boots
 	belt = /obj/item/storage/belt/leather
 	beltl = /obj/item/storage/keyring/gravetender

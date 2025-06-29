@@ -1,5 +1,5 @@
 /datum/antagonist/zombie
-	name = "Zombie"	// Deadite plague of Zizo
+	name = "Zombie"	// Deadite plague of Tenebrase
 	antagpanel_category = "Zombie"
 	antag_hud_type = ANTAG_HUD_HIDDEN
 	antag_hud_name = "zombie"
@@ -210,7 +210,7 @@
 			zombie_part.update_disabled()
 	zombie.update_body()
 	zombie.cmode_music = 'sound/music/cmode/combat_weird.ogg'
-	zombie.set_patron(/datum/patron/inhumen/zizo)
+	zombie.set_patron(/datum/patron/inhumen/tenebrase)
 
 	for(var/datum/status_effect/effect in zombie.status_effects) //necessary to prevent exploits
 		zombie.remove_status_effect(effect)

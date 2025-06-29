@@ -328,10 +328,10 @@
 	hammers_per_item = 7
 	craftdiff = 3
 
-/datum/artificer_recipe/psycross/noc
-	name = "Noc Psycross"
+/datum/artificer_recipe/psycross/lunaria
+	name = "Lunaria Psycross"
 	required_item = /obj/item/natural/wood/plank
-	created_item = /obj/item/clothing/neck/psycross/noc
+	created_item = /obj/item/clothing/neck/psycross/lunaria
 	hammers_per_item = 5
 	craftdiff = 1
 
@@ -342,10 +342,10 @@
 	hammers_per_item = 5
 	craftdiff = 2
 
-/datum/artificer_recipe/psycross/dendor
-	name = "Dendor Psycross"
+/datum/artificer_recipe/psycross/blissrose
+	name = "Blissrose Psycross"
 	required_item = /obj/item/ingot/silver
-	created_item = /obj/item/clothing/neck/psycross/silver/dendor
+	created_item = /obj/item/clothing/neck/psycross/silver/blissrose
 	hammers_per_item = 5
 	craftdiff = 2
 
@@ -356,17 +356,17 @@
 	hammers_per_item = 5
 	craftdiff = 2
 
-/datum/artificer_recipe/psycross/necra
-	name = "Necra Psycross"
+/datum/artificer_recipe/psycross/last_death
+	name = "Last Death Psycross"
 	required_item = /obj/item/ingot/silver
-	created_item = /obj/item/clothing/neck/psycross/silver/necra
+	created_item = /obj/item/clothing/neck/psycross/silver/last_death
 	hammers_per_item = 5
 	craftdiff = 2
 
-/datum/artificer_recipe/psycross/ravox
-	name = "Ravox Psycross"
+/datum/artificer_recipe/psycross/wanderer
+	name = "Wanderer Psycross"
 	required_item = /obj/item/ingot/silver
-	created_item = /obj/item/clothing/neck/psycross/silver/ravox
+	created_item = /obj/item/clothing/neck/psycross/silver/wanderer
 	hammers_per_item = 5
 	craftdiff = 2
 
@@ -377,10 +377,10 @@
 	hammers_per_item = 5
 	craftdiff = 2
 
-/datum/artificer_recipe/psycross/eora
-	name = "Eora Psycross"
+/datum/artificer_recipe/psycross/moonbeam
+	name = "Moonbeam Psycross"
 	required_item = /obj/item/ingot/silver
-	created_item = /obj/item/clothing/neck/psycross/silver/eora
+	created_item = /obj/item/clothing/neck/psycross/silver/moonbeam
 	hammers_per_item = 5
 	craftdiff = 2
 

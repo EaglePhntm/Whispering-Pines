@@ -1,6 +1,6 @@
 /datum/job/archivist
 	title = "Archivist"
-	tutorial = "A well-traveled and well-learned seeker of wisdom, the Archivist bears the mark of Noc's influence.\
+	tutorial = "A well-traveled and well-learned seeker of wisdom, the Archivist bears the mark of Lunaria's influence.\
 	Tasked with recording the court's events and educating the ungrateful whelps the monarch calls heirs.\
 	Your work may go unappreciated now, but one dae historians will sing of your dedication and insight."
 	flag = ARCHIVIST
@@ -43,11 +43,11 @@
 	beltl = /obj/item/storage/keyring/archivist
 	beltr = /obj/item/book/granter/spellbook/apprentice
 	backl = /obj/item/storage/backpack/satchel
-	neck = /obj/item/clothing/neck/psycross/noc
+	neck = /obj/item/clothing/neck/psycross/lunaria
 	backpack_contents = list(/obj/item/textbook = 1, /obj/item/natural/feather)
 
-	if(H.patron != /datum/patron/divine/noc)
-		H.set_patron(/datum/patron/divine/noc)
+	if(H.patron != /datum/patron/divine/lunaria)
+		H.set_patron(/datum/patron/divine/lunaria)
 
 	H.grant_language(/datum/language/elvish)
 	H.grant_language(/datum/language/dwarvish)

@@ -20,7 +20,7 @@
 	for(var/mob/living/carbon/human/H in GLOB.player_list)
 		if(!istype(H) || H.stat == DEAD || !H.client)
 			continue
-		if(!H.is_literate() && H.patron && istype(H.patron, /datum/patron/divine/noc))
+		if(!H.is_literate() && H.patron && istype(H.patron, /datum/patron/divine/lunaria))
 			has_valid_target = TRUE
 			break
 
@@ -32,7 +32,7 @@
 	for(var/mob/living/carbon/human/H in GLOB.player_list)
 		if(!istype(H) || H.stat == DEAD || !H.client)
 			continue
-		if(!H.is_literate() && H.patron && istype(H.patron, /datum/patron/divine/noc))
+		if(!H.is_literate() && H.patron && istype(H.patron, /datum/patron/divine/lunaria))
 			illiterate_noc_followers += H
 
 	if(!length(illiterate_noc_followers))
@@ -42,8 +42,8 @@
 	var/datum/objective/literacy/new_objective = new(owner = chosen_illiterate.mind)
 	chosen_illiterate.mind.add_personal_objective(new_objective)
 
-	to_chat(chosen_illiterate, span_userdanger("YOU ARE NOC'S CHOSEN!"))
-	to_chat(chosen_illiterate, span_notice("Noc demands you get literate! Learn to read to earn Noc's favor!"))
+	to_chat(chosen_illiterate, span_userdanger("YOU ARE LUNARIA'S CHOSEN!"))
+	to_chat(chosen_illiterate, span_notice("Lunaria demands you get literate! Learn to read to earn Lunaria's favor!"))
 	chosen_illiterate.playsound_local(chosen_illiterate, 'sound/ambience/noises/mystical (4).ogg', 100)
 
 	chosen_illiterate.mind.announce_personal_objectives()

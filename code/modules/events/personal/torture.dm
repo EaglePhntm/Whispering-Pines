@@ -20,7 +20,7 @@
 	for(var/mob/living/carbon/human/H in GLOB.player_list)
 		if(!istype(H) || H.stat == DEAD || !H.client)
 			continue
-		if(!H.patron || !istype(H.patron, /datum/patron/inhumen/zizo))
+		if(!H.patron || !istype(H.patron, /datum/patron/inhumen/tenebrase))
 			continue
 		return TRUE
 
@@ -32,7 +32,7 @@
 	for(var/mob/living/carbon/human/human_mob in GLOB.player_list)
 		if(!istype(human_mob) || human_mob.stat == DEAD || !human_mob.client)
 			continue
-		if(!human_mob.patron || !istype(human_mob.patron, /datum/patron/inhumen/zizo))
+		if(!human_mob.patron || !istype(human_mob.patron, /datum/patron/inhumen/tenebrase))
 			continue
 		valid_targets += human_mob
 
@@ -46,8 +46,8 @@
 
 	chosen_one.verbs |= /mob/living/carbon/human/proc/torture_victim
 
-	to_chat(chosen_one, span_userdanger("YOU ARE ZIZO'S CHOSEN!"))
-	to_chat(chosen_one, span_biginfo("Zizo demands suffering! Extract information through pain to earn Zizo's favor!"))
+	to_chat(chosen_one, span_userdanger("YOU ARE TENEBRASE'S CHOSEN!"))
+	to_chat(chosen_one, span_biginfo("Tenebrase demands suffering! Extract information through pain to earn Tenebrase's favor!"))
 	chosen_one.playsound_local(chosen_one, 'sound/misc/gods/zizo_omen.ogg', 100)
 
 	to_chat(chosen_one, span_notice("You have gained an ability to <b>torture</b> others!"))

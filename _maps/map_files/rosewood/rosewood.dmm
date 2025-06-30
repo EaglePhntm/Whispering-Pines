@@ -2624,7 +2624,7 @@
 /turf/open/floor/naturalstone,
 /area/rogue/under/cave)
 "bvL" = (
-/obj/structure/fluff/statue/astrata{
+/obj/structure/fluff/statue/asteria{
 	pixel_x = -17;
 	pixel_y = 9;
 	desc = "IMAGINE LUNARIA HERE pls";
@@ -7428,7 +7428,7 @@
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/indoors/town)
 "dYe" = (
-/obj/structure/fluff/statue/astrata{
+/obj/structure/fluff/statue/asteria{
 	pixel_x = -16;
 	pixel_y = 1
 	},
@@ -13442,12 +13442,12 @@
 /area/rogue/indoors/town)
 "hsi" = (
 /obj/structure/closet/crate/crafted_closet,
-/obj/item/clothing/head/roguehood/astrata,
-/obj/item/clothing/head/roguehood/astrata,
-/obj/item/clothing/head/roguehood/astrata,
-/obj/item/clothing/shirt/robe/astrata,
-/obj/item/clothing/shirt/robe/astrata,
-/obj/item/clothing/shirt/robe/astrata,
+/obj/item/clothing/head/roguehood/asteria,
+/obj/item/clothing/head/roguehood/asteria,
+/obj/item/clothing/head/roguehood/asteria,
+/obj/item/clothing/shirt/robe/asteria,
+/obj/item/clothing/shirt/robe/asteria,
+/obj/item/clothing/shirt/robe/asteria,
 /turf/open/floor/ruinedwood/darker,
 /area/rogue/indoors/town/church)
 "hsI" = (
@@ -21804,8 +21804,8 @@
 	pixel_x = 3
 	},
 /obj/item/clothing/neck/psycross/lunaria,
-/obj/item/clothing/neck/psycross/silver/astrata,
-/obj/item/clothing/neck/psycross/silver/astrata{
+/obj/item/clothing/neck/psycross/silver/asteria,
+/obj/item/clothing/neck/psycross/silver/asteria{
 	pixel_y = 4;
 	pixel_x = 5
 	},
@@ -38832,8 +38832,8 @@
 "vkE" = (
 /obj/effect/landmark/bounty_location{
 	completion_range = 5;
-	location_name = "In Front of Astrata's Statue";
-	name = "In Front of Astrata's Statue"
+	location_name = "In Front of Asteria's Statue";
+	name = "In Front of Asteria's Statue"
 	},
 /turf/open/floor/cobblerock/alt,
 /area/rogue/outdoors/town)

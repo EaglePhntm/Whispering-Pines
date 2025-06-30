@@ -152,10 +152,10 @@
 	block2add = FOV_BEHIND
 
 //............... Temple heavy helmets ......................//
-//............... Astrata Helmet ............... //
-/obj/item/clothing/head/helmet/heavy/necked/astrata
-	name = "astrata helmet"
-	desc = "A great helmet decorated with a golden sigil of the solar order and a maille neck cover. The dependable companion of many holy warriors of Astrata."
+//............... Asteria Helmet ............... //
+/obj/item/clothing/head/helmet/heavy/necked/asteria
+	name = "asteria helmet"
+	desc = "A great helmet decorated with a golden sigil of the solar order and a maille neck cover. The dependable companion of many holy warriors of Asteria."
 	icon_state = "astratahelm"
 	item_weight = 6 * GOLD_MULITPLIER
 
@@ -170,7 +170,7 @@
 //............... Last Death Helmet ............... //
 /obj/item/clothing/head/helmet/heavy/necked/last_death
 	name = "last death helmet"
-	desc = "A reinforced helmet shaped into the visage of a skull with a maille neck cover under the cloth. A symbol of authority for the battle servants of the Undermaiden."
+	desc = "A reinforced helmet shaped into the visage of a skull with a maille neck cover under the cloth. A symbol of authority for the battle servants of the Nameless Death."
 	icon_state = "last deathhelm"
 	item_weight = 6 * IRON_MULTIPLIER
 

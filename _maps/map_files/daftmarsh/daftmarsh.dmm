@@ -3051,7 +3051,7 @@
 /area/rogue/indoors/town/church)
 "cWQ" = (
 /obj/structure/fluff/walldeco/church/line,
-/obj/structure/fluff/statue/astrata,
+/obj/structure/fluff/statue/asteria,
 /turf/open/floor/churchmarble,
 /area/rogue/indoors/town/church/chapel)
 "cXi" = (
@@ -5811,7 +5811,7 @@
 /area/rogue/outdoors/town)
 "fNn" = (
 /obj/structure/table/wood/plain_alt,
-/obj/item/clothing/neck/psycross/silver/astrata,
+/obj/item/clothing/neck/psycross/silver/asteria,
 /turf/open/floor/blocks/newstone,
 /area/rogue/indoors/town/church)
 "fNB" = (
@@ -12591,12 +12591,12 @@
 /area/rogue/indoors/town)
 "mkg" = (
 /obj/structure/closet/crate/crafted_closet,
-/obj/item/clothing/head/roguehood/astrata,
-/obj/item/clothing/head/roguehood/astrata,
-/obj/item/clothing/head/roguehood/astrata,
-/obj/item/clothing/shirt/robe/astrata,
-/obj/item/clothing/shirt/robe/astrata,
-/obj/item/clothing/shirt/robe/astrata,
+/obj/item/clothing/head/roguehood/asteria,
+/obj/item/clothing/head/roguehood/asteria,
+/obj/item/clothing/head/roguehood/asteria,
+/obj/item/clothing/shirt/robe/asteria,
+/obj/item/clothing/shirt/robe/asteria,
+/obj/item/clothing/shirt/robe/asteria,
 /obj/machinery/light/fueled/wallfire/candle{
 	pixel_y = -32
 	},
@@ -13088,7 +13088,7 @@
 /area/rogue/outdoors/town/roofs)
 "mKy" = (
 /obj/structure/fluff/walldeco/church/line,
-/obj/structure/fluff/statue/astrata/bling,
+/obj/structure/fluff/statue/asteria/bling,
 /turf/open/floor/churchmarble,
 /area/rogue/indoors/town/church/chapel)
 "mKK" = (
@@ -19406,8 +19406,8 @@
 	pixel_x = 3
 	},
 /obj/item/clothing/neck/psycross/lunaria,
-/obj/item/clothing/neck/psycross/silver/astrata,
-/obj/item/clothing/neck/psycross/silver/astrata{
+/obj/item/clothing/neck/psycross/silver/asteria,
+/obj/item/clothing/neck/psycross/silver/asteria{
 	pixel_y = 4;
 	pixel_x = 5
 	},

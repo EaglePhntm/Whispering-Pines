@@ -961,6 +961,7 @@
 	stressadd = -5
 	desc = "<span class='green'>Pain makes it better.</span>"
 
+
 /mob/living/simple_animal/fuck_npc
 	name = "fucknpc"
 	desc = "used to hide in objects to fuck the user."
@@ -970,6 +971,9 @@
 	wander = FALSE
 	density = FALSE
 	var/cleanup_timer
+
+/mob/living/simple_animal/fuck_npc/Exit(atom/movable/AM, atom/newLoc)
+	return FALSE //dont move.
 
 /mob/living/simple_animal/fuck_npc/fem
 	gender = FEMALE

@@ -1,3 +1,8 @@
+//==============================================
+//	CHILL TOUCH
+//==============================================
+// Notes: I have taken creative liberties because I don't want to fuck with people's ability to be healed.
+// This now attaches a ghost hand to a targeted body part and does different things depending on the part
 /obj/effect/proc_holder/spell/invoked/chilltouch5e
 	name = "Chill Touch"
 	desc = "A skeletal hand grips your target, the targetted zone changes the effect."
@@ -39,6 +44,10 @@
 		hand.forceMove(target)
 		bodypart.add_embedded_object(hand, silent = TRUE, crit_message = FALSE)
 		target.visible_message(span_warning("A skeletal hand grips [target]'s [bodypart]!"), span_danger("A skeletal hand grips my [bodypart]!"))
+		if(user.zone_selected == BODY_ZONE_CHEST && !user.cmode && !target.cmode) //must be out of combat mode and have erp panel allowed for this prompt to appear
+			hand.pleasureaccepted = TRUE
+		else
+			hand.pleasureaccepted = FALSE
 		return ..()
 	return FALSE
 
@@ -57,6 +66,7 @@
 	var/pleasure = 5 //pleasurable quicker since they bleed inevitably due embed
 	var/curprocs = 0
 	var/procsmax = 180
+	var/pleasureaccepted = FALSE
 	var/mob/living/host //who are we stuck to?
 	var/obj/item/bodypart/bodypart //where are we stuck to?
 
@@ -72,6 +82,13 @@
 /obj/item/chilltouch5e/Initialize()
 	. = ..()
 	START_PROCESSING(SSobj, src)
+
+/obj/item/chilltouch5e/embedded(atom/embedded_target, obj/item/bodypart/part)
+	. = ..()
+	to_chat(part.owner, "<span class='warning'>hand attached to [part.owner]'s [part]!</span>")
+	if(part.owner)
+		host = part.owner
+		START_PROCESSING(SSobj, src)
 
 /obj/item/chilltouch5e/process()
 	var/hand_proc = pick(1,2,3,4,5)
@@ -96,13 +113,18 @@
 
 				target.adjustOxyLoss(oxy_drain*mult*2)
 			if(BODY_ZONE_CHEST) //pleasure if erp, hurt if not
-				to_chat(host, "<span class='danger'>[host] is pummeled by a skeletal hand!</span>")
-				playsound(get_turf(host), pick('sound/combat/hits/punch/punch_hard (1).ogg','sound/combat/hits/punch/punch_hard (2).ogg','sound/combat/hits/punch/punch_hard (3).ogg'), 100, FALSE, -1)
-				target.adjustBruteLoss(oxy_drain*mult*3)
+				//if erp allowed & said yes to prompt pleasure them & combat mode OFF
+				if(pleasureaccepted && !target.cmode)
+					to_chat(host, "<span class='warning'>[host] is rubbed by a skeletal hand!</span>")
+					playsound(get_turf(host), pick('sound/misc/mat/insert (1).ogg','sound/misc/mat/insert (2).ogg'), 100, FALSE, -1)
+					target.sexcon.perform_sex_action(host, pleasure*mult*3, 0, TRUE)
+				else //damage
+					to_chat(host, "<span class='danger'>[host] is pummeled by a skeletal hand!</span>")
+					playsound(get_turf(host), pick('sound/combat/hits/punch/punch_hard (1).ogg','sound/combat/hits/punch/punch_hard (2).ogg','sound/combat/hits/punch/punch_hard (3).ogg'), 100, FALSE, -1)
+					target.adjustBruteLoss(oxy_drain*mult*3)
 			else
 				to_chat(host, "<span class='danger'>[host]'s [bodypart] is twisted by a skeletal hand!</span>")
 				playsound(get_turf(host), pick('sound/combat/hits/punch/punch (1).ogg','sound/combat/hits/punch/punch (2).ogg','sound/combat/hits/punch/punch (3).ogg'), 100, FALSE, -1)
 				target.apply_damage(oxy_drain*mult*3, BRUTE, bodypart)
-				if(bodypart.can_be_disabled)
-					bodypart.update_disabled()
+				bodypart.update_disabled()
 	return FALSE

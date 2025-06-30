@@ -850,16 +850,16 @@
 /area/rogue/under/tomb/indoors/church)
 "Hu" = (
 /obj/structure/closet/crate/crafted_closet,
-/obj/item/clothing/cloak/stabard/templar/astrata/alt,
-/obj/item/clothing/cloak/stabard/templar/astrata/alt,
-/obj/item/clothing/cloak/stabard/templar/astrata,
-/obj/item/clothing/cloak/stabard/templar/astrata,
-/obj/item/clothing/neck/psycross/silver/astrata,
-/obj/item/clothing/neck/psycross/silver/astrata,
-/obj/item/clothing/shirt/robe/astrata,
-/obj/item/clothing/shirt/robe/astrata,
-/obj/item/clothing/head/helmet/heavy/necked/astrata,
-/obj/item/clothing/head/helmet/heavy/necked/astrata,
+/obj/item/clothing/cloak/stabard/templar/asteria/alt,
+/obj/item/clothing/cloak/stabard/templar/asteria/alt,
+/obj/item/clothing/cloak/stabard/templar/asteria,
+/obj/item/clothing/cloak/stabard/templar/asteria,
+/obj/item/clothing/neck/psycross/silver/asteria,
+/obj/item/clothing/neck/psycross/silver/asteria,
+/obj/item/clothing/shirt/robe/asteria,
+/obj/item/clothing/shirt/robe/asteria,
+/obj/item/clothing/head/helmet/heavy/necked/asteria,
+/obj/item/clothing/head/helmet/heavy/necked/asteria,
 /obj/machinery/light/fueled/torchholder/l,
 /obj/effect/spawner/map_spawner/loot/medium,
 /turf/open/floor/churchmarble,
@@ -1047,7 +1047,7 @@
 "OD" = (
 /obj/structure/closet/crate/chest/crate,
 /obj/item/clothing/neck/psycross/silver/last_death,
-/obj/item/clothing/neck/psycross/silver/astrata,
+/obj/item/clothing/neck/psycross/silver/asteria,
 /turf/open/floor/churchmarble,
 /area/rogue/under/tomb/indoors/church)
 "OM" = (

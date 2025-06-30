@@ -434,9 +434,9 @@
 	craftdiff = 3
 	category = "Cloak"
 
-/datum/repeatable_crafting_recipe/sewing/astratatemplar
+/datum/repeatable_crafting_recipe/sewing/asteriatemplar
 	name = "solar surcoat"
-	output = /obj/item/clothing/cloak/stabard/templar/astrata
+	output = /obj/item/clothing/cloak/stabard/templar/asteria
 	requirements = list(/obj/item/natural/cloth = 3,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 3

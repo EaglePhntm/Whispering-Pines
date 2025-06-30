@@ -662,9 +662,9 @@
 		qdel(carving_block)
 	update_appearance(UPDATE_ICON_STATE)
 
-/obj/structure/fluff/statue/astrata
-	name = "statue of Astrata"
-	desc = "Astrata, the Sun Queen, reigns over light, order, and conquest. She is worshipped and feared in equal measure."
+/obj/structure/fluff/statue/asteria
+	name = "statue of Asteria"
+	desc = "Asteria, the Sun Queen, reigns over light, order, and conquest. She is worshipped and feared in equal measure."
 	max_integrity = 100 // You wanted descructible statues, you'll get them.
 	deconstructible = FALSE
 	density = TRUE
@@ -672,11 +672,11 @@
 	icon_state = "astrata"
 	icon = 'icons/roguetown/misc/tallandwide.dmi'
 
-/obj/structure/fluff/statue/astrata/OnCrafted(dirin, mob/user)
+/obj/structure/fluff/statue/asteria/OnCrafted(dirin, mob/user)
 	. = ..()
 	pixel_x = -16
 
-/obj/structure/fluff/statue/astrata/bling
+/obj/structure/fluff/statue/asteria/bling
 	icon_state = "astrata_bling"
 
 /obj/structure/fluff/statue/knight/r
@@ -786,7 +786,7 @@
 		if(1)
 			message2send = "You can see Lunaria rotating."
 		if(2)
-			message2send = "Looking at Astrata blinds you!"
+			message2send = "Looking at Asteria blinds you!"
 		if(3)
 			message2send = "The stars smile at you."
 		if(4)

@@ -173,6 +173,15 @@ GLOBAL_LIST_EMPTY(global_biomass_storage)
 		sleep(1 SECONDS)
 		suckening_cycle(victim)
 
+/*if all fails try this ghetto way
+/obj/structure/closet/crate/coffin/liquid_drainer/process()
+	. = ..()
+	if(!opened)
+		to_chat(host, "<span class='warning'>[host] is rubbed by a skeletal hand!</span>")
+		playsound(get_turf(host), pick('sound/misc/mat/insert (1).ogg','sound/misc/mat/insert (2).ogg'), 100, FALSE, -1)
+		target.sexcon.perform_sex_action(host, pleasure*mult*3, 0, TRUE)
+*/
+
 /obj/structure/closet/crate/coffin/liquid_drainer/proc/suckening_cycle(mob/living/carbon/human/victim)
 	if(victim.blood_volume >= 0 && !opened && victim.loc == loc)
 		if(victim.stat != DEAD)

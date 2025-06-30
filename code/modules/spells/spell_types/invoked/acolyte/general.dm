@@ -45,7 +45,7 @@
 		switch(user.patron.type)
 			if(/datum/patron/psydon)
 				target.visible_message(span_info("A strange stirring feeling pours from [target]!"), span_notice("Sentimental thoughts drive away my pains!"))
-			if(/datum/patron/divine/astrata)
+			if(/datum/patron/divine/asteria)
 				target.visible_message(span_info("A wreath of gentle light passes over [target]!"), span_notice("I'm bathed in holy light!"))
 				// during the day, heal 10 more (basic as fuck)
 				if (GLOB.tod == "day")
@@ -79,7 +79,7 @@
 					situational_bonus = min(situational_bonus + 1, 25)
 				conditional_buff = TRUE
 			if(/datum/patron/divine/last_death)
-				target.visible_message(span_info("A sense of quiet respite radiates from [target]!"), span_notice("I feel the Undermaiden's gaze turn from me for now!"))
+				target.visible_message(span_info("A sense of quiet respite radiates from [target]!"), span_notice("I feel the Nameless Death's gaze turn from me for now!"))
 				if (iscarbon(target))
 					var/mob/living/carbon/C = target
 					// if the target is "close to death" (at or below 25% health)

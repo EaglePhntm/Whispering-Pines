@@ -249,7 +249,7 @@
 			V.say(pick( \
 				"PRAISE TENEBRASE!", \
 				"DEATH TO NEW GODS...", \
-				"Astrata will fail!", \
+				"Asteria will fail!", \
 				"New gods cannot stop me!", \
 				"Tenebrase shows the way!", \
 				"The Dark Lady has shown me the truth!", \

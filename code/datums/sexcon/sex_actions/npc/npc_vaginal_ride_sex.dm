@@ -37,7 +37,7 @@
 		else
 			target.sexcon.cum_into(vaginal = TRUE)
 //		target.try_impregnate(user)
-		target.virginity = FALSE
+	target.virginity = FALSE
 
 /datum/sex_action/npc_vaginal_ride_sex/on_finish(mob/living/user, mob/living/target)
 	user.visible_message(span_warning("[user] gets off [target]."))

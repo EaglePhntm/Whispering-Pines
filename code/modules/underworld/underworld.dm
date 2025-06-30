@@ -79,7 +79,7 @@
 	if(istype(W, /obj/item/underworld/coin))
 		if(!ghost.paid)
 			qdel(W)
-			to_chat(ghost, "<br><font color=purple><span class='bold'>THE TOLL IS PAID, THROUGH THE CARRIAGE THE UNDERMAIDEN WAITS.</span></font>")
+			to_chat(ghost, "<br><font color=purple><span class='bold'>THE TOLL IS PAID, THROUGH THE CARRIAGE THE NAMELESS DEATH WAITS.</span></font>")
 			user << sound(pick('sound/misc/carriage1.ogg', 'sound/misc/carriage2.ogg', 'sound/misc/carriage3.ogg', 'sound/misc/carriage4.ogg'), 0, 0 ,0, 50)
 			ghost.paid = TRUE
 			SSdeath_arena.remove_fighter(ghost)
@@ -93,7 +93,7 @@
 
 /obj/structure/underworld/barrier //Blocks sprite locations
 	name = "DONT STAND HERE"
-	desc = "The Undermaiden awaits."
+	desc = "The Nameless Death awaits."
 	icon = 'icons/roguetown/underworld/underworld.dmi'
 	icon_state = "spiritpart"
 	density = TRUE
@@ -102,7 +102,7 @@
 
 /obj/structure/underworld/carriage
 	name = "Carriage"
-	desc = "The Undermaiden awaits."
+	desc = "The Nameless Death awaits."
 	icon = 'icons/roguetown/underworld/enigma_carriage.dmi'
 	icon_state = "carriage_lit"
 	layer = ABOVE_MOB_LAYER

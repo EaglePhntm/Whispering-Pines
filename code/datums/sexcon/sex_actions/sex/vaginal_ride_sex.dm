@@ -66,8 +66,8 @@
 		target.visible_message(span_lovebold("[target] cums into [user]'s cunt!"))
 		target.sexcon.cum_into(vaginal = TRUE)
 //		target.try_impregnate(user)
-		target.virginity = FALSE
-		user.virginity = FALSE
+	target.virginity = FALSE
+	user.virginity = FALSE
 
 	if(target.sexcon.considered_limp())
 		user.sexcon.perform_sex_action(user, 1.2, 0, TRUE)

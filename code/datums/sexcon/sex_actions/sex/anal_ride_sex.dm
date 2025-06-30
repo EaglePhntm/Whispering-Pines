@@ -74,8 +74,8 @@
 		target.visible_message(span_lovebold("[target] cums into [user]'s ass!"))
 		target.sexcon.cum_into(anal = TRUE)
 //		target.try_impregnate(user)
-		target.virginity = FALSE
-		user.virginity = FALSE
+	target.virginity = FALSE
+	user.virginity = FALSE
 
 /datum/sex_action/anal_ride_sex/on_finish(mob/living/user, mob/living/target)
 	..()

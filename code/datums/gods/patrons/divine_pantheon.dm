@@ -17,36 +17,36 @@
 
 /* ----------------- */
 
-/datum/patron/divine/astrata
-	name = "Astrata"
-	domain = "Goddess of Order, the Sun Queen"
-	desc = "Crafted from the head of Psydon, twin of Lunaria. She gifted mankind the Sun, protecting Psydonia from all forces which may seek it harm: from both outside and within."
+/datum/patron/divine/asteria
+	name = "Lady Asteria"
+	domain = "Primordial Radiance, Good, Lawfulness, Life"
+	desc = "Asteria the Primordial Radiance, old goddess of the sun and goodness. One of the few old gods remaining that are known and are somewhat actively involved in mankind's destiny. She appears to be a female humanoid silhouette of pure blinding, hot starlight with long flowing hair."
 	flaws = "Tyrannical, Ill-Tempered, Uncompromising"
 	worshippers = "Nobles, Zealots, Commoners"
 	sins = "Betrayal, Sloth, Witchcraft"
 	boons = "Your stamina regeneration delay is lowered during daytime."
 	added_traits = list(TRAIT_APRICITY)
-	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
-	t1 = /obj/effect/proc_holder/spell/invoked/sacred_flame_rogue
-	t2 = /obj/effect/proc_holder/spell/invoked/heal
+	t0 = /obj/effect/proc_holder/spell/invoked/sacred_flame_rogue
+	t1 = /obj/effect/proc_holder/spell/invoked/heal
+	t2 = /obj/effect/proc_holder/spell/invoked/projectile/fireball
 	t3 = /obj/effect/proc_holder/spell/invoked/revive
 	confess_lines = list(
-		"ASTRATA IS MY LIGHT!",
-		"ASTRATA BRINGS LAW!",
+		"ASTERIA IS MY LIGHT!",
+		"ASTERIA BRINGS LAW!",
 		"I SERVE THE GLORY OF THE SUN!",
 	)
-	storyteller = /datum/storyteller/astrata
+	storyteller = /datum/storyteller/asteria
 
 /datum/patron/divine/lunaria
 	name = "Lunaria"
 	domain = "Goddess of Moon, Moonlight and Clarity."
-	desc = "New goddess of night and moon, Said to be the one who gifted mankind with arcane knowledge and affinity of magic after her becoming of a new god. Her flowing hair looks as white as snow and her face divine. Those cold crystal clear eyes are a glowing icey blue  and such seems to be the theme for her body, cold, lithe, yet powerful. She has modest assets for a divine being of this world at least compared to everything else that exists. She appears consistently nude... Lady Moonbeam is her best friend."
+	desc = "New goddess of night and moon, Said to be the one who gifted mankind with arcane knowledge and affinity of magic after her becoming of a new god. Her flowing hair looks as white as snow and her face divine. Those cold crystal clear eyes are a glowing icey blue  and such seems to be the theme for her body, cold, lithe, yet powerful. She has modest assets for a divine being of this world at least compared to everything else that exists. She appears consistently nude... Moonbeam is her best friend."
 	flaws = "Exhibitionism, Isolationism, Unfiltered Honesty"
 	worshippers = "Magic Practitioners, Scholars, Scribes"
-	sins = "Suppressing Truth, Doing drugs."
+	sins = "Suppressing Truth, Becoming addicted."
 	boons = "You enjoy night time more than others."
 	added_traits = list(TRAIT_NIGHT_OWL)
-	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
+	t0 = /obj/effect/proc_holder/spell/invoked/vigorouscraft
 	t1 = /obj/effect/proc_holder/spell/invoked/invisibility
 	t2 = /obj/effect/proc_holder/spell/invoked/blindness/miracle
 	t3 = /obj/effect/proc_holder/spell/invoked/projectile/moondagger
@@ -63,12 +63,12 @@
 	desc = "Blissrose the Plantmother,The first plantoid to ever exist, created by radiation mutating a certain narcotic plant, Blissrose is almost solely responsible for recovery of the world to be the 'new world' over raping (sometimes consensually mating) survivors for centuries, using the produced seeds to regrow whole forests in time, also mother or grandmother of -all- the rare plantpeople, taled to control the whole world's forests for this reason, she was considered powerful and significant enough to be a 'deity'. She represents instincts, animalism and true nature with her actions, generally worshipped and praised for everything the forest offers, as they all came from her in the end, causing travelers to sometimes leave gifts at the nudist village in heart of the forest."
 	flaws = "Animalism, Uncivilization, Disorderliness"
 	worshippers = "Druids, Beasts, Farmers"
-	sins = "Deforestation, Overhunting, Disrespecting Nature"
+	sins = "Deforestation, Disrespecting Nature"
 	boons = "You are immune to kneestingers, and drug overdoses."
 	added_traits = list(TRAIT_KNEESTINGER_IMMUNITY, TRAIT_CRACKHEAD)
-	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
-	t1 = /obj/effect/proc_holder/spell/targeted/blesscrop
-	t2 = /obj/effect/proc_holder/spell/self/beastsense
+	t0 = /obj/effect/proc_holder/spell/targeted/blesscrop
+	t1 = /obj/effect/proc_holder/spell/self/beastsense
+	t2 = /obj/effect/proc_holder/spell/invoked/cure_rot
 	t3 = /obj/effect/proc_holder/spell/targeted/beasttame
 	confess_lines = list(
 		"BLISSROSE PROVIDES!",
@@ -103,13 +103,13 @@
 	desc = "The Kin-Killer, After the Holy War which created the universe out of it's ashes and fire. After only a handful of the ancient gods being left, He picked them off one by one to kill who he found old minded for a new time. It's said they forced old Goddess of Life in blade-point to give life to his undead creations, making an abomination at first.. half undead half living beings that gave birth to fully living 'resurgentis' in time."
 	flaws = "Pessimistic, Wrathful"
 	worshippers = "Resurgentis, Gravetenders, Mourners, Clerical Necromancers"
-	sins = "Heretical Magic, Untimely Death, Disturbance of Rest unless for service of him."
+	sins = "Heretical Magic, Disturbance of Rest for personal gains."
 	boons = "You may see the presence of a soul in a body and eat raw meat."
 	added_traits = list(TRAIT_SOUL_EXAMINE, TRAIT_ORGAN_EATER)
-	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
-	t1 = /obj/effect/proc_holder/spell/targeted/burialrite
-	t2 = /obj/effect/proc_holder/spell/targeted/soulspeak
-	t3 = /obj/effect/proc_holder/spell/targeted/churn
+	t0 = /obj/effect/proc_holder/spell/targeted/burialrite
+	t1 = /obj/effect/proc_holder/spell/targeted/soulspeak
+	t2 = /obj/effect/proc_holder/spell/targeted/churn
+	t3 = /obj/effect/proc_holder/spell/invoked/revive
 	confess_lines = list(
 		"ALL SOULS FIND THEIR WAY TO THE LAST DEATH!",
 		"THE UNNAMED IS OUR FINAL REPOSE!",
@@ -128,7 +128,7 @@ most assume to be natural causes along with his near diefication by his follower
 accend to the astral plane as the god of the desert where he has watched over all who dwell there, even as evil creeps into his domain."
 	flaws = "Carelessness, Aggression, Pride"
 	worshippers = "Nomads, Leaders, Tribals"
-	sins = "Tyranny, Cruelty, Stagnation"
+	sins = "Tyranny, Cruelty"
 	boons = "Your used weapons dull slower."
 	added_traits = list(TRAIT_SHARPER_BLADES)
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
@@ -137,7 +137,7 @@ accend to the astral plane as the god of the desert where he has watched over al
 	t3 = /obj/effect/proc_holder/spell/invoked/persistence
 	confess_lines = list(
 		"WANDERER GUIDE ME!",
-		"BURNING SAND AGAINST MY SKIN!",
+		"BURNING SANDS AGAINST MY SKIN!",
 		"WANDERER PROTECTS!",
 	)
 	storyteller = /datum/storyteller/wanderer
@@ -155,7 +155,7 @@ accend to the astral plane as the god of the desert where he has watched over al
 	t1 = /obj/effect/proc_holder/spell/invoked/vicious_mimicry
 	t2 = /obj/effect/proc_holder/spell/invoked/wheel
 	confess_lines = list(
-		"ASTRATA IS MY LIGHT!",
+		"ASTERIA IS MY LIGHT!",
 		"LUNARIA IS NIGHT!",
 		"BLISSROSE PROVIDES!",
 		"ABYSSOR COMMANDS THE WAVES!",
@@ -211,19 +211,19 @@ accend to the astral plane as the god of the desert where he has watched over al
 /datum/patron/divine/moonbeam
 	name = "Lady Moonbeam"
 	domain = "Goddess of Dreams, Illusion, Pleasure."
-	desc = "The Dream Goddess. Initially a human psion, she named herself 'Lady Moonbeam', as her favorite thing in the mortal world that didn't leave her until her death. Eventually finding what's remaining of an old god in the astral plane with still strange traces of lewd energy... she takes it, being filled with all of the universe's secrets without -fully- losing her mind. She returned to the astral plane and began building her astral 'dreamland' empire out of people's sweetest dreams... Or wet, whatever pleases the wandering dreamer... she remains a bodiless, astral form taking on an ever-changing cosmic body when she must be seen. Often not speaking, but showing, finding that easier to express herself, her forms often have no mouth, but white glowing wide eyes to take attention, Her most common appearance would be that of a female humanoid shaped pattern of stars and cosmos with flowing hair. Lunaria is her best friend."
+	desc = "The Dream Goddess. Initially a human psion, she named herself 'Moonbeam', as her favorite thing in the mortal world that didn't leave her until her death. Eventually finding what's remaining of an old god in the astral plane with still strange traces of lewd energy... she takes it, being filled with all of the universe's secrets without -fully- losing her mind. She returned to the astral plane and began building her astral 'dreamland' empire out of people's sweetest dreams... Or wet, whatever pleases the wandering dreamer... she remains a bodiless, astral form taking on an ever-changing cosmic body when she must be seen. Often not speaking, but showing, finding that easier to express herself, her forms often have no mouth, but white glowing wide eyes to take attention, Her most common appearance would be that of a female humanoid shaped pattern of stars and cosmos with flowing hair. Lunaria is her best friend."
 	flaws= "Naivete, Impulsiveness, Slight madness, libido"
 	worshippers = "Mothers, Illusionists, Dreamers, Married Couples"
 	sins = "Sadism, Abandonment, Spreading illness purposefully."
-	boons = "You can understand others' needs better. You are better in bed and Clerics gain devotion through it."
-	added_traits = list(TRAIT_EXTEROCEPTION, TRAIT_GOODLOVER, TRAIT_SEXDEVO)
+	boons = "You gain more sleep experience, you are better in bed."
+	added_traits = list(TRAIT_TUTELAGE, TRAIT_GOODLOVER, TRAIT_SEXDEVO)
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
 	t1 = /obj/effect/proc_holder/spell/invoked/instill_perfection
 	t2 = /obj/effect/proc_holder/spell/invoked/projectile/eoracurse
-	t3 = /obj/effect/proc_holder/spell/invoked/bud
+	t3 = /obj/effect/proc_holder/spell/invoked/invisibility
 	confess_lines = list(
 		"TAKE ME TO YOUR ASTRAL EMBRACE!",
-		"LADY MOONBEAM, WAKE ME FROM THIS BAD DREAM!",
+		"MOONBEAM, WAKE ME FROM THIS BAD DREAM!",
 		"LIFE IS INVALUABLE!",
 	)
 	storyteller = /datum/storyteller/moonbeam

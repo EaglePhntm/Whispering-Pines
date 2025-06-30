@@ -51,7 +51,7 @@
 	strength_multiplier = strength
 	. = ..()
 
-/datum/status_effect/buff/boomingblade5e/proc/boom()
+/datum/status_effect/buff/boomingblade5e/proc/booming()
 	var/exp_heavy = 0
 	var/exp_light = round(1 * strength_multiplier)  // Scale explosion
 	var/exp_flash = round(2 * strength_multiplier)

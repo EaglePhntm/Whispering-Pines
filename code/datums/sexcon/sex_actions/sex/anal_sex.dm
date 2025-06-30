@@ -84,8 +84,8 @@
 		user.visible_message(span_lovebold("[user] cums into [target]'s ass!"))
 		user.sexcon.cum_into(anal = TRUE)
 //		user.try_impregnate(target)
-		user.virginity = FALSE
-		target.virginity = FALSE
+	user.virginity = FALSE
+	target.virginity = FALSE
 
 	if(user.sexcon.considered_limp())
 		user.sexcon.perform_sex_action(user, 1.2, 0, TRUE)

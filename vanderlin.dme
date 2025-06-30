@@ -1993,6 +1993,7 @@
 #include "code\modules\events\god_intervention\zizo.dm"
 #include "code\modules\events\minor\crop_growth.dm"
 #include "code\modules\events\minor\herb_growth.dm"
+#include "modular_stonehedge\code\modules\spells\roguetown\spells5e\spellscrolls.dm"
 #include "code\modules\events\minor\passive_animal_migration.dm"
 #include "code\modules\events\minor\price_fluctuation.dm"
 #include "code\modules\events\moderate\collapsing_earth.dm"

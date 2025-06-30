@@ -1,6 +1,6 @@
 /// Divine pantheon storytellers
 #define DIVINE_STORYTELLERS list( \
-	/datum/storyteller/astrata, \
+	/datum/storyteller/asteria, \
 	/datum/storyteller/lunaria, \
 	/datum/storyteller/wanderer, \
 	/datum/storyteller/last_death, \
@@ -17,9 +17,9 @@
 /// All storytellers
 #define STORYTELLERS_ALL (DIVINE_STORYTELLERS + INHUMEN_STORYTELLERS)
 
-/datum/storyteller/astrata
-	name = "Astrata"
-	desc = "Astrata will provide a balanced and varied experience. Consider this the default experience."
+/datum/storyteller/asteria
+	name = "Asteria"
+	desc = "Asteria will provide a balanced and varied experience. Consider this the default experience."
 	weight = 6
 	always_votable = TRUE
 	follower_modifier = LOWER_FOLLOWER_MODIFIER

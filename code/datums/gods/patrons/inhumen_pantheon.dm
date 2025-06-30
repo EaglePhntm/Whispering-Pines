@@ -20,7 +20,7 @@
 /* ----------------- */
 
 /datum/patron/inhumen/tenebrase
-	name = "Tenebrase"
+	name = "Lady Tenebrase"
 	domain = "Primordial Darkness, Evil, Chaos, Darkness, Undeath"
 	desc = "Tenebrase the Primordial Darkness. Tenebrase's history is a mystery to all, only way she shown her existence to the mortal\
 realm is through the underdark, as undead dug from their resting places towards the newly built\

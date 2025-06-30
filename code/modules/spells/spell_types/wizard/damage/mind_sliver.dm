@@ -24,13 +24,13 @@
 
 	invocation = "Steal their thoughts!"
 	invocation_type = "shout" //can be none, whisper, emote and shout
-	var/delay = 7
+	var/sliver_delay = 7
 
 
 /obj/effect/proc_holder/spell/invoked/mindsliver5e/cast(list/targets, mob/user)
 	var/turf/T = get_turf(targets[1])
 	new /obj/effect/temp_visual/mindsliver5e_p1(T)
-	sleep(delay)
+	sleep(sliver_delay)
 	new /obj/effect/temp_visual/mindsliver5e_p2(T)
 	playsound(T,'sound/magic/charged.ogg', 80, TRUE)
 	for(var/mob/living/L in T.contents)

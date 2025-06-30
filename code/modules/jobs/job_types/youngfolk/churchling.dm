@@ -54,8 +54,8 @@
 	beltl = /obj/item/storage/keyring/priest
 	neck = /obj/item/clothing/neck/psycross/silver
 	switch(H.patron?.type)
-		if(/datum/patron/divine/astrata)
-			neck = /obj/item/clothing/neck/psycross/silver/astrata
+		if(/datum/patron/divine/asteria)
+			neck = /obj/item/clothing/neck/psycross/silver/asteria
 		if(/datum/patron/divine/last_death) //last_death acolytes are now gravetenders
 			neck = /obj/item/clothing/neck/psycross/silver/last_death
 		if(/datum/patron/divine/moonbeam)

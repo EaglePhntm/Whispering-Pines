@@ -2,7 +2,7 @@
 
 /obj/effect/proc_holder/spell/invoked/instill_perfection
 	name = "Instill Perfection"
-	desc = "Grants target a super-natural beauty for a time, increasing their mood."
+	desc = "Grants target a super-natural illusory beauty for a time, increasing their mood."
 	overlay_state = "perfume"
 	recharge_time = 2 MINUTES
 	req_items = list(/obj/item/clothing/neck/psycross/silver/moonbeam)

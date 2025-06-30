@@ -1,5 +1,5 @@
 /obj/effect/proc_holder/spell/invoked/vigorouscraft
-	name = "Virgorous Craftsmanship"
+	name = "Clarity"
 	overlay_state = "craft_buff"
 	releasedrain = 0
 	chargedrain = 0

@@ -29,7 +29,6 @@
 	new /obj/item/book/granter/spell/spells5e/infestation5e(src)
 	new /obj/item/book/granter/spell/spells5e/light5e(src)
 	new /obj/item/book/granter/spell/spells5e/lightninglure5e(src)
-	new /obj/item/book/granter/spell/spells5e/magicstone5e(src)
 
 // Cantrips (Level 0)
 /obj/item/book/granter/spell/spells5e/acidsplash5e
@@ -68,22 +67,10 @@
 	spellname = "decompose"
 	icon_state = "scrollred"
 
-/obj/item/book/granter/spell/spells5e/eldritchblast5e
-	name = "Scroll of Eldritch Blast"
-	spell = /obj/effect/proc_holder/spell/invoked/projectile/eldritchblast5e
-	spellname = "eldritch blast"
-	icon_state = "scrollred"
-
 /obj/item/book/granter/spell/spells5e/encodethoughts5e
 	name = "Scroll of Encode Thoughts"
 	spell = /obj/effect/proc_holder/spell/targeted/encodethoughts5e
 	spellname = "encode thoughts"
-	icon_state = "scrollred"
-
-/obj/item/book/granter/spell/spells5e/firebolt5e
-	name = "Scroll of Fire Bolt"
-	spell = /obj/effect/proc_holder/spell/invoked/projectile/firebolt5e
-	spellname = "fire bolt"
 	icon_state = "scrollred"
 
 /obj/item/book/granter/spell/spells5e/frostbite5e
@@ -100,7 +87,7 @@
 
 /obj/item/book/granter/spell/spells5e/guidance5e
 	name = "Scroll of Guidance"
-	spell = /obj/effect/proc_holder/spell/invoked/guidance5e
+	spell = /obj/effect/proc_holder/spell/invoked/guidance
 	spellname = "guidance"
 	icon_state = "scrollred"
 
@@ -118,19 +105,13 @@
 
 /obj/item/book/granter/spell/spells5e/lightninglure5e
 	name = "Scroll of Lightning Lure"
-	spell = /obj/effect/proc_holder/spell/targeted/lightninglure5e
+	spell = /obj/effect/proc_holder/spell/targeted/lightninglure
 	spellname = "lightning lure"
-	icon_state = "scrollred"
-
-/obj/item/book/granter/spell/spells5e/magicstone5e
-	name = "Scroll of Magic Stone"
-	spell = /obj/effect/proc_holder/spell/invoked/magicstone5e
-	spellname = "magic stone"
 	icon_state = "scrollred"
 
 /obj/item/book/granter/spell/spells5e/mending5e
 	name = "Scroll of Mending"
-	spell = /obj/effect/proc_holder/spell/invoked/mending5e
+	spell = /obj/effect/proc_holder/spell/invoked/mending
 	spellname = "mending"
 	icon_state = "scrollred"
 
@@ -154,14 +135,8 @@
 
 /obj/item/book/granter/spell/spells5e/rayoffrost5e
 	name = "Scroll of Ray of Frost"
-	spell = /obj/effect/proc_holder/spell/invoked/projectile/rayoffrost5e
+	spell = /obj/effect/proc_holder/spell/invoked/beam/rayoffrost5e
 	spellname = "ray of frost"
-	icon_state = "scrollred"
-
-/obj/item/book/granter/spell/spells5e/replenishnature5e
-	name = "Scroll of Replenish Nature"
-	spell = /obj/effect/proc_holder/spell/invoked/replenish
-	spellname = "replenish nature"
 	icon_state = "scrollred"
 
 // Level 1 Spells - Cost 400
@@ -203,7 +178,7 @@
 
 /obj/item/book/granter/spell/spells5e/message5e
 	name = "Scroll of Message"
-	spell = /obj/effect/proc_holder/spell/invoked/message
+	spell = /obj/effect/proc_holder/spell/self/message
 	spellname = "message"
 	icon_state = "scrollblue"
 
@@ -226,35 +201,6 @@
 	icon_state = "scrollblue"
 
 // Level 2 Spells - Cost 800
-/obj/item/book/granter/spell/spells5e/animateobject5e
-	name = "Scroll of Animate Object"
-	spell = /obj/effect/proc_holder/spell/invoked/projectile/animate_object
-	spellname = "animate object"
-	icon_state = "scrollgreen"
-
-/obj/item/book/granter/spell/spells5e/cloakofflies5e
-	name = "Scroll of Cloak of Flies"
-	spell = /obj/effect/proc_holder/spell/self/cloakofflies
-	spellname = "cloak of flies"
-	icon_state = "scrollgreen"
-
-/obj/item/book/granter/spell/spells5e/drainstamina5e
-	name = "Scroll of Drain"
-	spell = /obj/effect/proc_holder/spell/invoked/drain_stam
-	spellname = "drain"
-	icon_state = "scrollgreen"
-
-/obj/item/book/granter/spell/spells5e/eldritchcurse5e
-	name = "Scroll of Eldritch Curse"
-	spell = /obj/effect/proc_holder/spell/invoked/eldritchcurse
-	spellname = "eldritch curse"
-	icon_state = "scrollgreen"
-
-/obj/item/book/granter/spell/spells5e/eldritchhealing5e
-	name = "Scroll of Eldritch Healing"
-	spell = /obj/effect/proc_holder/spell/invoked/eldritchhealing
-	spellname = "eldritch healing"
-	icon_state = "scrollgreen"
 
 /obj/item/book/granter/spell/spells5e/greaterfireball5e
 	name = "Scroll of Greater Fireball"
@@ -280,42 +226,6 @@
 	spellname = "nondetection"
 	icon_state = "scrollgreen"
 
-/obj/item/book/granter/spell/spells5e/seeliedust5e
-	name = "Scroll of Seelie Dust"
-	spell = /obj/effect/proc_holder/spell/invoked/seelie_dust
-	spellname = "seelie dust"
-	icon_state = "scrollgreen"
-
-/obj/item/book/granter/spell/spells5e/seeliekiss5e
-	name = "Scroll of Regenerative Kiss"
-	spell = /obj/effect/proc_holder/spell/targeted/seelie_kiss
-	spellname = "regenerative kiss"
-	icon_state = "scrollgreen"
-
-/obj/item/book/granter/spell/spells5e/stripclothes5e
-	name = "Scroll of Strip Clothes"
-	spell = /obj/effect/proc_holder/spell/invoked/strip
-	spellname = "strip clothes"
-	icon_state = "scrollgreen"
-
-/obj/item/book/granter/spell/spells5e/summonrat5e
-	name = "Scroll of Call Beast"
-	spell = /obj/effect/proc_holder/spell/invoked/summon_rat
-	spellname = "call beast"
-	icon_state = "scrollgreen"
-
-/obj/item/book/granter/spell/spells5e/tamerous5e
-	name = "Scroll of Tame Rous"
-	spell = /obj/effect/proc_holder/spell/targeted/roustame
-	spellname = "tame rous"
-	icon_state = "scrollgreen"
-
-/obj/item/book/granter/spell/spells5e/watersplash5e
-	name = "Scroll of Water Splash"
-	spell = /obj/effect/proc_holder/spell/invoked/projectile/splash
-	spellname = "water splash"
-	icon_state = "scrollgreen"
-
 // Level 3 Spells - Cost 1600
 /obj/item/book/granter/spell/spells5e/bloodbolt5e
 	name = "Scroll of Blood Bolt"
@@ -335,12 +245,6 @@
 	spellname = "command undead"
 	icon_state = "scrollpurple"
 
-/obj/item/book/granter/spell/spells5e/disappear5e
-	name = "Scroll of Disappear"
-	spell = /obj/effect/proc_holder/spell/invoked/Disappear
-	spellname = "disappear"
-	icon_state = "scrollpurple"
-
 /obj/item/book/granter/spell/spells5e/eyebite5e
 	name = "Scroll of Eyebite"
 	spell = /obj/effect/proc_holder/spell/invoked/eyebite
@@ -349,18 +253,11 @@
 
 /obj/item/book/granter/spell/spells5e/findfamiliar5e
 	name = "Scroll of Find Familiar"
-	spell = /obj/effect/proc_holder/spell/self/findfamiliar
+	spell = /obj/effect/proc_holder/spell/invoked/findfamiliar
 	spellname = "find familiar"
 	icon_state = "scrollpurple"
 
 // Really powerful BUT it works
-/obj/item/book/granter/spell/spells5e/lichdom5e
-	name = "Scroll of Lesser Lichdom"
-	desc = "A dark necromantic scroll that seems to pulse with an otherworldly energy. The parchment is made of an unusual material that feels cold to the touch, and the ink seems to writhe and move of its own accord."
-	spell = /obj/effect/proc_holder/spell/targeted/lichdom
-	spellname = "lesser lichdom"
-	icon_state = "scrollpurple"
-	remarks = list("The pursuit of immortality through lichdom is a dangerous path, one that strips away not only your mortal form but your very soul.", "A soul bound to a phylactery is never truly free. The price of eternal life is a curse, for the lich will never know rest again.", "To achieve lichdom, one must master the deepest secrets of necromancy—those that most would call abominable. But is it worth the cost?", "In the pursuit of godlike power, a lich sacrifices all that is left of their humanity. The question remains—what is the point of eternal life if you lose what makes you truly alive?")
 
 /obj/item/book/granter/spell/spells5e/lifesteal5e
 	name = "Scroll of Life Steal"
@@ -392,13 +289,6 @@
 	spellname = "infuse unlife"
 	icon_state = "scrollpurple"
 	remarks = list("Mediolanum ventis..", "Sana damnatorum..", "Frigidus ossa mortuorum..")
-
-//this aint in 5e but using the parent anyway fuck youuu.
-/obj/item/book/granter/spell/spells5e/controlundead
-	name = "Scroll of Control Undead"
-	spell = /obj/effect/proc_holder/spell/invoked/control_undead
-	spellname = "control undead"
-	icon_state = "scrollpurple"
 
 // Mapping only
 /obj/item/book/granter/spell/spells5e/random

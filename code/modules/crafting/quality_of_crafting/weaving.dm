@@ -77,9 +77,9 @@
 	craftdiff = 3
 	category = "Hat"
 
-/datum/repeatable_crafting_recipe/sewing/weaving/astratahood
-	name = "hood (solar/Astrata)"
-	output = /obj/item/clothing/head/roguehood/astrata
+/datum/repeatable_crafting_recipe/sewing/weaving/asteriahood
+	name = "hood (solar/Asteria)"
+	output = /obj/item/clothing/head/roguehood/asteria
 	requirements = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/silk = 1)
 	craftdiff = 3
@@ -154,9 +154,9 @@
 	craftdiff = 4
 	category = "Pants"
 
-/datum/repeatable_crafting_recipe/sewing/weaving/astratarobe
-	name = "robes (Astrata)"
-	output = /obj/item/clothing/shirt/robe/astrata
+/datum/repeatable_crafting_recipe/sewing/weaving/asteriarobe
+	name = "robes (Asteria)"
+	output = /obj/item/clothing/shirt/robe/asteria
 	requirements = list(/obj/item/natural/cloth = 3,
 				/obj/item/natural/silk = 1)
 	craftdiff = 4

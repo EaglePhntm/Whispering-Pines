@@ -18,9 +18,9 @@
 			head = /obj/item/clothing/head/helmet/heavy/bucket/gold
 			wrists = /obj/item/clothing/neck/psycross/g
 			H.cmode_music = 'sound/music/cmode/church/CombatInquisitor.ogg'
-		if(/datum/patron/divine/astrata)
-			head = /obj/item/clothing/head/helmet/heavy/necked/astrata
-			wrists = /obj/item/clothing/neck/psycross/silver/astrata
+		if(/datum/patron/divine/asteria)
+			head = /obj/item/clothing/head/helmet/heavy/necked/asteria
+			wrists = /obj/item/clothing/neck/psycross/silver/asteria
 			H.cmode_music = 'sound/music/cmode/church/CombatAstrata.ogg'
 		if(/datum/patron/divine/lunaria)
 			head = /obj/item/clothing/head/helmet/heavy/necked/lunaria

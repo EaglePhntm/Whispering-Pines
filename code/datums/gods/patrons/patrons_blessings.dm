@@ -154,7 +154,7 @@
 /// Returns the immersive flavor text based on both the target's patron and the specific blessing applied
 /// Falls back to generic patron text or a default generic divine message
 /// Returns the immersive flavor text based on both the target's patron and the specific blessing applied
-/// Fully extended for Abyssor, Astrata, Lamashtu, Blissrose, Moonbeam, Graggar, Malum, Matthios, Last Death, Lunaria, Pestra, Wanderer, Xylix, Tenebrase
+/// Fully extended for Abyssor, Asteria, Lamashtu, Blissrose, Moonbeam, Graggar, Malum, Matthios, Last Death, Lunaria, Pestra, Wanderer, Xylix, Tenebrase
 /proc/get_patron_blessing_text(mob/living/carbon/human/M, blessing_path)
 	var/patron_type = M.patron?.type
 	if(!patron_type)
@@ -179,20 +179,20 @@
 		),
 
 		/// (Repeat this block, tailored for each god)
-		/// Astrata - The Sun Queen
-		/datum/patron/divine/astrata = list(
-			/datum/status_effect/buff/beastsense = "Astrata commandeth: \"LET THY SIGHT BE CLEARED. THE LIGHT REVEALETH ALL.\"",
-			/datum/status_effect/buff/trollshape = "Astrata proclaimeth: \"BECOME THE HAMMER OF MINE WILL. STRIKE WITH PURPOSE.\"",
-			/datum/status_effect/buff/divine_beauty = "Astrata speaketh: \"RADIATE THY DUTY. LET NONE AVERT THEIR GAZE.\"",
-			/datum/status_effect/buff/call_to_arms = "Astrata belloweth: \"RISE, O RIGHTEOUS ONE. MARCH TO GLORY IN MINE NAME.\"",
-			/datum/status_effect/buff/craft_buff = "Astrata declareth: \"LET THINE HANDS BUILD THAT WHICH SHALL ENDURE.\"",
-			/datum/status_effect/buff/foodbuff = "Astrata blesseth: \"FEAST AND GROW STRONG BENEATH MINE EVER-WATCHFUL GAZE.\"",
-			/datum/status_effect/buff/clean_plus = "Astrata proclaims: \"THE LIGHT CLEANSETH ALL. DIRT SHALL NOT ENDURE.\"",
-			/datum/status_effect/buff/duration_modification/featherfall = "Astrata commandeth: \"ASCEND, FOR THOU ART WORTHY OF HEIGHT.\"",
-			/datum/status_effect/buff/duration_modification/darkvision = "Astrata scoffeth: \"SHADOWS ARE FOR THE FAINT. THOU NEEDST THEM NOT.\"",
-			/datum/status_effect/buff/duration_modification/haste = "Astrata ordereth: \"SWIFT BE THY FEET. DUTY BROOKETH NO DELAY.\"",
-			/datum/status_effect/buff/calm = "Astrata whispereth: \"BE STILL. THE SUN KEEPETH THEE SAFE.\"",
-			/datum/status_effect/buff/barbrage = "Astrata declareth: \"LET THY RIGHTEOUS FURY BURN AS MINE SUN.\""
+		/// Asteria - The Sun Queen
+		/datum/patron/divine/asteria = list(
+			/datum/status_effect/buff/beastsense = "Asteria commandeth: \"LET THY SIGHT BE CLEARED. THE LIGHT REVEALETH ALL.\"",
+			/datum/status_effect/buff/trollshape = "Asteria proclaimeth: \"BECOME THE HAMMER OF MINE WILL. STRIKE WITH PURPOSE.\"",
+			/datum/status_effect/buff/divine_beauty = "Asteria speaketh: \"RADIATE THY DUTY. LET NONE AVERT THEIR GAZE.\"",
+			/datum/status_effect/buff/call_to_arms = "Asteria belloweth: \"RISE, O RIGHTEOUS ONE. MARCH TO GLORY IN MINE NAME.\"",
+			/datum/status_effect/buff/craft_buff = "Asteria declareth: \"LET THINE HANDS BUILD THAT WHICH SHALL ENDURE.\"",
+			/datum/status_effect/buff/foodbuff = "Asteria blesseth: \"FEAST AND GROW STRONG BENEATH MINE EVER-WATCHFUL GAZE.\"",
+			/datum/status_effect/buff/clean_plus = "Asteria proclaims: \"THE LIGHT CLEANSETH ALL. DIRT SHALL NOT ENDURE.\"",
+			/datum/status_effect/buff/duration_modification/featherfall = "Asteria commandeth: \"ASCEND, FOR THOU ART WORTHY OF HEIGHT.\"",
+			/datum/status_effect/buff/duration_modification/darkvision = "Asteria scoffeth: \"SHADOWS ARE FOR THE FAINT. THOU NEEDST THEM NOT.\"",
+			/datum/status_effect/buff/duration_modification/haste = "Asteria ordereth: \"SWIFT BE THY FEET. DUTY BROOKETH NO DELAY.\"",
+			/datum/status_effect/buff/calm = "Asteria whispereth: \"BE STILL. THE SUN KEEPETH THEE SAFE.\"",
+			/datum/status_effect/buff/barbrage = "Asteria declareth: \"LET THY RIGHTEOUS FURY BURN AS MINE SUN.\""
 		),
 
 		/// Lamashtu - The Mad God
@@ -291,7 +291,7 @@
 			/datum/status_effect/buff/barbrage = "Matthios yells: \"Break stuff. Blame someone else!\""
 		),
 
-		/// Last Death - The Undermaiden
+		/// Last Death - The Nameless Death
 		/datum/patron/divine/last_death = list(
 			/datum/status_effect/buff/beastsense = "Last Death murmurs: \"The grave knows your scent... and waits.\"",
 			/datum/status_effect/buff/trollshape = "Last Death hums: \"Mass returns to earth. Let the soil remember you.\"",
